@@ -33,7 +33,7 @@
     {
       icon: Binary,
       title: 'Papillon est un logiciel libre et open-source',
-      description: 'Créé par des élèves pour des élèves, modifiable par n\'importe qui.',
+      description: 'Créé par des élèves pour des élèves, modifiable par des développeurs volontaire sous la surveillance de nos équipes',
       color: '#b5106b',
     },
     {
