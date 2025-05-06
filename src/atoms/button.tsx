@@ -8,7 +8,8 @@ export default function Button({
   icon,
   href = "#",
   value,
-  color
+  color,
+  className,
 } : {
   leading?: React.ReactNode,
   trailing?: React.ReactNode,
@@ -16,11 +17,12 @@ export default function Button({
   href?: string,
   value: string,
   color?: string,
+  className?: string,
 }) {
   return (
     <Link
       href={href}
-      className="button-outer"
+      className={"button-outer" + (" " + className || "")}
       style={{
         // @ts-expect-error --button-color is a CSS variable
         '--button-color': `var(--${color})`
