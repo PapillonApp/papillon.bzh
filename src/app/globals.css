@@ -1,13 +1,22 @@
 :root {
   --background: #ffffff;
+  --background-rgb: 255, 255, 255;
   --foreground: #171717;
+  --foreground-rgb: 23, 23, 23;
+  --primary: #29947a;
+  --primary-rgb: 41, 148, 122;
+  --support: #d28c00;
+  --support-rgb: 210, 140, 0;
+
+  --border: rgb(220, 220, 220);
+  --max-width: 1200px;
+  --navbar-height: 72px;
+  --page-height: calc(100vh - var(--navbar-height));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Papillon";
+  src: url("/fonts/SNPro/SNPro-Variable.woff2") format("woff2");
 }
 
 html,
@@ -20,6 +29,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,6 +38,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Papillon", sans-serif;
 }
 
 a {
@@ -35,8 +46,26 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.width {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+body main {
+  min-height: var(--page-height);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.error-page {
+  height: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--page-height);
+  gap: 6px;
 }

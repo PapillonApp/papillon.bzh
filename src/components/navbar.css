@@ -1,0 +1,81 @@
+.navbar {
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--border);
+  background-color: rgba(var(--background-rgb), 0.8);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar .width {
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-height {
+  height: var(--navbar-height);
+}
+
+.nav-part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-main {
+  flex: 2;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+  gap: 16px;
+}
+
+nav ul li {
+  margin: 0 12px;
+}
+
+nav ul li a {
+  font-weight: 500;
+  color: rgba(var(--foreground-rgb), 0.6);
+  transition: all 0.1s ease-in-out;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  font-weight: 650;
+  color: rgba(var(--foreground-rgb), 1);
+}
+
+nav ul li a:hover {
+  font-weight: 650;
+  color: rgba(var(--foreground-rgb), 1);
+}
+
+.support,
+.support:hover,
+.active.support,
+.active.support:hover {
+  color: rgba(var(--support-rgb), 1);
+}
