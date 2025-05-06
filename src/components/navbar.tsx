@@ -33,7 +33,7 @@ export default function Navbar() {
       <header className="navbar">
         <div className="width">
           <div className="nav-part nav-left">
-            <Link href="/">
+            <Link href="/" style={{ height: 28 }}>
               <Image
                 width={129}
                 height={28}
