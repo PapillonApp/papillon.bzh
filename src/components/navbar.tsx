@@ -20,10 +20,24 @@ export default function Navbar() {
     setMobileNavOpen(!mobileNavOpen);
   };
 
+  const [width, setWidth] = React.useState<number>(0);
+  React.useEffect(() => {
+    const handleResize = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call it once to set the initial width
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }
+  , []);
+
   const routes = [
     {
       title: "Le projet Papillon",
-      href: "/",
+      href: "/#",
     },
     {
       title: "Documentation",
@@ -76,7 +90,7 @@ export default function Navbar() {
           <div className="nav-part nav-right">
             <Button
               icon={<Download />}
-              value="Télécharger l'appli"
+              value={width > 500 ? "Télécharger l'appli" : "Obtenir"}
               color="primary"
               href="download"
               className='download-nav'
@@ -85,6 +99,15 @@ export default function Navbar() {
             <button
               onClick={() => toggleMobileNav()}
               className={"mobile-nav-button" + (mobileNavOpen ? " open" : "")}
+              aria-label="Menu"
+              aria-expanded={mobileNavOpen}
+              aria-controls="mobile-nav"
+              aria-haspopup="true"
+              type="button"
+              title="Menu"
+              data-state={mobileNavOpen ? "open" : "closed"}
+              data-state-closed={mobileNavOpen ? "closed" : "open"}
+              data-state-open={mobileNavOpen ? "open" : "closed"}
             >
               {mobileNavOpen ? (
                 <X />

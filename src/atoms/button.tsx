@@ -10,6 +10,8 @@ export default function Button({
   value,
   color,
   className,
+  outlined,
+  style,
 } : {
   leading?: React.ReactNode,
   trailing?: React.ReactNode,
@@ -18,12 +20,15 @@ export default function Button({
   value: string,
   color?: string,
   className?: string,
+  outlined?: boolean,
+  style?: React.CSSProperties,
 }) {
   return (
     <Link
       href={href}
-      className={"button-outer" + (" " + className || "")}
+      className={"button-outer" + (" " + className || "") + (outlined ? " outlined" : "")}
       style={{
+        ...style,
         // @ts-expect-error --button-color is a CSS variable
         '--button-color': `var(--${color})`
       }}
@@ -32,7 +37,7 @@ export default function Button({
         {leading}
           {// @ts-expect-error icon is Lucide icon
           icon && React.cloneElement(icon, {
-            color: "#ffffff",
+            color: outlined ? "var(--button-color)" : "#ffffff",
             size: 20,
             strokeWidth: 2.5
           })}
