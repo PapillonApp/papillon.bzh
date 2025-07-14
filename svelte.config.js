@@ -22,6 +22,7 @@ export default {
 				'/github/link/error',
 				'/github/link/not_available',
 				'/github/link/success',
+				'/discord/contester-une-sanction',
 				'/kenavo',
 			],
 		},

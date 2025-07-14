@@ -34,11 +34,13 @@
 		margin-top: 1rem;
 		font-size: 2rem;
 		color: var(--papillon-primary);
+		text-align: center;
 	}
 
 	p {
 		color: rgba(var(--color-text-rgb), 0.4);
 		font-size: 1rem;
 		margin-top: 5px;
+		text-align: center;
 	}
 </style>
