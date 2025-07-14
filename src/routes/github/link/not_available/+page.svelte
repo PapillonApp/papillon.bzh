@@ -1,10 +1,20 @@
 <script>
 	import { GitFork } from 'lucide-svelte';
 	import Button from '../../../../components/Button.svelte';
+	import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 </script>
 
 <main>
-	<img src="/assets/checkmark_fail.png" alt="Checkmark with an x" />
+	<LottiePlayer
+		src="/lottie/fail.json"
+		autoplay="{true}"
+		loop="{false}"
+		controls={false}
+		renderer="svg"
+		background="transparent"
+		height={200}
+		width={200}
+	/>
 	<h1>Il semblerait que tu n'aies pas encore contribué...</h1>
 	<p>Fait une contribution sur le repo de Papillon, puis revient faire ta demande. 👀</p>
 	<Button value="Faire une contribution" icon={GitFork} variant="light" href="https://github.com/PapillonApp/Papillon/fork" />
