@@ -1,7 +1,7 @@
 import React from "react";
 import "./herospan.css";
 
-import { motion, MotionConfig, useTransform } from "motion/react"
+import { motion } from "motion/react"
 
 export default function HeroSpan({ text, color, icon, index }: { text: string; color: string; icon?: React.ReactNode; index: number }) {
   const iconSize = 36;
@@ -16,6 +16,7 @@ export default function HeroSpan({ text, color, icon, index }: { text: string; c
         opacity: 0,
         scale: 0.1,
         rotate: -4,
+        translateY: 40,
       }}
       whileInView={{
         opacity: 1,
@@ -23,6 +24,7 @@ export default function HeroSpan({ text, color, icon, index }: { text: string; c
         scale: 1,
         rotate: 0,
       }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         bounce: 0.4,
