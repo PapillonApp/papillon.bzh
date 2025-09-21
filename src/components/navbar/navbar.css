@@ -65,11 +65,7 @@ nav ul {
   padding: 0;
   margin: 0;
   flex-direction: row;
-  gap: 16px;
-}
-
-nav ul li {
-  margin: 0 12px;
+  gap: 12px;
 }
 
 nav ul li a {
@@ -79,7 +75,6 @@ nav ul li a {
 
   background-color: rgba(var(--foreground-rgb), 0.0);
   padding: 8px 14px;
-  margin: -8px -14px;
   border-radius: 10px;
 
   overflow: hidden;
@@ -165,7 +160,7 @@ nav ul li a:hover {
 
 .mobile-nav-nav ul {
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   padding-top: 20px;
 }
 
