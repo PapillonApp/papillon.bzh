@@ -81,11 +81,11 @@ nav ul li a {
   text-overflow: ellipsis;
   white-space: nowrap;
   text-decoration: none;
+    display: inline-block;
 }
 
 nav ul li a:active {
-  padding: 6px 6px;
-  margin: -6px -6px;
+    transform: scale(0.9);
 }
 
 nav ul li a.active {
