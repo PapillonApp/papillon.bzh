@@ -17,7 +17,9 @@ import { del } from "motion/react-client";
 import { transition } from "@/utils/Transition";
 
 function getOS() {
+  // @ts-ignore
   var uA = navigator.userAgent || navigator.vendor || window.opera;
+  // @ts-ignore
   if ((/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document)) return 'iOS';
 
   var i, os = ['Android', 'iOS'];

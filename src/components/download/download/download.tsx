@@ -36,10 +36,10 @@ export default function Download() {
         </p>
 
         <a href="https://testflight.apple.com/join/AT2h5fj1" className="betaLink">
-          -> Rejoindre le programme TestFlight pour iOS
+          -&gt; Rejoindre le programme TestFlight pour iOS
         </a>
         <a href="https://play.google.com/store/apps/details?id=xyz.getpapillon.app" className="betaLink">
-          -> Rejoindre le programme Google Play Beta pour Android
+          -&gt; Rejoindre le programme Google Play Beta pour Android
         </a>
       </div>
     </div>
