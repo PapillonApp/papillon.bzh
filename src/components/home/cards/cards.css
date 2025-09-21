@@ -6,7 +6,8 @@
 
 .cards-list {
   margin-top: 40px;
-  overflow-y: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding-top: 40px;
   width: 100%;
   display: flex;
@@ -14,6 +15,8 @@
   gap: 48px;
   padding-left: calc((100vw - var(--max-width))/2 + 20px);
   padding-right: calc((100vw - var(--max-width))/2 + 20px);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 } 
 
 @media screen and (max-width: 1400px) {
@@ -28,7 +31,13 @@
   }
 }
 
-.cards-list::-webkit-scrollbar { display: none; }
+.cards-list::-webkit-scrollbar { 
+  display: none; 
+}
+
+.cards-list::-webkit-scrollbar-horizontal { 
+  display: none; 
+}
 
 .card {
   min-width: 400px;
