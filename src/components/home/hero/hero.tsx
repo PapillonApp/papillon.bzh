@@ -12,25 +12,31 @@ import Check from "@/icons/Check";
 
 import "./hero.css";
 import HeroSpan from "@/atoms/herospan/herospan";
+
 import { useScroll, useSpring } from "motion/react";
 import { del } from "motion/react-client";
 import { transition } from "@/utils/Transition";
+import { useEffect, useState } from "react";
+
 
 function getOS() {
+  if (typeof window === "undefined" || typeof navigator === "undefined") return null;
   // @ts-ignore
-  var uA = navigator.userAgent || navigator.vendor || window.opera;
+  var uA = navigator.userAgent || navigator.vendor || (window as any).opera;
   // @ts-ignore
-  if ((/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document)) return 'iOS';
-
+  if ((/iPad|iPhone|iPod/.test(uA) && !(window as any).MSStream) || (uA.includes('Mac') && 'ontouchend' in document)) return 'iOS';
   var i, os = ['Android', 'iOS'];
   for (i = 0; i < os.length; i++) if (new RegExp(os[i],'i').test(uA)) return os[i];
-
   return null;
 }
 
+
 export default function Hero() {
   const { scrollYProgress, scrollY } = useScroll();
-  const os = getOS();
+  const [os, setOS] = useState<string | null>(null);
+  useEffect(() => {
+    setOS(getOS());
+  }, []);
 
   return (
     <>
