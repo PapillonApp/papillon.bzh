@@ -1,0 +1,15 @@
+.why {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  background-color: #e9f4f2;
+  --primary: #29947A;
+  padding: 64px 32px !important;
+  margin: 20px;
+  border-radius: 24px;
+}
+
+.section-illustration {
+  align-self: center;
+}

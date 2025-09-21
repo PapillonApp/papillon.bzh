@@ -1,0 +1,128 @@
+.hero {
+  background: url("/bg-image.jpg") no-repeat;
+  background-size: cover;
+  background-position: top center;
+  overflow: hidden;
+  margin-top: calc(0px - var(--navbar-height));
+  padding-top: calc(var(--navbar-height) + 40px);
+}
+
+.hero .hero-content {
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+  padding: 60px 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero .hero-content {
+    padding: 60px 32px;
+  }
+}
+
+.trophies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .trophies {
+    zoom: 0.8;
+  }
+}
+
+.main-title span,
+.main-description span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.buttons-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-title {
+  font-size: 3.0rem;
+  line-height: 3.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.main-description {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: rgba(var(--foreground-rgb), 0.6);
+}
+
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+
+  .main-description {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+.main-terms {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  font-weight: 500;
+  color: rgba(var(--foreground-rgb), 0.6);
+}
+
+.main-terms a {
+  color: rgba(var(--foreground-rgb), 1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.main-terms a:hover {
+  border-bottom: 1px solid rgba(var(--foreground-rgb), 2);
+}
+
+@media screen and (max-width: 508px) {
+  .button-knowmore {
+    display: none;
+  }
+}
+
+.hero-phones {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+@media screen and (max-width: 768px) {
+  .hero-phones {
+    display: none;
+  }
+}
+
+.hero-background-line {
+  position: absolute;
+  bottom: -200px;
+  left: calc(-10% - 50px);
+  width: 125%;
+  height: 800px;
+  z-index: -1;
+  object-fit: cover;
+}

@@ -3,10 +3,14 @@
   --background-rgb: 255, 255, 255;
   --card: #ffffff;
   --card-rgb: 255, 255, 255;
-  --foreground: #343e3b;
-  --foreground-rgb: 52, 62, 59;
-  --primary: #29947a;
-  --primary-rgb: 41, 148, 122;
+  --foreground: #3E1939;
+  --foreground-rgb: 62, 25, 57;
+  --foreground-darker: #2a0f2a;
+  --foreground-darker-rgb: 42, 15, 42;
+  --primary: #B1399F;
+  --primary-rgb: 177, 57, 159;
+  --primary-lighter: #d16bbf;
+  --primary-lighter-rgb: 209, 107, 191;
   --support: #d28c00;
   --support-rgb: 210, 140, 0;
   --contrast: #bfe677;
@@ -15,14 +19,45 @@
   --contrast-foreground-rgb: 90, 120, 33;
 
   --border: rgb(220, 220, 220);
-  --max-width: 1200px;
+  --max-width: 1300px;
   --navbar-height: 72px;
-  --page-height: calc(100vh - var(--navbar-height));
+  --page-height: calc(100vh);
+}
+
+@font-face {
+  font-family: "Papillon-Variable";
+  src: url("/fonts/SNPro/SNPro-Variable.woff2") format("woff2");
+  font-weight: 100 900;
 }
 
 @font-face {
   font-family: "Papillon";
-  src: url("/fonts/SNPro/SNPro-Variable.woff2") format("woff2");
+  src: url("/fonts/SNPro/SNPro-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Papillon";
+  src: url("/fonts/SNPro/SNPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Papillon";
+  src: url("/fonts/SNPro/SNPro-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Papillon";
+  src: url("/fonts/SNPro/SNPro-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Papillon";
+  src: url("/fonts/SNPro/SNPro-Bold.woff2") format("woff2");
+  font-weight: 700;
 }
 
 html,
@@ -46,6 +81,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Papillon", sans-serif;
+}
+
+@supports (font-variation-settings: "wdth" 115) {
+  * {
+    font-family: "Papillon-Variable", sans-serif;
+  }
 }
 
 a {
@@ -78,7 +119,7 @@ h1 {
 }
 
 .section {
-  padding: 76px 20px;
+  padding: 126px 20px;
   display: flex;
   flex-direction: column;
 }
@@ -88,23 +129,38 @@ h1 {
   flex-direction: column;
   gap: 12px;
   max-width: 800px;
+  align-self: center;
 }
 
 .section-heading .section-title {
-  font-size: 2.3rem;
+  font-size: 2.6rem;
   letter-spacing: -0.02em;
   font-weight: 650;
   color: var(--foreground);
+  text-align: center;
+  width: 100%;
 }
 
 .section-heading .section-description {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
   font-weight: 500;
   color: rgba(var(--foreground-rgb), 0.7);
+  text-align: center;
+  width: 100%;
 }
 
 .section-heading .section-title span,
 .section-heading .section-description span {
   color: var(--primary);
   font-weight: 700;
+}
+
+img {
+  image-rendering: crisp-edges;
+}
+
+.app.top {
+  margin-top: var(--navbar-height);
+  min-height: calc(100vh - var(--navbar-height));
 }

@@ -1,0 +1,6 @@
+.section.donate {
+  background: url("/bg-donate.jpg") no-repeat;
+  background-size: cover;
+  background-position: top center;
+  min-height: 100vh;
+}

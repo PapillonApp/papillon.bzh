@@ -1,0 +1,86 @@
+.cardDownload {
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  min-height: 100px;
+  align-self: center;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 16px;
+}
+
+.cardDownloadSide {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cardDownloadSide.qr {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cardDownloadSide h2 {
+  font-size: 1.8rem;
+  color: var(--foreground);
+}
+
+.cardDownloadSide .description {
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  color: rgba(var(--foreground-rgb), 0.7);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.qrCode {
+  height: 300px;
+  width: fit-content;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.storeButton {
+  height: 48px;
+}
+
+.storeButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .cardDownload {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .cardDownloadSide {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.betaLink {
+  font-size: 1.1rem;
+  color: rgba(var(--primary-rgb), 1);
+  font-weight: 500;
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0);
+  margin-bottom: 4px;
+}
+
+.betaLink:hover {
+  border-bottom: 1px solid rgba(var(--primary-rgb), 1);
+}

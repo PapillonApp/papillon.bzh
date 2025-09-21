@@ -1,5 +1,5 @@
-import Button from "@/atoms/button";
-import Spacer from "@/atoms/spacer";
+import Button from "@/atoms/button/button";
+import Spacer from "@/atoms/spacer/spacer";
 import { Undo2 } from "lucide-react";
 import Image from "next/image";
 

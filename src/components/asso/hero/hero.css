@@ -1,0 +1,49 @@
+.hero-asso {
+  background: url("/bg-asso.jpg") no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  overflow: hidden;
+  margin-top: calc(0px - var(--navbar-height));
+  padding-top: calc(var(--navbar-height) + 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.hero-asso-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 20px;
+  gap: 10px;
+}
+
+.hero-people {
+  margin-bottom: 10px;
+  filter: drop-shadow(0 1px 6px #00000030);
+}
+
+.hero-asso-content h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero-asso-content .description {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  color: rgba(var(--foreground-rgb), 0.7);
+}
+
+.buttons-hero {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}

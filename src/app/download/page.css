@@ -1,0 +1,11 @@
+.donatePage {
+  background: url("/bg-download.jpg") no-repeat;
+  background-size: cover;
+  background-position: top center;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
