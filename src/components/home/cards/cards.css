@@ -48,12 +48,12 @@
   overflow: visible;
 }
 
-.card:hover img {
+.card:hover .card-video {
   transform: scale(1.03) translateY(-5px);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 
-.card img {
+.card .card-video {
   border-radius: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   margin-bottom: 26px;
@@ -61,6 +61,7 @@
   aspect-ratio: 4 / 5;
   height: auto;
   transition: transform 0.3s ease 0s, box-shadow 0.3s ease 0s;
+  object-fit: cover;
 }
 
 .card h3 {
