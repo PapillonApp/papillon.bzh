@@ -21,6 +21,13 @@ export default function Persons() {
       image: "/people/tryon.jpg"
     },
     {
+      firstname: "Tom",
+      lastname: "Hélière",
+      role: "Secrétaire",
+      description: "Artiste du projet, il s'occupe de l'identité visuelle de Papillon.",
+      image: "/people/tomhlr.jpg"
+    },
+    {
       firstname: "Raphaël",
       lastname: "Schroder",
       role: "Trésorier adjoint",
@@ -33,13 +40,6 @@ export default function Persons() {
       role: "Secrétaire adjoint",
       description: "Visionnaire du code et du design, il met un coup de pinceaux aux fonctionnalités.",
       image: "/people/remygdt.jpg"
-    },
-    {
-      firstname: "Tom",
-      lastname: "Hélière",
-      role: "Secrétaire",
-      description: "Artiste et troubadour du projet, il prend soin de l'apparence de Papillon.",
-      image: "/people/tomhlr.jpg"
     }
   ];
 
