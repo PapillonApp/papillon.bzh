@@ -40,6 +40,13 @@ export default function Persons() {
       role: "Secrétaire adjoint",
       description: "Visionnaire du code et du design, il met un coup de pinceaux aux fonctionnalités.",
       image: "/people/remygdt.jpg"
+    },
+    {
+      firstname: "Mael",
+      lastname: "Duret",
+      role: "Membre",
+      description: 'Il touche à tout… surtout quand il veut "juste voir ce que ça fait".',
+      image: "/people/ryzenixx.jpg"
     }
   ];
 

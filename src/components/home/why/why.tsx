@@ -10,8 +10,9 @@ export default function Why() {
         <Image
           src="/people.png"
           alt=""
-          width={312}
-          height={64}
+          width={300}
+          height={0}
+          style={{ height: 'auto' }}
           className="section-illustration"
           />
         <h2 className="section-title">Pas une simple <span>application de vie scolaire</span>, mais une vision de l'éducation</h2>
