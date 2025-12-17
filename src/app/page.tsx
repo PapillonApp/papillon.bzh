@@ -1,4 +1,5 @@
 import Cards from "@/components/home/cards/cards";
+import FAQ from "@/components/home/faq/faq";
 import Features from "@/components/home/features/features";
 import Hero from "@/components/home/hero/hero";
 import HowTo from "@/components/home/howto/howto";
@@ -17,6 +18,7 @@ export default function Home() {
       <Steps />
       <Cards />
       <Features />
+      <FAQ />
       <Why />
 
       {/*
