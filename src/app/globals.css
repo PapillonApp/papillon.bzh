@@ -3,14 +3,14 @@
   --background-rgb: 255, 255, 255;
   --card: #ffffff;
   --card-rgb: 255, 255, 255;
-  --foreground: #3E1939;
-  --foreground-rgb: 62, 25, 57;
-  --foreground-darker: #2a0f2a;
-  --foreground-darker-rgb: 42, 15, 42;
-  --primary: #B1399F;
-  --primary-rgb: 177, 57, 159;
-  --primary-lighter: #d16bbf;
-  --primary-lighter-rgb: 209, 107, 191;
+  --foreground: #19243e;
+  --foreground-rgb: 25, 36, 62;
+  --foreground-darker: #0f122a;
+  --foreground-darker-rgb: 15, 18, 42;
+  --primary: #29947A;
+  --primary-rgb: 41, 148, 122;
+  --primary-lighter: #54b39b;
+  --primary-lighter-rgb: 84, 179, 155;
   --support: #d28c00;
   --support-rgb: 210, 140, 0;
   --contrast: #bfe677;
@@ -63,7 +63,7 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
