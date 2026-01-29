@@ -21,7 +21,7 @@ export default function Download() {
         </p>
 
         <div className="storeButtons">
-          <a href="https://apps.apple.com/app/papillon-ton-alli%C3%A9-scolaire/id6477761165" target="_blank" rel="noreferrer">
+          <a href="https://apps.apple.com/fr/app/papillon-lappli-scolaire/id6477761165" target="_blank" rel="noreferrer">
             <img className="storeButton" src="/appstore_svg.svg" alt="Télécharger sur l'App Store" />
           </a>
 
