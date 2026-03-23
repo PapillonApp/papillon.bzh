@@ -16,6 +16,7 @@ export default function Persons() {
       <div className="persons-grid">
         {persons.map((person, index) => (
           <a href={person.link} key={index} className="person-card" target='_blank'>
+            <img src={person.image} alt={""} className="person-image-gradient" />
             <div className="person-image">
               <Image src={person.image} alt={""} width={150} height={150} />
             </div>
