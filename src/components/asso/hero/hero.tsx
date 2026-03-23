@@ -6,6 +6,7 @@ import Button from "@/atoms/button/button";
 import { Code2Icon, DownloadIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from 'motion/react';
+import {People} from "@/components/global/people/people";
 
 function getOS() {
   if (typeof window === "undefined" || typeof navigator === "undefined") return null;
@@ -58,14 +59,7 @@ export default function Hero() {
           pour faire mieux.
         </motion.h1>
         <motion.div initial={{ opacity: 0, scale: 0.9, y: 40 }} whileInView={{ opacity: 0.7, scale: 1, y: 0 }} transition={{ duration: 1, type: "spring", bounce: 0.5, delay: 0.1 }}>
-          <Image
-            src="/people.png"
-            alt=""
-            width={400}
-            height={67}
-            style={{ height: 'auto' }}
-            className="hero-people"
-          />
+          <People avatarSize={70}/>
         </motion.div>
         <motion.p className="hero-description" initial={{ opacity: 0, scale: 0.9, y: 40 }} whileInView={{ opacity: 0.7, scale: 1, y: 0 }} transition={{ duration: 1, type: "spring", bounce: 0.5, delay: 0.1 }}>
           Papillon, c'est aussi 6 étudiants passionnés qui cherchent toujours a créer l'inattendu pour fournir une expérience au delà des attentes.
