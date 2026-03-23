@@ -88,7 +88,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`navbar${scrollValue > 30 ? ' scrolled' : ''}${isDark ? ' dark' : ''}`}>
+      <header className={`navbar${scrollValue > 30 && !mobileNavOpen ? ' scrolled' : ''}${isDark ? ' dark' : ''}`}>
         <div className="width">
           <div className="nav-part nav-left">
             <Link href="/" style={{ height: 28 }}>
@@ -96,7 +96,7 @@ export default function Navbar() {
                 width={119}
                 height={26}
                 alt="Papillon"
-                src={!isDark ? "./logotype.svg" : "./logotype_dark.svg"}
+                src={!isDark || mobileNavOpen ? "./logotype.svg" : "./logotype_dark.svg"}
                 priority
               />
             </Link>
@@ -143,6 +143,9 @@ export default function Navbar() {
               data-state={mobileNavOpen ? "open" : "closed"}
               data-state-closed={mobileNavOpen ? "closed" : "open"}
               data-state-open={mobileNavOpen ? "open" : "closed"}
+              style={{
+                filter: mobileNavOpen && isDark ? 'invert(1)':''
+              }}
             >
               {mobileNavOpen ? (
                 <X />
