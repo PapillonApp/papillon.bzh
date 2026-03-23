@@ -86,6 +86,10 @@ export default function Navbar() {
     },
   ];
 
+  React.useEffect(() => {
+    setMobileNavOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <header className={`navbar${scrollValue > 30 && !mobileNavOpen ? ' scrolled' : ''}${isDark ? ' dark' : ''}`}>
