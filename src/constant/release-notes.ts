@@ -13,7 +13,7 @@ export const ReleaseNotesContent = [
 				imageAlt: '',
 				title: 'Tes transports dans ton emploi du temps',
 				contributors: ['remy', 'vince'],
-				description: 'Tellus cras ad, convallis in porttitor nibh. Litora sociosqu, habitasse elit condimentum. Amet vulputate mi lobortis, vehicula elit ornare, scelerisque massa leo sed lacus aliquam iaculis. Posuere nam, maecenas.'
+				description: 'Tes trajets s’invitent dans ton emploi du temps. Tu sais désormais exactement quand partir pour être à l’heure en cours. Plus aucune excuse pour être en retard…'
 			},
 			{
 				color: '#26B290',
@@ -21,7 +21,7 @@ export const ReleaseNotesContent = [
 				imageAlt: '',
 				title: 'Tout tes comptes, au même endroits',
 				contributors: ['vince', 'raphael'],
-				description: 'Tellus cras ad, convallis in porttitor nibh. Litora sociosqu, habitasse elit condimentum. Amet vulputate mi lobortis, vehicula elit ornare, scelerisque massa leo sed lacus aliquam iaculis. Posuere nam, maecenas.'
+				description: 'Tu as plusieurs rôles ou services à suivre ? Que tu sois prof et parent d\'élève ou même étudiant avec plusieurs comptes, pas de problème. Papillon supporte désormais plusieurs comptes au sein du même endroit. Tu peux passer de l’un à l’autre en un clin d’œil et garder toutes tes infos à portée de main. '
 			},
 			{
 				color: '#B300CA',
@@ -29,7 +29,7 @@ export const ReleaseNotesContent = [
 				imageAlt: '',
 				title: '¡Muchas novedades lingüísticas en el mismo sitio!',
 				contributors: ['vince'],
-				description: 'Tellus cras ad, convallis in porttitor nibh. Litora sociosqu, habitasse elit condimentum. Amet vulputate mi lobortis, vehicula elit ornare, scelerisque massa leo sed lacus aliquam iaculis. Posuere nam, maecenas.'
+				description: 'Parles-tu 2, 3 ou 4 langues ? Peu importe. Papillon supporte désormais 32 langues, de quoi tout le monde trouve son bonheur.'
 			},
 			{
 				color: '#2DB9D8',
@@ -37,7 +37,7 @@ export const ReleaseNotesContent = [
 				imageAlt: '',
 				title: 'Simple comme bonjour !',
 				contributors: ['vince', 'tom'],
-				description: 'Tellus cras ad, convallis in porttitor nibh. Litora sociosqu, habitasse elit condimentum. Amet vulputate mi lobortis, vehicula elit ornare, scelerisque massa leo sed lacus aliquam iaculis. Posuere nam, maecenas.'
+				description: 'L\'écran de connexion c\'est refait une beauté  ! Plus clair, plus simple et beaucoup plus agréable à utiliser, tu peux maintenant te connecter en un clin d’œil. Même ton chat pourrait y arriver !'
 			}
 		]
 	}
