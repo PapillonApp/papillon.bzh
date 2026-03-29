@@ -1,8 +1,14 @@
 "use client";
 import "./footer.css";
+import {useEffect, useState} from "react";
 
 export default function Footer() {
-	const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+	const [isIOS, setIsIOS] = useState(false);
+
+	useEffect(() => {
+		setIsIOS(/iPhone|iPad|iPod/i.test(navigator.userAgent));
+	}, []);
+
 
 	return (
 		<footer>
