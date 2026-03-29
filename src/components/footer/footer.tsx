@@ -65,7 +65,7 @@ export default function Footer() {
                 width={119}
                 height={26}
                 alt="Papillon"
-                src="./logotype.svg"
+                src="/logotype.svg"
                 className="footer-logo"
               />
               <p className="copyright">© {new Date().getFullYear()} Association Papillon & contributeurs. Tous droits réservés.</p>

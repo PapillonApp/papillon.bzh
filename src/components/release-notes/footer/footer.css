@@ -1,0 +1,38 @@
+footer {
+    padding: 30px 20px;
+    background-color: #0001;
+    border-top: 1px solid #0001;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+footer svg {
+    width: 40px;
+    height: 40px;
+    opacity: .3;
+}
+
+footer h2 {
+    font-family: "SN Pro", sans-serif;
+    font-size: 28px;
+    opacity: .8;
+}
+
+footer p {
+    font-family: "SN Pro", sans-serif;
+    font-size: 16px;
+    opacity: .5;
+    margin-bottom: 20px;
+}
+
+footer a {
+    font-family: "SN Pro", sans-serif;
+    font-size: 18px;
+    padding: 10px 30px;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 50px;
+}

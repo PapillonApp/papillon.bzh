@@ -1,0 +1,62 @@
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 400px;
+}
+
+.card > img {
+    width: 100%;
+    aspect-ratio: 1.81;
+    object-fit: contain;
+    z-index: 1;
+    mask-image: linear-gradient(#000 80%, #0000);
+}
+
+.card-content {
+    border-radius: 20px;
+    margin-top: -100px;
+    padding: 110px 15px 15px;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-content > h2 {
+    font-family: "SN Pro", sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.card-content > span {
+    font-family: "SN Pro", sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-content > span > img {
+    margin-left: -12px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.card-content > span > img:first-child {
+    margin-left: 0;
+}
+
+.card-content > span > img:last-child {
+    margin-right: 5px;
+}
+
+.card-content > p {
+    font-family: "SN Pro", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    opacity: 0.7;
+}
