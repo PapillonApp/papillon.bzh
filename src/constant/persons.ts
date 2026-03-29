@@ -1,5 +1,6 @@
 export const persons = [
 	{
+		id: 'vince',
 		firstname: "Vince",
 		lastname: "Linise",
 		role: "Président",
@@ -8,6 +9,7 @@ export const persons = [
 		image: "/people/ecnivtwelve.jpg"
 	},
 	{
+		id: 'lucas',
 		firstname: "Lucas",
 		lastname: "Lavajo",
 		role: "Vice-président",
@@ -16,6 +18,7 @@ export const persons = [
 		image: "/people/tryon.jpg"
 	},
 	{
+		id: 'tom',
 		firstname: "Tom",
 		lastname: "Hélière",
 		role: "Designer UI/UX",
@@ -24,6 +27,7 @@ export const persons = [
 		image: "/people/tomhlr.jpg"
 	},
 	{
+		id: 'raphael',
 		firstname: "Raphaël",
 		lastname: "Schroder",
 		role: "Développeur",
@@ -32,6 +36,7 @@ export const persons = [
 		image: "/people/raphckrman.jpg"
 	},
 	{
+		id: 'remy',
 		firstname: "Rémy",
 		lastname: "Godet",
 		role: "Développeur",
@@ -40,6 +45,7 @@ export const persons = [
 		image: "/people/remygdt.jpg"
 	},
 	{
+		id: 'mael',
 		firstname: "Mael",
 		lastname: "Duret",
 		role: "Développeur",
