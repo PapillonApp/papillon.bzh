@@ -1,19 +1,18 @@
 import "../globals.css";
+import "@fontsource/sn-pro/500.css";
+import "@fontsource/sn-pro/600.css";
+import "@fontsource/sn-pro/700.css";
 
 import SmoothScrolling from "@/components/smooth-scrolling";
 
-export default function RootLayout({
-																		 children,
-																	 }: Readonly<{
+export default function RootLayout({ children }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
 		<body>
-			<main>
-				<SmoothScrolling>
-					{children}
-				</SmoothScrolling>
-			</main>
+			<SmoothScrolling>
+				{children}
+			</SmoothScrolling>
 		</body>
 	);
 }

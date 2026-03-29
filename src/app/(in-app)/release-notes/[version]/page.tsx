@@ -1,5 +1,6 @@
 import {ReleaseNotesContent} from "@/constant/release-notes";
 import { notFound } from 'next/navigation';
+import {Hero} from "@/components/release-notes/hero/hero";
 
 export const dynamicParams = false;
 
@@ -17,6 +18,12 @@ export default async function ReleaseNotes({ params }) {
 	if (!content) notFound();
 
 	return (
-		<p>{content.text}</p>
+		<Hero
+			imageSource={`/release-notes/${content.imageSource}`}
+			imageAlt={content.imageAlt}
+			accent={content.accent}
+			title={content.title}
+			lastUpdate={content.lastUpdate}
+		/>
 	);
 }
