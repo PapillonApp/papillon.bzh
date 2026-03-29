@@ -2,6 +2,7 @@ import {ReleaseNotesContent} from "@/constant/release-notes";
 import { notFound } from 'next/navigation';
 import {Hero} from "@/components/release-notes/hero/hero";
 import Card from "@/components/release-notes/card/card";
+import Footer from "@/components/release-notes/footer/footer";
 
 export const dynamicParams = false;
 
@@ -40,6 +41,7 @@ export default async function ReleaseNotes({ params }) {
 					/>
 				))}
 			</main>
+			<Footer/>
 		</>
 	);
 }
