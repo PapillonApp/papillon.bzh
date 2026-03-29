@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/navbar/navbar";
-import Footer from "@/components/footer/footer";
-
-import SmoothScrolling from "@/components/smooth-scrolling";
 
 export const viewport = {
   themeColor: "#29947A",
@@ -51,15 +47,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.macpaw.com" />
         <link rel="stylesheet" href="https://fonts.macpaw.com/css?family=FixelText:300;400;500;600;700;800" />
       </head>
-      <body>
-        <Navbar />
-        <main>
-          <SmoothScrolling>
-            {children}
-          </SmoothScrolling>
-        </main>
-        <Footer />
-      </body>
+      {children}
     </html>
   );
 }

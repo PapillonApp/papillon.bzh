@@ -100,7 +100,7 @@ export default function Navbar() {
                 width={119}
                 height={26}
                 alt="Papillon"
-                src={!isDark || mobileNavOpen ? "./logotype.svg" : "./logotype_dark.svg"}
+                src={!isDark || mobileNavOpen ? "/logotype.svg" : "/logotype_dark.svg"}
                 priority
               />
             </Link>
