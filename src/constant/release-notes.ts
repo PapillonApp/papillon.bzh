@@ -29,7 +29,7 @@ export const ReleaseNotesContent = [
 				imageAlt: '',
 				title: '¡Muchas novedades lingüísticas en el mismo sitio!',
 				contributors: ['vince'],
-				description: 'Parles-tu 2, 3 ou 4 langues ? Peu importe. Papillon supporte désormais 32 langues, de quoi tout le monde trouve son bonheur.'
+				description: 'Parles-tu 2, 3 ou 4 langues ? Peu importe. Papillon supporte désormais 32 nouvelles langues, de quoi tout le monde trouve son bonheur.'
 			},
 			{
 				color: '#2DB9D8',
