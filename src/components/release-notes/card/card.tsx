@@ -1,6 +1,9 @@
+"use client";
+
 import "./card.css";
 import Image from "next/image";
 import {persons} from "@/constant/persons";
+import {motion} from "motion/react";
 
 export interface CardProps {
 	color: string;
@@ -29,7 +32,13 @@ export default function Card({color, imageSource, imageAlt, title, contributors,
 	}
 
 	return (
-		<div className="card">
+		<motion.div
+			className="card"
+			initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)", translateY: "20%" }}
+			whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)", translateY: 0 }}
+			transition={{duration: 0.8, type: "spring"}}
+			viewport={{ once: true }}
+		>
 			<img src={imageSource} alt={imageAlt} />
 			<div className="card-content" style={{backgroundColor: color}}>
 				<h2>{title}</h2>
@@ -48,6 +57,6 @@ export default function Card({color, imageSource, imageAlt, title, contributors,
 				</span>
 				<p>{description}</p>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
