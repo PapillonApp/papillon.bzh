@@ -37,7 +37,7 @@ export const ReleaseNotesContent = [
 				imageAlt: '',
 				title: 'Simple comme bonjour !',
 				contributors: ['vince', 'tom'],
-				description: 'L\'écran de connexion c\'est refait une beauté  ! Plus clair, plus simple et beaucoup plus agréable à utiliser, tu peux maintenant te connecter en un clin d’œil. Même ton chat pourrait y arriver !'
+				description: 'L\'écran de connexion s\'est refait une beauté  ! Plus clair, plus simple et beaucoup plus agréable à utiliser, tu peux maintenant te connecter en un clin d’œil. Même ton chat pourrait y arriver !'
 			}
 		]
 	}
