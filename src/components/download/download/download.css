@@ -27,6 +27,12 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+html.dark .cardDownloadSide.qr {
+  background: rgba(var(--card-rgb), 0.88);
+  border: 1px solid rgba(var(--foreground-rgb), 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
 .cardDownloadSide h2 {
   font-size: 1.8rem;
   color: var(--foreground);
@@ -46,6 +52,10 @@
   aspect-ratio: 1;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+html.dark .qrCode {
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .storeButton {

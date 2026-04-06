@@ -7,15 +7,22 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/
 import Image from "next/image";
 import "./navbar.css";
 import Button from "@/atoms/button/button";
-import { Download, Menu, X } from "lucide-react";
+import { Download, Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import Link from "next/link";
 import React from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { setTheme, resolvedTheme } = useTheme();
   const { scrollY } = useScroll();
   const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const [scrollValue, setScrollValue] = React.useState(scrollY.get());
 
@@ -90,6 +97,11 @@ export default function Navbar() {
     setMobileNavOpen(false);
   }, [pathname]);
 
+  const isThemeDark = isMounted && resolvedTheme === "dark";
+  const toggleTheme = () => {
+    setTheme(isThemeDark ? "light" : "dark");
+  };
+
   return (
     <>
       <header className={`navbar${scrollValue > 30 && !mobileNavOpen ? ' scrolled' : ''}${isDark ? ' dark' : ''}`}>
@@ -127,6 +139,16 @@ export default function Navbar() {
             </nav>
           </div>
           <div className="nav-part nav-right">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label={isThemeDark ? "Passer en mode clair" : "Passer en mode sombre"}
+              type="button"
+              title={isThemeDark ? "Mode clair" : "Mode sombre"}
+            >
+              {isThemeDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
             <Button
               icon={<Download />}
               value={width > 500 ? "Télécharger l'appli" : "Télécharger"}
