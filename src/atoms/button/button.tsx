@@ -8,7 +8,7 @@ export default function Button({
   icon,
   href = "#",
   value,
-  color,
+  color = "primary",
   className,
   outlined,
   style,
@@ -23,20 +23,39 @@ export default function Button({
   outlined?: boolean,
   style?: React.CSSProperties,
 }) {
+  type ButtonStyle = React.CSSProperties & {
+    [key: `--${string}`]: string | number | undefined;
+  };
+
+  const cssStyle = style as React.CSSProperties & {
+    "--button-color"?: string;
+    "--button-content-color"?: string;
+  };
+
+  const contentColor = outlined
+    ? "var(--button-color)"
+    : color === "foreground"
+      ? "var(--background)"
+      : color === "background"
+        ? "var(--foreground)"
+        : "#ffffff";
+
+  const buttonStyle: ButtonStyle = {
+    ...style,
+    "--button-color": cssStyle?.["--button-color"] ?? `var(--${color})`,
+    "--button-content-color": cssStyle?.["--button-content-color"] ?? contentColor,
+  };
+
   return (
     <Link
       href={href}
       className={"button" + (" " + className || "") + (outlined ? " outlined" : "")}
-      style={{
-        ...style,
-        // @ts-expect-error --button-color is a CSS variable
-        '--button-color': `var(--${color})`
-      }}
+      style={buttonStyle}
     >
       {leading}
       {// @ts-expect-error icon is Lucide icon
         icon && React.cloneElement(icon, {
-          color: outlined ? "var(--button-color)" : "#ffffff",
+          color: "var(--button-content-color)",
           size: 20,
           strokeWidth: 2.5
         })}

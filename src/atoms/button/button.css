@@ -39,15 +39,11 @@
 }
 
 .button-value {
-  color: #fff;
+  color: var(--button-content-color, #fff);
   font-weight: 600;
 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-decoration: none;
-}
-
-.button.outlined .button-value {
-  color: var(--button-color);
 }

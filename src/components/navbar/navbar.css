@@ -59,6 +59,43 @@
   justify-content: flex-end;
 }
 
+.theme-toggle {
+  all: unset;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  color: rgba(var(--foreground-rgb), 0.92);
+  border: 1px solid rgba(var(--foreground-rgb), 0.12);
+  background: rgba(var(--background-rgb), 0.78);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+}
+
+.theme-toggle:hover {
+  color: rgba(var(--foreground-rgb), 1);
+  border-color: rgba(var(--foreground-rgb), 0.18);
+  background: rgba(var(--background-rgb), 0.9);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+  transform: scale(0.97);
+}
+
+.theme-toggle svg {
+  display: block;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -146,6 +183,10 @@ nav ul li a:hover {
 @media screen and (max-width: 450px) {
   .download-nav {
     display: none;
+  }
+
+  .theme-toggle {
+    margin-right: 4px;
   }
 }
 

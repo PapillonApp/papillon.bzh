@@ -8,7 +8,7 @@ import Footer from "@/components/footer/footer";
 
 export default function NotFound() {
   return (
-    <body>
+    <>
       <Navbar />
       <SmoothScrolling>
         <article className="width error-page">
@@ -39,6 +39,6 @@ export default function NotFound() {
         </article>
       </SmoothScrolling>
       <Footer />
-    </body>
+    </>
   );
 }

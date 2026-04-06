@@ -24,6 +24,40 @@
   --page-height: calc(100vh);
 }
 
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --background: #0f1418;
+  --background-rgb: 15, 20, 24;
+  --card: #151d22;
+  --card-rgb: 21, 29, 34;
+  --foreground: #e7f1f4;
+  --foreground-rgb: 231, 241, 244;
+  --foreground-darker: #ffffff;
+  --foreground-darker-rgb: 255, 255, 255;
+  --primary: #31a889;
+  --primary-rgb: 49, 168, 137;
+  --primary-lighter: #48b89a;
+  --primary-lighter-rgb: 72, 184, 154;
+  --support: #f2bb45;
+  --support-rgb: 242, 187, 69;
+  --contrast: #95c94f;
+  --contrast-rgb: 149, 201, 79;
+  --contrast-foreground: #d6ecb2;
+  --contrast-foreground-rgb: 214, 236, 178;
+
+  --border: rgb(49, 62, 70);
+}
+
+html.dark .hero-title.width,
+html.dark .hero-title.width * {
+  color: #ffffff;
+}
+
 @font-face {
   font-family: "Papillon-Variable";
   src: url("/fonts/SNPro/SNPro-Variable.woff2") format("woff2");

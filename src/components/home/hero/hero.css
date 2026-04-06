@@ -32,6 +32,11 @@
     filter: drop-shadow(0px 0px 30px #090c14)
 }
 
+html.dark .hero-title.width,
+html.dark .hero-title.width * {
+    color: #ffffff;
+}
+
 .hero-title h1 {
     font-size: 4.2rem;
     line-height: 4rem;

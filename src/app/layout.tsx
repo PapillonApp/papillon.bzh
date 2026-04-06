@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 export const viewport = {
   themeColor: "#29947A",
@@ -7,13 +8,15 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: "Papillon - Votre vie scolaire, avec de la magie en plus",
-  description: "Papillon est une alternative libre et open source aux applications de vie scolaire traditionnelles. Conçue, dévelopée et maintenue avec soin par des étudiants.",
+  description:
+    "Papillon est une alternative libre et open source aux applications de vie scolaire traditionnelles. Conçue, dévelopée et maintenue avec soin par des étudiants.",
   itunes: {
-    appId: "6477761165"
+    appId: "6477761165",
   },
   openGraph: {
     title: "Papillon - Votre vie scolaire, avec de la magie en plus",
-    description: "Papillon est une alternative libre et open source aux applications de vie scolaire traditionnelles. Conçue, dévelopée et maintenue avec soin par des étudiants.",
+    description:
+      "Papillon est une alternative libre et open source aux applications de vie scolaire traditionnelles. Conçue, dévelopée et maintenue avec soin par des étudiants.",
     url: "https://papillon.bzh",
     siteName: "Papillon",
     images: [
@@ -31,7 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Papillon - Votre vie scolaire, avec de la magie en plus",
-    description: "Papillon est une alternative libre et open source aux applications de vie scolaire traditionnelles. Conçue, dévelopée et maintenue avec soin par des étudiants.",
+    description:
+      "Papillon est une alternative libre et open source aux applications de vie scolaire traditionnelles. Conçue, dévelopée et maintenue avec soin par des étudiants.",
     images: ["/og-image.jpg"],
   },
 };
@@ -42,12 +46,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html suppressHydrationWarning lang="fr" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.macpaw.com" />
-        <link rel="stylesheet" href="https://fonts.macpaw.com/css?family=FixelText:300;400;500;600;700;800" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.macpaw.com/css?family=FixelText:300;400;500;600;700;800"
+        />
       </head>
-      {children}
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
