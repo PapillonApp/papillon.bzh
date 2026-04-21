@@ -1,5 +1,7 @@
 .donatePage {
-  background: url("/bg-download.jpg") no-repeat;
+  background:
+    radial-gradient(120% 72% at 50% 12%, rgba(232, 241, 250, 0.95) 0%, rgba(223, 233, 243, 0.82) 44%, rgba(214, 223, 231, 0.62) 72%, rgba(208, 216, 223, 0.45) 100%),
+    linear-gradient(180deg, #c8d1db 0%, #d1d9e0 35%, #dbe1e7 65%, #e7ebef 100%);
   background-size: cover;
   background-position: top center;
   min-height: 100vh;
@@ -8,4 +10,10 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+}
+
+html.dark .donatePage {
+  background:
+    radial-gradient(120% 70% at 50% 10%, rgba(40, 58, 77, 0.55) 0%, rgba(26, 37, 49, 0.45) 44%, rgba(17, 24, 33, 0.36) 72%, rgba(11, 16, 23, 0.28) 100%),
+    linear-gradient(180deg, #0f151e 0%, #121a24 35%, #141d28 65%, #18222e 100%);
 }

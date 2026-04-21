@@ -72,6 +72,7 @@ export default function Hero() {
 						href="https://github.com/PapillonApp/Papillon"
 						color="background"
 						outlined
+						style={{ "--button-color": "#ffffff" } as React.CSSProperties}
 						icon={<Code2Icon />}
 					/>
 				</motion.div>

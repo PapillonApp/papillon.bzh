@@ -9,10 +9,10 @@ export default function RootLayout({ children }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
-		<body>
+		<>
 			<SmoothScrolling>
 				{children}
 			</SmoothScrolling>
-		</body>
+		</>
 	);
 }

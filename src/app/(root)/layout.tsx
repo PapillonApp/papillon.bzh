@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <body>
+    <>
     <Navbar />
     <main>
       <SmoothScrolling>
@@ -17,6 +17,6 @@ export default function RootLayout({
       </SmoothScrolling>
     </main>
     <Footer />
-    </body>
+    </>
   );
 }
