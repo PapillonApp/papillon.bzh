@@ -79,8 +79,8 @@ export default function Hero() {
 					<Image
 						src="/home-hand.png"
 						alt=""
-						width={1200}
-						height={1200}
+						width={2400}
+						height={2400}
 						className="hero-image"
 					/>
 				</motion.div>
