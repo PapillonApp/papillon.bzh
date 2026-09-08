@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
-import { Renderer, Program, Triangle, Mesh } from 'ogl';
+import { Renderer, Program, Triangle, Mesh, type OGLRenderingContext } from 'ogl';
 
 export type RaysOrigin =
   | 'top-center' | 'top-left' | 'top-right'
@@ -162,7 +162,7 @@ const LightRays: React.FC<LightRaysProps> = ({
     const init = () => {
       if (!containerRef.current) return;
       let renderer: Renderer;
-      let gl: WebGLRenderingContext;
+      let gl: OGLRenderingContext;
       try {
         renderer = new Renderer({
           dpr: Math.min(window.devicePixelRatio, deviceProfile.dprCap),
