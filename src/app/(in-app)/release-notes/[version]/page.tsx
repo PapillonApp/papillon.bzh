@@ -22,7 +22,7 @@ export default async function ReleaseNotes({ params }) {
 	return (
 		<>
 			<Hero
-				imageSource={`/release-notes/${content.imageSource}`}
+				imageSource={content.imageSource ? `/release-notes/${content.imageSource}` : undefined}
 				imageAlt={content.imageAlt}
 				accent={content.accent}
 				title={content.title}
@@ -33,7 +33,7 @@ export default async function ReleaseNotes({ params }) {
 					<Card
 						key={index}
 						color={card.color}
-						imageSource={`/release-notes/${card.imageSource}`}
+						imageSource={card.imageSource ? `/release-notes/${card.imageSource}` : undefined}
 						imageAlt={card.imageAlt}
 						title={card.title}
 						contributors={card.contributors}

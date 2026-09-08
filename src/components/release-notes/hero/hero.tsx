@@ -5,7 +5,7 @@ import {JSX} from "react";
 export interface HeroProps {
 	title: string;
 	lastUpdate: string;
-	imageSource: string;
+	imageSource?: string;
 	imageAlt: string;
 	accent: string;
 }
@@ -23,14 +23,16 @@ export function Hero({title, lastUpdate, imageSource, imageAlt, accent}: HeroPro
 				<rect x={0} y={0} width={"200%"} height={400} mask={"url(#sub)"}/>
 			</svg>
 
-			<Image
-				src={imageSource}
-				alt={imageAlt}
-				width={300}
-				height={160}
-			/>
+			{imageSource && (
+				<Image
+					src={imageSource}
+					alt={imageAlt}
+					width={300}
+					height={160}
+				/>
+			)}
 			<h1>{title}</h1>
-			<p>Dernière mises à jour le : {lastUpdate}</p>
+			<p>Dernière mise à jour le : {lastUpdate}</p>
 		</header>
 	)
 }

@@ -40,5 +40,34 @@ export const ReleaseNotesContent = [
 				description: 'L\'écran de connexion s\'est refait une beauté  ! Plus clair, plus simple et beaucoup plus agréable à utiliser, tu peux maintenant te connecter en un clin d’œil. Même ton chat pourrait y arriver !'
 			}
 		]
+	},
+	{
+		version: '8.5.2',
+		accent: '#FF6B4A',
+		title: 'Quoi de nouveau\ndans Papillon v8.5 ?',
+		lastUpdate: '08/09/2026',
+		cards: [
+			{
+				color: '#FF6B4A',
+				imageAlt: '',
+				title: 'Nouvel onglet Notes optimisé et repensé',
+				contributors: ['vince'],
+				description: 'L\'onglet Notes fait peau neuve ! Plus rapide, plus clair et repensé de fond en comble pour te donner une vue d\'ensemble limpide de tes résultats.'
+			},
+			{
+				color: '#4A7CFF',
+				imageAlt: '',
+				title: 'Application pour iPad',
+				contributors: ['vince'],
+				description: 'Papillon débarque enfin sur iPad ! Profite d\'une interface adaptée au grand écran pour consulter ton emploi du temps, tes notes et bien plus, encore plus confortablement.'
+			},
+			{
+				color: '#16A34A',
+				imageAlt: '',
+				title: 'Services Pronote et EcoleDirecte 2026 fonctionnels',
+				contributors: ['vince'],
+				description: 'Les services Pronote et EcoleDirecte 2026 sont désormais pleinement compatibles avec Papillon. Connecte-toi sans accroc, comme toujours.'
+			}
+		]
 	}
 ]

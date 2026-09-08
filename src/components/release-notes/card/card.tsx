@@ -7,7 +7,7 @@ import {motion} from "motion/react";
 
 export interface CardProps {
 	color: string;
-	imageSource: string;
+	imageSource?: string;
 	imageAlt: string;
 	title: string;
 	contributors: string[];
@@ -39,8 +39,8 @@ export default function Card({color, imageSource, imageAlt, title, contributors,
 			transition={{duration: 0.8, type: "spring"}}
 			viewport={{ once: true }}
 		>
-			<img src={imageSource} alt={imageAlt} />
-			<div className="card-content" style={{backgroundColor: color}}>
+			{imageSource && <img src={imageSource} alt={imageAlt} />}
+			<div className={`card-content${imageSource ? "" : " card-content--no-image"}`} style={{backgroundColor: color}}>
 				<h2>{title}</h2>
 				<span>
 					{parsed_contributors.map((contributor, index) => (

@@ -24,6 +24,11 @@
     gap: 5px;
 }
 
+.card-content--no-image {
+    margin-top: 0;
+    padding: 15px;
+}
+
 .card-content > h2 {
     font-family: "SN Pro", sans-serif;
     font-size: 24px;
