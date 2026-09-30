@@ -13,7 +13,7 @@ export const persons = [
 		firstname: "Lucas",
 		lastname: "Lavajo",
 		role: "Vice-président",
-		description: "Lucas à rejoint Papillon à ses débuts et participe activement à la direction du projet.",
+		description: "Lucas a rejoint Papillon à ses débuts et participe activement à la direction du projet.",
 		link: "https://www.linkedin.com/in/lucas-lavajo/",
 		image: "/people/tryon.jpg"
 	},
