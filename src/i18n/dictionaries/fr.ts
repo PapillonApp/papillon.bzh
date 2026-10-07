@@ -69,7 +69,48 @@ const fr = {
       new: "Nouveau",
       previous: "Appareil précédent",
       next: "Appareil suivant",
-      placeholder: "Mockup à venir",
+      highlights: {
+        sidebar: {
+          title: "Barre latérale",
+          description:
+            "Passez de l’accueil aux cours, aux tâches ou aux notes depuis une barre latérale, comme dans les apps iPad.",
+        },
+        macApp: {
+          title: "Pensé pour macOS",
+          description:
+            "Une vraie fenêtre Mac, avec sa barre latérale, qui trouve sa place à côté de vos autres apps.",
+        },
+        weekView: {
+          title: "Vue semaine",
+          description:
+            "Le grand écran affiche tout votre emploi du temps de la semaine, d’un seul coup d’œil.",
+        },
+        liquidGlass: {
+          title: "Liquid Glass",
+          description:
+            "Boutons, cartes et menus adoptent le matériau translucide d’iOS, avec ses reflets et sa profondeur.",
+        },
+        liveActivity: {
+          title: "Cours en direct",
+          description:
+            "Votre cours actuel ou le prochain s’affiche en direct, avec la salle, le professeur et le temps restant.",
+        },
+        materialYou: {
+          title: "Material You",
+          description:
+            "L’interface reprend les couleurs de votre fond d’écran et suit les composants Material d’Android.",
+        },
+        sideTabs: {
+          title: "Onglets adaptés",
+          description:
+            "Sur l’iPhone Duo, les onglets passent sur le côté pour laisser toute la place à votre contenu.",
+        },
+        wideLayout: {
+          title: "Interface élargie",
+          description:
+            "Papillon profite de toute la largeur de l’écran pour des cartes et un emploi du temps plus lisibles.",
+        },
+      },
       duo: {
         label: "Position de l’iPhone Duo",
         closed: "Fermé",

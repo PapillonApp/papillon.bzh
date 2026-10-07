@@ -3,9 +3,11 @@
 import { ChevronLeft, ChevronRight } from "@getpapillon/papicons";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
-import { type KeyboardEvent, useId, useRef, useState } from "react";
+import { type KeyboardEvent, type PointerEvent, useId, useRef, useState } from "react";
 import duoClosed from "@/assets/devices/Devices-Duo-Closed.png";
+import mac from "@/assets/devices/Devices-MacApp.png";
 import android from "@/assets/devices/Devices-Pixel10.png";
+import ipad from "@/assets/devices/Devices-iPadPro.png";
 import iphone from "@/assets/devices/Devices-iPhone.png";
 import duoOpen from "@/assets/devices/iPhone Duo-Open.png";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
@@ -22,13 +24,57 @@ const devices: { key: DeviceKey; isNew?: boolean }[] = [
 ];
 
 type DuoState = "closed" | "open";
+type HighlightKey = keyof Dictionary["home"]["devices"]["highlights"];
+type Hotspot = { key: HighlightKey; side: "left" | "right"; top: number; height: number };
+type Mockup = { image: StaticImageData; hotspots: Hotspot[] };
 
-const duoMockups: Record<DuoState, StaticImageData> = { closed: duoClosed, open: duoOpen };
+const mockups: Record<Exclude<DeviceKey, "iphoneDuo">, Mockup> = {
+  iphone: {
+    image: iphone,
+    hotspots: [
+      { key: "liquidGlass", side: "right", top: 16, height: 13 },
+      { key: "liveActivity", side: "left", top: 83, height: 6 },
+    ],
+  },
+  android: {
+    image: android,
+    hotspots: [{ key: "materialYou", side: "right", top: 9, height: 20 }],
+  },
+  ipad: {
+    image: ipad,
+    hotspots: [
+      { key: "sidebar", side: "left", top: 17, height: 19 },
+      { key: "weekView", side: "right", top: 15, height: 65 },
+    ],
+  },
+  mac: {
+    image: mac,
+    hotspots: [
+      { key: "macApp", side: "left", top: 14, height: 17 },
+      { key: "weekView", side: "right", top: 12, height: 73 },
+    ],
+  },
+};
 
-const mockups: Partial<Record<DeviceKey, StaticImageData>> = { iphone, android };
+const duoMockups: Record<DuoState, Mockup> = {
+  closed: {
+    image: duoClosed,
+    hotspots: [
+      { key: "wideLayout", side: "left", top: 32, height: 52 },
+      { key: "sideTabs", side: "right", top: 64, height: 27 },
+    ],
+  },
+  open: {
+    image: duoOpen,
+    hotspots: [
+      { key: "wideLayout", side: "left", top: 32, height: 52 },
+      { key: "sideTabs", side: "right", top: 64, height: 27 },
+    ],
+  },
+};
 
 const tallestMockup = Math.max(
-  ...[...Object.values(mockups), ...Object.values(duoMockups)].map((image) => image.height),
+  ...[...Object.values(mockups), ...Object.values(duoMockups)].map(({ image }) => image.height),
 );
 
 const slide = {
@@ -51,6 +97,14 @@ export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
   const reduceMotion = useReducedMotion();
   const [{ index, direction }, setSelection] = useState({ index: 0, direction: 1 });
   const [duoState, setDuoState] = useState<DuoState>("closed");
+  const [hoveredSide, setHoveredSide] = useState<Hotspot["side"] | null>(null);
+  const mockupRef = useRef<HTMLDivElement>(null);
+
+  const trackHoveredSide = (event: PointerEvent) => {
+    if (event.pointerType !== "mouse" || !mockupRef.current) return;
+    const box = mockupRef.current.getBoundingClientRect();
+    setHoveredSide(event.clientX > box.right ? "right" : event.clientX < box.left ? "left" : null);
+  };
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const tabBarRef = useRef<HTMLDivElement>(null);
   const id = useId();
@@ -72,7 +126,7 @@ export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
   const device = devices[index];
   const slideDirection = reduceMotion ? 0 : direction;
   const isDuo = device.key === "iphoneDuo";
-  const mockup = isDuo ? duoMockups[duoState] : mockups[device.key];
+  const mockup = device.key === "iphoneDuo" ? duoMockups[duoState] : mockups[device.key];
 
   return (
     <div className="mt-10 flex flex-col items-center gap-8 lg:mt-14 lg:gap-12">
@@ -139,7 +193,11 @@ export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
             <ChevronLeft aria-hidden className="size-6" />
           </button>
 
-          <div className="relative aspect-4/5 flex-1 overflow-hidden rounded-3xl bg-surface sm:aspect-video">
+          <div
+            onPointerMove={trackHoveredSide}
+            onPointerLeave={() => setHoveredSide(null)}
+            className="group/stage relative aspect-4/5 flex-1 overflow-hidden rounded-3xl bg-surface sm:aspect-video"
+          >
             <AnimatePresence initial={false} custom={slideDirection}>
               <motion.div
                 key={device.key}
@@ -151,36 +209,45 @@ export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
                 transition={slideTransition}
                 className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center"
               >
-                {mockup ? (
-                  <AnimatePresence initial={false}>
-                    <motion.div
-                      key={mockup.src}
-                      initial={{ opacity: 0, scale: 0.96 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.96 }}
-                      transition={slideTransition}
-                      className="absolute inset-0 flex items-center justify-center"
+                <AnimatePresence initial={false}>
+                  <motion.div
+                    key={mockup.image.src}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.96 }}
+                    transition={slideTransition}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div
+                      ref={(element) => {
+                        if (element) mockupRef.current = element;
+                      }}
+                      className="relative max-w-11/12"
+                      style={{
+                        height: `${(mockup.image.height / tallestMockup) * 88}%`,
+                        aspectRatio: `${mockup.image.width} / ${mockup.image.height}`,
+                      }}
                     >
                       <Image
-                        src={mockup}
+                        src={mockup.image}
                         alt={
                           isDuo ? `${t.names.iphoneDuo} (${t.duo[duoState]})` : t.names[device.key]
                         }
                         sizes="(min-width: 1024px) 600px, 80vw"
                         quality={90}
-                        style={{ height: `${(mockup.height / tallestMockup) * 88}%` }}
-                        className="w-auto max-w-11/12 object-contain"
+                        className="size-full object-contain drop-shadow-2xl"
                       />
-                    </motion.div>
-                  </AnimatePresence>
-                ) : (
-                  <>
-                    <span className="text-2xl font-semibold text-foreground/40 lg:text-4xl">
-                      {t.names[device.key]}
-                    </span>
-                    <span className="text-md text-foreground/60">{t.placeholder}</span>
-                  </>
-                )}
+                      {mockup.hotspots.map((hotspot) => (
+                        <DeviceHotspot
+                          key={hotspot.key}
+                          hotspot={hotspot}
+                          content={t.highlights[hotspot.key]}
+                          hovered={hoveredSide === hotspot.side}
+                        />
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
                 {isDuo && (
                   <div
                     role="radiogroup"
@@ -249,6 +316,53 @@ export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
           </AnimatePresence>
         </div>
       </div>
+    </div>
+  );
+}
+
+type DeviceHotspotProps = {
+  hotspot: Hotspot;
+  content: { title: string; description: string };
+  hovered: boolean;
+};
+
+function DeviceHotspot({ hotspot, content, hovered }: DeviceHotspotProps) {
+  const [focused, setFocused] = useState(false);
+  const open = hovered || focused;
+  const onRight = hotspot.side === "right";
+
+  return (
+    <div
+      style={{ top: `${hotspot.top}%`, height: `${hotspot.height}%` }}
+      className={`absolute flex items-center opacity-0 transition-opacity duration-300 group-has-focus-visible/stage:opacity-100 group-hover/stage:opacity-100 max-lg:hidden ${onRight ? "left-full" : "right-full flex-row-reverse"}`}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-label={content.title}
+        onPointerUp={(event) => event.pointerType !== "mouse" && setFocused(!focused)}
+        onFocus={(event) => event.currentTarget.matches(":focus-visible") && setFocused(true)}
+        onBlur={() => setFocused(false)}
+        className="flex h-full items-stretch px-3"
+      >
+        <span
+          className={`w-0.5 rounded-full transition-colors duration-50 ${open ? "bg-foreground" : "bg-foreground/20"}`}
+        />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, x: onRight ? -8 : 8 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: onRight ? -8 : 8 }}
+            transition={{ duration: 0.25, ease: easeOutPapillon }}
+            className={`flex w-40 flex-col gap-1 ${onRight ? "text-left" : "text-right"}`}
+          >
+            <span className="text-lg font-semibold">{content.title}</span>
+            <span className="text-md/snug text-foreground/60">{content.description}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

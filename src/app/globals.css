@@ -28,6 +28,21 @@
   );
 }
 
+@property --page-light {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
+}
+
+@keyframes page-light {
+  from {
+    --page-light: 0%;
+  }
+  to {
+    --page-light: 100%;
+  }
+}
+
 @utility text-trim {
   text-box: trim-both cap alphabetic;
 }
@@ -43,6 +58,15 @@
 
   :root:has([data-dark-hero]) {
     --page-light: 0%;
+  }
+
+  /* Scroll-linked in CSS so a reload mid-page paints the right tone before hydration */
+  @supports (animation-timeline: scroll()) {
+    :root:has([data-dark-hero]) {
+      animation: page-light linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 calc(var(--spacing) * 75);
+    }
   }
 
   body {

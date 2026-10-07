@@ -68,7 +68,47 @@ const en: Dictionary = {
       new: "New",
       previous: "Previous device",
       next: "Next device",
-      placeholder: "Mockup coming soon",
+      highlights: {
+        sidebar: {
+          title: "Sidebar",
+          description:
+            "Jump between home, classes, tasks, and grades from a sidebar, just like in other iPad apps.",
+        },
+        macApp: {
+          title: "Made for macOS",
+          description:
+            "A real Mac window, with its sidebar, that sits right next to your other apps.",
+        },
+        weekView: {
+          title: "Week view",
+          description: "The big screen shows your whole week’s schedule at a glance.",
+        },
+        liquidGlass: {
+          title: "Liquid Glass",
+          description:
+            "Buttons, cards, and menus use iOS’s translucent material, with its reflections and depth.",
+        },
+        liveActivity: {
+          title: "Live classes",
+          description:
+            "Your current or next class shows up live, with the room, the teacher, and the time left.",
+        },
+        materialYou: {
+          title: "Material You",
+          description:
+            "The interface picks up your wallpaper’s colors and follows Android’s Material components.",
+        },
+        sideTabs: {
+          title: "Adapted tabs",
+          description:
+            "On iPhone Duo, tabs move to the side to leave all the room for your content.",
+        },
+        wideLayout: {
+          title: "Wider interface",
+          description:
+            "Papillon uses the full width of the screen for easier-to-read cards and schedules.",
+        },
+      },
       duo: {
         label: "iPhone Duo position",
         closed: "Closed",
