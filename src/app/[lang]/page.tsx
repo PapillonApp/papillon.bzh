@@ -1,6 +1,7 @@
 import { Adoption } from "@/components/home/adoption";
 import { Devices } from "@/components/home/devices";
 import { Faq } from "@/components/home/faq";
+import { FeatureDemos } from "@/components/home/feature-demos";
 import { Features } from "@/components/home/features";
 import { Hero } from "@/components/home/hero";
 import { Steps } from "@/components/home/steps";
@@ -15,12 +16,13 @@ export default async function HomePage() {
       <Hero t={dict.home.hero} download={dict.download} />
       <Features />
       <Devices />
+      <FeatureDemos />
       <Steps />
-      <div data-dark-section className="theme-dark bg-background">
+      <div data-dark-section className="theme-dark bg-background py-12 lg:py-20">
         <Trust />
         <Adoption />
       </div>
-      <Faq />
+      <Faq t={dict.home.faq} />
     </main>
   );
 }

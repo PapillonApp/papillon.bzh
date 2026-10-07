@@ -1,9 +1,20 @@
 "use client";
 
-import { PapillonApp } from "@getpapillon/papicons";
+import { Apple, PapillonApp } from "@getpapillon/papicons";
 import { useParams } from "next/navigation";
+import { storeUrls } from "@/components/download/store-badges";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { externalProps } from "@/lib/links";
+import { GitHubLogo, GooglePlayLogo } from "./brand-logos";
 import { Chevron } from "./chevron";
+import { Dropdown } from "./dropdown";
+import { HoverGroup } from "./hover-highlight";
+
+const stores = [
+  { key: "appStore", Logo: Apple },
+  { key: "googlePlay", Logo: GooglePlayLogo },
+  { key: "github", Logo: GitHubLogo },
+] as const;
 
 const variants = {
   header: {
@@ -48,13 +59,34 @@ export function DownloadButton({ t, variant, compactOnMobile = false }: Download
           <span className="text-trim whitespace-nowrap">{t.label}</span>
         )}
       </a>
-      <button
-        type="button"
-        aria-label={t.moreOptions}
-        className={`flex items-center rounded-r-full border-l transition-[background-color] hover:bg-current/10 ${style.toggle} ${compactOnMobile ? "max-sm:hidden" : ""}`}
+      <Dropdown
+        className={compactOnMobile ? "max-sm:hidden" : ""}
+        triggerClassName={`flex h-full items-center rounded-r-full border-l transition-[background-color] hover:bg-current/10 ${style.toggle}`}
+        trigger={
+          <>
+            <span className="sr-only">{t.moreOptions}</span>
+            <Chevron />
+          </>
+        }
       >
-        <Chevron />
-      </button>
+        <HoverGroup highlightClassName="rounded-xl bg-foreground/5">
+          <ul>
+            {stores.map(({ key, Logo }) => (
+              <li key={key}>
+                <a
+                  href={storeUrls[key]}
+                  {...externalProps}
+                  data-hover-item
+                  className="flex h-9 items-center gap-2.5 rounded-xl px-3 text-md font-medium"
+                >
+                  <Logo aria-hidden className="size-5" />
+                  <span className="text-trim whitespace-nowrap">{t.stores[key]}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </HoverGroup>
+      </Dropdown>
     </div>
   );
 }

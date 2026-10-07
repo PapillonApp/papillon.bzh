@@ -15,9 +15,10 @@ const entryStyle =
 type MobileMenuProps = {
   nav: Dictionary["nav"];
   language: Dictionary["language"];
+  locale: string;
 };
 
-export function MobileMenu({ nav, language }: MobileMenuProps) {
+export function MobileMenu({ nav, language, locale }: MobileMenuProps) {
   const { menuOpen: open, setMenuOpen: setOpen } = useHeaderMenu();
 
   useEffect(() => {
@@ -59,13 +60,18 @@ export function MobileMenu({ nav, language }: MobileMenuProps) {
             onClick={(event) => {
               if ((event.target as Element).closest("a")) setOpen(false);
             }}
-            className="fixed inset-0 -z-10 flex flex-col bg-background px-4 pt-20 pb-8 lg:hidden"
+            className="fixed inset-0 -z-10 flex flex-col overflow-y-auto bg-background px-4 pt-20 pb-8 lg:hidden"
           >
             <nav aria-label={nav.label}>
               <ul>
                 {navItems.map((item) => (
                   <li key={item.key}>
-                    <NavEntry item={item} labels={nav} className={entryStyle} />
+                    <NavEntry
+                      item={item}
+                      labels={nav}
+                      locale={locale}
+                      className={entryStyle}
+                    />
                   </li>
                 ))}
               </ul>

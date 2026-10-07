@@ -4,35 +4,9 @@ import team from "@/assets/team/PapillonTeam.png";
 import { Logo } from "@/components/ui/logo";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { getDictionary, getLocale } from "@/i18n/server";
-import { discordUrl } from "@/lib/links";
+import { externalProps, type LinkKey, linkedinUrl, linkHrefs, localizeHref } from "@/lib/links";
 
 type Columns = Dictionary["footer"]["columns"];
-type LinkKey = { [Column in keyof Columns]: keyof Columns[Column]["links"] }[keyof Columns];
-
-const linkedinUrl = "https://www.linkedin.com/company/getpapillonapp";
-
-// TODO: replace "#" once the feature and blog pages exist.
-const linkHrefs: Record<LinkKey, string> = {
-  grades: "#",
-  schedule: "#",
-  homework: "#",
-  canteen: "#",
-  news: "#",
-  team: "/association",
-  blog: "#",
-  donate: "https://ko-fi.com/thepapillonapp",
-  privacy: "https://docs.papillon.bzh/privacy-policy",
-  docs: "https://docs.papillon.bzh",
-  github: "https://github.com/PapillonApp",
-  x: "https://x.com/thepapillonapp",
-  instagram: "https://instagram.com/thepapillonapp",
-  tiktok: "https://tiktok.com/@thepapillonapp",
-  youtube: "https://youtube.com/@thepapillonapp",
-  linkedin: linkedinUrl,
-  discord: discordUrl,
-};
-
-const externalProps = { target: "_blank", rel: "noreferrer" } as const;
 
 export async function SiteFooter() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
@@ -56,7 +30,7 @@ export async function SiteFooter() {
             <p className="text-lg/normal text-pretty text-white/70">{t.team.description}</p>
             <div className="mt-3 flex flex-wrap gap-3">
               <a
-                href={`/${locale}${linkHrefs.team}`}
+                href={localizeHref(linkHrefs.team, locale)}
                 className="flex h-10 items-center rounded-full bg-white px-5 text-md font-semibold text-primary-dark transition hover:bg-white/85 active:scale-97"
               >
                 <span className="text-trim">{t.team.about}</span>
@@ -86,8 +60,7 @@ export async function SiteFooter() {
               <h2 className="text-md font-semibold">{t.columns[column].title}</h2>
               <ul className="flex flex-col gap-3">
                 {Object.entries(t.columns[column].links).map(([key, label]) => {
-                  const target = linkHrefs[key as LinkKey];
-                  const href = target.startsWith("/") ? `/${locale}${target}` : target;
+                  const href = localizeHref(linkHrefs[key as LinkKey], locale);
                   return (
                     <li key={key}>
                       <a

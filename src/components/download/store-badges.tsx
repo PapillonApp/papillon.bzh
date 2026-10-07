@@ -10,6 +10,7 @@ export const storeUrls = {
   appStore: "https://apps.apple.com/app/id6477761165",
   googlePlay: "https://play.google.com/store/apps/details?id=xyz.getpapillon.app",
   testFlight: "https://testflight.apple.com/join/AT2h5fj1",
+  github: "https://github.com/PapillonApp/Papillon/releases",
 };
 
 const badges = {

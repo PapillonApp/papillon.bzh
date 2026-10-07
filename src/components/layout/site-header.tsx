@@ -3,10 +3,11 @@ import { DownloadButton } from "@/components/ui/download-button";
 import { HoverGroup } from "@/components/ui/hover-highlight";
 import { Logo } from "@/components/ui/logo";
 import { getDictionary, getLocale } from "@/i18n/server";
+import { DesktopNav } from "./desktop-nav";
 import { HeaderShell } from "./header-shell";
 import { LanguageMenu } from "./language-menu";
 import { MobileMenu } from "./mobile-menu";
-import { NavEntry, navEntryStyle, navHighlightStyle, navItems } from "./nav";
+import { navEntryStyle, navHighlightStyle } from "./nav";
 
 export async function SiteHeader() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
@@ -25,22 +26,14 @@ export async function SiteHeader() {
           >
             <Logo aria-hidden className="h-6.5" />
           </Link>
-          <nav aria-label={dict.nav.label} className="max-lg:hidden">
-            <ul className="flex items-center gap-1">
-              {navItems.map((item) => (
-                <li key={item.key}>
-                  <NavEntry item={item} labels={dict.nav} className={navEntryStyle} />
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <DesktopNav labels={dict.nav} locale={locale} />
         </div>
         <div className="flex items-center gap-2.5 max-lg:gap-2">
           <div className="max-lg:hidden">
             <LanguageMenu t={dict.language} triggerClassName={navEntryStyle} />
           </div>
           <DownloadButton t={dict.download} variant="header" compactOnMobile />
-          <MobileMenu nav={dict.nav} language={dict.language} />
+          <MobileMenu nav={dict.nav} language={dict.language} locale={locale} />
         </div>
       </HoverGroup>
     </HeaderShell>

@@ -35,11 +35,10 @@ export function Hero({ t, download }: HeroProps) {
   }
 
   return (
-    <section className="relative isolate overflow-hidden px-4 pt-32 pb-20 lg:px-5 lg:pt-44 lg:pb-28">
-      <div
-        aria-hidden
-        className="absolute -top-118 left-1/2 -z-10 h-238 w-428 -translate-x-1/2 bg-radial from-primary/40 via-primary/8 via-40% to-transparent to-65%"
-      />
+    <section className="relative isolate z-10 overflow-x-clip px-4 pt-32 pb-20 lg:px-5 lg:pt-44 lg:pb-28">
+      <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-118 left-1/2 h-238 w-428 -translate-x-1/2 bg-radial from-primary/40 via-primary/8 via-40% to-transparent to-65%" />
+      </div>
 
       <ul className="flex items-center justify-center gap-1 sm:gap-3 lg:gap-5">
         {teamMembers.map((member, index) => (

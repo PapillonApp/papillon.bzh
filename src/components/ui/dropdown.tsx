@@ -17,6 +17,7 @@ const alignments = {
 type DropdownProps = {
   trigger: ReactNode;
   triggerClassName: string;
+  className?: string;
   side?: keyof typeof placements;
   align?: keyof typeof alignments;
   children: ReactNode;
@@ -25,6 +26,7 @@ type DropdownProps = {
 export function Dropdown({
   trigger,
   triggerClassName,
+  className = "",
   side = "bottom",
   align = "end",
   children,
@@ -54,7 +56,7 @@ export function Dropdown({
   }, [open]);
 
   return (
-    <div ref={rootRef} className="relative">
+    <div ref={rootRef} className={`relative ${className}`}>
       <button
         type="button"
         aria-expanded={open}

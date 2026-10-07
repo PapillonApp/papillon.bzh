@@ -38,17 +38,13 @@ export function Hero({ t, download }: HeroProps) {
   return (
     <section
       data-dark-hero
-      className="relative isolate flex flex-col overflow-hidden pt-18 pb-12 text-page-foreground lg:h-svh lg:min-h-180 lg:pb-16"
+      className="relative isolate z-10 flex flex-col overflow-x-clip pt-18 pb-12 text-page-foreground lg:h-svh lg:min-h-180 lg:pb-16"
     >
       <div ref={toneRef} aria-hidden className="absolute inset-x-0 top-0 h-75" />
-      <div
-        aria-hidden
-        className="absolute -top-193 left-1/2 -z-10 h-386 w-918 -translate-x-1/2 bg-radial from-primary/30 from-21% via-primary/15 via-43% to-transparent to-65%"
-      />
-      <div
-        aria-hidden
-        className="absolute -top-112 left-1/2 -z-10 h-238 w-428 -translate-x-1/2 bg-radial from-primary/55 via-primary/30 via-26% to-transparent to-71%"
-      />
+      <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-193 left-1/2 h-386 w-918 -translate-x-1/2 bg-radial from-primary/30 from-21% via-primary/15 via-43% to-transparent to-65%" />
+        <div className="absolute -top-112 left-1/2 h-238 w-428 -translate-x-1/2 bg-radial from-primary/55 via-primary/30 via-26% to-transparent to-71%" />
+      </div>
 
       <MotionImage
         initial={reduceMotion ? false : { opacity: 0, y: 32 }}
