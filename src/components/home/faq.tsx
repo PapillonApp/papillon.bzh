@@ -10,7 +10,7 @@ export async function Faq() {
     <section id="faq" className="scroll-mt-20 px-4 py-24 lg:px-5 lg:py-32">
       <SectionHeading
         icon={Info}
-        iconColor="text-foreground/60"
+        iconColor="text-foreground/50"
         title={t.title}
         description={t.description}
       />

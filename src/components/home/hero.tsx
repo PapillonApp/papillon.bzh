@@ -3,43 +3,15 @@
 import { Search } from "@getpapillon/papicons";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import Image from "next/image";
-import { type ClipboardEvent, useEffect, useRef } from "react";
-import bubble from "@/assets/hero/bubble.svg";
-import calendar from "@/assets/hero/calendar.svg";
-import cards from "@/assets/hero/cards.svg";
-import homework from "@/assets/hero/homework.svg";
-import menu from "@/assets/hero/menu.svg";
+import { useEffect, useRef } from "react";
 import phoneInHand from "@/assets/hero/phone-in-hand.webp";
+import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { easeOutPapillon } from "@/lib/motion";
 import { pageLight } from "@/lib/page-tone";
 
-const titleIcons = [bubble, cards, calendar, menu, homework];
-
 const MotionImage = motion.create(Image);
-
-const iconVariants: Variants = {
-  hidden: { width: 0, opacity: 0, scale: 0.4, rotate: -12 },
-  visible: (index: number) => ({
-    width: "auto",
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    transition: { duration: 0.55, delay: 0.4 + index * 0.09, ease: easeOutPapillon },
-  }),
-};
-
-function copyCollapsedText(event: ClipboardEvent<HTMLElement>) {
-  const selection = window.getSelection();
-  if (
-    !selection?.rangeCount ||
-    !event.currentTarget.contains(selection.getRangeAt(0).commonAncestorContainer)
-  )
-    return;
-  event.preventDefault();
-  event.clipboardData.setData("text/plain", selection.toString().replace(/\s+/g, " ").trim());
-}
 
 type HeroProps = {
   t: Dictionary["home"]["hero"];
@@ -91,31 +63,7 @@ export function Hero({ t, download }: HeroProps) {
       />
 
       <div className="relative mx-auto mt-auto flex max-w-3xl flex-col items-center gap-5 px-4 text-center">
-        <h1
-          onCopy={copyCollapsedText}
-          className="flex items-center justify-center gap-1.5 text-4xl leading-none font-book tracking-tight lg:text-5xl max-md:flex-col"
-        >
-          <span className="text-trim whitespace-nowrap">{t.titleStart}</span>
-          <motion.span
-            aria-hidden
-            initial={reduceMotion ? false : "hidden"}
-            animate={reduceMotion ? "visible" : undefined}
-            whileInView="visible"
-            className="flex items-center select-none"
-          >
-            {titleIcons.map((icon, index) => (
-              <motion.span
-                key={icon.src}
-                custom={index}
-                variants={iconVariants}
-                className="flex h-12 justify-center lg:h-17"
-              >
-                <Image src={icon} alt="" className="size-12 max-w-none lg:size-17" />
-              </motion.span>
-            ))}
-          </motion.span>
-          <span className="text-trim whitespace-nowrap">{t.titleEnd}</span>
-        </h1>
+        <HeroTitle start={t.titleStart} end={t.titleEnd} />
 
         <p className="text-trim text-lg/normal font-book text-current/60">{t.description}</p>
 

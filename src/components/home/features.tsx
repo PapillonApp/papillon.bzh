@@ -23,7 +23,7 @@ export async function Features() {
       <RevealWhenLight>
         <SectionHeading
           icon={Grid}
-          iconColor="text-primary"
+          iconColor="text-foreground/50"
           title={t.title}
           description={t.description}
         />
