@@ -23,7 +23,7 @@ export async function Trust() {
   ];
 
   return (
-    <section className="px-4 py-24 lg:px-5 lg:py-32">
+    <section className="px-6 py-24 lg:py-32">
       <SectionHeading
         icon={Heart}
         iconColor="text-pink-500"

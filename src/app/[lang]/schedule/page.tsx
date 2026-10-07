@@ -23,8 +23,9 @@ export default async function SchedulePage() {
   return (
     <FeaturePage
       t={t}
+      themeClassName="theme-schedule"
       icon={Calendar}
-      heroImages={{ front: list, back: liveActivity }}
+      heroImage={list}
       highlights={[
         { key: "day", image: list },
         { key: "views", image: views },

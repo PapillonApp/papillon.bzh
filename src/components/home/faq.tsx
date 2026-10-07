@@ -5,7 +5,7 @@ import type { Dictionary } from "@/i18n/dictionaries/fr";
 
 export function Faq({ t }: { t: Dictionary["home"]["faq"] }) {
   return (
-    <section id="faq" className="scroll-mt-20 px-4 py-24 lg:px-5 lg:py-32">
+    <section id="faq" className="scroll-mt-20 px-6 py-24 lg:py-32">
       <SectionHeading
         icon={Info}
         iconColor="text-foreground/50"

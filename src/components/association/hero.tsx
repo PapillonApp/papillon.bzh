@@ -35,7 +35,7 @@ export function Hero({ t, download }: HeroProps) {
   }
 
   return (
-    <section className="relative isolate z-10 overflow-x-clip px-4 pt-32 pb-20 lg:px-5 lg:pt-44 lg:pb-28">
+    <section className="relative isolate z-10 overflow-x-clip px-6 pt-32 pb-20 lg:pt-44 lg:pb-28">
       <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-118 left-1/2 h-238 w-428 -translate-x-1/2 bg-radial from-primary/40 via-primary/8 via-40% to-transparent to-65%" />
       </div>
@@ -67,7 +67,7 @@ export function Hero({ t, download }: HeroProps) {
                   alt={member.name}
                   sizes="112px"
                   priority
-                  className={`rounded-full object-cover shadow-lg${avatarSizes[index]}`}
+                  className={`rounded-full object-cover shadow-lg ${avatarSizes[index]}`}
                 />
               </motion.div>
               <span

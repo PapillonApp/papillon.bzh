@@ -21,13 +21,18 @@ const badges = {
 type StoreBadgesProps = {
   t: Dictionary["downloadPage"]["stores"];
   locale: Locale;
+  className?: string;
 };
 
-export function StoreBadges({ t, locale }: StoreBadgesProps) {
+export function StoreBadges({
+  t,
+  locale,
+  className = "justify-center lg:justify-start",
+}: StoreBadgesProps) {
   const stores = ["appStore", "googlePlay"] as const;
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+    <div className={`flex flex-wrap gap-3 ${className}`}>
       {stores.map((store) => (
         <a
           key={store}

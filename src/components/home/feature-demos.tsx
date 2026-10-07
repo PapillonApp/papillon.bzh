@@ -10,7 +10,7 @@ export async function FeatureDemos() {
   const t = (await getDictionary()).home.demos;
 
   return (
-    <section className="px-4 py-24 lg:px-5 lg:py-32">
+    <section className="px-6 py-24 lg:py-32">
       <ul className="mx-auto flex max-w-5xl flex-col gap-24 lg:gap-32">
         {t.items.map((item, index) => (
           <li

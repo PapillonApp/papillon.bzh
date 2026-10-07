@@ -14,7 +14,7 @@ export function MoreFeatures<Key extends string>({ t, icons }: MoreFeaturesProps
   const keys = Object.keys(t.items) as Key[];
 
   return (
-    <section className="px-4 py-24 lg:px-5 lg:py-32">
+    <section className="px-6 py-24 lg:py-32">
       <SectionHeading
         icon={Sparkles}
         iconColor="text-foreground/50"

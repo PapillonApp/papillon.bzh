@@ -12,7 +12,7 @@ type LargeScreenProps = {
 
 export function LargeScreen({ t, image }: LargeScreenProps) {
   return (
-    <section className="relative isolate overflow-hidden px-4 py-24 lg:px-5 lg:py-32">
+    <section className="relative isolate overflow-hidden px-6 py-24 lg:py-32">
       <div
         aria-hidden
         className="absolute inset-x-0 bottom-0 -z-10 h-3/5 bg-radial-[at_bottom] from-primary/20 via-primary/5 via-40% to-transparent to-70%"

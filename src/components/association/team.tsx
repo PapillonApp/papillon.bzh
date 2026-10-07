@@ -9,7 +9,7 @@ type TeamDict = Dictionary["association"]["team"];
 
 export function Team({ t }: { t: TeamDict }) {
   return (
-    <section id="team" className="scroll-mt-20 px-4 py-24 lg:px-5 lg:py-32">
+    <section id="team" className="scroll-mt-20 px-6 py-24 lg:py-32">
       <SectionHeading
         icon={User}
         iconColor="text-primary"

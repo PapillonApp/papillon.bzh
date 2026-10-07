@@ -4,7 +4,7 @@ import { Search } from "@getpapillon/papicons";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import phoneInHand from "@/assets/hero/phone-in-hand.webp";
+import phoneInHand from "@/assets/hero/phone-in-hand.png";
 import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
@@ -52,13 +52,14 @@ export function Hero({ t, download }: HeroProps) {
         transition={{ duration: 0.9, ease: easeOutPapillon }}
         src={phoneInHand}
         alt={t.imageAlt}
-        sizes="(min-width: 1024px) 850px, (min-width: 768px) 652px, 92vw"
+        sizes="(min-width: 1024px) 1100px, (min-width: 768px) 800px, 680px"
         loading="eager"
         fetchPriority="high"
-        className="mx-auto -mb-8 w-11/12 max-w-163 translate-x-1/7 md:-mb-14 lg:absolute lg:inset-0 lg:m-auto lg:h-3/4 lg:max-h-220 lg:w-auto lg:max-w-none"
+        quality={90}
+        className="-mb-16 w-170 max-w-none self-center mask-b-from-75% md:-mb-14 md:w-200 lg:absolute lg:inset-x-0 lg:top-20 lg:mx-auto lg:h-4/5 lg:max-h-240 lg:w-auto"
       />
 
-      <div className="relative mx-auto mt-auto flex max-w-3xl flex-col items-center gap-5 px-4 text-center">
+      <div className="relative mx-auto mt-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
         <HeroTitle start={t.titleStart} end={t.titleEnd} />
 
         <p className="text-trim text-lg/normal font-book text-current/60">{t.description}</p>

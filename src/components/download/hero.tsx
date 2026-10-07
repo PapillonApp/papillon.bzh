@@ -19,7 +19,7 @@ export function Hero({ t, stats, locale }: HeroProps) {
     .replace("{downloads}", stats.downloads.value);
 
   return (
-    <section data-primary-hero className="theme-primary overflow-hidden bg-background px-4 pt-32 lg:px-5 lg:pt-40 pb-16">
+    <section data-primary-hero className="theme-primary overflow-hidden bg-background px-6 pt-32 lg:pt-40 pb-16">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2 lg:gap-10">
         <FadeUp className="flex flex-col items-center gap-5 text-center lg:items-start lg:pb-28 lg:text-left">
           <p className="rounded-full bg-foreground/15 px-3 py-1.5 text-md font-medium">

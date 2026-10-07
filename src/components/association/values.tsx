@@ -16,7 +16,7 @@ const images = [
 
 export function Values({ t }: { t: Dictionary["association"]["values"] }) {
   return (
-    <section className="px-4 py-16 lg:px-5 lg:py-24">
+    <section className="px-6 py-16 lg:py-24">
       <ul className="mx-auto flex max-w-6xl flex-col gap-24 lg:gap-32">
         {t.map((value, index) => {
           const [portrait, landscape] = images[index];

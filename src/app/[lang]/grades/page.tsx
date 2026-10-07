@@ -31,8 +31,9 @@ export default async function GradesPage() {
   return (
     <FeaturePage
       t={t}
+      themeClassName="theme-grades"
       icon={Grades}
-      heroImages={{ front: overview, back: subjects }}
+      heroImage={overview}
       highlights={[
         { key: "evolution", image: evolution },
         { key: "methods", image: methods },

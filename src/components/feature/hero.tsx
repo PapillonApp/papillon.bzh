@@ -16,80 +16,76 @@ const services = [
 ];
 
 export type HeroText = {
-  label: string;
   title: string;
   description: string;
   imageAlt: string;
-  secondaryImageAlt: string;
 };
 
 type HeroProps = {
   t: HeroText;
   icon: ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
-  images: { front: StaticImageData; back: StaticImageData };
+  image: StaticImageData;
   compatible: string;
   download: Dictionary["downloadPage"];
   stats: Dictionary["home"]["adoption"]["stats"];
   locale: Locale;
 };
 
-export function Hero({ t, icon: Icon, images, compatible, download, stats, locale }: HeroProps) {
+export function Hero({ t, icon: Icon, image, compatible, download, stats, locale }: HeroProps) {
   const rating = download.hero.rating
     .replace("{rating}", stats.rating.value)
     .replace("{downloads}", stats.downloads.value);
 
   return (
-    <section className="relative isolate overflow-hidden px-4 pt-32 pb-20 lg:px-5 lg:pt-40 lg:pb-28">
+    <section className="relative isolate overflow-hidden px-6 pt-32 lg:pt-44">
       <div
         aria-hidden
-        className="absolute -top-118 left-1/2 -z-10 h-238 w-428 -translate-x-1/2 bg-radial from-primary/30 via-primary/6 via-40% to-transparent to-65%"
+        className="absolute inset-x-0 bottom-0 -z-10 h-full bg-radial-[at_top] from-primary/25 via-primary/8 via-30% to-transparent to-60%"
       />
-      <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2 lg:gap-10">
-        <FadeUp className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
-          <p className="flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-md font-semibold text-primary">
-            <Icon aria-hidden className="size-5" />
-            <span className="text-trim">{t.label}</span>
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-balance lg:text-6xl">
-            {t.title}
-          </h1>
-          <p className="max-w-xl text-lg/normal text-pretty text-foreground/60">{t.description}</p>
-          <div className="mt-4">
-            <StoreBadges t={download.stores} locale={locale} />
-          </div>
-          <p className="flex items-center gap-1.5 text-md text-foreground/60">
+
+      <FadeUp className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+        <Icon aria-hidden className="size-14 text-primary lg:size-16" />
+        <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-7xl">
+          {t.title}
+        </h1>
+        <p className="max-w-xl text-lg/normal font-book text-pretty text-foreground/60">
+          {t.description}
+        </p>
+        <div className="mt-2">
+          <StoreBadges t={download.stores} locale={locale} />
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-md text-foreground/60">
+          <p className="flex items-center gap-1.5">
             <Star aria-hidden className="size-5 text-primary" />
             <span className="text-trim">{rating}</span>
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-foreground/10 pt-6 lg:justify-start">
-            <span className="text-md text-foreground/50">{compatible}</span>
-            <ul className="flex flex-wrap items-center gap-4">
-              {services.map((service) => (
-                <li key={service.name} className="flex items-center gap-2 text-md font-medium">
-                  <Image src={service.logo} alt="" className="size-6 rounded-md" />
-                  {service.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </FadeUp>
+          <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+            <span className="text-trim">{compatible}</span>
+            {services.map((service) => (
+              <Image
+                key={service.name}
+                src={service.logo}
+                alt={service.name}
+                title={service.name}
+                className="size-6 rounded-md"
+              />
+            ))}
+          </p>
+        </div>
+      </FadeUp>
 
-        <FadeUp delay={0.15} className="relative flex justify-center">
-          <Image
-            src={images.back}
-            alt={t.secondaryImageAlt}
-            sizes="(min-width: 1024px) 256px, 192px"
-            className="absolute top-12 left-1/2 h-auto w-48 translate-x-1/7 rotate-6 opacity-90 drop-shadow-xl lg:w-64"
-          />
-          <Image
-            src={images.front}
-            alt={t.imageAlt}
-            sizes="(min-width: 1024px) 320px, 240px"
-            priority
-            className="relative h-auto w-60 -translate-x-1/5 -rotate-2 drop-shadow-2xl lg:w-80"
-          />
-        </FadeUp>
-      </div>
+      <FadeUp
+        delay={0.15}
+        className="mx-auto mt-14 h-100 w-fit overflow-hidden px-10 mask-b-from-55% lg:mt-20 lg:h-150"
+      >
+        <Image
+          src={image}
+          alt={t.imageAlt}
+          sizes="(min-width: 1024px) 384px, 288px"
+          priority
+          className="h-auto w-72 drop-shadow-2xl lg:w-96"
+        />
+      </FadeUp>
     </section>
   );
 }

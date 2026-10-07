@@ -18,8 +18,9 @@ export default async function HomeworkPage() {
   return (
     <FeaturePage
       t={t}
+      themeClassName="theme-homework"
       icon={Tasks}
-      heroImages={{ front: list, back: detail }}
+      heroImage={list}
       highlights={[
         { key: "week", image: list },
         { key: "done", image: detail },

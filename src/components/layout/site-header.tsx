@@ -16,7 +16,7 @@ export async function SiteHeader() {
     <HeaderShell>
       <HoverGroup
         highlightClassName={navHighlightStyle}
-        className="mx-auto flex h-16 max-w-7xl items-center gap-2.5 px-4 lg:h-20 lg:px-5"
+        className="mx-auto flex h-16 max-w-7xl items-center gap-2.5 px-6 lg:h-20"
       >
         <div className="flex flex-1 items-center gap-8">
           <Link

@@ -48,7 +48,7 @@ export async function Features() {
   };
 
   return (
-    <section id="features" className="scroll-mt-20 px-4 py-24 lg:px-5 lg:py-32">
+    <section id="features" className="hidden scroll-mt-20 px-6 py-24 md:block lg:py-32">
       <RevealWhenLight>
         <SectionHeading
           icon={Grid}

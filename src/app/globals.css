@@ -20,6 +20,11 @@
   --color-swatch-blue: #4fafe1;
   --color-swatch-gray: #616161;
 
+  --color-feature-grades: #29947a;
+  --color-feature-schedule: #d1402f;
+  --color-feature-homework: #b8560c;
+  --color-feature-news: #2a6fdb;
+
   --text-md: 1rem;
   --text-lg: 1.0625rem;
   --text-5xl: 3.25rem;
@@ -58,6 +63,22 @@
   --color-foreground: #ffffff;
   --color-surface: oklch(20% 0 0);
   color: var(--color-foreground);
+}
+
+@utility theme-grades {
+  --color-primary: var(--color-feature-grades);
+}
+
+@utility theme-schedule {
+  --color-primary: var(--color-feature-schedule);
+}
+
+@utility theme-homework {
+  --color-primary: var(--color-feature-homework);
+}
+
+@utility theme-news {
+  --color-primary: var(--color-feature-news);
 }
 
 @utility theme-primary {

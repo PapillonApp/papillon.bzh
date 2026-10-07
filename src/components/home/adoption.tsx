@@ -19,7 +19,7 @@ export async function Adoption() {
 
   return (
     <section className="py-24 lg:py-32">
-      <div className="px-4 lg:px-5">
+      <div className="px-6">
         <SectionHeading
           icon={TextBubble}
           iconColor="text-foreground/50"

@@ -18,14 +18,7 @@ type Menus = Dictionary["nav"]["menus"];
 export type MenuKey = keyof Menus;
 type MenuLinkKey = { [Key in MenuKey]: keyof Menus[Key] }[MenuKey];
 
-type NavItem = { key: MenuKey; href?: never } | { key: "blog"; href: string };
-
-export const navItems: NavItem[] = [
-  { key: "features" },
-  { key: "about" },
-  { key: "developers" },
-  { key: "blog", href: "#" },
-];
+export const navItems: MenuKey[] = ["features", "about", "developers"];
 
 const menuIcons: Record<MenuLinkKey, typeof Grades> = {
   grades: Grades,
@@ -38,29 +31,21 @@ const menuIcons: Record<MenuLinkKey, typeof Grades> = {
 };
 
 type NavEntryProps = {
-  item: NavItem;
+  item: MenuKey;
   labels: Dictionary["nav"];
   locale: string;
   className: string;
 };
 
 export function NavEntry({ item, labels, locale, className }: NavEntryProps) {
-  if (item.href !== undefined) {
-    return (
-      <a href={item.href} data-hover-item className={className}>
-        <span className="text-trim">{labels[item.key]}</span>
-      </a>
-    );
-  }
-
   return (
     <details className="group/details">
       <summary className={`list-none [&::-webkit-details-marker]:hidden ${className}`}>
-        <span className="text-trim">{labels[item.key]}</span>
+        <span className="text-trim">{labels[item]}</span>
         <Chevron className="text-current/30 transition-transform group-open/details:rotate-180" />
       </summary>
       <div className="py-3">
-        <MenuLinks links={labels.menus[item.key]} locale={locale} />
+        <MenuLinks links={labels.menus[item]} locale={locale} />
       </div>
     </details>
   );

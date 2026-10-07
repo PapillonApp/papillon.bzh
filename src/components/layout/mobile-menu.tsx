@@ -60,12 +60,12 @@ export function MobileMenu({ nav, language, locale }: MobileMenuProps) {
             onClick={(event) => {
               if ((event.target as Element).closest("a")) setOpen(false);
             }}
-            className="fixed inset-0 -z-10 flex flex-col overflow-y-auto bg-background px-4 pt-20 pb-8 lg:hidden"
+            className="fixed inset-0 -z-10 flex flex-col overflow-y-auto bg-background px-6 pt-20 pb-8 lg:hidden"
           >
             <nav aria-label={nav.label}>
               <ul>
                 {navItems.map((item) => (
-                  <li key={item.key}>
+                  <li key={item}>
                     <NavEntry
                       item={item}
                       labels={nav}

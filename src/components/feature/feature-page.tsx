@@ -19,8 +19,9 @@ type FeaturePageProps<HighlightKey extends string, MoreKey extends string> = {
     cta: { title: string; description: string };
     largeScreen?: LargeScreenText;
   };
+  themeClassName: string;
   icon: Icon;
-  heroImages: { front: StaticImageData; back: StaticImageData };
+  heroImage: StaticImageData;
   highlights: { key: HighlightKey; image: StaticImageData }[];
   moreIcons: Record<MoreKey, Icon>;
   ctaImage: StaticImageData;
@@ -29,8 +30,9 @@ type FeaturePageProps<HighlightKey extends string, MoreKey extends string> = {
 
 export async function FeaturePage<HighlightKey extends string, MoreKey extends string>({
   t,
+  themeClassName,
   icon,
-  heroImages,
+  heroImage,
   highlights,
   moreIcons,
   ctaImage,
@@ -39,11 +41,11 @@ export async function FeaturePage<HighlightKey extends string, MoreKey extends s
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
-    <main>
+    <main className={themeClassName}>
       <Hero
         t={t.hero}
         icon={icon}
-        images={heroImages}
+        image={heroImage}
         compatible={dict.featurePages.compatible}
         download={dict.downloadPage}
         stats={dict.home.adoption.stats}

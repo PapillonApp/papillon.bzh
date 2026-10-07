@@ -10,7 +10,6 @@ const fr = {
     features: "Fonctionnalités",
     about: "À propos",
     developers: "Développer",
-    blog: "Blog",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     menus: {
@@ -446,12 +445,10 @@ const fr = {
       metadataDescription:
         "Vos notes dès leur publication, votre moyenne calculée avec les coefficients et son évolution sur l’année. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        label: "Notes et moyennes",
         title: "Votre moyenne, sans attendre le bulletin.",
         description:
           "Papillon récupère vos notes dès leur publication, calcule votre moyenne avec les coefficients et vous montre son évolution, matière par matière.",
         imageAlt: "L’onglet Notes de Papillon, avec la courbe d’évolution et une moyenne de 15,20 sur 20",
-        secondaryImageAlt: "Les notes de Papillon regroupées par matière, chacune avec sa moyenne",
       },
       highlights: {
         evolution: {
@@ -620,12 +617,10 @@ const fr = {
       metadataDescription:
         "Votre emploi du temps toujours à jour : cours annulés et modifiés signalés, salles, professeurs, Activités en direct et widgets. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        label: "Emploi du temps",
         title: "Votre journée, cours après cours.",
         description:
           "Papillon affiche votre emploi du temps à jour, signale les cours annulés ou modifiés et vous suit jusque sur l’écran verrouillé.",
         imageAlt: "L’emploi du temps du jeudi 8 octobre dans Papillon, avec une pause déjeuner et un cours annulé",
-        secondaryImageAlt: "L’Activité en direct de Papillon sur l’écran verrouillé d’un iPhone",
       },
       highlights: {
         day: {
@@ -791,12 +786,10 @@ const fr = {
       metadataDescription:
         "Tous vos devoirs semaine par semaine, à cocher une fois terminés, triés par date ou par matière. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        label: "Devoirs",
         title: "Ce qu’il reste à faire, et pour quand.",
         description:
           "Papillon rassemble vos devoirs semaine par semaine, vous laisse les cocher une fois faits et vous montre en un coup d’œil ce qui vous attend.",
         imageAlt: "Les devoirs de la semaine 41 dans Papillon, rangés par jour de rendu",
-        secondaryImageAlt: "Le détail d’un devoir d’Histoire-Géographie marqué comme terminé",
       },
       highlights: {
         week: {
@@ -918,12 +911,10 @@ const fr = {
       metadataDescription:
         "Les actualités de votre établissement dans une liste claire, lisible sur téléphone. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        label: "Actualités",
         title: "Les infos de votre établissement, sans rien manquer.",
         description:
           "Réunions, inscriptions, sorties : Papillon rassemble les actualités de votre établissement dans une liste claire, faite pour être lue sur téléphone.",
         imageAlt: "La liste des actualités de l’établissement dans Papillon",
-        secondaryImageAlt: "Une actualité sur l’inscription à l’association sportive, ouverte dans Papillon",
       },
       highlights: {
         list: {
@@ -1007,6 +998,42 @@ const fr = {
       },
     },
   },
+  linksPage: {
+    metadataTitle: "Nos liens – Papillon",
+    title: "Papillon",
+    description: "L’app scolaire qui simplifie la vie des élèves. Retrouvez-nous partout ci-dessous.",
+    otherOptions: "Versions bêta et autres options",
+    groups: {
+      community: {
+        title: "Communauté",
+        links: {
+          discord: { title: "Discord", description: "Le serveur de la communauté" },
+          instagram: { title: "Instagram", description: "@thepapillonapp" },
+          tiktok: { title: "TikTok", description: "@thepapillonapp" },
+          x: { title: "X", description: "@thepapillonapp" },
+          youtube: { title: "YouTube", description: "@thepapillonapp" },
+          linkedin: { title: "LinkedIn", description: "Papillon" },
+        },
+      },
+      project: {
+        title: "Le projet",
+        links: {
+          docs: { title: "Documentation", description: "Guides et aide" },
+          github: { title: "GitHub", description: "Le code, ouvert à tous" },
+          donate: { title: "Ko-fi", description: "Soutenir le projet" },
+        },
+      },
+    },
+  },
+  notFound: {
+    metadataTitle: "Page introuvable – Papillon",
+    label: "Erreur 404 · Absence non justifiée",
+    title: "Cette page sèche les cours.",
+    description:
+      "On a cherché partout : en permanence, au CDI, même à la cantine. Elle s’est envolée sans laisser de mot d’excuse.",
+    home: "Retour à l’accueil",
+    hint: "Essayez d’attraper le papillon.",
+  },
   footer: {
     team: {
       title: "Une équipe & une vision de l’école",
@@ -1032,7 +1059,6 @@ const fr = {
         title: "À propos",
         links: {
           team: "Qui sommes-nous",
-          blog: "Blog",
           donate: "Soutenir le projet",
           privacy: "Confidentialité",
         },

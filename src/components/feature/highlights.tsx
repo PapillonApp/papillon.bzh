@@ -17,7 +17,7 @@ type HighlightsProps<Key extends string> = {
 
 export function Highlights<Key extends string>({ t, items }: HighlightsProps<Key>) {
   return (
-    <div className="flex flex-col gap-24 px-4 py-12 lg:gap-32 lg:px-5 lg:py-20">
+    <div className="flex flex-col gap-24 px-6 py-12 lg:gap-32 lg:py-20">
       {items.map(({ key, image }, index) => (
         <section
           key={key}

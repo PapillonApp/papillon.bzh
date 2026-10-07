@@ -72,34 +72,23 @@ export function DesktopNav({ labels, locale }: DesktopNavProps) {
     >
       <ul className="flex items-center gap-1">
         {navItems.map((item) => (
-          <li key={item.key}>
-            {item.href !== undefined ? (
-              <a
-                href={item.href}
-                onPointerEnter={(event) => isMouse(event) && setActive(null)}
-                data-hover-item
-                className={navEntryStyle}
-              >
-                <span className="text-trim">{labels[item.key]}</span>
-              </a>
-            ) : (
-              <button
-                type="button"
-                aria-expanded={active === item.key}
-                aria-controls={panelId}
-                onPointerEnter={(event) => isMouse(event) && show(item.key, event.currentTarget)}
-                onClick={(event) => {
-                  const fromMouse = (event.nativeEvent as globalThis.PointerEvent).pointerType === "mouse";
-                  if (active === item.key && !fromMouse) setActive(null);
-                  else show(item.key, event.currentTarget);
-                }}
-                data-hover-item
-                className={navEntryStyle}
-              >
-                <span className="text-trim">{labels[item.key]}</span>
-                <Chevron className="text-current/30" />
-              </button>
-            )}
+          <li key={item}>
+            <button
+              type="button"
+              aria-expanded={active === item}
+              aria-controls={panelId}
+              onPointerEnter={(event) => isMouse(event) && show(item, event.currentTarget)}
+              onClick={(event) => {
+                const fromMouse = (event.nativeEvent as globalThis.PointerEvent).pointerType === "mouse";
+                if (active === item && !fromMouse) setActive(null);
+                else show(item, event.currentTarget);
+              }}
+              data-hover-item
+              className={navEntryStyle}
+            >
+              <span className="text-trim">{labels[item]}</span>
+              <Chevron className="text-current/30" />
+            </button>
           </li>
         ))}
       </ul>

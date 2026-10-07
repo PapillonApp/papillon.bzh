@@ -17,8 +17,9 @@ export default async function NewsPage() {
   return (
     <FeaturePage
       t={t}
+      themeClassName="theme-news"
       icon={Newspaper}
-      heroImages={{ front: list, back: detail }}
+      heroImage={list}
       highlights={[
         { key: "list", image: list },
         { key: "detail", image: detail },

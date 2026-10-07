@@ -2,31 +2,30 @@ import type { Dictionary } from "./fr";
 
 const en: Dictionary = {
   metadata: {
-    title: "Papillon, the new school life",
-    description: "One place for your grades, your canteen, your calendar, your homework, and more.",
+    title: "Papillon, school life reimagined",
+    description: "Your grades, schedule, homework, cafeteria menu and more, all in one app.",
   },
   nav: {
     label: "Main navigation",
-    home: "Papillon, home",
+    home: "Papillon home",
     features: "Features",
     about: "About",
     developers: "Developers",
-    blog: "Blog",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     menus: {
       features: {
-        grades: { title: "Grades & averages", description: "All your grades, averages worked out." },
-        schedule: { title: "Schedule", description: "Your day, class by class." },
-        homework: { title: "Homework", description: "What’s left to do, and when it’s due." },
-        news: { title: "News", description: "Updates from your school." },
+        grades: { title: "Grades", description: "Every grade, with your averages done for you." },
+        schedule: { title: "Schedule", description: "Your day, one class at a time." },
+        homework: { title: "Homework", description: "What’s due, and when." },
+        news: { title: "News", description: "Announcements from your school." },
       },
       about: {
-        team: { title: "Association", description: "The team and vision behind Papillon." },
+        team: { title: "Our team", description: "The people and the vision behind Papillon." },
       },
       developers: {
-        docs: { title: "Documentation", description: "Guides and reference to contribute." },
-        github: { title: "GitHub", description: "The source code, open to everyone." },
+        docs: { title: "Docs", description: "Guides and API reference for contributors." },
+        github: { title: "GitHub", description: "Our source code, open to all." },
       },
     },
   },
@@ -34,9 +33,9 @@ const en: Dictionary = {
     label: "Language",
   },
   download: {
-    label: "Download the app",
+    label: "Get the app",
     shortLabel: "Download",
-    moreOptions: "More download options",
+    moreOptions: "More ways to download",
     stores: {
       appStore: "App Store",
       googlePlay: "Google Play",
@@ -45,53 +44,53 @@ const en: Dictionary = {
   },
   home: {
     hero: {
-      titleStart: "The new",
-      titleEnd: "way to school",
+      titleStart: "School life,",
+      titleEnd: "reimagined",
       description:
-        "One place for your grades, your canteen, your calendar, your homework, and more, in an experience designed to make student life easy, smooth, and part of your everyday routine.",
-      imageAlt: "Papillon open on a foldable phone, showing today’s schedule",
-      discover: "Discover Papillon",
+        "Grades, schedule, homework, cafeteria menu and more, all in one beautifully simple app that fits right into your day.",
+      imageAlt: "Papillon on a foldable phone, showing today’s schedule",
+      discover: "Explore Papillon",
     },
     features: {
-      title: "Your whole school life, in one app.",
+      title: "Everything school, in one app.",
       description:
-        "Papillon brings together everything you need day to day, from your grades to the canteen menu. Built by students, for students, the app stays free, open source, and respectful of your privacy.",
+        "From your grades to today’s lunch menu, Papillon puts everything you need in one place. Made by students, for students: free, open source, and private by design.",
       cards: {
         connected: {
           title: "Connected",
           description:
-            "Pronote, ÉcoleDirecte, Skolengo and your canteen. Connect your accounts, Papillon handles the rest.",
+            "Pronote, ÉcoleDirecte, Skolengo and your cafeteria. Link your accounts and Papillon takes care of the rest.",
           loadingTitle: "Setting up your account",
-          loadingDescription: "We’re signing you in. This can take a few seconds.",
+          loadingDescription: "Signing you in. This can take a few seconds.",
         },
         private: {
           title: "Private",
-          description: "Your data stays on your device. Free, open source, no ads, no tracking.",
+          description: "Your data never leaves your device. Free, open source, no ads, no tracking.",
           passwordPlaceholder: "Password",
         },
         instant: {
           title: "Instant",
-          description: "Your day at a glance. Even offline.",
+          description: "Your whole day at a glance. Even offline.",
           homework: {
             emoji: "🇬🇧",
             subject: "English",
             due: "tomorrow",
-            content: "Finish all the exercises on page 19 and the attached appendices",
-            tag: "Oral presentation",
+            content: "Finish all the exercises on page 19 and the attached worksheets",
+            tag: "Presentation",
             done: "Done",
             markDone: "Mark as done",
           },
         },
         smart: {
           title: "Smart",
-          description: "Averages calculated for you. Watch your grades evolve, term after term.",
+          description: "Averages calculated for you. Track your progress term after term.",
           averageLabel: "Subject average",
           averageSource: "from your school",
         },
         personal: {
           title: "Yours",
-          description: "Colors, emojis, subject names. Every detail is yours to tweak.",
-          colorsLabel: "App color",
+          description: "Colors, emojis, subject names. Make every detail your own.",
+          colorsLabel: "Accent color",
           colors: {
             pink: "Pink",
             orange: "Orange",
@@ -104,9 +103,9 @@ const en: Dictionary = {
       },
     },
     devices: {
-      title: "Works on any device",
+      title: "On every screen you own",
       description:
-        "Papillon adapts to whatever screen you have at hand: your phone in class, your tablet for revision, your Mac to keep everything organized.",
+        "Papillon fits whatever you have on hand: your phone in class, your iPad for studying, your Mac to stay on top of it all.",
       tabsLabel: "Devices",
       new: "New",
       previous: "Previous device",
@@ -115,41 +114,41 @@ const en: Dictionary = {
         sidebar: {
           title: "Sidebar",
           description:
-            "Jump between home, classes, tasks, and grades from a sidebar, just like in other iPad apps.",
+            "Jump between Home, Classes, Tasks and Grades from the sidebar, just like any other iPad app.",
         },
         macApp: {
-          title: "Made for macOS",
+          title: "Built for macOS",
           description:
-            "A real Mac window, with its sidebar, that sits right next to your other apps.",
+            "A true Mac app with a native sidebar that sits right alongside your other apps.",
         },
         weekView: {
           title: "Week view",
-          description: "The big screen shows your whole week’s schedule at a glance.",
+          description: "The bigger screen shows your entire week at a glance.",
         },
         liquidGlass: {
           title: "Liquid Glass",
           description:
-            "Buttons, cards, and menus use iOS’s translucent material, with its reflections and depth.",
+            "Buttons, cards and menus use iOS’s translucent material, complete with reflections and depth.",
         },
         liveActivity: {
-          title: "Live classes",
+          title: "Live Activities",
           description:
-            "Your current or next class shows up live, with the room, the teacher, and the time left.",
+            "Your current or next class, live, with the room, the teacher and the time remaining.",
         },
         materialYou: {
           title: "Material You",
           description:
-            "The interface picks up your wallpaper’s colors and follows Android’s Material components.",
+            "The interface takes on your wallpaper’s colors and follows Android’s Material design.",
         },
         sideTabs: {
-          title: "Adapted tabs",
+          title: "Adaptive tabs",
           description:
-            "On iPhone Duo, tabs move to the side to leave all the room for your content.",
+            "On iPhone Duo, tabs move to the side to give your content all the room it needs.",
         },
         wideLayout: {
-          title: "Wider interface",
+          title: "Wider layout",
           description:
-            "Papillon uses the full width of the screen for easier-to-read cards and schedules.",
+            "Papillon uses the full width of the screen, so cards and schedules are easier to read.",
         },
       },
       duo: {
@@ -166,159 +165,159 @@ const en: Dictionary = {
       },
       details: {
         iphone:
-          "On iPhone, Papillon embraces Liquid Glass and native iOS components: menus, transitions, and gestures behave exactly as you expect.",
+          "On iPhone, Papillon embraces Liquid Glass and native iOS components, so menus, transitions and gestures work just the way you’d expect.",
         android:
-          "On Android, the interface follows Material You and picks up the colors of your wallpaper, for an app that feels like yours.",
-        ipad: "On iPad, Papillon makes the most of the extra screen space to show more at a glance.",
-        mac: "Papillon follows you all the way to your Mac and fits right into macOS, so you can keep an eye on your day while you work.",
+          "On Android, the interface follows Material You and matches your wallpaper’s colors, so the app feels like yours.",
+        ipad: "On iPad, Papillon makes the most of the larger display to show you more at once.",
+        mac: "Papillon comes with you to your Mac and feels right at home on macOS, so you can keep an eye on your day while you work.",
         iphoneDuo:
-          "Papillon is ready for tomorrow’s iPhone, with an interface that adapts naturally to its foldable screen.",
+          "Papillon is ready for the iPhone of tomorrow, with an interface that adapts seamlessly to its foldable display.",
       },
     },
     demos: {
       items: [
         {
           overtitle: "Smart",
-          title: "See your overall average over time",
+          title: "Watch your overall average over time",
           description:
-            "Follow your grades and progress in real time to better understand how you’re doing.",
+            "Follow your grades as they come in and see exactly how you’re doing.",
           checks: [
-            "Estimated average calculated automatically",
+            "Estimated average, calculated automatically",
             "Overall average history",
-            "Impact of each grade on your averages",
+            "How each grade affects your averages",
           ],
         },
         {
           overtitle: "Fast",
-          title: "Check your timetable at a glance",
+          title: "Your schedule, at a glance",
           description:
-            "Get to your timetable quickly, wherever you are, so you never miss a class.",
-          checks: ["Lightning-fast loading", "Works offline", "Always up to date"],
+            "Pull up your schedule in a second, wherever you are, and never miss a class.",
+          checks: ["Loads instantly", "Works offline", "Always up to date"],
         },
         {
           overtitle: "Personal",
           title: "Make your subjects your own",
-          description: "Tailor your subjects to your taste for an experience that feels like you.",
-          checks: ["Custom colors", "Subject emojis and names", "Applied across the whole app"],
+          description: "Customize your subjects so the app feels like you.",
+          checks: ["Custom colors", "Your own emojis and names", "Applied across the whole app"],
         },
       ],
     },
     steps: {
       title: "How it works",
       description:
-        "Sign in with your school’s credentials and Papillon handles the rest. No account to create, and your password is never sent to us.",
+        "Sign in with your school login and Papillon does the rest. No new account to create, and we never see your password.",
       items: [
         {
-          title: "Pick your school in seconds",
+          title: "Find your school in seconds",
           description:
-            "Search for your middle school, high school, or university by name or city, then pick it from the list.",
+            "Search for your middle school, high school or university by name or city, then select it.",
         },
         {
-          title: "Sign in like you always do",
+          title: "Sign in as usual",
           description:
-            "Use the login page of your school or digital workspace, with the credentials you already know.",
+            "Use your school’s login page with the username and password you already have.",
         },
         {
-          title: "Rely on a secure connection",
+          title: "Stay secure",
           description:
-            "Papillon talks directly to your school over an encrypted connection. Your data stays with you.",
+            "Papillon connects directly to your school over an encrypted connection. Your data stays yours.",
         },
         {
-          title: "Make the most of Papillon",
+          title: "You’re all set",
           description:
-            "Grades, schedule, homework, and canteen menus: everything is right there, ready whenever you are.",
+            "Grades, schedule, homework and lunch menus: everything’s right there whenever you need it.",
         },
       ],
     },
     trust: {
-      title: "Built by you. Fully secure.",
+      title: "Built by you. Secure by design.",
       description:
-        "Papillon is developed in the open by a community of students. No ads, no tracking: the app exists for you, not for your data.",
+        "Papillon is built in the open by a community of students. No ads, no tracking: the app is here for you, not your data.",
       github: "View the code on GitHub",
       contributors: "{count} contributors on GitHub",
       pillars: {
         openSource: {
           title: "Free and open source",
           description:
-            "Papillon’s code is public: anyone can freely read it, check it, and contribute to it on GitHub.",
+            "Papillon’s code is public: anyone can read it, audit it and contribute on GitHub.",
         },
         privacy: {
           title: "Private by default",
           description:
-            "No ads, no tracking, no data resale. Your information stays right here, on your device.",
+            "No ads, no tracking, no selling your data. Your information stays on your device.",
         },
         security: {
           title: "Secure at every step",
           description:
-            "We never know your credentials: they go straight to your school over an encrypted link.",
+            "We never see your login: it goes straight to your school over an encrypted connection.",
         },
       },
     },
     adoption: {
       title: "Don’t just take our word for it.",
       description:
-        "Middle schoolers, high schoolers, and students use it every day. Here’s what they say on the stores.",
-      reviewsLabel: "Reviews posted on the App Store and Google Play",
+        "Students from middle school to university use Papillon every day. Here’s what they’re saying.",
+      reviewsLabel: "Reviews from the App Store and Google Play",
       ratingLabel: "out of 5 stars",
       stats: {
         downloads: { value: "1.8M+", label: "downloads" },
-        rating: { value: "4.7", label: "average rating on the stores" },
-        reviews: { value: "25K+", label: "reviews on the stores" },
-        sessions: { value: "100K+", label: "weekly sessions" },
+        rating: { value: "4.7", label: "average rating" },
+        reviews: { value: "25K+", label: "reviews" },
+        sessions: { value: "100K+", label: "sessions a week" },
       },
     },
     faq: {
-      title: "Frequently asked questions",
+      title: "FAQ",
       description:
-        "Everything you need to know before downloading Papillon. Another question? Write to us at support@papillon.bzh.",
+        "Everything you need to know before downloading Papillon. Still have questions? Reach us at support@papillon.bzh.",
       items: [
         {
           emoji: "💸",
           question: "Is Papillon free?",
           answer:
-            "Yes, completely. Papillon has no ads and collects no personal data. The app is developed by students and young developers.",
+            "Yes, 100% free. Papillon has no ads and doesn’t collect any personal data. It’s built by students and young developers.",
         },
         {
           emoji: "🔒",
           question: "Is my data safe?",
           answer:
-            "Your credentials are never stored or sent to Papillon, and your information stays on your device. Since the code is open source, anyone can check how the app works.",
+            "Your login is never stored or sent to Papillon, and your data stays on your device. Since the code is open source, anyone can check how the app works.",
         },
         {
           emoji: "🔌",
           question: "Which services are supported?",
           answer:
-            "Papillon works with Pronote, ÉcoleDirecte, Skolengo, and Turboself. More services, like the Crous and regional digital workspaces, are coming soon.",
+            "Papillon works with Pronote, ÉcoleDirecte, Skolengo and Turboself. More services, like Crous and regional school portals, are on the way.",
         },
         {
           emoji: "🏫",
-          question: "My school isn’t in the list. What can I do?",
+          question: "I can’t find my school. What should I do?",
           answer:
-            "Some schools choose not to appear in the Pronote directory, which is managed by Index Education. You can still sign in by scanning a QR code or entering your school’s address.",
+            "Some schools choose not to be listed in the Pronote directory, which is run by Index Education. You can still sign in by scanning a QR code or entering your school’s URL.",
         },
         {
           emoji: "👨‍👩‍👧",
-          question: "Can I use Papillon with a parent or teacher account?",
+          question: "Can parents or teachers use Papillon?",
           answer:
-            "Not yet: only student accounts are supported for now. Other account types may come later.",
+            "Not yet. Only student accounts are supported for now, but other account types may come later.",
         },
         {
           emoji: "🌍",
           question: "Is Papillon available outside France?",
           answer:
-            "On Android, Papillon is available everywhere. On iOS, the app is currently limited to France and Switzerland, for legal and App Store reasons.",
+            "On Android, Papillon is available worldwide. On iOS, it’s currently limited to France and Switzerland for legal and App Store reasons.",
         },
         {
           emoji: "🧑‍💻",
           question: "What does “open source” mean?",
           answer:
-            "Papillon’s code is public: anyone can read it, check the app’s security, and suggest improvements on GitHub.",
+            "Papillon’s code is public: anyone can read it, check the app’s security and suggest improvements on GitHub.",
         },
         {
           emoji: "💬",
-          question: "How can I contact the team?",
+          question: "How do I contact the team?",
           answer:
-            "Write to us at support@papillon.bzh, or find us on Discord, X, Instagram, TikTok, and LinkedIn.",
+            "Email us at support@papillon.bzh, or find us on Discord, X, Instagram, TikTok and LinkedIn.",
         },
       ],
     },
@@ -326,62 +325,62 @@ const en: Dictionary = {
   association: {
     metadataTitle: "About us – Papillon",
     hero: {
-      label: "Association Papillon",
-      title: "Teaming up to do better.",
+      label: "About Papillon",
+      title: "Better, together.",
       description:
-        "Papillon is also 6 passionate students who always strive to create the unexpected and deliver an experience beyond expectations.",
-      discord: "Join the Discord",
+        "Papillon is also six passionate students who never stop pushing to surprise you and deliver an experience that goes beyond what you’d expect.",
+      discord: "Join our Discord",
     },
     values: [
       {
-        title: "We can’t please everyone, but we do everything we can to please you.",
+        title: "We can’t please everyone, but we’ll do everything we can to please you.",
         description:
-          "We don’t just want an app, we want to build a community committed to creating educational tools that go beyond expectations. Papillon is a team of passionate people, dedicated to always doing more for you.",
+          "We’re not just building an app. We’re building a community that creates school tools that go further. Papillon is a team of passionate people who always want to do more for you.",
       },
       {
-        title: "Passionate about what breaks you out of the routine.",
+        title: "Passionate about breaking the routine.",
         description:
-          "Always looking to do better, again and again. That’s what drives us. Papillon is a team that constantly thinks about how to do things differently, to bring an experience that feels like a breath of fresh air.",
+          "Always looking for ways to do better, again and again: that’s what drives us. We’re constantly rethinking how things are done to bring you something that feels like a breath of fresh air.",
       },
       {
-        title: "Even through the worst storms, we’ll stick together.",
+        title: "Whatever the storm, we stick together.",
         description:
-          "We’re a team that believes in the strength of the collective. Papillon is a team that moves forward together, shares the same values, and keeps going even when the pressure is high.",
+          "We believe in the power of the team. At Papillon, we move forward together, share the same values and keep going even when the pressure’s on.",
       },
     ],
     team: {
-      title: "So who is Papillon?",
+      title: "So, who’s behind Papillon?",
       description:
-        "Alongside the hundreds of contributors we warmly thank, Papillon is also a team of passionate people working every day to keep the project alive.",
+        "Along with the hundreds of contributors we can’t thank enough, Papillon is a team of passionate people working every day to keep the project going.",
       members: {
         vince: {
           role: "President",
           description:
-            "Founder and president of the project, he dabbles in everything Papillon-related.",
+            "Founder and president of the project, he has a hand in everything Papillon.",
         },
         lucas: {
-          role: "Vice-president",
+          role: "Vice President",
           description:
-            "Lucas joined Papillon in its early days and is actively involved in steering the project.",
+            "Lucas joined Papillon in its early days and helps lead the project.",
         },
         tom: {
           role: "UI/UX Designer",
           description:
-            "The project’s artist, he takes care of Papillon’s visual identity and interface.",
+            "The team’s artist, he shapes Papillon’s visual identity and interface.",
         },
         raphael: {
           role: "Developer",
           description:
-            "Evil genius of code, he’s the one we hand all the thankless tasks to.",
+            "Our evil coding genius, and the one who gets all the jobs nobody else wants.",
         },
         remy: {
           role: "Developer",
           description:
-            "A visionary of code and design, he gives features a fresh coat of paint.",
+            "With an eye for both code and design, he gives features a fresh coat of paint.",
         },
         mael: {
           role: "Developer",
-          description: "He tinkers with everything… especially when he “just wants to see what happens”.",
+          description: "He tinkers with everything… especially when he “just wants to see what happens.”",
         },
       },
     },
@@ -390,14 +389,14 @@ const en: Dictionary = {
     metadataTitle: "Download Papillon",
     hero: {
       label: "Free, ad-free, open source",
-      title: "Your school life, in your pocket.",
+      title: "School life, in your pocket.",
       description:
-        "Grades, schedule, homework and canteen menus: install Papillon and find everything in an instant.",
+        "Grades, schedule, homework and lunch menus: install Papillon and get it all in an instant.",
       rating: "{rating} out of 5 · {downloads} downloads",
-      imageAlt: "Papillon open on an iPhone",
+      imageAlt: "Papillon on an iPhone",
       qrTitle: "Scan to download",
-      qrDescription: "Point your phone’s camera at this code, it takes you to the right store.",
-      qrAlt: "QR code to the Papillon download page",
+      qrDescription: "Point your phone’s camera at this code to go straight to the right store.",
+      qrAlt: "QR code linking to the Papillon download page",
     },
     stores: {
       appStore: "Download on the App Store",
@@ -405,67 +404,65 @@ const en: Dictionary = {
     },
     platforms: {
       title: "On all your devices",
-      description: "Phone, tablet or computer: Papillon installs wherever you need it.",
+      description: "Phone, tablet or computer: Papillon is there wherever you need it.",
       items: {
         apple: {
           name: "iPhone and iPad",
-          description: "Liquid Glass and live classes. Available in France and Switzerland.",
+          description: "Liquid Glass and Live Activities. Available in France and Switzerland.",
           cta: "View on the App Store",
         },
         android: {
           name: "Android",
-          description: "Material You and your wallpaper’s colors. Available everywhere.",
+          description: "Material You, matched to your wallpaper. Available worldwide.",
           cta: "View on Google Play",
         },
         mac: {
           name: "Mac",
-          description: "A real Mac window to keep an eye on your day while you work.",
+          description: "A true Mac app to keep an eye on your day while you work.",
           cta: "View on the Mac App Store",
         },
       },
     },
     beta: {
-      title: "Beta versions",
-      description: "Join our testing programs to try the latest features before everyone else.",
-      testFlight: "Join TestFlight for iOS",
-      googlePlay: "Join the Google Play beta for Android",
+      title: "Beta",
+      description: "Join our beta programs and try new features before anyone else.",
+      testFlight: "Join the iOS beta on TestFlight",
+      googlePlay: "Join the Android beta on Google Play",
     },
   },
   featurePages: {
     compatible: "Works with",
     grades: {
-      metadataTitle: "Grades and averages – Papillon",
+      metadataTitle: "Grades – Papillon",
       metadataDescription:
-        "Your grades as soon as they’re published, your average calculated with coefficients, and how it changes over the year. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "Get your grades as soon as they’re posted, your weighted average calculated for you, and see how it changes over the year. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        label: "Grades and averages",
-        title: "Your average, without waiting for the report card.",
+        title: "Know your average before report cards do.",
         description:
-          "Papillon fetches your grades as soon as they’re published, calculates your average with coefficients, and shows how it changes, subject by subject.",
-        imageAlt: "Papillon’s Grades tab, with the progress curve and an average of 15.20 out of 20",
-        secondaryImageAlt: "Papillon grades grouped by subject, each with its average",
+          "Papillon pulls in your grades as soon as they’re posted, calculates your weighted average and shows how it changes, subject by subject.",
+        imageAlt: "Papillon’s Grades tab, with the progress chart and an average of 15.20 out of 20",
       },
       highlights: {
         evolution: {
           eyebrow: "Progress",
           title: "See where you stand, at a glance.",
           description:
-            "Your overall average is front and center, with its curve over the whole term. Slide your finger along it to see your average on any date.",
+            "Your overall average front and center, with a chart covering the whole term. Drag your finger along it to see your average on any day.",
           points: [
-            "Interactive progress curve",
-            "Your latest grades at the top",
+            "Interactive progress chart",
+            "Your latest grades up top",
           ],
-          imageAlt: "Papillon’s progress curve, with an estimated average of 14.83 out of 20 on October 4",
+          imageAlt: "Papillon’s progress chart, showing an estimated average of 14.83 out of 20 on October 4",
         },
         methods: {
           eyebrow: "Calculation",
-          title: "Your average, calculated the way you want.",
+          title: "Your average, your way.",
           description:
-            "Papillon takes coefficients into account and lets you pick the method your school uses. When your school publishes its own average, that’s the one you see.",
+            "Papillon factors in weights and lets you pick the method your school uses. If your school posts its own average, that’s the one you’ll see.",
           points: [
-            "Coefficients taken into account",
+            "Weights factored in",
             "Subject average, weighted average or median",
-            "The official average when your school publishes it",
+            "Your school’s official average, when it’s posted",
           ],
           imageAlt: "Choosing how the overall average is calculated in Papillon",
         },
@@ -473,61 +470,61 @@ const en: Dictionary = {
           eyebrow: "Details",
           title: "Every grade, in context.",
           description:
-            "Tap a grade to see how the class did: group average, highest and lowest grade, and the assignment’s coefficient.",
+            "Tap a grade to see how the rest of the class did: class average, highest and lowest score, and how much the assignment is worth.",
           points: [
-            "Group average",
-            "Highest and lowest grade",
-            "Coefficient for every assessment",
+            "Class average",
+            "Highest and lowest score",
+            "Weight of every assignment",
           ],
-          imageAlt: "Details of a 16 out of 20 grade, with a coefficient of 1 and a group average of 13.50",
+          imageAlt: "Details of a 16 out of 20 grade, with a weight of 1 and a class average of 13.50",
         },
         influence: {
           eyebrow: "Impact",
-          title: "Know what every grade changes.",
+          title: "See what every grade really changes.",
           description:
-            "A 16 in Biology? +0.07 points on your overall average. Papillon calculates the impact of every grade, so you know right away where you’re gaining points and where to catch up.",
+            "Got a 16 in Biology? That’s +0.07 on your overall average. Papillon shows the impact of every grade, so you know exactly where you’re gaining ground and where to catch up.",
           points: [
             "Points gained or lost, grade by grade",
-            "Effect on your average and the group’s",
+            "Effect on your average and the class’s",
           ],
-          imageAlt: "A grade that adds 0.07 points to the overall average",
+          imageAlt: "A grade that raises the overall average by 0.07 points",
         },
         periods: {
-          eyebrow: "Periods",
-          title: "Every term, within reach.",
+          eyebrow: "Terms",
+          title: "Every term, one tap away.",
           description:
-            "Switch from one term or semester to another from the periods menu, to compare your results or look back at the start of the year. Mock exams get their own period.",
-          points: ["Terms and semesters", "Mock exams kept separate", "The dates of every period"],
-          imageAlt: "Papillon’s periods menu, with the three terms and their dates",
+            "Switch between terms or semesters from the menu to compare your results or look back at the start of the year. Practice exams get their own tab.",
+          points: ["Terms and semesters", "Practice exams kept separate", "Start and end dates for each term"],
+          imageAlt: "Papillon’s term menu, showing three terms and their dates",
         },
         subjects: {
           eyebrow: "Organization",
-          title: "All your subjects, neatly sorted.",
+          title: "All your subjects, neatly organized.",
           description:
-            "Your grades are grouped by subject, each with its average. Papillon recognizes over 250 subjects, even abbreviated or in all caps, and gives them a readable name, an emoji and a color. Sort them, or search for an assignment.",
+            "Your grades are grouped by subject, each with its own average. Papillon recognizes over 250 subjects, even when they’re abbreviated or in all caps, and gives each a clean name, an emoji and a color. Sort them, or search for any assignment.",
           points: [
-            "Sort by date, average or alphabetically",
-            "Search across all your grades",
-            "Name, emoji and color detected automatically",
+            "Sort by date, average or name",
+            "Search all your grades",
+            "Names, emojis and colors set automatically",
           ],
-          imageAlt: "Papillon grades grouped by subject: French, Physics-Chemistry and their averages",
+          imageAlt: "Grades in Papillon grouped by subject: French, Physics & Chemistry and their averages",
         },
       },
       more: {
-        title: "And there’s more",
-        description: "The little details that make a difference, every day.",
+        title: "And that’s not all",
+        description: "The little things that make a big difference.",
         items: {
           offline: {
             title: "Offline",
-            description: "Your grades stay available without a connection, on the bus or at the back of class.",
+            description: "Your grades are always available, even with no signal on the bus or in the back row.",
           },
           home: {
             title: "Right on the home screen",
-            description: "Your average and its curve show up as soon as you open the app.",
+            description: "Your average and its chart are there the moment you open the app.",
           },
           scale: {
             title: "Your scale",
-            description: "Graded out of 10 or 40? Papillon converts it to the scale you choose.",
+            description: "Graded out of 10 or 40? Papillon converts it to the scale you prefer.",
           },
           skills: {
             title: "Skills",
@@ -535,170 +532,168 @@ const en: Dictionary = {
           },
           personal: {
             title: "Make it yours",
-            description: "Everything is picked automatically, but each subject’s name, emoji and color are yours to change.",
+            description: "Everything’s set up for you, but you can change any subject’s name, emoji and color.",
           },
           private: {
             title: "Private",
-            description: "Your grades stay on your device. They never go through our servers.",
+            description: "Your grades stay on your device. They never touch our servers.",
           },
         },
       },
       faq: {
-        title: "Your questions about grades",
+        title: "Grades FAQ",
         description:
-          "Everything you need to know about grades and averages in Papillon. Another question? Write to us at support@papillon.bzh.",
+          "Everything you need to know about grades and averages in Papillon. Still have questions? Reach us at support@papillon.bzh.",
         items: [
           {
             emoji: "🎯",
-            question: "Is the average the same as on my report card?",
+            question: "Will my average match my report card?",
             answer:
-              "When your school publishes an average, Papillon shows it as is. Otherwise, the app calculates it from your grades and their coefficients: it’s a close estimate that can differ slightly from your report card (bonus or optional grades, rounding).",
+              "If your school posts an average, Papillon shows exactly that. Otherwise, the app calculates it from your grades and their weights. It’s a close estimate, but it may differ slightly from your report card (extra credit, optional grades, rounding).",
           },
           {
             emoji: "⚖️",
-            question: "Are coefficients taken into account?",
+            question: "Are weights taken into account?",
             answer:
-              "Yes. Every grade counts according to the coefficient set by your teacher, and you’ll find it in the grade’s details.",
+              "Yes. Every grade counts according to the weight your teacher set, which you can find in the grade’s details.",
           },
           {
             emoji: "🧮",
-            question: "Which calculation method should I choose?",
+            question: "Which calculation method should I pick?",
             answer:
-              "The subject average is recommended: it’s how most schools calculate the overall average. The weighted average and the median give you another look at your results.",
+              "We recommend the subject average, since most schools use it for the overall average. The weighted average and median give you another way to look at your results.",
           },
           {
             emoji: "⏱️",
             question: "When do new grades show up?",
             answer:
-              "As soon as they’re published on Pronote, ÉcoleDirecte or Skolengo. Papillon fetches them straight from your school when you open the app.",
+              "As soon as they’re posted on Pronote, ÉcoleDirecte or Skolengo. Papillon fetches them straight from your school when you open the app.",
           },
           {
             emoji: "📶",
-            question: "Can I check my grades offline?",
-            answer: "Yes. Grades that were already fetched stay on your device and show up even offline.",
+            question: "Can I see my grades offline?",
+            answer: "Yes. Once your grades have loaded, they’re saved on your device and available offline.",
           },
           {
             emoji: "🔒",
             question: "Can anyone else see my grades?",
             answer:
-              "No. Your grades go straight from your school to your phone. Papillon doesn’t see, store or sell them.",
+              "No. Your grades go straight from your school to your phone. Papillon never sees, stores or sells them.",
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for these features?",
-            answer: "No. Everything is free, with no ads and no subscription.",
+            question: "Do I have to pay for any of this?",
+            answer: "Nope. Everything is free, with no ads and no subscription.",
           },
         ],
       },
       largeScreen: {
-        title: "Even clearer on a big screen.",
+        title: "Even better on a big screen.",
         description:
-          "On iPad and Mac, Papillon uses the full width of the screen: the curve stretches out, your latest grades scroll by and two subjects sit side by side.",
-        imageAlt: "Papillon’s Grades tab on an iPad Pro, with the progress curve and two subjects side by side",
+          "On iPad and Mac, Papillon uses the full width of the screen: the chart stretches out, your latest grades scroll by and two subjects sit side by side.",
+        imageAlt: "Papillon’s Grades tab on an iPad Pro, with the progress chart and two subjects side by side",
       },
       cta: {
-        title: "Your next grade deserves better than a spreadsheet.",
+        title: "Your grades deserve better than a spreadsheet.",
         description:
-          "Install Papillon and sign in with your usual credentials. Your grades are there in seconds.",
+          "Install Papillon and sign in with your school login. Your grades show up in seconds.",
       },
     },
     schedule: {
       metadataTitle: "Schedule – Papillon",
       metadataDescription:
-        "Your schedule, always up to date: canceled and changed classes flagged, rooms, teachers, Live Activities and widgets. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "Your schedule, always up to date: canceled and changed classes, rooms, teachers, Live Activities and widgets. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        label: "Schedule",
-        title: "Your day, class after class.",
+        title: "Your day, one class at a time.",
         description:
-          "Papillon shows your up-to-date schedule, flags canceled or changed classes and follows you all the way to the Lock Screen.",
-        imageAlt: "The Thursday, October 8 schedule in Papillon, with a lunch break and a canceled class",
-        secondaryImageAlt: "Papillon’s Live Activity on an iPhone Lock Screen",
+          "Papillon keeps your schedule up to date, flags canceled or changed classes and follows you all the way to your Lock Screen.",
+        imageAlt: "Thursday, October 8 in Papillon’s schedule, with a lunch break and a canceled class",
       },
       highlights: {
         day: {
           eyebrow: "Your day",
-          title: "Changes jump right out.",
+          title: "Changes stand out.",
           description:
-            "A class canceled or changed? It’s flagged right in your day. Room, teacher, length: it’s all there, with the breaks between classes.",
+            "Class canceled or moved? You’ll see it right in your day. Room, teacher, length: it’s all there, breaks included.",
           points: [
             "Canceled and changed classes flagged",
             "Room, teacher and length of every class",
-            "Breaks and lunch shown",
+            "Breaks and lunch included",
           ],
-          imageAlt: "Thursday, October 8, with the lunch break and a canceled Economics class",
+          imageAlt: "Thursday, October 8, with a lunch break and a canceled Economics class",
         },
         views: {
           eyebrow: "Views",
           title: "List or week, your call.",
           description:
-            "Stick with the List view to follow your day, or switch to the Weekly view to see all your classes at a glance. One menu is all it takes.",
-          points: ["List view, day by day", "Weekly view, in beta", "Your iCal calendars in one place"],
-          imageAlt: "The schedule’s View menu, with the List and Weekly views",
+            "Stick with the List view to follow your day, or switch to the Week view to see every class at once. It’s just one menu away.",
+          points: ["List view, day by day", "Week view, in beta", "All your iCal calendars in one place"],
+          imageAlt: "The schedule’s View menu, with the List and Week options",
         },
         calendar: {
           eyebrow: "Navigation",
           title: "Jump to any day.",
           description:
-            "Swipe from one day to the next, or open the calendar to go straight to the date you need: a test in two weeks, the first day back after the holidays.",
+            "Swipe from one day to the next, or open the calendar to go straight to the date you need, whether it’s a test in two weeks or the first day back from break.",
           points: [
             "Swipe to the next day",
-            "The month’s calendar in one tap",
+            "Full month view in one tap",
             "Back to today in one tap",
           ],
           imageAlt: "The month calendar open on Tuesday, October 13",
         },
         detail: {
           eyebrow: "Details",
-          title: "Every class, in detail.",
+          title: "Every class, up close.",
           description:
-            "Tap a class to see its times, how long until it starts, the room and the teacher. Papillon automatically recognizes over 250 subjects, even abbreviated or in all caps, and gives them a readable name, an emoji and a color.",
+            "Tap a class to see when it starts and ends, how long until it begins, the room and the teacher. Papillon recognizes over 250 subjects, even when they’re abbreviated or in all caps, and gives each a clean name, an emoji and a color.",
           points: [
-            "Start, end and length",
+            "Start time, end time and length",
             "Room and teacher",
-            "Name, emoji and color detected automatically",
+            "Names, emojis and colors set automatically",
           ],
-          imageAlt: "Details of a one-hour History-Geography class in room C 018 with Mme Bernard",
+          imageAlt: "Details of a one-hour History & Geography class in room C 018 with Mme Bernard",
         },
         live: {
           eyebrow: "Live Activities",
-          title: "Your class, on the Lock Screen.",
+          title: "Your class, on your Lock Screen.",
           description:
-            "On iPhone, your current or next class shows live on the Lock Screen and in the Dynamic Island, with the room and the time left. No need to open the app between bells.",
-          points: ["Time left, live", "Room and teacher", "In the Dynamic Island"],
-          imageAlt: "An iPhone Lock Screen showing the current History-Geography class and the time left",
+            "On iPhone, your current or next class shows up live on the Lock Screen and in the Dynamic Island, with the room and time remaining. No need to open the app between classes.",
+          points: ["Live countdown", "Room and teacher", "In the Dynamic Island"],
+          imageAlt: "An iPhone Lock Screen showing the current History & Geography class and the time remaining",
         },
         widget: {
           eyebrow: "Widgets",
-          title: "Your next classes, right on the Home Screen.",
+          title: "Your next classes, right on your Home Screen.",
           description:
-            "Add the Papillon widget to your iPhone’s Home Screen: your next classes show up without even opening the app.",
-          points: ["Your next classes at a glance", "Always up to date"],
-          imageAlt: "An iPhone Home Screen with Papillon’s widget showing tomorrow’s classes",
+            "Add the Papillon widget to your iPhone’s Home Screen and see your upcoming classes without even opening the app.",
+          points: ["Upcoming classes at a glance", "Always up to date"],
+          imageAlt: "An iPhone Home Screen with the Papillon widget showing tomorrow’s classes",
         },
       },
       more: {
-        title: "And there’s more",
-        description: "The little details that make a difference, every day.",
+        title: "And that’s not all",
+        description: "The little things that make a big difference.",
         items: {
           home: {
             title: "Right on the home screen",
-            description: "Today’s or tomorrow’s classes show up as soon as you open the app.",
+            description: "Today’s or tomorrow’s classes are there the moment you open the app.",
           },
           offline: {
             title: "Offline",
-            description: "Your schedule stays available without a connection.",
+            description: "Your schedule is always available, even without a connection.",
           },
           ical: {
             title: "iCal calendars",
-            description: "Add your iCal calendars to see them next to your classes.",
+            description: "Add your iCal calendars and see them alongside your classes.",
           },
           devices: {
             title: "Big screen",
-            description: "On iPad and Mac, your whole week fits on a single screen.",
+            description: "On iPad and Mac, your whole week fits on one screen.",
           },
           personal: {
             title: "Make it yours",
-            description: "Change the name, emoji and color of every subject.",
+            description: "Change any subject’s name, emoji and color.",
           },
           private: {
             title: "Private",
@@ -707,138 +702,136 @@ const en: Dictionary = {
         },
       },
       faq: {
-        title: "Your questions about the schedule",
+        title: "Schedule FAQ",
         description:
-          "Everything you need to know about the schedule in Papillon. Another question? Write to us at support@papillon.bzh.",
+          "Everything you need to know about your schedule in Papillon. Still have questions? Reach us at support@papillon.bzh.",
         items: [
           {
             emoji: "🔄",
             question: "Do last-minute changes show up?",
             answer:
-              "Yes. Canceled classes, changed classes and room changes show up as soon as your school publishes them on Pronote, ÉcoleDirecte or Skolengo.",
+              "Yes. Canceled classes, schedule changes and room changes show up as soon as your school posts them on Pronote, ÉcoleDirecte or Skolengo.",
           },
           {
             emoji: "🔒",
             question: "How do I turn on Live Activities?",
             answer:
-              "On iPhone, open Papillon’s settings and turn on Live Activities. Your current or next class then shows on the Lock Screen and in the Dynamic Island.",
+              "On iPhone, open Papillon’s settings and turn on Live Activities. Your current or next class will then appear on the Lock Screen and in the Dynamic Island.",
           },
           {
             emoji: "📱",
             question: "How do I add the widget?",
             answer:
-              "Touch and hold your iPhone’s Home Screen, tap “+” at the top, then search for Papillon and pick the widget.",
+              "Touch and hold your iPhone’s Home Screen, tap “+” at the top, then search for Papillon and choose the widget.",
           },
           {
             emoji: "🗓️",
             question: "Can I see my whole week?",
             answer:
-              "Yes. In the Timetable tab, tap “…” at the top right and choose the Weekly view. It’s still in beta.",
+              "Yes. In the Schedule tab, tap “…” in the top-right corner and choose Week view. It’s still in beta.",
           },
           {
             emoji: "✨",
-            question: "Why do my subjects have a different name?",
+            question: "Why do my subjects have different names?",
             answer:
-              "Papillon automatically recognizes your subjects, even when your school abbreviates them or writes them in all caps, and gives them a readable name, an emoji and a color. You can change all of it.",
+              "Papillon automatically recognizes your subjects, even when your school abbreviates them or writes them in all caps, and gives each a clean name, an emoji and a color. You can change any of it.",
           },
           {
             emoji: "📶",
-            question: "Can I check my schedule offline?",
-            answer: "Yes. A schedule that was already fetched stays on your device and shows up even offline.",
+            question: "Can I see my schedule offline?",
+            answer: "Yes. Once your schedule has loaded, it’s saved on your device and available offline.",
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for these features?",
-            answer: "No. Everything is free, with no ads and no subscription.",
+            question: "Do I have to pay for any of this?",
+            answer: "Nope. Everything is free, with no ads and no subscription.",
           },
         ],
       },
       largeScreen: {
-        title: "The whole week, on one screen.",
+        title: "Your whole week, on one screen.",
         description:
-          "On iPad and Mac, the Weekly view shows your classes from Monday to Friday at a glance, canceled classes included. The sidebar takes you from one tab to another.",
-        imageAlt: "The schedule for the week of October 5 in Papillon on an iPad Pro",
+          "On iPad and Mac, the Week view shows every class from Monday to Friday at a glance, canceled ones included. Use the sidebar to jump between tabs.",
+        imageAlt: "The week of October 5 in Papillon’s schedule on an iPad Pro",
       },
       cta: {
-        title: "Your next class already fits in your pocket.",
+        title: "Your next class, already in your pocket.",
         description:
-          "Install Papillon and sign in with your usual credentials. Your schedule is there in seconds.",
+          "Install Papillon and sign in with your school login. Your schedule shows up in seconds.",
       },
     },
     homework: {
       metadataTitle: "Homework – Papillon",
       metadataDescription:
-        "All your homework week by week, ready to check off once done, sorted by date or subject. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "All your homework, week by week, sorted by due date or subject and ready to check off. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        label: "Homework",
-        title: "What’s left to do, and when it’s due.",
+        title: "What’s due, and when.",
         description:
-          "Papillon gathers your homework week by week, lets you check it off once it’s done, and shows you at a glance what’s coming up.",
-        imageAlt: "Week 41 homework in Papillon, sorted by due day",
-        secondaryImageAlt: "A History-Geography assignment marked as done",
+          "Papillon gathers your homework week by week, lets you check it off when you’re done and shows you what’s coming up at a glance.",
+        imageAlt: "Week 41 homework in Papillon, sorted by due date",
       },
       highlights: {
         week: {
-          eyebrow: "Week",
-          title: "The whole week, day by day.",
+          eyebrow: "This week",
+          title: "Your whole week, day by day.",
           description:
-            "Your homework is sorted by due date, with the subject and the time you have left. Swipe to move to the next week.",
+            "Your homework is sorted by due date, with the subject and how much time you have left. Swipe to see next week.",
           points: [
-            "Sorted by due day",
-            "“tomorrow”, “in 2 days”: deadlines in plain words",
-            "A new week with one swipe",
+            "Sorted by due date",
+            "“Tomorrow,” “in 2 days”: deadlines in plain English",
+            "Next week, one swipe away",
           ],
-          imageAlt: "Homework from Monday, October 5 to Wednesday, October 7, one already done",
+          imageAlt: "Homework from Monday, October 5 to Wednesday, October 7, one assignment already done",
         },
         done: {
           eyebrow: "Tracking",
-          title: "Check it off, done.",
+          title: "Check it off. Done.",
           description:
-            "Mark an assignment as done with one tap, from the list or its own page. You always know what’s left before tomorrow.",
+            "Mark an assignment as done with one tap, from the list or the assignment itself. You always know what’s left before tomorrow.",
           points: [
             "Done in one tap",
-            "The full instructions on the assignment page",
-            "Your teacher’s attachments",
+            "Full instructions on every assignment",
+            "Your teachers’ attachments",
           ],
-          imageAlt: "A History-Geography assignment page, marked as done",
+          imageAlt: "A History & Geography assignment, marked as done",
         },
         sort: {
           eyebrow: "Sorting",
           title: "Sort it your way.",
           description:
-            "Sort your homework by due date, by subject, or put unfinished work first. Looking for specific instructions? Search finds them.",
+            "Sort your homework by due date or subject, or show unfinished work first. Looking for specific instructions? Just search.",
           points: [
-            "By due date or by subject",
-            "Unfinished homework first",
-            "Search across all your homework",
+            "By due date or subject",
+            "Unfinished work first",
+            "Search all your homework",
           ],
-          imageAlt: "The homework sort menu: due date, subjects, not done",
+          imageAlt: "The homework sort menu: due date, subject, not done",
         },
       },
       more: {
-        title: "And there’s more",
-        description: "The little details that make a difference, every day.",
+        title: "And that’s not all",
+        description: "The little things that make a big difference.",
         items: {
           subjects: {
-            title: "Recognized subjects",
+            title: "Smart subjects",
             description:
-              "Over 250 subjects recognized automatically, even abbreviated, with a readable name, an emoji and a color.",
+              "Over 250 subjects recognized automatically, even abbreviated, each with a clean name, an emoji and a color.",
           },
           home: {
             title: "Right on the home screen",
-            description: "Your to-do list shows up as soon as you open the app.",
+            description: "Your to-do list is there the moment you open the app.",
           },
           attachments: {
             title: "Attachments",
-            description: "Files attached by your teachers are available from the assignment.",
+            description: "Files your teachers attach are right there in the assignment.",
           },
           search: {
             title: "Search",
-            description: "Find an assignment by typing a word from the instructions or the subject name.",
+            description: "Find any assignment by typing a word from the instructions or the subject name.",
           },
           offline: {
             title: "Offline",
-            description: "Your homework stays available without a connection.",
+            description: "Your homework is always available, even without a connection.",
           },
           private: {
             title: "Private",
@@ -847,156 +840,190 @@ const en: Dictionary = {
         },
       },
       faq: {
-        title: "Your questions about homework",
+        title: "Homework FAQ",
         description:
-          "Everything you need to know about homework in Papillon. Another question? Write to us at support@papillon.bzh.",
+          "Everything you need to know about homework in Papillon. Still have questions? Reach us at support@papillon.bzh.",
         items: [
           {
             emoji: "📥",
             question: "Where does my homework come from?",
             answer:
-              "Papillon fetches the homework your teachers publish on Pronote, ÉcoleDirecte or Skolengo, straight from your school.",
+              "Papillon pulls the homework your teachers post on Pronote, ÉcoleDirecte or Skolengo, straight from your school.",
           },
           {
             emoji: "📆",
-            question: "Can I see homework for the coming weeks?",
-            answer: "Yes. Swipe the list left or right to move from one week to another.",
+            question: "Can I see homework for the weeks ahead?",
+            answer: "Yes. Swipe left or right on the list to move between weeks.",
           },
           {
             emoji: "📎",
-            question: "Are attachments available?",
-            answer: "Yes. Open an assignment to find its full instructions and the files your teacher attached.",
+            question: "Can I open attachments?",
+            answer: "Yes. Open an assignment to see the full instructions and any files your teacher attached.",
           },
           {
             emoji: "✨",
-            question: "Where do the emojis next to subjects come from?",
+            question: "Where do the subject emojis come from?",
             answer:
-              "Papillon automatically recognizes your subjects and gives them a readable name, an emoji and a color. You can change all of it.",
+              "Papillon automatically recognizes your subjects and gives each a clean name, an emoji and a color. You can change any of it.",
           },
           {
             emoji: "📶",
-            question: "Can I check my homework offline?",
-            answer: "Yes. Homework that was already fetched stays on your device and shows up even offline.",
+            question: "Can I see my homework offline?",
+            answer: "Yes. Once your homework has loaded, it’s saved on your device and available offline.",
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for these features?",
-            answer: "No. Everything is free, with no ads and no subscription.",
+            question: "Do I have to pay for any of this?",
+            answer: "Nope. Everything is free, with no ads and no subscription.",
           },
         ],
       },
       cta: {
-        title: "No more “wait, did we have homework?”.",
+        title: "No more “wait, did we have homework?”",
         description:
-          "Install Papillon and sign in with your usual credentials. Your homework is there in seconds.",
+          "Install Papillon and sign in with your school login. Your homework shows up in seconds.",
       },
     },
     news: {
       metadataTitle: "News – Papillon",
       metadataDescription:
-        "Your school’s news in a clear list, easy to read on your phone. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "Your school’s announcements in one clean feed, easy to read on your phone. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        label: "News",
-        title: "Your school’s news, without missing a thing.",
+        title: "Never miss a school announcement.",
         description:
-          "Meetings, sign-ups, trips: Papillon gathers your school’s announcements in a clear list, made to be read on your phone.",
-        imageAlt: "The list of school news in Papillon",
-        secondaryImageAlt: "A news post about signing up for the sports club, open in Papillon",
+          "Meetings, sign-ups, field trips: Papillon brings your school’s announcements together in one clean feed, made for reading on your phone.",
+        imageAlt: "The school news feed in Papillon",
       },
       highlights: {
         list: {
           eyebrow: "Feed",
           title: "Every announcement, in one place.",
           description:
-            "Each post shows its author, its date and a preview of the message. The newest are at the top, and search finds any announcement in an instant.",
-          points: ["Author and publication date", "Message preview", "Search across all news"],
-          imageAlt: "Four news posts: parent-teacher meeting, library, sports club and a charity drive",
+            "Each post shows who wrote it, when, and a preview of the message. The latest are at the top, and search finds any announcement in an instant.",
+          points: ["Author and date", "Message preview", "Search all announcements"],
+          imageAlt: "Four announcements: parent-teacher conferences, the library, the sports club and a charity drive",
         },
         detail: {
           eyebrow: "Reading",
-          title: "Comfortable reading.",
+          title: "Easy on the eyes.",
           description:
-            "Open a post to read it in full, formatted for your screen. Its category is shown at the top, so you know right away what it’s about.",
-          points: ["Text formatted for your phone", "Category, author and date at the top"],
-          imageAlt: "The “Sports club sign-ups” post, published by the student life office",
+            "Open a post to read it in full, formatted for your screen. Its category is shown up top, so you know right away what it’s about.",
+          points: ["Text formatted for your phone", "Category, author and date up top"],
+          imageAlt: "The “Sports club sign-ups” announcement, posted by the student affairs office",
         },
       },
       more: {
-        title: "And there’s more",
-        description: "The little details that make a difference, every day.",
+        title: "And that’s not all",
+        description: "The little things that make a big difference.",
         items: {
           home: {
             title: "Right on the home screen",
-            description: "The latest news shows up on the app’s home screen.",
+            description: "The latest announcements appear on the app’s home screen.",
           },
           offline: {
             title: "Offline",
-            description: "News that was already loaded stays readable without a connection.",
+            description: "Announcements you’ve already loaded stay readable without a connection.",
           },
           private: {
             title: "Private",
-            description: "Your school’s news stays on your device, never on our servers.",
+            description: "Your school’s announcements stay on your device, never on our servers.",
           },
         },
       },
       faq: {
-        title: "Your questions about news",
+        title: "News FAQ",
         description:
-          "Everything you need to know about news in Papillon. Another question? Write to us at support@papillon.bzh.",
+          "Everything you need to know about news in Papillon. Still have questions? Reach us at support@papillon.bzh.",
         items: [
           {
             emoji: "📥",
-            question: "Where does the news come from?",
+            question: "Where do announcements come from?",
             answer:
-              "It’s the information your school publishes on Pronote, ÉcoleDirecte or Skolengo. Papillon fetches it directly, with no middleman.",
+              "They’re what your school posts on Pronote, ÉcoleDirecte or Skolengo. Papillon fetches them directly, with no middleman.",
           },
           {
             emoji: "📊",
             question: "Can I answer polls?",
             answer:
-              "Not yet: Pronote doesn’t allow showing them for now. Papillon tells you when a post contains a poll.",
+              "Not yet, since Pronote doesn’t allow it for now. Papillon lets you know when a post includes a poll.",
           },
           {
             emoji: "🛠️",
-            question: "A post looks wrong, what can I do?",
+            question: "A post looks off. What can I do?",
             answer:
               "At the bottom of every post, you can turn off automatic formatting to see it exactly as it was published.",
           },
           {
             emoji: "📶",
-            question: "Can I read the news offline?",
-            answer: "Yes. News that was already loaded stays on your device and shows up even offline.",
+            question: "Can I read announcements offline?",
+            answer: "Yes. Once announcements have loaded, they’re saved on your device and available offline.",
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for these features?",
-            answer: "No. Everything is free, with no ads and no subscription.",
+            question: "Do I have to pay for any of this?",
+            answer: "Nope. Everything is free, with no ads and no subscription.",
           },
         ],
       },
       cta: {
-        title: "You won’t miss the next announcement.",
+        title: "Stay in the loop.",
         description:
-          "Install Papillon and sign in with your usual credentials. Your school’s news is there in seconds.",
+          "Install Papillon and sign in with your school login. Your school’s announcements show up in seconds.",
       },
     },
   },
+  linksPage: {
+    metadataTitle: "Our links – Papillon",
+    title: "Papillon",
+    description: "The school app that makes student life simpler. Find us everywhere below.",
+    otherOptions: "Beta builds and other options",
+    groups: {
+      community: {
+        title: "Community",
+        links: {
+          discord: { title: "Discord", description: "The community server" },
+          instagram: { title: "Instagram", description: "@thepapillonapp" },
+          tiktok: { title: "TikTok", description: "@thepapillonapp" },
+          x: { title: "X", description: "@thepapillonapp" },
+          youtube: { title: "YouTube", description: "@thepapillonapp" },
+          linkedin: { title: "LinkedIn", description: "Papillon" },
+        },
+      },
+      project: {
+        title: "The project",
+        links: {
+          docs: { title: "Documentation", description: "Guides and help" },
+          github: { title: "GitHub", description: "The code, open to everyone" },
+          donate: { title: "Ko-fi", description: "Support the project" },
+        },
+      },
+    },
+  },
+  notFound: {
+    metadataTitle: "Page not found – Papillon",
+    label: "Error 404 · Unexcused absence",
+    title: "This page is skipping class.",
+    description:
+      "We looked everywhere: study hall, the library, even the cafeteria. It flew off without leaving a note.",
+    home: "Back to home",
+    hint: "Try to catch the butterfly.",
+  },
   footer: {
     team: {
-      title: "A team & a vision for school",
+      title: "A team with a vision for school",
       description:
-        "Papillon is run by a nonprofit of students and young developers. We picture a school life centered on students, and we build it together, in the open.",
-      about: "Who we are",
+        "Papillon is run by a nonprofit of students and young developers. We believe school life should revolve around students, and we’re building it together, in the open.",
+      about: "Meet the team",
       linkedin: "LinkedIn",
       photoAlt: "The Papillon team",
     },
-    association: "Association Papillon",
-    copyright: "© 2026 Association Papillon & contributors. All rights reserved.",
+    association: "Papillon (nonprofit)",
+    copyright: "© 2026 Papillon & contributors. All rights reserved.",
     columns: {
       product: {
         title: "Features",
         links: {
-          grades: "Grades & averages",
+          grades: "Grades",
           schedule: "Schedule",
           homework: "Homework",
           news: "News",
@@ -1005,21 +1032,20 @@ const en: Dictionary = {
       about: {
         title: "About",
         links: {
-          team: "Who we are",
-          blog: "Blog",
-          donate: "Support the project",
+          team: "Meet the team",
+          donate: "Donate",
           privacy: "Privacy",
         },
       },
       developers: {
         title: "Developers",
         links: {
-          docs: "Documentation",
+          docs: "Docs",
           github: "GitHub",
         },
       },
       social: {
-        title: "Find us",
+        title: "Follow us",
         links: {
           x: "X (formerly Twitter)",
           instagram: "Instagram",

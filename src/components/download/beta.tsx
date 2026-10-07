@@ -14,7 +14,7 @@ export function Beta({ t }: BetaProps) {
   ] as const;
 
   return (
-    <section className="px-4 pb-24 lg:px-5 lg:pb-32">
+    <section className="px-6 pb-24 lg:pb-32">
       <FadeUp className="mx-auto flex max-w-6xl flex-col items-center gap-4 rounded-3xl border border-foreground/10 px-6 py-12 text-center">
         <h2 className="text-2xl font-semibold tracking-tight">{t.title}</h2>
         <p className="max-w-xl text-lg/normal text-pretty text-foreground/60">{t.description}</p>

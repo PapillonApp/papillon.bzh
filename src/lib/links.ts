@@ -6,14 +6,12 @@ export type LinkKey = { [Column in keyof Columns]: keyof Columns[Column]["links"
 export const discordUrl = "https://discord.gg/wVKWBRTbfh";
 export const linkedinUrl = "https://www.linkedin.com/company/getpapillonapp";
 
-// TODO: replace "#" once the blog page exists.
 export const linkHrefs: Record<LinkKey, string> = {
   grades: "/grades",
   schedule: "/schedule",
   homework: "/homework",
   news: "/news",
   team: "/association",
-  blog: "#",
   donate: "https://ko-fi.com/thepapillonapp",
   privacy: "https://docs.papillon.bzh/privacy-policy",
   docs: "https://docs.papillon.bzh",

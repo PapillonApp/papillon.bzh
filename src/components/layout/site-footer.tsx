@@ -15,7 +15,7 @@ export async function SiteFooter() {
 
   return (
     <footer className="overflow-hidden bg-primary-dark text-white">
-      <div className="mx-auto max-w-7xl px-4 lg:px-5">
+      <div className="mx-auto max-w-7xl px-6">
         <section className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
           <Image
             src={team}

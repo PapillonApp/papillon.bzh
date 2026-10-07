@@ -13,7 +13,7 @@ type CtaProps = {
 
 export function Cta({ t, image, stores, locale }: CtaProps) {
   return (
-    <section className="px-4 pb-24 lg:px-5 lg:pb-32">
+    <section className="px-6 pb-24 lg:pb-32">
       <FadeUp className="theme-primary mx-auto grid max-w-6xl items-center overflow-hidden rounded-4xl bg-background lg:grid-cols-2">
         <div className="flex flex-col items-center gap-5 px-6 pt-14 text-center lg:items-start lg:py-20 lg:pl-16 lg:text-left">
           <h2 className="text-3xl font-semibold tracking-tight text-balance lg:text-4xl">
