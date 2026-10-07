@@ -30,7 +30,7 @@ export async function Adoption() {
           {stats.map(({ key, withStar }) => (
             <div key={key} className="flex flex-col-reverse items-center gap-2 text-center">
               <dt className="text-md text-foreground/60">{t.stats[key].label}</dt>
-              <dd className="flex items-center gap-2 text-4xl font-semibold tracking-tight lg:text-5xl">
+              <dd className="flex items-center gap-2 text-4xl font-bold tracking-tight lg:text-5xl">
                 <StatValue value={t.stats[key].value} />
                 {withStar && <Star aria-hidden className="size-8 text-primary lg:size-10" />}
               </dd>
@@ -51,7 +51,7 @@ function StatValue({ value }: { value: string }) {
   return (
     <span>
       {number}
-      <span className="opacity-50">{suffix}</span>
+      <span className="">{suffix}</span>
     </span>
   );
 }
