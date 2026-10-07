@@ -1,4 +1,7 @@
+"use client";
+
 import { PapillonApp } from "@getpapillon/papicons";
+import { useParams } from "next/navigation";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { Chevron } from "./chevron";
 
@@ -25,13 +28,14 @@ type DownloadButtonProps = {
 
 export function DownloadButton({ t, variant, compactOnMobile = false }: DownloadButtonProps) {
   const style = variants[variant];
+  const { lang } = useParams<{ lang: string }>();
 
   return (
     <div
       className={`flex shrink-0 items-stretch rounded-full text-md font-semibold transition-[color,background-color,scale] duration-300 active:scale-97 active:duration-150 ${style.root}`}
     >
       <a
-        href="#"
+        href={`/${lang}/download`}
         className={`flex items-center gap-1.5 rounded-l-full px-3 transition-[background-color] hover:bg-current/10 ${style.main} ${compactOnMobile ? "max-sm:rounded-r-full" : ""}`}
       >
         <PapillonApp aria-hidden className={style.icon} />

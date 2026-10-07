@@ -276,6 +276,116 @@ const fr = {
       ],
     },
   },
+  association: {
+    metadataTitle: "Qui sommes-nous ? – Papillon",
+    hero: {
+      label: "Association Papillon",
+      title: "Faire équipe pour faire mieux.",
+      description:
+        "Papillon, c’est aussi 6 étudiants passionnés qui cherchent toujours à créer l’inattendu pour fournir une expérience au-delà des attentes.",
+      discord: "Rejoindre le Discord",
+    },
+    values: [
+      {
+        title: "On ne peut pas plaire à tout le monde, mais on fait tout pour vous plaire.",
+        description:
+          "On ne veut pas juste une application, mais construire une communauté qui s’engage à créer des outils éducatifs qui dépassent les attentes. Papillon, c’est une équipe de passionnés, qui se dédie à faire toujours plus pour vous.",
+      },
+      {
+        title: "Passionnés par ce qui vous change de la routine.",
+        description:
+          "Chercher à faire mieux, toujours, et encore. C’est notre moteur. Papillon, c’est une équipe qui réfléchit constamment à comment faire autrement, pour apporter une expérience qui fait un vent de frais.",
+      },
+      {
+        title: "Même sous les pires tempêtes, on restera soudés.",
+        description:
+          "On est une équipe qui croit en la force du collectif. Papillon, c’est une équipe qui avance ensemble, qui partage les mêmes valeurs, et qui avance même quand la contrainte est forte.",
+      },
+    ],
+    team: {
+      title: "Mais c’est qui, Papillon ?",
+      description:
+        "En plus des centaines de contributeurs que nous remercions chaleureusement, Papillon c’est aussi une équipe de passionnés qui travaillent chaque jour pour faire vivre le projet.",
+      members: {
+        vince: {
+          role: "Président",
+          description:
+            "Fondateur et président du projet, il touche un peu à tout ce qui parle Papillon.",
+        },
+        lucas: {
+          role: "Vice-président",
+          description:
+            "Lucas a rejoint Papillon à ses débuts et participe activement à la direction du projet.",
+        },
+        tom: {
+          role: "Designer UI/UX",
+          description:
+            "Artiste du projet, il s’occupe de l’identité visuelle et de l’interface de Papillon.",
+        },
+        raphael: {
+          role: "Développeur",
+          description:
+            "Grand génie du mal et du code, c’est lui à qui on refile les tâches ingrates.",
+        },
+        remy: {
+          role: "Développeur",
+          description:
+            "Visionnaire du code et du design, il met un coup de pinceau aux fonctionnalités.",
+        },
+        mael: {
+          role: "Développeur",
+          description: "Il touche à tout… surtout quand il veut « juste voir ce que ça fait ».",
+        },
+      },
+    },
+  },
+  downloadPage: {
+    metadataTitle: "Télécharger Papillon",
+    hero: {
+      label: "Gratuit, sans pub, open source",
+      title: "Votre vie scolaire, dans votre poche.",
+      description:
+        "Notes, emploi du temps, devoirs et menus de la cantine : installez Papillon et retrouvez tout en un instant.",
+      rating: "{rating} sur 5 · {downloads} téléchargements",
+      imageAlt: "Papillon ouvert sur un iPhone",
+      qrTitle: "Scannez pour télécharger",
+      qrDescription: "Visez ce code avec l’appareil photo de votre téléphone, il vous mène au bon store.",
+      qrAlt: "QR code vers la page de téléchargement de Papillon",
+    },
+    stores: {
+      appStore: "Télécharger dans l’App Store",
+      googlePlay: "Disponible sur Google Play",
+    },
+    platforms: {
+      title: "Sur tous vos appareils",
+      description:
+        "Téléphone, tablette ou ordinateur : Papillon s’installe là où vous en avez besoin.",
+      items: {
+        apple: {
+          name: "iPhone et iPad",
+          description: "Liquid Glass et cours en direct. Disponible en France et en Suisse.",
+          cta: "Voir sur l’App Store",
+        },
+        android: {
+          name: "Android",
+          description: "Material You et les couleurs de votre fond d’écran. Disponible partout.",
+          cta: "Voir sur Google Play",
+        },
+        mac: {
+          name: "Mac",
+          description: "Une vraie fenêtre Mac pour garder un œil sur votre journée en travaillant.",
+          cta: "Voir sur le Mac App Store",
+        },
+      },
+    },
+    beta: {
+      title: "Versions bêta",
+      description:
+        "Rejoignez nos programmes de test pour accéder aux dernières fonctionnalités en avant-première.",
+      testFlight: "Rejoindre TestFlight pour iOS",
+      googlePlay: "Rejoindre la bêta Google Play pour Android",
+    },
+  },
   footer: {
     team: {
       title: "Une équipe & une vision de l’école",
@@ -283,7 +393,7 @@ const fr = {
         "Papillon est porté par une association d’élèves, d’étudiants et de jeunes développeurs. Nous imaginons une vie scolaire centrée sur les élèves, et nous la construisons ensemble, en open source.",
       about: "Qui sommes-nous ?",
       linkedin: "LinkedIn",
-      photoPlaceholder: "Photo de l’équipe à venir",
+      photoAlt: "L’équipe de Papillon",
     },
     association: "Association Papillon",
     copyright: "© 2026 Association Papillon & contributeurs. Tous droits réservés.",

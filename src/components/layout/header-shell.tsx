@@ -14,10 +14,13 @@ const lightAfterScroll = 8;
 
 const headerMiddle = 40;
 
-function subscribeToScroll(onChange: () => void) {
+function subscribeToPage(onChange: () => void) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.body, { childList: true, subtree: true });
   window.addEventListener("scroll", onChange, { passive: true });
   window.addEventListener("resize", onChange);
   return () => {
+    observer.disconnect();
     window.removeEventListener("scroll", onChange);
     window.removeEventListener("resize", onChange);
   };
@@ -31,15 +34,18 @@ function isOverDarkSection() {
 }
 
 function isOverDarkHero() {
-  return Boolean(document.querySelector("[data-dark-hero]")) && window.scrollY <= lightAfterScroll;
+  return (
+    Boolean(document.querySelector("[data-dark-hero], [data-primary-hero]")) &&
+    window.scrollY <= lightAfterScroll
+  );
 }
 
 export function HeaderShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const overDarkHero = useSyncExternalStore(subscribeToScroll, isOverDarkHero, () =>
-    isHome(pathname),
+  const overDarkHero = useSyncExternalStore(subscribeToPage, isOverDarkHero, () =>
+    startsOverDarkHero(pathname),
   );
-  const overDarkSection = useSyncExternalStore(subscribeToScroll, isOverDarkSection, () => false);
+  const overDarkSection = useSyncExternalStore(subscribeToPage, isOverDarkSection, () => false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -59,6 +65,6 @@ export function HeaderShell({ children }: { children: ReactNode }) {
   );
 }
 
-function isHome(pathname: string) {
-  return pathname.split("/").filter(Boolean).length <= 1;
+function startsOverDarkHero(pathname: string) {
+  return ["", "download"].includes(pathname.split("/")[2] ?? "");
 }

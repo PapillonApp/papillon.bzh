@@ -275,6 +275,114 @@ const en: Dictionary = {
       ],
     },
   },
+  association: {
+    metadataTitle: "About us – Papillon",
+    hero: {
+      label: "Association Papillon",
+      title: "Teaming up to do better.",
+      description:
+        "Papillon is also 6 passionate students who always strive to create the unexpected and deliver an experience beyond expectations.",
+      discord: "Join the Discord",
+    },
+    values: [
+      {
+        title: "We can’t please everyone, but we do everything we can to please you.",
+        description:
+          "We don’t just want an app, we want to build a community committed to creating educational tools that go beyond expectations. Papillon is a team of passionate people, dedicated to always doing more for you.",
+      },
+      {
+        title: "Passionate about what breaks you out of the routine.",
+        description:
+          "Always looking to do better, again and again. That’s what drives us. Papillon is a team that constantly thinks about how to do things differently, to bring an experience that feels like a breath of fresh air.",
+      },
+      {
+        title: "Even through the worst storms, we’ll stick together.",
+        description:
+          "We’re a team that believes in the strength of the collective. Papillon is a team that moves forward together, shares the same values, and keeps going even when the pressure is high.",
+      },
+    ],
+    team: {
+      title: "So who is Papillon?",
+      description:
+        "Alongside the hundreds of contributors we warmly thank, Papillon is also a team of passionate people working every day to keep the project alive.",
+      members: {
+        vince: {
+          role: "President",
+          description:
+            "Founder and president of the project, he dabbles in everything Papillon-related.",
+        },
+        lucas: {
+          role: "Vice-president",
+          description:
+            "Lucas joined Papillon in its early days and is actively involved in steering the project.",
+        },
+        tom: {
+          role: "UI/UX Designer",
+          description:
+            "The project’s artist, he takes care of Papillon’s visual identity and interface.",
+        },
+        raphael: {
+          role: "Developer",
+          description:
+            "Evil genius of code, he’s the one we hand all the thankless tasks to.",
+        },
+        remy: {
+          role: "Developer",
+          description:
+            "A visionary of code and design, he gives features a fresh coat of paint.",
+        },
+        mael: {
+          role: "Developer",
+          description: "He tinkers with everything… especially when he “just wants to see what happens”.",
+        },
+      },
+    },
+  },
+  downloadPage: {
+    metadataTitle: "Download Papillon",
+    hero: {
+      label: "Free, ad-free, open source",
+      title: "Your school life, in your pocket.",
+      description:
+        "Grades, schedule, homework and canteen menus: install Papillon and find everything in an instant.",
+      rating: "{rating} out of 5 · {downloads} downloads",
+      imageAlt: "Papillon open on an iPhone",
+      qrTitle: "Scan to download",
+      qrDescription: "Point your phone’s camera at this code, it takes you to the right store.",
+      qrAlt: "QR code to the Papillon download page",
+    },
+    stores: {
+      appStore: "Download on the App Store",
+      googlePlay: "Get it on Google Play",
+    },
+    platforms: {
+      title: "On all your devices",
+      description: "Phone, tablet or computer: Papillon installs wherever you need it.",
+      items: {
+        apple: {
+          name: "iPhone and iPad",
+          description: "Liquid Glass and live classes. Available in France and Switzerland.",
+          cta: "View on the App Store",
+        },
+        android: {
+          name: "Android",
+          description: "Material You and your wallpaper’s colors. Available everywhere.",
+          cta: "View on Google Play",
+        },
+        mac: {
+          name: "Mac",
+          description: "A real Mac window to keep an eye on your day while you work.",
+          cta: "View on the Mac App Store",
+        },
+      },
+    },
+    beta: {
+      title: "Beta versions",
+      description: "Join our testing programs to try the latest features before everyone else.",
+      testFlight: "Join TestFlight for iOS",
+      googlePlay: "Join the Google Play beta for Android",
+    },
+  },
   footer: {
     team: {
       title: "A team & a vision for school",
@@ -282,7 +390,7 @@ const en: Dictionary = {
         "Papillon is run by a nonprofit of students and young developers. We picture a school life centered on students, and we build it together, in the open.",
       about: "Who we are",
       linkedin: "LinkedIn",
-      photoPlaceholder: "Team photo coming soon",
+      photoAlt: "The Papillon team",
     },
     association: "Association Papillon",
     copyright: "© 2026 Association Papillon & contributors. All rights reserved.",

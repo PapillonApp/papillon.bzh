@@ -1,21 +1,24 @@
 import { ExternalLink } from "@getpapillon/papicons";
+import Image from "next/image";
+import team from "@/assets/team/PapillonTeam.png";
 import { Logo } from "@/components/ui/logo";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
-import { getDictionary } from "@/i18n/server";
+import { getDictionary, getLocale } from "@/i18n/server";
+import { discordUrl } from "@/lib/links";
 
 type Columns = Dictionary["footer"]["columns"];
 type LinkKey = { [Column in keyof Columns]: keyof Columns[Column]["links"] }[keyof Columns];
 
 const linkedinUrl = "https://www.linkedin.com/company/getpapillonapp";
 
-// TODO: replace "#" once the feature, "Qui sommes-nous" and blog pages exist.
+// TODO: replace "#" once the feature and blog pages exist.
 const linkHrefs: Record<LinkKey, string> = {
   grades: "#",
   schedule: "#",
   homework: "#",
   canteen: "#",
   news: "#",
-  team: "#",
+  team: "/association",
   blog: "#",
   donate: "https://ko-fi.com/thepapillonapp",
   privacy: "https://docs.papillon.bzh/privacy-policy",
@@ -26,13 +29,13 @@ const linkHrefs: Record<LinkKey, string> = {
   tiktok: "https://tiktok.com/@thepapillonapp",
   youtube: "https://youtube.com/@thepapillonapp",
   linkedin: linkedinUrl,
-  discord: "https://discord.gg/wVKWBRTbfh",
+  discord: discordUrl,
 };
 
 const externalProps = { target: "_blank", rel: "noreferrer" } as const;
 
 export async function SiteFooter() {
-  const dict = await getDictionary();
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
   const t = dict.footer;
   const columns = Object.keys(t.columns) as (keyof Columns)[];
 
@@ -40,9 +43,12 @@ export async function SiteFooter() {
     <footer className="overflow-hidden bg-primary-dark text-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-5">
         <section className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
-          <div className="flex aspect-4/3 items-center justify-center rounded-2xl bg-white/5 mask-b-from-50%">
-            <span className="text-md text-white/60">{t.team.photoPlaceholder}</span>
-          </div>
+          <Image
+            src={team}
+            alt={t.team.photoAlt}
+            sizes="(min-width: 1024px) 600px, 90vw"
+            className="w-full -rotate-2"
+          />
           <div className="flex flex-col items-start gap-5">
             <h2 className="text-3xl font-semibold tracking-tight text-balance lg:text-5xl">
               {t.team.title}
@@ -50,7 +56,7 @@ export async function SiteFooter() {
             <p className="text-lg/normal text-pretty text-white/70">{t.team.description}</p>
             <div className="mt-3 flex flex-wrap gap-3">
               <a
-                href="#"
+                href={`/${locale}${linkHrefs.team}`}
                 className="flex h-10 items-center rounded-full bg-white px-5 text-md font-semibold text-primary-dark transition hover:bg-white/85 active:scale-97"
               >
                 <span className="text-trim">{t.team.about}</span>
@@ -80,7 +86,8 @@ export async function SiteFooter() {
               <h2 className="text-md font-semibold">{t.columns[column].title}</h2>
               <ul className="flex flex-col gap-3">
                 {Object.entries(t.columns[column].links).map(([key, label]) => {
-                  const href = linkHrefs[key as LinkKey];
+                  const target = linkHrefs[key as LinkKey];
+                  const href = target.startsWith("/") ? `/${locale}${target}` : target;
                   return (
                     <li key={key}>
                       <a

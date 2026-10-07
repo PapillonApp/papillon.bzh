@@ -60,6 +60,13 @@
   color: var(--color-foreground);
 }
 
+@utility theme-primary {
+  --color-background: var(--color-primary);
+  --color-foreground: #ffffff;
+  --color-surface: color-mix(in oklab, #ffffff 12%, var(--color-primary));
+  color: var(--color-foreground);
+}
+
 @utility scrollbar-none {
   scrollbar-width: none;
 }
