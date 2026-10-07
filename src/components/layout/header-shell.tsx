@@ -1,5 +1,6 @@
 "use client";
 
+import { MotionConfig } from "motion/react";
 import { usePathname } from "next/navigation";
 import { createContext, type ReactNode, useContext, useState, useSyncExternalStore } from "react";
 
@@ -52,7 +53,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
           aria-hidden
           className="absolute inset-0 -z-10 border-b border-foreground/5 bg-background/85 group-data-dark/header:border-foreground/10 opacity-0 backdrop-blur-xl transition-[opacity,background-color,border-color] duration-300 group-data-light/header:opacity-100"
         />
-        {children}
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </header>
     </HeaderMenuContext>
   );

@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       lang={await getLocale()}
       className={`${snPro.variable} antialiased motion-safe:scroll-smooth`}
     >
-      <body className="min-h-dvh font-sans">
+      <body className="min-h-dvh font-sans selection:bg-primary/25">
         <SiteHeader />
         {children}
         <SiteFooter />

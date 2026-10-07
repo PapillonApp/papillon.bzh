@@ -12,7 +12,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
   const id = useId();
 
   return (
-    <ul className="divide-y divide-black/10 border-y border-black/10">
+    <ul className="divide-y divide-foreground/10 border-y border-foreground/10">
       {items.map((item, index) => {
         const open = openIndex === index;
         return (
@@ -26,7 +26,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 onClick={() => setOpenIndex(open ? null : index)}
                 className="flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-semibold"
               >
-                <span className="flex items-center gap-4">
+                <span className="flex items-center gap-4 text-balance">
                   {item.emoji && <span aria-hidden className="text-2xl">{item.emoji}</span>}
                   {item.question}
                 </span>

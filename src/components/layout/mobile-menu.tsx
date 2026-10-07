@@ -10,7 +10,7 @@ import { LanguageMenu } from "./language-menu";
 import { NavEntry, navEntryStyle, navItems } from "./nav";
 
 const entryStyle =
-  "flex w-full items-center justify-between border-b border-black/10 py-5 text-2xl transition-colors hover:text-primary";
+  "flex w-full items-center justify-between border-b border-foreground/10 py-5 text-2xl transition-colors hover:text-primary";
 
 type MobileMenuProps = {
   nav: Dictionary["nav"];
@@ -43,7 +43,7 @@ export function MobileMenu({ nav, language }: MobileMenuProps) {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen(!open)}
-        className="flex size-11 items-center justify-center rounded-full transition-[background-color] hover:bg-current/10 lg:hidden"
+        className="flex size-11 items-center justify-center rounded-full transition hover:bg-current/10 active:scale-95 lg:hidden"
       >
         {open ? <Cross aria-hidden className="size-6" /> : <Menu aria-hidden className="size-6" />}
       </button>

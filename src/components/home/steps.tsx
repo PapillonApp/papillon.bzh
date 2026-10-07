@@ -40,7 +40,7 @@ export async function Steps() {
               <span aria-hidden className="text-3xl font-semibold text-primary lg:text-4xl">
                 {index + 1}
               </span>
-              <h3 className="text-xl font-semibold tracking-tight lg:text-2xl">{step.title}</h3>
+              <h3 className="text-xl font-semibold tracking-tight text-balance lg:text-2xl">{step.title}</h3>
               <p className="text-md/normal text-pretty text-foreground/60">{step.description}</p>
             </div>
           </li>

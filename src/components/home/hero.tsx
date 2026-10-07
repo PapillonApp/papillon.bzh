@@ -71,7 +71,7 @@ export function Hero({ t, download }: HeroProps) {
           <DownloadButton t={download} variant="primary" />
           <a
             href="#features"
-            className="flex h-10 items-center gap-1.5 rounded-full border border-current/30 px-4 text-md font-medium text-current/60 transition-colors hover:border-current/50 hover:text-current/80"
+            className="flex h-10 items-center gap-1.5 rounded-full border border-current/30 px-4 text-md font-medium text-current/60 transition hover:border-current/50 hover:text-current/80 active:scale-97"
           >
             <Search aria-hidden className="size-6" />
             <span className="text-trim">{t.discover}</span>

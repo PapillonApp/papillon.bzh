@@ -19,7 +19,7 @@ export function FeatureCard({
     >
       <div className="relative min-h-48 flex-1 lg:min-h-52">{illustration}</div>
       <div className="flex flex-col gap-1 px-6 pb-6 lg:px-6 lg:pb-6">
-        <h3 className="text-xl font-bold tracking-tight">{title}</h3>
+        <h3 className="text-xl font-bold tracking-tight text-balance">{title}</h3>
         <p className="text-md/normal text-foreground/60">{description}</p>
       </div>
     </article>

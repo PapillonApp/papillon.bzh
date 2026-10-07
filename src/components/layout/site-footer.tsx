@@ -51,14 +51,14 @@ export async function SiteFooter() {
             <div className="mt-3 flex flex-wrap gap-3">
               <a
                 href="#"
-                className="flex h-10 items-center rounded-full bg-white px-5 text-md font-semibold text-primary-dark transition-colors hover:bg-white/85"
+                className="flex h-10 items-center rounded-full bg-white px-5 text-md font-semibold text-primary-dark transition hover:bg-white/85 active:scale-97"
               >
                 <span className="text-trim">{t.team.about}</span>
               </a>
               <a
                 href={linkedinUrl}
                 {...externalProps}
-                className="flex h-10 items-center gap-1.5 rounded-full border border-white/30 px-5 text-md font-medium transition-colors hover:bg-white/10"
+                className="flex h-10 items-center gap-1.5 rounded-full border border-white/30 px-5 text-md font-medium transition hover:bg-white/10 active:scale-97"
               >
                 <span className="text-trim">{t.team.linkedin}</span>
                 <ExternalLink aria-hidden className="size-5 text-white/60" />

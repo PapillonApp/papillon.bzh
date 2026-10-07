@@ -36,7 +36,7 @@ export function LanguageMenu({ t, triggerClassName, side, align }: LanguageMenuP
         </>
       }
     >
-      <HoverGroup highlightClassName="rounded-xl bg-black/5">
+      <HoverGroup highlightClassName="rounded-xl bg-foreground/5">
         <ul>
           {locales.map((locale) => (
             <li key={locale}>

@@ -77,7 +77,7 @@ export function Dropdown({
             onClick={(event) => {
               if ((event.target as Element).closest("a")) setOpen(false);
             }}
-            className={`absolute z-10 min-w-44 rounded-2xl border border-black/10 bg-background p-1.5 text-foreground shadow-xl ${placements[side]} ${alignments[align]}`}
+            className={`absolute z-10 min-w-44 rounded-2xl border border-foreground/10 bg-background p-1.5 text-foreground shadow-xl ${placements[side]} ${alignments[align]}`}
           >
             {children}
           </motion.div>

@@ -91,7 +91,7 @@ const delayedSlide = {
 };
 
 const arrowStyle =
-  "flex size-11 shrink-0 items-center justify-center rounded-full bg-surface transition-colors hover:bg-black/10 lg:size-12";
+  "flex size-11 shrink-0 items-center justify-center rounded-full bg-surface transition hover:bg-foreground/10 active:scale-95 lg:size-12";
 
 export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
   const reduceMotion = useReducedMotion();
