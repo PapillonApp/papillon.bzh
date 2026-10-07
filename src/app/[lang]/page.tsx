@@ -18,7 +18,7 @@ export default async function HomePage() {
       <Devices />
       <FeatureDemos />
       <Steps />
-      <div data-dark-section className="theme-dark bg-background py-12 lg:py-20">
+      <div data-dark-section className="theme-dark my-12 bg-background py-12 lg:my-20 lg:py-20">
         <Trust />
         <Adoption />
       </div>
