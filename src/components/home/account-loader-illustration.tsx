@@ -12,14 +12,14 @@ export function AccountLoaderIllustration({ title, description }: AccountLoaderI
 
   return (
     <>
-      <div className="absolute inset-0 bg-linear-to-b from-red-500/25 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-b from-swatch-pink/25 to-transparent" />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-8 text-center">
         <motion.svg
           aria-hidden
           viewBox="0 0 24 24"
           animate={reduceMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="mb-5 size-16 text-red-500"
+          className="mb-5 size-16 text-swatch-pink"
         >
           <circle
             cx="12"
