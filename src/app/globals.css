@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sn-pro), ui-sans-serif, system-ui, sans-serif;
+  /* Figma's SN Pro styles, converted to the Google Fonts weight axis */
+  --font-weight-book: 411;
+  --font-weight-normal: 467;
+  --font-weight-medium: 550;
+  --font-weight-semibold: 631;
+
+  --color-primary: #29947a;
+  --color-primary-dark: #154338;
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-surface: oklch(97% 0 0);
+
+  --text-md: 1rem;
+  --text-lg: 1.0625rem;
+  --text-5xl: 3.25rem;
+}
+
+@theme inline {
+  --color-page: color-mix(in oklab, var(--color-background) var(--page-light), var(--color-foreground));
+  --color-page-foreground: color-mix(
+    in oklab,
+    var(--color-foreground) var(--page-light),
+    var(--color-background)
+  );
+}
+
+@utility text-trim {
+  text-box: trim-both cap alphabetic;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+}
+
+@layer base {
+  :root {
+    --page-light: 100%;
+  }
+
+  :root:has([data-dark-hero]) {
+    --page-light: 0%;
+  }
+
+  body {
+    @apply bg-page text-foreground;
+    font-weight: var(--font-weight-normal);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}

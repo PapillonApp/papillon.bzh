@@ -1,0 +1,262 @@
+"use client";
+
+import { ChevronLeft, ChevronRight } from "@getpapillon/papicons";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import Image, { type StaticImageData } from "next/image";
+import { type KeyboardEvent, useId, useRef, useState } from "react";
+import duoClosed from "@/assets/devices/Devices-Duo-Closed.png";
+import android from "@/assets/devices/Devices-Pixel10.png";
+import iphone from "@/assets/devices/Devices-iPhone.png";
+import duoOpen from "@/assets/devices/iPhone Duo-Open.png";
+import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { easeOutPapillon } from "@/lib/motion";
+
+type DeviceKey = keyof Dictionary["home"]["devices"]["names"];
+
+const devices: { key: DeviceKey; isNew?: boolean }[] = [
+  { key: "iphone" },
+  { key: "android" },
+  { key: "ipad" },
+  { key: "mac" },
+  { key: "iphoneDuo", isNew: true },
+];
+
+type DuoState = "closed" | "open";
+
+const duoMockups: Record<DuoState, StaticImageData> = { closed: duoClosed, open: duoOpen };
+
+const mockups: Partial<Record<DeviceKey, StaticImageData>> = { iphone, android };
+
+const tallestMockup = Math.max(
+  ...[...Object.values(mockups), ...Object.values(duoMockups)].map((image) => image.height),
+);
+
+const slide = {
+  enter: (direction: number) => ({ opacity: 0, x: direction * 48 }),
+  center: { opacity: 1, x: 0 },
+  exit: (direction: number) => ({ opacity: 0, x: direction * -48 }),
+};
+
+const slideTransition = { duration: 0.4, ease: easeOutPapillon };
+
+const delayedSlide = {
+  ...slide,
+  center: { ...slide.center, transition: { ...slideTransition, delay: 0.08 } },
+};
+
+const arrowStyle =
+  "flex size-11 shrink-0 items-center justify-center rounded-full bg-surface transition-colors hover:bg-black/10 lg:size-12";
+
+export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
+  const reduceMotion = useReducedMotion();
+  const [{ index, direction }, setSelection] = useState({ index: 0, direction: 1 });
+  const [duoState, setDuoState] = useState<DuoState>("closed");
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const tabBarRef = useRef<HTMLDivElement>(null);
+  const id = useId();
+
+  const select = (next: number, step = next - index) => {
+    const wrapped = (next + devices.length) % devices.length;
+    setSelection({ index: wrapped, direction: Math.sign(step) || 1 });
+    centerTab(tabBarRef.current, tabRefs.current[wrapped]);
+    return wrapped;
+  };
+
+  const moveWithKeyboard = (event: KeyboardEvent) => {
+    const step = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
+    if (!step) return;
+    event.preventDefault();
+    tabRefs.current[select(index + step, step)]?.focus();
+  };
+
+  const device = devices[index];
+  const slideDirection = reduceMotion ? 0 : direction;
+  const isDuo = device.key === "iphoneDuo";
+  const mockup = isDuo ? duoMockups[duoState] : mockups[device.key];
+
+  return (
+    <div className="mt-10 flex flex-col items-center gap-8 lg:mt-14 lg:gap-12">
+      <div
+        ref={tabBarRef}
+        className="scrollbar-none max-w-full overflow-x-auto rounded-full bg-surface p-1"
+      >
+        <div
+          role="tablist"
+          aria-label={t.tabsLabel}
+          onKeyDown={moveWithKeyboard}
+          className="relative isolate flex gap-1"
+        >
+          {devices.map((item, itemIndex) => {
+            const selected = itemIndex === index;
+            return (
+              <button
+                key={item.key}
+                ref={(element) => {
+                  tabRefs.current[itemIndex] = element;
+                }}
+                type="button"
+                role="tab"
+                id={`${id}-tab-${item.key}`}
+                aria-selected={selected}
+                aria-controls={`${id}-panel`}
+                tabIndex={selected ? 0 : -1}
+                onClick={() => select(itemIndex)}
+                className={`relative flex h-9 shrink-0 items-center gap-2 rounded-full pl-4 text-md whitespace-nowrap transition-colors ${item.isNew ? "pr-1" : "pr-4"} ${selected ? "text-foreground" : "text-foreground/60 hover:text-foreground"}`}
+              >
+                {selected && (
+                  <motion.span
+                    layoutId={`${id}-indicator`}
+                    transition={{ type: "spring", bounce: 0.15, duration: 0.3 }}
+                    style={{ borderRadius: 999 }}
+                    className="absolute inset-0 -z-10 bg-background shadow-sm"
+                  />
+                )}
+                <span className="text-trim">{t.names[item.key]}</span>
+                {item.isNew && (
+                  <span className="flex h-7 items-center rounded-full bg-primary/15 px-2.5 text-sm font-semibold text-primary-dark">
+                    <span className="text-trim">{t.new}</span>
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div
+        role="tabpanel"
+        id={`${id}-panel`}
+        aria-labelledby={`${id}-tab-${device.key}`}
+        className="flex w-full max-w-6xl flex-col items-center gap-6 lg:gap-8"
+      >
+        <div className="flex w-full items-center gap-3 lg:gap-6">
+          <button
+            type="button"
+            aria-label={t.previous}
+            onClick={() => select(index - 1, -1)}
+            className={arrowStyle}
+          >
+            <ChevronLeft aria-hidden className="size-6" />
+          </button>
+
+          <div className="relative aspect-4/5 flex-1 overflow-hidden rounded-3xl bg-surface sm:aspect-video">
+            <AnimatePresence initial={false} custom={slideDirection}>
+              <motion.div
+                key={device.key}
+                custom={slideDirection}
+                variants={slide}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={slideTransition}
+                className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center"
+              >
+                {mockup ? (
+                  <AnimatePresence initial={false}>
+                    <motion.div
+                      key={mockup.src}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={slideTransition}
+                      className="absolute inset-0 flex items-center justify-center"
+                    >
+                      <Image
+                        src={mockup}
+                        alt={
+                          isDuo ? `${t.names.iphoneDuo} (${t.duo[duoState]})` : t.names[device.key]
+                        }
+                        sizes="(min-width: 1024px) 600px, 80vw"
+                        quality={90}
+                        style={{ height: `${(mockup.height / tallestMockup) * 88}%` }}
+                        className="w-auto max-w-11/12 object-contain"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                ) : (
+                  <>
+                    <span className="text-2xl font-semibold text-foreground/40 lg:text-4xl">
+                      {t.names[device.key]}
+                    </span>
+                    <span className="text-md text-foreground/60">{t.placeholder}</span>
+                  </>
+                )}
+                {isDuo && (
+                  <div
+                    role="radiogroup"
+                    aria-label={t.duo.label}
+                    className="absolute bottom-4 isolate flex rounded-full bg-background p-1 shadow-sm"
+                  >
+                    {(["closed", "open"] as const).map((state) => (
+                      <button
+                        key={state}
+                        type="button"
+                        role="radio"
+                        aria-checked={duoState === state}
+                        onClick={() => setDuoState(state)}
+                        className={`relative flex h-8 items-center rounded-full px-4 text-md transition-colors ${duoState === state ? "text-foreground" : "text-foreground/60 hover:text-foreground"}`}
+                      >
+                        {duoState === state && (
+                          <motion.span
+                            layoutId={`${id}-duo`}
+                            transition={{ type: "spring", bounce: 0.15, duration: 0.3 }}
+                            style={{ borderRadius: 999 }}
+                            className="absolute inset-0 -z-10 bg-surface"
+                          />
+                        )}
+                        <span className="text-trim">{t.duo[state]}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <button
+            type="button"
+            aria-label={t.next}
+            onClick={() => select(index + 1, 1)}
+            className={arrowStyle}
+          >
+            <ChevronRight aria-hidden className="size-6" />
+          </button>
+        </div>
+
+        <div className="relative grid max-w-2xl text-center">
+          {devices.map((item) => (
+            <p
+              key={item.key}
+              aria-hidden
+              className="invisible col-start-1 row-start-1 text-lg/normal text-pretty"
+            >
+              {t.details[item.key]}
+            </p>
+          ))}
+          <AnimatePresence initial={false} custom={slideDirection}>
+            <motion.p
+              key={device.key}
+              custom={slideDirection}
+              variants={delayedSlide}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={slideTransition}
+              className="absolute inset-0 text-lg/normal text-pretty text-foreground/60"
+            >
+              {t.details[device.key]}
+            </motion.p>
+          </AnimatePresence>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function centerTab(tabBar: HTMLElement | null, tab: HTMLElement | null) {
+  if (!tabBar || !tab) return;
+  tabBar.scrollTo({
+    left: tab.offsetLeft - (tabBar.clientWidth - tab.offsetWidth) / 2,
+    behavior: "smooth",
+  });
+}
