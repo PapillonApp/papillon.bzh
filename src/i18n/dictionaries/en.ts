@@ -26,7 +26,7 @@ const en: Dictionary = {
   home: {
     hero: {
       titleStart: "The new",
-      titleEnd: "school life",
+      titleEnd: "way to school",
       description:
         "One place for your grades, your canteen, your calendar, your homework, and more, in an experience designed to make student life easy, smooth, and part of your everyday routine.",
       imageAlt: "Papillon open on a foldable phone, showing today’s schedule",

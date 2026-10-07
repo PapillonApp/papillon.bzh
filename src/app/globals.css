@@ -53,6 +53,13 @@
   text-box: trim-both cap alphabetic;
 }
 
+@utility theme-dark {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-surface: oklch(20% 0 0);
+  color: var(--color-foreground);
+}
+
 @utility scrollbar-none {
   scrollbar-width: none;
 }

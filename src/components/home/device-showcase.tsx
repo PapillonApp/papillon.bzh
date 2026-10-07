@@ -346,7 +346,7 @@ function DeviceHotspot({ hotspot, content, hovered }: DeviceHotspotProps) {
         className="flex h-full items-stretch px-3"
       >
         <span
-          className={`w-0.5 rounded-full transition-colors duration-50 ${open ? "bg-foreground" : "bg-foreground/20"}`}
+          className={`w-0.5 rounded-full bg-foreground transition-opacity duration-150 ${open ? "opacity-100" : "opacity-20"}`}
         />
       </button>
       <AnimatePresence>

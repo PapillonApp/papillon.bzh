@@ -28,7 +28,7 @@ export function DownloadButton({ t, variant, compactOnMobile = false }: Download
 
   return (
     <div
-      className={`flex shrink-0 items-stretch rounded-full text-md font-semibold transition-colors ${style.root}`}
+      className={`flex shrink-0 items-stretch rounded-full text-md font-semibold transition-colors duration-300 ${style.root}`}
     >
       <a
         href="#"

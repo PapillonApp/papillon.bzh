@@ -16,8 +16,10 @@ export default async function HomePage() {
       <Features />
       <Devices />
       <Steps />
-      <Trust />
-      <Adoption />
+      <div data-dark-section className="theme-dark bg-background">
+        <Trust />
+        <Adoption />
+      </div>
       <Faq />
     </main>
   );

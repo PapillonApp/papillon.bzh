@@ -21,7 +21,7 @@ export async function SiteHeader() {
           <Link
             href={`/${locale}`}
             aria-label={dict.nav.home}
-            className="shrink-0 rounded-md transition-colors group-data-light/header:text-primary"
+            className="shrink-0 rounded-md transition-colors duration-300 group-data-light/header:text-primary"
           >
             <Logo aria-hidden className="h-6.5" />
           </Link>

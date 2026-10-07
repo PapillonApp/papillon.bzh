@@ -11,9 +11,22 @@ export const useHeaderMenu = () => useContext(HeaderMenuContext);
 
 const lightAfterScroll = 8;
 
+const headerMiddle = 40;
+
 function subscribeToScroll(onChange: () => void) {
   window.addEventListener("scroll", onChange, { passive: true });
-  return () => window.removeEventListener("scroll", onChange);
+  window.addEventListener("resize", onChange);
+  return () => {
+    window.removeEventListener("scroll", onChange);
+    window.removeEventListener("resize", onChange);
+  };
+}
+
+function isOverDarkSection() {
+  return [...document.querySelectorAll("[data-dark-section]")].some((section) => {
+    const { top, bottom } = section.getBoundingClientRect();
+    return top <= headerMiddle && bottom > headerMiddle;
+  });
 }
 
 function isOverDarkHero() {
@@ -25,17 +38,19 @@ export function HeaderShell({ children }: { children: ReactNode }) {
   const overDarkHero = useSyncExternalStore(subscribeToScroll, isOverDarkHero, () =>
     isHome(pathname),
   );
+  const overDarkSection = useSyncExternalStore(subscribeToScroll, isOverDarkSection, () => false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <HeaderMenuContext value={{ menuOpen, setMenuOpen }}>
       <header
         data-light={menuOpen || !overDarkHero || undefined}
-        className="group/header fixed inset-x-0 top-0 z-20 text-white transition-colors data-light:text-foreground"
+        data-dark={(overDarkSection && !menuOpen) || undefined}
+        className="group/header fixed inset-x-0 top-0 z-20 text-white transition-colors duration-300 data-light:text-foreground data-dark:theme-dark"
       >
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 border-b border-black/5 bg-background/85 opacity-0 backdrop-blur-xl transition-opacity group-data-light/header:opacity-100"
+          className="absolute inset-0 -z-10 border-b border-foreground/5 bg-background/85 group-data-dark/header:border-foreground/10 opacity-0 backdrop-blur-xl transition-[opacity,background-color,border-color] duration-300 group-data-light/header:opacity-100"
         />
         {children}
       </header>

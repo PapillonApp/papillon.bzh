@@ -30,7 +30,7 @@ export async function Trust() {
         title={t.title}
         description={t.description}
       />
-      <ul className="mx-auto mt-12 grid max-w-6xl gap-14 md:grid-cols-3 md:gap-0 md:divide-x md:divide-black/10 lg:mt-20">
+      <ul className="mx-auto mt-12 grid max-w-6xl gap-14 md:grid-cols-3 md:gap-0 md:divide-x md:divide-foreground/10 lg:mt-20">
         {pillars.map(({ key, proof }, index) => (
           <li key={key} className="md:px-8 lg:px-10">
             <FadeUp delay={index * 0.08} className="flex h-full flex-col gap-8">
