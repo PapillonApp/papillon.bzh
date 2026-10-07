@@ -40,24 +40,47 @@ const fr = {
           title: "Connecté",
           description:
             "Pronote, ÉcoleDirecte, Skolengo et votre cantine. Connectez vos comptes, Papillon s’occupe du reste.",
+          loadingTitle: "Préparation de ton compte",
+          loadingDescription: "Nous sommes en train de te connecter. Cela peut prendre quelques secondes.",
         },
         private: {
           title: "Privé",
           description:
             "Vos données restent sur votre appareil. Libre, open source, sans pub ni pistage.",
+          passwordPlaceholder: "Mot de passe",
         },
         instant: {
           title: "Instantané",
           description: "Votre journée en un coup d’œil. Même hors connexion.",
+          homework: {
+            emoji: "🇬🇧",
+            subject: "Anglais LV1",
+            due: "demain",
+            content: "Compléter tous les exercices de la page 19 ainsi que les annexes en pièce jointe",
+            tag: "Présentation orale",
+            done: "Terminé",
+            markDone: "Marquer comme terminé",
+          },
         },
         smart: {
           title: "Malin",
           description:
             "Moyennes calculées pour vous. L’évolution de vos notes, trimestre après trimestre.",
+          averageLabel: "Moyenne des matières",
+          averageSource: "par l’établissement",
         },
         personal: {
           title: "À votre image",
           description: "Couleurs, emojis, noms de matières. Chaque détail se personnalise.",
+          colorsLabel: "Couleur de l’app",
+          colors: {
+            pink: "Rose",
+            orange: "Orange",
+            green: "Vert",
+            purple: "Violet",
+            blue: "Bleu",
+            gray: "Gris",
+          },
         },
       },
     },
@@ -165,6 +188,7 @@ const fr = {
       description:
         "Papillon est développé en open source par une communauté d’élèves et d’étudiants. Pas de pub, pas de pistage : l’app existe pour vous, pas pour vos données.",
       github: "Voir le code sur GitHub",
+      contributors: "{count} contributeurs sur GitHub",
       pillars: {
         openSource: {
           title: "Libre et open source",
@@ -202,41 +226,49 @@ const fr = {
         "Tout ce qu’il faut savoir avant de télécharger Papillon. Une autre question ? Écrivez-nous à support@papillon.bzh.",
       items: [
         {
+          emoji: "💸",
           question: "Papillon est-il gratuit ?",
           answer:
             "Oui, entièrement. Papillon ne contient aucune publicité et ne collecte aucune donnée personnelle. L’app est développée par des élèves et de jeunes développeurs.",
         },
         {
+          emoji: "🔒",
           question: "Mes données sont-elles en sécurité ?",
           answer:
             "Vos identifiants ne sont ni conservés ni transmis à Papillon, et vos informations restent sur votre appareil. Le code étant open source, chacun peut vérifier comment l’app fonctionne.",
         },
         {
+          emoji: "🔌",
           question: "Quels services sont compatibles ?",
           answer:
             "Papillon fonctionne avec Pronote, ÉcoleDirecte, Skolengo et Turboself. D’autres services, comme le Crous et les ENT régionaux, arrivent bientôt.",
         },
         {
+          emoji: "🏫",
           question: "Mon établissement n’apparaît pas dans la liste, que faire ?",
           answer:
             "Certains établissements choisissent de ne pas figurer dans l’annuaire Pronote, géré par Index Education. Vous pouvez quand même vous connecter en scannant un QR code ou en saisissant l’adresse de votre établissement.",
         },
         {
+          emoji: "👨‍👩‍👧",
           question: "Puis-je utiliser Papillon avec un compte parent ou enseignant ?",
           answer:
             "Pas pour le moment : seuls les comptes élèves sont pris en charge. D’autres types de comptes pourraient arriver plus tard.",
         },
         {
+          emoji: "🌍",
           question: "Papillon est-il disponible hors de France ?",
           answer:
             "Sur Android, Papillon est disponible partout. Sur iOS, l’app est pour l’instant limitée à la France et à la Suisse, pour des raisons légales et liées à l’App Store.",
         },
         {
+          emoji: "🧑‍💻",
           question: "Que veut dire « open source » ?",
           answer:
             "Le code de Papillon est public : chacun peut le lire, vérifier la sécurité de l’app et proposer des améliorations sur GitHub.",
         },
         {
+          emoji: "💬",
           question: "Comment contacter l’équipe ?",
           answer:
             "Écrivez-nous à support@papillon.bzh, ou retrouvez-nous sur Discord, X, Instagram, TikTok et LinkedIn.",

@@ -31,8 +31,8 @@ export async function Adoption() {
             <div key={key} className="flex flex-col-reverse items-center gap-2 text-center">
               <dt className="text-md text-foreground/60">{t.stats[key].label}</dt>
               <dd className="flex items-center gap-2 text-4xl font-semibold tracking-tight lg:text-5xl">
-                {t.stats[key].value}
-                {withStar && <Star aria-hidden className="size-8 lg:size-10" />}
+                <StatValue value={t.stats[key].value} />
+                {withStar && <Star aria-hidden className="size-8 text-primary lg:size-10" />}
               </dd>
             </div>
           ))}
@@ -42,5 +42,16 @@ export async function Adoption() {
         <ReviewMarquee reviews={reviews} label={t.reviewsLabel} ratingLabel={t.ratingLabel} />
       </div>
     </section>
+  );
+}
+
+function StatValue({ value }: { value: string }) {
+  const [, number, suffix] = value.match(/^([\d.,]+)(.*)$/) ?? [value, value, ""];
+
+  return (
+    <span>
+      {number}
+      <span className="opacity-50">{suffix}</span>
+    </span>
   );
 }

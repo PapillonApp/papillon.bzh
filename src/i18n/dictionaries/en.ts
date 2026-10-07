@@ -41,22 +41,45 @@ const en: Dictionary = {
           title: "Connected",
           description:
             "Pronote, ÉcoleDirecte, Skolengo and your canteen. Connect your accounts, Papillon handles the rest.",
+          loadingTitle: "Setting up your account",
+          loadingDescription: "We’re signing you in. This can take a few seconds.",
         },
         private: {
           title: "Private",
           description: "Your data stays on your device. Free, open source, no ads, no tracking.",
+          passwordPlaceholder: "Password",
         },
         instant: {
           title: "Instant",
           description: "Your day at a glance. Even offline.",
+          homework: {
+            emoji: "🇬🇧",
+            subject: "English",
+            due: "tomorrow",
+            content: "Finish all the exercises on page 19 and the attached appendices",
+            tag: "Oral presentation",
+            done: "Done",
+            markDone: "Mark as done",
+          },
         },
         smart: {
           title: "Smart",
           description: "Averages calculated for you. Watch your grades evolve, term after term.",
+          averageLabel: "Subject average",
+          averageSource: "from your school",
         },
         personal: {
           title: "Yours",
           description: "Colors, emojis, subject names. Every detail is yours to tweak.",
+          colorsLabel: "App color",
+          colors: {
+            pink: "Pink",
+            orange: "Orange",
+            green: "Green",
+            purple: "Purple",
+            blue: "Blue",
+            gray: "Gray",
+          },
         },
       },
     },
@@ -164,6 +187,7 @@ const en: Dictionary = {
       description:
         "Papillon is developed in the open by a community of students. No ads, no tracking: the app exists for you, not for your data.",
       github: "View the code on GitHub",
+      contributors: "{count} contributors on GitHub",
       pillars: {
         openSource: {
           title: "Free and open source",
@@ -201,41 +225,49 @@ const en: Dictionary = {
         "Everything you need to know before downloading Papillon. Another question? Write to us at support@papillon.bzh.",
       items: [
         {
+          emoji: "💸",
           question: "Is Papillon free?",
           answer:
             "Yes, completely. Papillon has no ads and collects no personal data. The app is developed by students and young developers.",
         },
         {
+          emoji: "🔒",
           question: "Is my data safe?",
           answer:
             "Your credentials are never stored or sent to Papillon, and your information stays on your device. Since the code is open source, anyone can check how the app works.",
         },
         {
+          emoji: "🔌",
           question: "Which services are supported?",
           answer:
             "Papillon works with Pronote, ÉcoleDirecte, Skolengo, and Turboself. More services, like the Crous and regional digital workspaces, are coming soon.",
         },
         {
+          emoji: "🏫",
           question: "My school isn’t in the list. What can I do?",
           answer:
             "Some schools choose not to appear in the Pronote directory, which is managed by Index Education. You can still sign in by scanning a QR code or entering your school’s address.",
         },
         {
+          emoji: "👨‍👩‍👧",
           question: "Can I use Papillon with a parent or teacher account?",
           answer:
             "Not yet: only student accounts are supported for now. Other account types may come later.",
         },
         {
+          emoji: "🌍",
           question: "Is Papillon available outside France?",
           answer:
             "On Android, Papillon is available everywhere. On iOS, the app is currently limited to France and Switzerland, for legal and App Store reasons.",
         },
         {
+          emoji: "🧑‍💻",
           question: "What does “open source” mean?",
           answer:
             "Papillon’s code is public: anyone can read it, check the app’s security, and suggest improvements on GitHub.",
         },
         {
+          emoji: "💬",
           question: "How can I contact the team?",
           answer:
             "Write to us at support@papillon.bzh, or find us on Discord, X, Instagram, TikTok, and LinkedIn.",

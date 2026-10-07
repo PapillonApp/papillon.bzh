@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { useId, useState } from "react";
 import { easeOutPapillon } from "@/lib/motion";
 
-type AccordionItem = { question: string; answer: string };
+type AccordionItem = { emoji?: string; question: string; answer: string };
 
 export function Accordion({ items }: { items: AccordionItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -26,7 +26,10 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 onClick={() => setOpenIndex(open ? null : index)}
                 className="flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-semibold"
               >
-                {item.question}
+                <span className="flex items-center gap-4">
+                  {item.emoji && <span aria-hidden className="text-2xl">{item.emoji}</span>}
+                  {item.question}
+                </span>
                 <motion.span
                   animate={{ rotate: open ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: easeOutPapillon }}
