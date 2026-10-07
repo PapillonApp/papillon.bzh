@@ -452,7 +452,6 @@ const fr = {
       },
       highlights: {
         evolution: {
-          eyebrow: "Évolution",
           title: "Voyez où vous en êtes, d’un coup d’œil.",
           description:
             "Votre moyenne générale s’affiche en grand, avec sa courbe sur toute la période. Glissez le doigt dessus pour retrouver votre moyenne à n’importe quelle date.",
@@ -463,7 +462,6 @@ const fr = {
           imageAlt: "La courbe d’évolution de Papillon, avec une moyenne estimée à 14,83 sur 20 au 4 octobre",
         },
         methods: {
-          eyebrow: "Calcul",
           title: "Une moyenne calculée pour vous, comme vous le voulez.",
           description:
             "Papillon tient compte des coefficients et vous laisse choisir la méthode qui correspond à votre établissement. Quand celui-ci publie sa propre moyenne, c’est elle qui s’affiche.",
@@ -475,7 +473,6 @@ const fr = {
           imageAlt: "Le choix de la méthode de calcul de la moyenne générale dans Papillon",
         },
         detail: {
-          eyebrow: "Détail",
           title: "Chaque note, remise dans son contexte.",
           description:
             "Touchez une note pour savoir comment s’en est sortie la classe : moyenne du groupe, meilleure et moins bonne note, et le coefficient du devoir.",
@@ -487,7 +484,6 @@ const fr = {
           imageAlt: "Détail d’une note de 16 sur 20, avec un coefficient de 1 et une moyenne de groupe de 13,50",
         },
         influence: {
-          eyebrow: "Influence",
           title: "Sachez ce que chaque note change.",
           description:
             "Un 16 en SVT ? +0,07 point sur votre moyenne générale. Papillon calcule l’impact de chaque note, pour savoir tout de suite où vous gagnez des points et où il faut en reprendre.",
@@ -498,7 +494,6 @@ const fr = {
           imageAlt: "Une note qui fait gagner 0,07 point sur la moyenne générale",
         },
         periods: {
-          eyebrow: "Périodes",
           title: "Chaque trimestre, à portée de main.",
           description:
             "Passez d’un trimestre ou d’un semestre à l’autre depuis le menu des périodes, pour comparer vos résultats ou revoir le début d’année. Les bacs et brevets blancs ont leur propre période.",
@@ -510,7 +505,6 @@ const fr = {
           imageAlt: "Le menu des périodes de Papillon, avec les trois trimestres et leurs dates",
         },
         subjects: {
-          eyebrow: "Organisation",
           title: "Toutes vos matières, bien rangées.",
           description:
             "Vos notes sont regroupées par matière, chacune avec sa moyenne. Papillon reconnaît plus de 250 matières, même abrégées ou en majuscules, et leur donne un nom lisible, un emoji et une couleur. Triez-les, ou cherchez directement un devoir.",
@@ -523,8 +517,7 @@ const fr = {
         },
       },
       more: {
-        title: "Et ce n’est pas tout",
-        description: "Les petits détails qui font la différence, au quotidien.",
+        title: "Et aussi",
         items: {
           offline: {
             title: "Hors connexion",
@@ -624,7 +617,6 @@ const fr = {
       },
       highlights: {
         day: {
-          eyebrow: "Votre journée",
           title: "Les changements sautent aux yeux.",
           description:
             "Un cours annulé ou modifié ? Il est signalé directement dans votre journée. Salle, professeur, durée : tout est là, avec les pauses entre deux cours.",
@@ -636,7 +628,6 @@ const fr = {
           imageAlt: "La journée du jeudi 8 octobre, avec la pause méridienne et un cours de SES annulé",
         },
         views: {
-          eyebrow: "Affichage",
           title: "En liste ou à la semaine, à vous de choisir.",
           description:
             "Gardez la vue Liste pour suivre votre journée, ou passez à la vue Semaine pour voir tous vos cours d’un coup d’œil. Il suffit d’un menu pour changer.",
@@ -648,7 +639,6 @@ const fr = {
           imageAlt: "Le menu Affichage de l’emploi du temps, avec les vues Liste et Semaine",
         },
         calendar: {
-          eyebrow: "Navigation",
           title: "Sautez à n’importe quel jour.",
           description:
             "Glissez d’un jour à l’autre, ou ouvrez le calendrier pour aller droit à la date qui vous intéresse : un contrôle dans deux semaines, la rentrée après les vacances.",
@@ -660,7 +650,6 @@ const fr = {
           imageAlt: "Le calendrier du mois ouvert sur le mardi 13 octobre",
         },
         detail: {
-          eyebrow: "Détail",
           title: "Chaque cours, en détail.",
           description:
             "Touchez un cours pour voir ses horaires, le temps avant qu’il commence, la salle et le professeur. Papillon reconnaît automatiquement plus de 250 matières, même abrégées ou en majuscules, et leur donne un nom lisible, un emoji et une couleur.",
@@ -672,7 +661,6 @@ const fr = {
           imageAlt: "Le détail d’un cours d’Histoire-Géographie d’une heure, en salle C 018 avec Mme Bernard",
         },
         live: {
-          eyebrow: "Activités en direct",
           title: "Votre cours, sur l’écran verrouillé.",
           description:
             "Sur iPhone, le cours actuel ou le suivant s’affiche en direct sur l’écran verrouillé et dans la Dynamic Island, avec la salle et le temps restant. Plus besoin d’ouvrir l’app entre deux sonneries.",
@@ -684,7 +672,6 @@ const fr = {
           imageAlt: "L’écran verrouillé d’un iPhone avec le cours d’Histoire-Géographie en cours et le temps restant",
         },
         widget: {
-          eyebrow: "Widgets",
           title: "Vos prochains cours, dès l’écran d’accueil.",
           description:
             "Ajoutez le widget Papillon à l’écran d’accueil de votre iPhone : vos prochains cours s’affichent sans même ouvrir l’app.",
@@ -693,8 +680,7 @@ const fr = {
         },
       },
       more: {
-        title: "Et ce n’est pas tout",
-        description: "Les petits détails qui font la différence, au quotidien.",
+        title: "Et aussi",
         items: {
           home: {
             title: "Dès l’accueil",
@@ -793,7 +779,6 @@ const fr = {
       },
       highlights: {
         week: {
-          eyebrow: "Semaine",
           title: "Toute la semaine, jour par jour.",
           description:
             "Vos devoirs sont rangés par date de rendu, avec la matière et le temps qu’il vous reste. Glissez pour passer à la semaine suivante.",
@@ -805,7 +790,6 @@ const fr = {
           imageAlt: "Les devoirs du lundi 5 au mercredi 7 octobre, dont un déjà terminé",
         },
         done: {
-          eyebrow: "Suivi",
           title: "Cochez, c’est fait.",
           description:
             "Marquez un devoir comme terminé d’un geste, depuis la liste ou depuis sa fiche. Vous savez toujours ce qu’il reste à faire avant demain.",
@@ -817,7 +801,6 @@ const fr = {
           imageAlt: "La fiche d’un devoir d’Histoire-Géographie, marqué comme terminé",
         },
         sort: {
-          eyebrow: "Tri",
           title: "Rangez-les comme vous voulez.",
           description:
             "Triez vos devoirs par date de rendu, par matière, ou faites passer ceux qui ne sont pas terminés en premier. Une consigne précise ? La recherche la retrouve.",
@@ -830,8 +813,7 @@ const fr = {
         },
       },
       more: {
-        title: "Et ce n’est pas tout",
-        description: "Les petits détails qui font la différence, au quotidien.",
+        title: "Et aussi",
         items: {
           subjects: {
             title: "Matières reconnues",
@@ -918,7 +900,6 @@ const fr = {
       },
       highlights: {
         list: {
-          eyebrow: "Fil",
           title: "Toutes les annonces, au même endroit.",
           description:
             "Chaque actualité affiche son auteur, sa date et un aperçu du message. Les plus récentes en haut, et une recherche pour retrouver une annonce en un instant.",
@@ -930,7 +911,6 @@ const fr = {
           imageAlt: "Quatre actualités : réunion parents-professeurs, CDI, association sportive et collecte solidaire",
         },
         detail: {
-          eyebrow: "Lecture",
           title: "Une lecture confortable.",
           description:
             "Ouvrez une actualité pour la lire en entier, mise en forme pour votre écran. Sa catégorie s’affiche en tête, pour savoir tout de suite de quoi il s’agit.",
@@ -939,8 +919,7 @@ const fr = {
         },
       },
       more: {
-        title: "Et ce n’est pas tout",
-        description: "Les petits détails qui font la différence, au quotidien.",
+        title: "Et aussi",
         items: {
           home: {
             title: "Dès l’accueil",

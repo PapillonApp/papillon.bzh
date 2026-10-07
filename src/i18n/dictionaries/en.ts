@@ -444,7 +444,6 @@ const en: Dictionary = {
       },
       highlights: {
         evolution: {
-          eyebrow: "Progress",
           title: "See where you stand, at a glance.",
           description:
             "Your overall average front and center, with a chart covering the whole term. Drag your finger along it to see your average on any day.",
@@ -455,7 +454,6 @@ const en: Dictionary = {
           imageAlt: "Papillon’s progress chart, showing an estimated average of 14.83 out of 20 on October 4",
         },
         methods: {
-          eyebrow: "Calculation",
           title: "Your average, your way.",
           description:
             "Papillon factors in weights and lets you pick the method your school uses. If your school posts its own average, that’s the one you’ll see.",
@@ -467,7 +465,6 @@ const en: Dictionary = {
           imageAlt: "Choosing how the overall average is calculated in Papillon",
         },
         detail: {
-          eyebrow: "Details",
           title: "Every grade, in context.",
           description:
             "Tap a grade to see how the rest of the class did: class average, highest and lowest score, and how much the assignment is worth.",
@@ -479,7 +476,6 @@ const en: Dictionary = {
           imageAlt: "Details of a 16 out of 20 grade, with a weight of 1 and a class average of 13.50",
         },
         influence: {
-          eyebrow: "Impact",
           title: "See what every grade really changes.",
           description:
             "Got a 16 in Biology? That’s +0.07 on your overall average. Papillon shows the impact of every grade, so you know exactly where you’re gaining ground and where to catch up.",
@@ -490,7 +486,6 @@ const en: Dictionary = {
           imageAlt: "A grade that raises the overall average by 0.07 points",
         },
         periods: {
-          eyebrow: "Terms",
           title: "Every term, one tap away.",
           description:
             "Switch between terms or semesters from the menu to compare your results or look back at the start of the year. Practice exams get their own tab.",
@@ -498,7 +493,6 @@ const en: Dictionary = {
           imageAlt: "Papillon’s term menu, showing three terms and their dates",
         },
         subjects: {
-          eyebrow: "Organization",
           title: "All your subjects, neatly organized.",
           description:
             "Your grades are grouped by subject, each with its own average. Papillon recognizes over 250 subjects, even when they’re abbreviated or in all caps, and gives each a clean name, an emoji and a color. Sort them, or search for any assignment.",
@@ -511,8 +505,7 @@ const en: Dictionary = {
         },
       },
       more: {
-        title: "And that’s not all",
-        description: "The little things that make a big difference.",
+        title: "Also",
         items: {
           offline: {
             title: "Offline",
@@ -611,7 +604,6 @@ const en: Dictionary = {
       },
       highlights: {
         day: {
-          eyebrow: "Your day",
           title: "Changes stand out.",
           description:
             "Class canceled or moved? You’ll see it right in your day. Room, teacher, length: it’s all there, breaks included.",
@@ -623,7 +615,6 @@ const en: Dictionary = {
           imageAlt: "Thursday, October 8, with a lunch break and a canceled Economics class",
         },
         views: {
-          eyebrow: "Views",
           title: "List or week, your call.",
           description:
             "Stick with the List view to follow your day, or switch to the Week view to see every class at once. It’s just one menu away.",
@@ -631,7 +622,6 @@ const en: Dictionary = {
           imageAlt: "The schedule’s View menu, with the List and Week options",
         },
         calendar: {
-          eyebrow: "Navigation",
           title: "Jump to any day.",
           description:
             "Swipe from one day to the next, or open the calendar to go straight to the date you need, whether it’s a test in two weeks or the first day back from break.",
@@ -643,7 +633,6 @@ const en: Dictionary = {
           imageAlt: "The month calendar open on Tuesday, October 13",
         },
         detail: {
-          eyebrow: "Details",
           title: "Every class, up close.",
           description:
             "Tap a class to see when it starts and ends, how long until it begins, the room and the teacher. Papillon recognizes over 250 subjects, even when they’re abbreviated or in all caps, and gives each a clean name, an emoji and a color.",
@@ -655,7 +644,6 @@ const en: Dictionary = {
           imageAlt: "Details of a one-hour History & Geography class in room C 018 with Mme Bernard",
         },
         live: {
-          eyebrow: "Live Activities",
           title: "Your class, on your Lock Screen.",
           description:
             "On iPhone, your current or next class shows up live on the Lock Screen and in the Dynamic Island, with the room and time remaining. No need to open the app between classes.",
@@ -663,7 +651,6 @@ const en: Dictionary = {
           imageAlt: "An iPhone Lock Screen showing the current History & Geography class and the time remaining",
         },
         widget: {
-          eyebrow: "Widgets",
           title: "Your next classes, right on your Home Screen.",
           description:
             "Add the Papillon widget to your iPhone’s Home Screen and see your upcoming classes without even opening the app.",
@@ -672,8 +659,7 @@ const en: Dictionary = {
         },
       },
       more: {
-        title: "And that’s not all",
-        description: "The little things that make a big difference.",
+        title: "Also",
         items: {
           home: {
             title: "Right on the home screen",
@@ -772,7 +758,6 @@ const en: Dictionary = {
       },
       highlights: {
         week: {
-          eyebrow: "This week",
           title: "Your whole week, day by day.",
           description:
             "Your homework is sorted by due date, with the subject and how much time you have left. Swipe to see next week.",
@@ -784,7 +769,6 @@ const en: Dictionary = {
           imageAlt: "Homework from Monday, October 5 to Wednesday, October 7, one assignment already done",
         },
         done: {
-          eyebrow: "Tracking",
           title: "Check it off. Done.",
           description:
             "Mark an assignment as done with one tap, from the list or the assignment itself. You always know what’s left before tomorrow.",
@@ -796,7 +780,6 @@ const en: Dictionary = {
           imageAlt: "A History & Geography assignment, marked as done",
         },
         sort: {
-          eyebrow: "Sorting",
           title: "Sort it your way.",
           description:
             "Sort your homework by due date or subject, or show unfinished work first. Looking for specific instructions? Just search.",
@@ -809,8 +792,7 @@ const en: Dictionary = {
         },
       },
       more: {
-        title: "And that’s not all",
-        description: "The little things that make a big difference.",
+        title: "Also",
         items: {
           subjects: {
             title: "Smart subjects",
@@ -896,7 +878,6 @@ const en: Dictionary = {
       },
       highlights: {
         list: {
-          eyebrow: "Feed",
           title: "Every announcement, in one place.",
           description:
             "Each post shows who wrote it, when, and a preview of the message. The latest are at the top, and search finds any announcement in an instant.",
@@ -904,7 +885,6 @@ const en: Dictionary = {
           imageAlt: "Four announcements: parent-teacher conferences, the library, the sports club and a charity drive",
         },
         detail: {
-          eyebrow: "Reading",
           title: "Easy on the eyes.",
           description:
             "Open a post to read it in full, formatted for your screen. Its category is shown up top, so you know right away what it’s about.",
@@ -913,8 +893,7 @@ const en: Dictionary = {
         },
       },
       more: {
-        title: "And that’s not all",
-        description: "The little things that make a big difference.",
+        title: "Also",
         items: {
           home: {
             title: "Right on the home screen",

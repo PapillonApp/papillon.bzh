@@ -120,6 +120,10 @@
     cursor: pointer;
   }
 
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-primary) 25%, transparent);
+  }
+
   :focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
