@@ -38,7 +38,7 @@ export function Hero({ t, download }: HeroProps) {
 
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
 
-        <div class="flex items-center -mb-3 gap-1">
+        <div className="-mb-3 flex items-center gap-1">
         <motion.div {...reveal(0.22)}>
           <PapillonIcon aria-hidden className="size-10 text-primary" />
         </motion.div>

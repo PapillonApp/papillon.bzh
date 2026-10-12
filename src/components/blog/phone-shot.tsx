@@ -19,7 +19,7 @@ export function PhoneShot({ src, alt, caption, show = "top" }: PhoneShotProps) {
         </div>
       </div>
       {caption && (
-        <figcaption className="mt-3 text-center text-sm text-foreground/50">{caption}</figcaption>
+        <figcaption className="mt-3 text-center text-sm text-foreground/60">{caption}</figcaption>
       )}
     </figure>
   );

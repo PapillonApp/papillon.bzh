@@ -52,7 +52,7 @@ type PostsProps = {
 function Posts({ posts, empty, locale }: PostsProps) {
   if (posts.length === 0) {
     return (
-      <p className="mt-6 border-t border-foreground/10 pt-6 text-md text-foreground/50">{empty}</p>
+      <p className="mt-6 border-t border-foreground/10 pt-6 text-md text-foreground/60">{empty}</p>
     );
   }
 
@@ -93,11 +93,11 @@ function PostRow({ post, locale, preload }: PostRowProps) {
           {post.title}
         </h2>
         {post.description && (
-          <p className="line-clamp-1 text-md text-foreground/50 max-sm:hidden">
+          <p className="line-clamp-1 text-md text-foreground/60 max-sm:hidden">
             {post.description}
           </p>
         )}
-        <time dateTime={post.date} className="text-sm text-foreground/40">
+        <time dateTime={post.date} className="text-sm text-foreground/60">
           {formatPostDate(post.date, locale)}
         </time>
       </div>

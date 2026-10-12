@@ -20,7 +20,7 @@ export function PostArticle({ t, post, locale }: PostArticleProps) {
         <div className="mx-auto flex max-w-2xl flex-col items-start gap-5">
           <Link
             href={`/${locale}/blog`}
-            className="mb-4 flex items-center gap-2 text-md text-foreground/50 transition-colors hover:text-foreground"
+            className="mb-4 flex items-center gap-2 text-md text-foreground/60 transition-colors hover:text-foreground"
           >
             <ArrowLeft aria-hidden className="size-5" />
             <span className="text-trim">{t.back}</span>
@@ -31,15 +31,15 @@ export function PostArticle({ t, post, locale }: PostArticleProps) {
           {post.description && (
             <p className="text-xl/snug text-pretty text-foreground/60">{post.description}</p>
           )}
-          <span className="mt-2 text-md font-medium text-foreground/70 flex items-center gap-4">
+          <div className="mt-2 flex items-center gap-4 text-md font-medium text-foreground/70">
             <Author login={post.author} link />
 
             <div className="h-1 w-1 rounded-full bg-foreground/30" />
 
-            <time dateTime={post.date} className="text-md text-foreground/50">
+            <time dateTime={post.date} className="text-md text-foreground/60">
               {formatPostDate(post.date, locale)}
             </time>
-          </span>
+          </div>
         </div>
 
         <ViewTransition name={`blog-banner-${post.slug}`} share="blog-banner" default="none">

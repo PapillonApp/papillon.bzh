@@ -25,7 +25,7 @@ export function Hero({ t, stats, locale }: HeroProps) {
 
       <StoreBadges t={t.stores} locale={locale} className="mt-8" />
 
-      <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-foreground/50">
+      <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-foreground/60">
         <Star aria-hidden className="size-4" />
         <span>{rating}</span>
         <span aria-hidden>·</span>
@@ -36,7 +36,7 @@ export function Hero({ t, stats, locale }: HeroProps) {
         <QrCode label={t.hero.qrAlt} className="size-24 shrink-0" />
         <div className="flex flex-col gap-1.5">
           <p className="text-lg/snug font-medium">{t.hero.qrTitle}</p>
-          <p className="text-md text-pretty text-foreground/50">{t.hero.qrDescription}</p>
+          <p className="text-md text-pretty text-foreground/60">{t.hero.qrDescription}</p>
         </div>
       </div>
     </section>

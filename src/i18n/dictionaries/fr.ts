@@ -38,7 +38,7 @@ const fr = {
       },
       developers: {
         docs: { title: "Documentation", description: "Guides et référence pour contribuer." },
-        github: { title: "GitHub", description: "Le code source, ouvert à tous." },
+        github: { title: "GitHub", description: "Le code source, ouvert à tou·te·s." },
       },
     },
   },
@@ -63,6 +63,7 @@ const fr = {
         "Un seul endroit pour vos notes, votre cantine, votre calendrier, vos devoirs, et plus encore, pour une expérience pensée pour rendre la vie étudiante facile et intégrée dans votre quotidien.",
       stars: "étoiles",
       discover: "Découvrir Papillon",
+      iconLabels: ["Actualités", "Cartes", "Emploi du temps", "Cantine", "Vie scolaire"],
     },
     features: {
       title: "Toute votre scolarité, dans une seule app.",
@@ -73,7 +74,7 @@ const fr = {
           title: "Connecté",
           description:
             "Pronote, ÉcoleDirecte, Skolengo et votre cantine. Connectez vos comptes, Papillon s’occupe du reste.",
-          loadingTitle: "Préparation de ton compte",
+          loadingTitle: "Préparation de votre compte",
           loadingDescription: "Nous sommes en train de te connecter. Cela peut prendre quelques secondes.",
         },
         private: {
@@ -252,9 +253,9 @@ const fr = {
     trust: {
       title: "Construit par vous. Entièrement sécurisé.",
       description:
-        "Papillon est développé en open source par une communauté d’élèves et d’étudiants. Pas de pub, pas de pistage : l’app existe pour vous, pas pour vos données.",
+        "Papillon est développé en open source par une communauté d’élèves et d’étudiant·e·s. Pas de pub, pas de pistage : l’app existe pour vous, pas pour vos données.",
       github: "Voir le code sur GitHub",
-      contributors: "{count} contributeurs sur GitHub",
+      contributors: "{count} contributeur·rice·s sur GitHub",
       pillars: {
         openSource: {
           title: "Libre et open source",
@@ -276,7 +277,7 @@ const fr = {
     adoption: {
       title: "C’est vous qui le dites.",
       description:
-        "Collégiens, lycéens et étudiants l’utilisent au quotidien. Voici ce qu’ils en disent sur les stores.",
+        "Collégien·ne·s, lycéen·ne·s et étudiant·e·s l’utilisent au quotidien. Voici leurs avis sur les stores.",
       reviewsLabel: "Avis publiés sur l’App Store et Google Play",
       ratingLabel: "étoiles sur 5",
       stats: {
@@ -295,7 +296,7 @@ const fr = {
           emoji: "💸",
           question: "Papillon est-il gratuit ?",
           answer:
-            "Oui, entièrement. Papillon ne contient aucune publicité et ne collecte aucune donnée personnelle. L’app est développée par des élèves et de jeunes développeurs.",
+            "Oui, entièrement. Papillon ne contient aucune publicité et ne collecte aucune donnée personnelle. L’app est développée par des élèves et de jeunes développeur·euse·s.",
         },
         {
           emoji: "🔒",
@@ -348,7 +349,7 @@ const fr = {
       label: "Association Papillon",
       title: "Faire équipe pour faire mieux.",
       description:
-        "Papillon, c’est aussi 6 étudiants passionnés qui cherchent toujours à créer l’inattendu pour fournir une expérience au-delà des attentes.",
+        "Papillon, c’est aussi 6 étudiant·e·s passionné·e·s qui cherchent toujours à créer l’inattendu pour fournir une expérience au-delà des attentes.",
       discord: "Rejoindre le Discord",
     },
     values: [
@@ -371,7 +372,7 @@ const fr = {
     team: {
       title: "Mais c’est qui, Papillon ?",
       description:
-        "En plus des centaines de contributeurs que nous remercions chaleureusement, Papillon c’est aussi une équipe de passionnés qui travaillent chaque jour pour faire vivre le projet.",
+        "En plus des centaines de contributeur·rice·s que nous remercions chaleureusement, Papillon c’est aussi une équipe de passionné·e·s qui travaillent chaque jour pour faire vivre le projet.",
       members: {
         vince: {
           role: "Président",
@@ -461,40 +462,40 @@ const fr = {
       hero: {
         title: "Votre moyenne, sans attendre le bulletin.",
         description:
-          "Papillon récupère vos notes dès leur publication, calcule votre moyenne avec les coefficients et vous montre son évolution, matière par matière.",
+          "Dès qu’un prof publie une note, elle arrive dans Papillon. Votre moyenne est recalculée avec les coefficients, et vous voyez tout de suite si ça monte ou si ça descend.",
         imageAlt: "L’onglet Notes de Papillon, avec la courbe d’évolution et une moyenne de 15,20 sur 20",
       },
       tour: {
-        title: "Toutes vos notes, sous tous les angles.",
+        title: "Vos notes, dans tous les sens.",
         description:
-          "Courbe, méthode de calcul, périodes et matières : Papillon organise vos résultats pour que vous n’ayez rien à calculer.",
+          "La courbe, la méthode de calcul, les trimestres, les matières : tout est rangé, et vous n’avez plus rien à calculer de tête.",
       },
       highlights: {
         evolution: {
-          title: "Voyez où vous en êtes, d’un coup d’œil.",
+          title: "Où vous en êtes, en un coup d’œil.",
           description:
-            "Votre moyenne générale s’affiche en grand, avec sa courbe sur toute la période. Glissez le doigt dessus pour retrouver votre moyenne à n’importe quelle date.",
+            "Votre moyenne générale s’affiche en grand, avec sa courbe sur toute la période. Faites glisser votre doigt dessus pour voir ce qu’elle valait à n’importe quelle date.",
           points: [
             "Courbe d’évolution interactive",
-            "Vos dernières notes en tête de liste",
+            "Vos dernières notes en premier",
           ],
           imageAlt: "La courbe d’évolution de Papillon, avec une moyenne estimée à 14,83 sur 20 au 4 octobre",
         },
         methods: {
-          title: "Une moyenne calculée pour vous, comme vous le voulez.",
+          title: "La bonne moyenne, avec les bons coeffs.",
           description:
-            "Papillon tient compte des coefficients et vous laisse choisir la méthode qui correspond à votre établissement. Quand celui-ci publie sa propre moyenne, c’est elle qui s’affiche.",
+            "Papillon tient compte des coefficients et vous laisse choisir la méthode de calcul de votre établissement. Et si votre établissement publie sa propre moyenne, c’est elle qui s’affiche.",
           points: [
             "Coefficients pris en compte",
             "Moyenne des matières, moyenne pondérée ou médiane",
-            "La moyenne officielle quand l’établissement la publie",
+            "La moyenne officielle, quand elle est publiée",
           ],
           imageAlt: "Le choix de la méthode de calcul de la moyenne générale dans Papillon",
         },
         detail: {
-          title: "Chaque note, remise dans son contexte.",
+          title: "Ce que vaut vraiment votre note.",
           description:
-            "Touchez une note pour savoir comment s’en est sortie la classe : moyenne du groupe, meilleure et moins bonne note, et le coefficient du devoir.",
+            "Touchez une note pour voir comment s’en est sortie la classe : moyenne du groupe, meilleure et moins bonne note, et le coefficient du devoir.",
           points: [
             "Moyenne du groupe",
             "Note la plus haute et la plus basse",
@@ -503,19 +504,19 @@ const fr = {
           imageAlt: "Détail d’une note de 16 sur 20, avec un coefficient de 1 et une moyenne de groupe de 13,50",
         },
         influence: {
-          title: "Sachez ce que chaque note change.",
+          title: "Ce que chaque note change.",
           description:
-            "Un 16 en SVT ? +0,07 point sur votre moyenne générale. Papillon calcule l’impact de chaque note, pour savoir tout de suite où vous gagnez des points et où il faut en reprendre.",
+            "Un 16 en SVT ? +0,07 point sur votre moyenne générale. Papillon calcule l’effet de chaque note, pour que vous sachiez tout de suite où vous gagnez des points et où il faut vous rattraper.",
           points: [
             "Gain ou perte en points, note par note",
-            "Effet sur votre moyenne et sur celle du groupe",
+            "L’effet sur votre moyenne et sur celle du groupe",
           ],
           imageAlt: "Une note qui fait gagner 0,07 point sur la moyenne générale",
         },
         periods: {
-          title: "Chaque trimestre, à portée de main.",
+          title: "Trimestre par trimestre.",
           description:
-            "Passez d’un trimestre ou d’un semestre à l’autre depuis le menu des périodes, pour comparer vos résultats ou revoir le début d’année. Les bacs et brevets blancs ont leur propre période.",
+            "Passez d’un trimestre ou d’un semestre à l’autre depuis le menu des périodes, pour comparer vos résultats ou revoir votre début d’année. Les bacs et brevets blancs ont leur propre période.",
           points: [
             "Trimestres et semestres",
             "Bacs et brevets blancs à part",
@@ -526,10 +527,10 @@ const fr = {
         subjects: {
           title: "Toutes vos matières, bien rangées.",
           description:
-            "Vos notes sont regroupées par matière, chacune avec sa moyenne. Papillon reconnaît plus de 250 matières, même abrégées ou en majuscules, et leur donne un nom lisible, un emoji et une couleur. Triez-les, ou cherchez directement un devoir.",
+            "Vos notes sont groupées par matière, chacune avec sa moyenne. Papillon reconnaît plus de 250 matières, même quand votre établissement les écrit en abrégé ou en majuscules, et leur donne un vrai nom, un emoji et une couleur. Triez-les comme vous voulez, ou cherchez directement un devoir.",
           points: [
             "Tri par date, par moyenne ou par ordre alphabétique",
-            "Recherche parmi toutes vos notes",
+            "Recherche dans toutes vos notes",
             "Nom, emoji et couleur détectés automatiquement",
           ],
           imageAlt: "Les notes de Papillon regroupées par matière : Français, Physique-Chimie et leurs moyennes",
@@ -539,15 +540,15 @@ const fr = {
         title: "Et aussi",
         items: {
           offline: {
-            title: "Hors connexion",
-            description: "Vos notes restent consultables sans réseau, dans le bus comme au fond de la salle.",
+            title: "Même sans réseau",
+            description: "Vos notes restent dispo hors connexion, dans le bus comme au fond de la salle.",
           },
           home: {
             title: "Dès l’accueil",
-            description: "Votre moyenne et sa courbe s’affichent dès que vous ouvrez l’app.",
+            description: "Votre moyenne et sa courbe vous attendent dès que vous ouvrez l’app.",
           },
           scale: {
-            title: "Votre échelle",
+            title: "Sur 20, ou pas",
             description: "Un devoir noté sur 10 ou sur 40 ? Papillon le ramène à l’échelle de votre choix.",
           },
           skills: {
@@ -556,10 +557,10 @@ const fr = {
           },
           personal: {
             title: "À votre image",
-            description: "Tout est choisi automatiquement, mais le nom, l’emoji et la couleur de chaque matière se changent en un geste.",
+            description: "Tout est choisi automatiquement, mais vous pouvez changer le nom, l’emoji et la couleur de chaque matière en un geste.",
           },
           private: {
-            title: "Privé",
+            title: "Rien que pour vous",
             description: "Vos notes restent sur votre appareil. Elles ne passent jamais par nos serveurs.",
           },
         },
@@ -571,51 +572,51 @@ const fr = {
         items: [
           {
             emoji: "🎯",
-            question: "La moyenne affichée est-elle celle de mon bulletin ?",
+            question: "C’est la même moyenne que sur mon bulletin ?",
             answer:
-              "Quand votre établissement publie une moyenne, Papillon l’affiche telle quelle. Sinon, l’app la calcule à partir de vos notes et de leurs coefficients : c’est une estimation fidèle, qui peut légèrement différer du bulletin (notes bonus ou optionnelles, arrondis).",
+              "Si votre établissement publie une moyenne, Papillon affiche exactement celle-là. Sinon, l’app la calcule à partir de vos notes et de leurs coefficients. Le résultat est fidèle, mais il peut varier un peu par rapport au bulletin (notes bonus ou optionnelles, arrondis).",
           },
           {
             emoji: "⚖️",
-            question: "Les coefficients sont-ils pris en compte ?",
+            question: "Les coefficients sont pris en compte ?",
             answer:
-              "Oui. Chaque note compte selon le coefficient indiqué par votre professeur, et vous le retrouvez dans le détail de la note.",
+              "Oui. Chaque note compte selon le coefficient donné par votre prof, et vous le retrouvez dans le détail de la note.",
           },
           {
             emoji: "🧮",
             question: "Quelle méthode de calcul choisir ?",
             answer:
-              "La moyenne des matières est recommandée : c’est ainsi que la plupart des établissements calculent la moyenne générale. La moyenne pondérée et la médiane offrent un autre regard sur vos résultats.",
+              "On vous conseille la moyenne des matières : c’est comme ça que la plupart des établissements calculent la moyenne générale. La moyenne pondérée et la médiane vous donnent un autre regard sur vos résultats.",
           },
           {
             emoji: "⏱️",
-            question: "Quand mes nouvelles notes apparaissent-elles ?",
+            question: "Mes nouvelles notes arrivent quand ?",
             answer:
-              "Dès qu’elles sont publiées sur Pronote, ÉcoleDirecte ou Skolengo. Papillon les récupère directement auprès de votre établissement quand vous ouvrez l’app.",
+              "Dès qu’elles sont publiées sur Pronote, ÉcoleDirecte ou Skolengo. Papillon va les chercher directement auprès de votre établissement quand vous ouvrez l’app.",
           },
           {
             emoji: "📶",
-            question: "Puis-je consulter mes notes sans connexion ?",
+            question: "Je peux voir mes notes sans connexion ?",
             answer:
               "Oui. Les notes déjà récupérées restent sur votre appareil et s’affichent même hors ligne.",
           },
           {
             emoji: "🔒",
-            question: "Quelqu’un d’autre peut-il voir mes notes ?",
+            question: "Quelqu’un d’autre peut voir mes notes ?",
             answer:
               "Non. Vos notes vont directement de votre établissement à votre téléphone. Papillon ne les voit pas, ne les stocke pas et ne les revend pas.",
           },
           {
             emoji: "💸",
-            question: "Faut-il payer pour ces fonctionnalités ?",
-            answer: "Non. Tout est gratuit, sans publicité ni abonnement.",
+            question: "C’est payant ?",
+            answer: "Non. Tout est gratuit, sans pub et sans abonnement.",
           },
         ],
       },
       largeScreen: {
-        title: "Encore plus clair sur grand écran.",
+        title: "Encore mieux sur grand écran.",
         description:
-          "Sur iPad et Mac, Papillon profite de toute la largeur de l’écran : la courbe s’étire, vos dernières notes défilent et deux matières s’affichent côte à côte.",
+          "Sur iPad et Mac, Papillon prend toute la largeur : la courbe s’étire, vos dernières notes défilent et deux matières tiennent côte à côte.",
         imageAlt: "L’onglet Notes de Papillon sur un iPad Pro, avec la courbe d’évolution et deux matières côte à côte",
       },
       cta: {
@@ -627,34 +628,34 @@ const fr = {
     schedule: {
       metadataTitle: "Emploi du temps – Papillon",
       metadataDescription:
-        "Votre emploi du temps toujours à jour : cours annulés et modifiés signalés, salles, professeurs, Activités en direct et widgets. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Votre emploi du temps toujours à jour : cours annulés et modifiés signalés, salles, profs, Activités en direct et widgets. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
         title: "Votre journée, cours après cours.",
         description:
-          "Papillon affiche votre emploi du temps à jour, signale les cours annulés ou modifiés et vous suit jusque sur l’écran verrouillé.",
+          "Papillon affiche votre emploi du temps à jour, vous prévient quand un cours saute ou change, et vous suit jusque sur l’écran verrouillé.",
         imageAlt: "L’emploi du temps du jeudi 8 octobre dans Papillon, avec une pause déjeuner et un cours annulé",
       },
       beyond: {
         title: "Même sans ouvrir l’app.",
         description:
-          "Sur iPhone, vos cours vous suivent sur l’écran verrouillé et l’écran d’accueil.",
+          "Sur iPhone, vos cours vous suivent sur l’écran verrouillé et sur l’écran d’accueil.",
       },
       highlights: {
         day: {
-          title: "Les changements sautent aux yeux.",
+          title: "Un cours annulé ? Vous le voyez tout de suite.",
           description:
-            "Un cours annulé ou modifié ? Il est signalé directement dans votre journée. Salle, professeur, durée : tout est là, avec les pauses entre deux cours.",
+            "Annulé ou modifié, un cours est signalé directement dans votre journée. Salle, prof, durée : tout est là, pauses comprises.",
           points: [
             "Cours annulés et modifiés signalés",
-            "Salle, professeur et durée de chaque cours",
-            "Pauses et pause déjeuner affichées",
+            "Salle, prof et durée de chaque cours",
+            "Les pauses et la pause déj",
           ],
           imageAlt: "La journée du jeudi 8 octobre, avec la pause méridienne et un cours de SES annulé",
         },
         views: {
-          title: "En liste ou à la semaine, à vous de choisir.",
+          title: "En liste ou à la semaine.",
           description:
-            "Gardez la vue Liste pour suivre votre journée, ou passez à la vue Semaine pour voir tous vos cours d’un coup d’œil. Il suffit d’un menu pour changer.",
+            "Gardez la vue Liste pour suivre votre journée, ou passez à la vue Semaine pour voir tous vos cours d’un coup. Un menu suffit pour changer.",
           points: [
             "Vue Liste, jour par jour",
             "Vue Semaine, en bêta",
@@ -665,21 +666,21 @@ const fr = {
         calendar: {
           title: "Sautez à n’importe quel jour.",
           description:
-            "Glissez d’un jour à l’autre, ou ouvrez le calendrier pour aller droit à la date qui vous intéresse : un contrôle dans deux semaines, la rentrée après les vacances.",
+            "Glissez d’un jour à l’autre, ou ouvrez le calendrier pour aller droit à la date qui vous intéresse : le contrôle dans deux semaines, la rentrée après les vacances.",
           points: [
             "Un glissement pour passer au jour suivant",
             "Le calendrier du mois en un geste",
-            "Retour à aujourd’hui d’un seul appui",
+            "Retour à aujourd’hui en un appui",
           ],
           imageAlt: "Le calendrier du mois ouvert sur le mardi 13 octobre",
         },
         detail: {
           title: "Chaque cours, en détail.",
           description:
-            "Touchez un cours pour voir ses horaires, le temps avant qu’il commence, la salle et le professeur. Papillon reconnaît automatiquement plus de 250 matières, même abrégées ou en majuscules, et leur donne un nom lisible, un emoji et une couleur.",
+            "Touchez un cours pour voir ses horaires, le temps avant qu’il commence, la salle et le prof. Papillon reconnaît plus de 250 matières, même abrégées ou en majuscules, et leur donne un vrai nom, un emoji et une couleur.",
           points: [
             "Début, fin et durée",
-            "Salle et professeur",
+            "Salle et prof",
             "Nom, emoji et couleur détectés automatiquement",
           ],
           imageAlt: "Le détail d’un cours d’Histoire-Géographie d’une heure, en salle C 018 avec Mme Bernard",
@@ -687,10 +688,10 @@ const fr = {
         live: {
           title: "Votre cours, sur l’écran verrouillé.",
           description:
-            "Sur iPhone, le cours actuel ou le suivant s’affiche en direct sur l’écran verrouillé et dans la Dynamic Island, avec la salle et le temps restant. Plus besoin d’ouvrir l’app entre deux sonneries.",
+            "Sur iPhone, votre cours actuel ou le suivant s’affiche en direct sur l’écran verrouillé et dans la Dynamic Island, avec la salle et le temps restant. Plus besoin d’ouvrir l’app entre deux sonneries.",
           points: [
             "Temps restant en direct",
-            "Salle et professeur",
+            "Salle et prof",
             "Dans la Dynamic Island",
           ],
           imageAlt: "L’écran verrouillé d’un iPhone avec le cours d’Histoire-Géographie en cours et le temps restant",
@@ -698,7 +699,7 @@ const fr = {
         widget: {
           title: "Vos prochains cours, dès l’écran d’accueil.",
           description:
-            "Ajoutez le widget Papillon à l’écran d’accueil de votre iPhone : vos prochains cours s’affichent sans même ouvrir l’app.",
+            "Ajoutez le widget Papillon sur l’écran d’accueil de votre iPhone : vos prochains cours s’affichent sans même ouvrir l’app.",
           points: ["Vos prochains cours en un coup d’œil", "Toujours à jour"],
           imageAlt: "L’écran d’accueil d’un iPhone avec le widget Papillon des cours de demain",
         },
@@ -708,11 +709,11 @@ const fr = {
         items: {
           home: {
             title: "Dès l’accueil",
-            description: "Vos cours de la journée ou du lendemain s’affichent dès que vous ouvrez l’app.",
+            description: "Vos cours du jour ou du lendemain vous attendent dès que vous ouvrez l’app.",
           },
           offline: {
-            title: "Hors connexion",
-            description: "Votre emploi du temps reste consultable sans réseau.",
+            title: "Même sans réseau",
+            description: "Votre emploi du temps reste dispo hors connexion.",
           },
           ical: {
             title: "Calendriers iCal",
@@ -727,7 +728,7 @@ const fr = {
             description: "Changez le nom, l’emoji et la couleur de chaque matière.",
           },
           private: {
-            title: "Privé",
+            title: "Rien que pour vous",
             description: "Votre emploi du temps reste sur votre appareil, jamais sur nos serveurs.",
           },
         },
@@ -739,48 +740,48 @@ const fr = {
         items: [
           {
             emoji: "🔄",
-            question: "Les changements de dernière minute apparaissent-ils ?",
+            question: "Les changements de dernière minute s’affichent ?",
             answer:
-              "Oui. Cours annulés, cours modifiés et changements de salle apparaissent dès que votre établissement les publie sur Pronote, ÉcoleDirecte ou Skolengo.",
+              "Oui. Cours annulés, cours modifiés, changements de salle : tout apparaît dès que votre établissement le publie sur Pronote, ÉcoleDirecte ou Skolengo.",
           },
           {
             emoji: "🔒",
             question: "Comment activer les Activités en direct ?",
             answer:
-              "Sur iPhone, ouvrez les réglages de Papillon et activez les Activités en direct. Le cours actuel ou le suivant s’affiche alors sur l’écran verrouillé et dans la Dynamic Island.",
+              "Sur iPhone, ouvrez les réglages de Papillon et activez les Activités en direct. Votre cours actuel ou le suivant s’affiche alors sur l’écran verrouillé et dans la Dynamic Island.",
           },
           {
             emoji: "📱",
             question: "Comment ajouter le widget ?",
             answer:
-              "Maintenez le doigt sur l’écran d’accueil de votre iPhone, touchez « + » en haut, puis cherchez Papillon et choisissez le widget.",
+              "Restez appuyé·e sur l’écran d’accueil de votre iPhone, touchez « + » en haut, puis cherchez Papillon et choisissez le widget.",
           },
           {
             emoji: "🗓️",
-            question: "Puis-je voir toute ma semaine ?",
+            question: "Je peux voir toute ma semaine ?",
             answer:
               "Oui. Dans l’onglet Cours, touchez « … » en haut à droite et choisissez la vue Semaine. Elle est encore en bêta.",
           },
           {
             emoji: "✨",
-            question: "Pourquoi mes matières ont-elles un autre nom ?",
+            question: "Pourquoi mes matières ont un autre nom ?",
             answer:
-              "Papillon reconnaît automatiquement vos matières, même abrégées ou écrites en majuscules par l’établissement, et leur donne un nom lisible, un emoji et une couleur. Vous pouvez tout changer à votre goût.",
+              "Papillon reconnaît vos matières, même quand votre établissement les écrit en abrégé ou en majuscules, et leur donne un vrai nom, un emoji et une couleur. Vous pouvez tout changer comme vous voulez.",
           },
           {
             emoji: "📶",
-            question: "Puis-je consulter mon emploi du temps hors connexion ?",
+            question: "Je peux voir mon emploi du temps hors connexion ?",
             answer: "Oui. L’emploi du temps déjà récupéré reste sur votre appareil et s’affiche même sans réseau.",
           },
           {
             emoji: "💸",
-            question: "Faut-il payer pour ces fonctionnalités ?",
-            answer: "Non. Tout est gratuit, sans publicité ni abonnement.",
+            question: "C’est payant ?",
+            answer: "Non. Tout est gratuit, sans pub et sans abonnement.",
           },
         ],
       },
       largeScreen: {
-        title: "Toute la semaine, sur un seul écran.",
+        title: "Toute votre semaine, sur un seul écran.",
         description:
           "Sur iPad et Mac, la vue Semaine affiche vos cours du lundi au vendredi d’un coup d’œil, cours annulés compris. La barre latérale vous emmène d’un onglet à l’autre.",
         imageAlt: "L’emploi du temps de la semaine du 5 octobre dans Papillon sur un iPad Pro",
@@ -794,11 +795,11 @@ const fr = {
     homework: {
       metadataTitle: "Devoirs – Papillon",
       metadataDescription:
-        "Tous vos devoirs semaine par semaine, à cocher une fois terminés, triés par date ou par matière. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Tous vos devoirs semaine par semaine, à cocher une fois finis, triés par date ou par matière. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
         title: "Ce qu’il reste à faire, et pour quand.",
         description:
-          "Papillon rassemble vos devoirs semaine par semaine, vous laisse les cocher une fois faits et vous montre en un coup d’œil ce qui vous attend.",
+          "Papillon range vos devoirs semaine par semaine, vous laisse les cocher une fois faits et vous montre d’un coup d’œil ce qui vous attend.",
         imageAlt: "Les devoirs de la semaine 41 dans Papillon, rangés par jour de rendu",
       },
       tour: {
@@ -819,23 +820,23 @@ const fr = {
           imageAlt: "Les devoirs du lundi 5 au mercredi 7 octobre, dont un déjà terminé",
         },
         done: {
-          title: "Cochez, c’est fait.",
+          title: "Coché, c’est fait.",
           description:
-            "Marquez un devoir comme terminé d’un geste, depuis la liste ou depuis sa fiche. Vous savez toujours ce qu’il reste à faire avant demain.",
+            "Marquez un devoir comme fini d’un geste, depuis la liste ou depuis sa fiche. Vous savez toujours ce qu’il vous reste avant demain.",
           points: [
-            "Terminé en un geste",
+            "Fini en un geste",
             "La consigne complète sur la fiche du devoir",
-            "Les pièces jointes du professeur",
+            "Les pièces jointes du prof",
           ],
           imageAlt: "La fiche d’un devoir d’Histoire-Géographie, marqué comme terminé",
         },
         sort: {
           title: "Rangez-les comme vous voulez.",
           description:
-            "Triez vos devoirs par date de rendu, par matière, ou faites passer ceux qui ne sont pas terminés en premier. Une consigne précise ? La recherche la retrouve.",
+            "Triez vos devoirs par date de rendu, par matière, ou faites remonter ceux qui ne sont pas finis. Vous cherchez une consigne précise ? La recherche la retrouve.",
           points: [
             "Par date de rendu ou par matière",
-            "Les devoirs non terminés en premier",
+            "Les devoirs pas finis en premier",
             "Recherche dans tous vos devoirs",
           ],
           imageAlt: "Le menu de tri des devoirs : date de rendu, matières, non terminé",
@@ -847,26 +848,26 @@ const fr = {
           subjects: {
             title: "Matières reconnues",
             description:
-              "Plus de 250 matières reconnues automatiquement, même abrégées, avec un nom lisible, un emoji et une couleur.",
+              "Plus de 250 matières reconnues automatiquement, même abrégées, avec un vrai nom, un emoji et une couleur.",
           },
           home: {
             title: "Dès l’accueil",
-            description: "Les tâches à faire s’affichent dès que vous ouvrez l’app.",
+            description: "Ce qu’il vous reste à faire s’affiche dès que vous ouvrez l’app.",
           },
           attachments: {
             title: "Pièces jointes",
-            description: "Les documents joints par vos professeurs sont accessibles depuis le devoir.",
+            description: "Les documents joints par vos profs sont accessibles depuis le devoir.",
           },
           search: {
             title: "Recherche",
             description: "Retrouvez un devoir en tapant un mot de la consigne ou le nom de la matière.",
           },
           offline: {
-            title: "Hors connexion",
-            description: "Vos devoirs restent consultables sans réseau.",
+            title: "Même sans réseau",
+            description: "Vos devoirs restent dispo hors connexion.",
           },
           private: {
-            title: "Privé",
+            title: "Rien que pour vous",
             description: "Vos devoirs restent sur votre appareil, jamais sur nos serveurs.",
           },
         },
@@ -880,34 +881,34 @@ const fr = {
             emoji: "📥",
             question: "D’où viennent mes devoirs ?",
             answer:
-              "Papillon récupère les devoirs publiés par vos professeurs sur Pronote, ÉcoleDirecte ou Skolengo, directement auprès de votre établissement.",
+              "Papillon récupère les devoirs publiés par vos profs sur Pronote, ÉcoleDirecte ou Skolengo, directement auprès de votre établissement.",
           },
           {
             emoji: "📆",
-            question: "Puis-je voir les devoirs des semaines suivantes ?",
+            question: "Je peux voir les devoirs des semaines suivantes ?",
             answer:
-              "Oui. Glissez la liste vers la gauche ou la droite pour passer d’une semaine à l’autre.",
+              "Oui. Faites glisser la liste vers la gauche ou la droite pour changer de semaine.",
           },
           {
             emoji: "📎",
-            question: "Les pièces jointes sont-elles disponibles ?",
-            answer: "Oui. Ouvrez un devoir pour retrouver sa consigne complète et les documents joints par le professeur.",
+            question: "Les pièces jointes sont dispo ?",
+            answer: "Oui. Ouvrez un devoir pour retrouver sa consigne complète et les documents joints par votre prof.",
           },
           {
             emoji: "✨",
             question: "D’où viennent les emojis à côté des matières ?",
             answer:
-              "Papillon reconnaît automatiquement vos matières et leur attribue un nom lisible, un emoji et une couleur. Vous pouvez tout changer à votre goût.",
+              "Papillon reconnaît vos matières et leur donne un vrai nom, un emoji et une couleur. Vous pouvez tout changer comme vous voulez.",
           },
           {
             emoji: "📶",
-            question: "Puis-je consulter mes devoirs hors connexion ?",
+            question: "Je peux voir mes devoirs hors connexion ?",
             answer: "Oui. Les devoirs déjà récupérés restent sur votre appareil et s’affichent même sans réseau.",
           },
           {
             emoji: "💸",
-            question: "Faut-il payer pour ces fonctionnalités ?",
-            answer: "Non. Tout est gratuit, sans publicité ni abonnement.",
+            question: "C’est payant ?",
+            answer: "Non. Tout est gratuit, sans pub et sans abonnement.",
           },
         ],
       },
@@ -920,35 +921,35 @@ const fr = {
     news: {
       metadataTitle: "Actualités – Papillon",
       metadataDescription:
-        "Les actualités de votre établissement dans une liste claire, lisible sur téléphone. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Les actus de votre établissement dans une liste claire, faite pour le téléphone. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        title: "Les infos de votre établissement, sans rien manquer.",
+        title: "Les infos de votre établissement, sans rien rater.",
         description:
-          "Réunions, inscriptions, sorties : Papillon rassemble les actualités de votre établissement dans une liste claire, faite pour être lue sur téléphone.",
+          "Réunions, inscriptions, sorties : Papillon regroupe les actus de votre établissement dans une liste claire, faite pour être lue sur votre téléphone.",
         imageAlt: "La liste des actualités de l’établissement dans Papillon",
       },
       tour: {
         title: "L’essentiel, sans chercher.",
         description:
-          "Les annonces de votre établissement, rassemblées au même endroit et mises en forme pour votre téléphone.",
+          "Les annonces de votre établissement, au même endroit et mises en forme pour votre téléphone.",
       },
       highlights: {
         list: {
           title: "Toutes les annonces, au même endroit.",
           description:
-            "Chaque actualité affiche son auteur, sa date et un aperçu du message. Les plus récentes en haut, et une recherche pour retrouver une annonce en un instant.",
+            "Chaque actu affiche son auteur, sa date et un aperçu du message. Les plus récentes sont en haut, et la recherche retrouve une annonce en deux secondes.",
           points: [
             "Auteur et date de publication",
             "Aperçu du message",
-            "Recherche dans toutes les actualités",
+            "Recherche dans toutes les actus",
           ],
           imageAlt: "Quatre actualités : réunion parents-professeurs, CDI, association sportive et collecte solidaire",
         },
         detail: {
-          title: "Une lecture confortable.",
+          title: "Agréable à lire.",
           description:
-            "Ouvrez une actualité pour la lire en entier, mise en forme pour votre écran. Sa catégorie s’affiche en tête, pour savoir tout de suite de quoi il s’agit.",
-          points: ["Texte mis en forme pour le téléphone", "Catégorie, auteur et date en tête"],
+            "Ouvrez une actu pour la lire en entier, mise en forme pour votre écran. Sa catégorie s’affiche en haut, pour savoir tout de suite de quoi ça parle.",
+          points: ["Texte mis en forme pour le téléphone", "Catégorie, auteur et date en haut"],
           imageAlt: "L’actualité « Inscription à l’association sportive », publiée par le service de la vie scolaire",
         },
       },
@@ -957,57 +958,57 @@ const fr = {
         items: {
           home: {
             title: "Dès l’accueil",
-            description: "La dernière actualité s’affiche sur l’accueil de l’app.",
+            description: "La dernière actu s’affiche sur l’accueil de l’app.",
           },
           offline: {
-            title: "Hors connexion",
-            description: "Les actualités déjà chargées restent lisibles sans réseau.",
+            title: "Même sans réseau",
+            description: "Les actus déjà chargées restent lisibles hors connexion.",
           },
           private: {
-            title: "Privé",
-            description: "Vos actualités restent sur votre appareil, jamais sur nos serveurs.",
+            title: "Rien que pour vous",
+            description: "Vos actus restent sur votre appareil, jamais sur nos serveurs.",
           },
         },
       },
       faq: {
-        title: "Vos questions sur les actualités",
+        title: "Vos questions sur les actus",
         description:
-          "Tout ce qu’il faut savoir sur les actualités dans Papillon.",
+          "Tout ce qu’il faut savoir sur les actus dans Papillon.",
         items: [
           {
             emoji: "📥",
-            question: "D’où viennent les actualités ?",
+            question: "D’où viennent les actus ?",
             answer:
-              "Ce sont les informations publiées par votre établissement sur Pronote, ÉcoleDirecte ou Skolengo. Papillon les récupère directement, sans intermédiaire.",
+              "Ce sont les infos publiées par votre établissement sur Pronote, ÉcoleDirecte ou Skolengo. Papillon les récupère directement, sans intermédiaire.",
           },
           {
             emoji: "📊",
-            question: "Puis-je répondre aux sondages ?",
+            question: "Je peux répondre aux sondages ?",
             answer:
-              "Pas encore : Pronote ne permet pas de les afficher pour le moment. Papillon vous indique quand une actualité contient un sondage.",
+              "Pas encore : Pronote ne permet pas de les afficher pour l’instant. Papillon vous signale quand une actu contient un sondage.",
           },
           {
             emoji: "🛠️",
-            question: "Une actualité s’affiche mal, que faire ?",
+            question: "Une actu s’affiche mal, je fais quoi ?",
             answer:
-              "En bas de chaque actualité, vous pouvez désactiver le formatage automatique pour l’afficher telle qu’elle a été publiée.",
+              "En bas de chaque actu, vous pouvez désactiver la mise en forme automatique pour la voir telle qu’elle a été publiée.",
           },
           {
             emoji: "📶",
-            question: "Puis-je lire les actualités hors connexion ?",
-            answer: "Oui. Les actualités déjà chargées restent sur votre appareil et s’affichent même sans réseau.",
+            question: "Je peux lire les actus hors connexion ?",
+            answer: "Oui. Les actus déjà chargées restent sur votre appareil et s’affichent même sans réseau.",
           },
           {
             emoji: "💸",
-            question: "Faut-il payer pour ces fonctionnalités ?",
-            answer: "Non. Tout est gratuit, sans publicité ni abonnement.",
+            question: "C’est payant ?",
+            answer: "Non. Tout est gratuit, sans pub et sans abonnement.",
           },
         ],
       },
       cta: {
         title: "La prochaine annonce, vous la verrez.",
         description:
-          "Installez Papillon et connectez-vous avec vos identifiants habituels. Les actualités de votre établissement sont là en quelques secondes.",
+          "Installez Papillon et connectez-vous avec vos identifiants habituels. Les actus de votre établissement sont là en quelques secondes.",
       },
     },
   },
@@ -1032,7 +1033,7 @@ const fr = {
         title: "Le projet",
         links: {
           docs: { title: "Documentation", description: "Guides et aide" },
-          github: { title: "GitHub", description: "Le code, ouvert à tous" },
+          github: { title: "GitHub", description: "Le code, ouvert à tou·te·s" },
           donate: { title: "Ko-fi", description: "Soutenir le projet" },
         },
       },
@@ -1066,13 +1067,13 @@ const fr = {
     team: {
       title: "Une équipe & une vision de l’école",
       description:
-        "Papillon est porté par une association d’élèves, d’étudiants et de jeunes développeurs. Nous imaginons une vie scolaire centrée sur les élèves, et nous la construisons ensemble, en open source.",
+        "Papillon est porté par une association d’élèves, d’étudiant·e·s et de jeunes développeur·euse·s. Nous imaginons une vie scolaire centrée sur les élèves, et nous la construisons ensemble, en open source.",
       about: "Qui sommes-nous ?",
       linkedin: "LinkedIn",
       photoAlt: "L’équipe de Papillon",
     },
     association: "Association Papillon",
-    copyright: "© 2026 Association Papillon & contributeurs. Tous droits réservés.",
+    copyright: "© 2026 Association Papillon & contributeur·rice·s. Tous droits réservés.",
     columns: {
       product: {
         title: "Fonctionnalités",
@@ -1116,15 +1117,15 @@ const fr = {
   story: {
     placeholder: "Capture à fournir",
     timeline: [
-      { date: "2021", title: "Une app pour les copains", text: "La première version est codée le soir après les cours, pour une poignée d’amis." },
+      { date: "2021", title: "Une app pour les potes", text: "La première version est codée le soir après les cours, pour une poignée d’ami·e·s." },
       { date: "2022", title: "Le code passe en open source", text: "Tout le monde peut lire le code et proposer des changements. La communauté se forme sur GitHub et sur Discord." },
       { date: "2023", title: "Enfin sur les stores", text: "Les dons de la communauté permettent de publier Papillon sur l’App Store et Google Play." },
       { date: "Septembre 2024", title: "La v7, refaite de zéro", text: "Tom redessine toute l’app, identité visuelle comprise." },
       { date: "Décembre 2024", title: "Numéro 1 de l’App Store", text: "Papillon passe les 100 000 téléchargements et reste une semaine en tête de l’App Store France." },
       { date: "Mai 2025", title: "Un million de téléchargements", text: "Et toujours pas une seule pub. L’app reste gratuite." },
-      { date: "Août 2025", title: "On crée l’association", text: "Papillon devient une association d’élèves et d’étudiants, pour que le projet tienne dans le temps." },
+      { date: "Août 2025", title: "On crée l’association", text: "Papillon devient une association d’élèves et d’étudiant·e·s, pour que le projet tienne dans le temps." },
       { date: "Septembre 2025", title: "La v8", text: "Une grosse mise à jour : l’app est plus rapide et fait plus de choses." },
-      { date: "Janvier 2026", title: "Direction la fac", text: "On commence à adapter Papillon aux étudiants du supérieur." },
+      { date: "Janvier 2026", title: "Direction la fac", text: "On commence à adapter Papillon aux étudiant·e·s du supérieur." },
       { date: "Septembre 2026", title: "iPad, iPhone Duo et Mac", text: "Papillon arrive sur iPad et sur Mac, et s’adapte à l’écran pliable de l’iPhone Duo." },
     ],
     vinceQuote:

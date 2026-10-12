@@ -21,12 +21,19 @@ import { LargeScreen } from "@/components/feature/large-screen";
 import { SectionTitle } from "@/components/feature/section-title";
 import { Tiles } from "@/components/feature/tiles";
 import { AnnotatedScreen } from "@/components/grades/annotated-screen";
-import { getDictionary } from "@/i18n/server";
+import { getDictionary, getLocale } from "@/i18n/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = (await getDictionary()).featurePages.grades;
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
+  const t = dict.featurePages.grades;
 
-  return { title: t.metadataTitle, description: t.metadataDescription };
+  return pageMetadata({
+    locale,
+    path: "/grades",
+    title: t.metadataTitle,
+    description: t.metadataDescription,
+  });
 }
 
 export default async function GradesPage() {

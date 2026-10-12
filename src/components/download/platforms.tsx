@@ -40,7 +40,7 @@ export function Platforms({ t }: PlatformsProps) {
                 <h3 className="text-lg/snug font-medium transition-colors duration-150 group-hover:text-primary">
                   {t.items[key].name}
                 </h3>
-                <p className="text-md text-pretty text-foreground/50 max-sm:hidden">
+                <p className="text-md text-pretty text-foreground/60 max-sm:hidden">
                   {t.items[key].description}
                 </p>
                 <span className="text-sm font-medium text-primary">{t.items[key].cta}</span>

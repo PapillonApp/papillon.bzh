@@ -41,7 +41,7 @@ const components = {
   ),
   ol: (props) => (
     <ol
-      className="mt-5 list-decimal pl-6 text-lg/relaxed text-foreground/75 marker:text-foreground/40 [&>li+li]:mt-2"
+      className="mt-5 list-decimal pl-6 text-lg/relaxed text-foreground/75 marker:text-foreground/60 [&>li+li]:mt-2"
       {...props}
     />
   ),

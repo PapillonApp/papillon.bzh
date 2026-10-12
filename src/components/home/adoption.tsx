@@ -22,7 +22,7 @@ export async function Adoption() {
       <div className="px-6">
         <SectionHeading
           icon={TextBubble}
-          iconColor="text-foreground/50"
+          iconColor="text-foreground/60"
           title={t.title}
           description={t.description}
         />

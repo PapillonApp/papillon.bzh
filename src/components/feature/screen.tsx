@@ -13,7 +13,7 @@ export function Screen({ image, alt, className = "w-64 lg:w-80", priority }: Scr
       src={image}
       alt={alt}
       sizes="(min-width: 1024px) 320px, 256px"
-      priority={priority}
+      preload={priority}
       className={`h-auto drop-shadow-xl/15 ${className}`}
     />
   );

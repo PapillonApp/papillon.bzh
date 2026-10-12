@@ -41,7 +41,7 @@ export function StoreBadges({
           rel="noreferrer"
           className="transition hover:opacity-85 active:scale-97"
         >
-          <Image src={badges[locale][store]} alt={t[store]} className="h-13 w-auto" />
+          <Image src={badges[locale][store]} alt={t[store]} sizes="180px" className="h-13 w-auto" />
         </a>
       ))}
     </div>

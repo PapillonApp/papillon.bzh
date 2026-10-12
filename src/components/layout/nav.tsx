@@ -29,8 +29,8 @@ export const menuIcons: Record<MenuLinkKey, { Icon: typeof Grades; color: string
   news: { Icon: Newspaper, color: "text-feature-news" },
   team: { Icon: Butterfly, color: "text-primary" },
   story: { Icon: Clock, color: "text-primary" },
-  docs: { Icon: Paper, color: "text-foreground/50" },
-  github: { Icon: Code, color: "text-foreground/50" },
+  docs: { Icon: Paper, color: "text-foreground/60" },
+  github: { Icon: Code, color: "text-foreground/60" },
 };
 
 type NavEntryProps = {

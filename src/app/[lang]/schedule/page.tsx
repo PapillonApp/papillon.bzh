@@ -13,12 +13,19 @@ import { HeroScreens } from "@/components/feature/hero-screens";
 import { LargeScreen } from "@/components/feature/large-screen";
 import { SectionTitle } from "@/components/feature/section-title";
 import { Tiles } from "@/components/feature/tiles";
-import { getDictionary } from "@/i18n/server";
+import { getDictionary, getLocale } from "@/i18n/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = (await getDictionary()).featurePages.schedule;
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
+  const t = dict.featurePages.schedule;
 
-  return { title: t.metadataTitle, description: t.metadataDescription };
+  return pageMetadata({
+    locale,
+    path: "/schedule",
+    title: t.metadataTitle,
+    description: t.metadataDescription,
+  });
 }
 
 export default async function SchedulePage() {

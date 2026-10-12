@@ -1,5 +1,5 @@
 import { Heart, Paper } from "@getpapillon/papicons";
-import type { ComponentType, SVGProps } from "react";
+import type { ComponentType } from "react";
 import { QrCode } from "@/components/download/qr-code";
 import { StoreBadges } from "@/components/download/store-badges";
 import {
@@ -22,7 +22,7 @@ type Groups = Dictionary["linksPage"]["groups"];
 type GroupKey = keyof Groups;
 type GroupLinkKey = { [Group in GroupKey]: keyof Groups[Group]["links"] }[GroupKey];
 
-const icons: Record<GroupLinkKey, ComponentType<SVGProps<SVGSVGElement>>> = {
+const icons: Record<GroupLinkKey, ComponentType<{ className?: string; "aria-hidden"?: boolean }>> = {
   discord: DiscordLogo,
   instagram: InstagramLogo,
   tiktok: TikTokLogo,
@@ -89,7 +89,7 @@ function LinkGroup({ title, links }: LinkGroupProps) {
 
   return (
     <nav aria-label={title}>
-      <h2 className="border-b border-foreground/10 pb-3 text-md font-semibold text-foreground/50">
+      <h2 className="border-b border-foreground/10 pb-3 text-md font-semibold text-foreground/60">
         {title}
       </h2>
       <HoverGroup highlightClassName="rounded-2xl bg-foreground/5">
@@ -106,7 +106,7 @@ function LinkGroup({ title, links }: LinkGroupProps) {
                 >
                   <Icon aria-hidden className="size-6 shrink-0 text-foreground/70" />
                   <span className="text-xl font-medium">{link.title}</span>
-                  <span className="ml-auto truncate text-md text-foreground/50">
+                  <span className="ml-auto truncate text-md text-foreground/60">
                     {link.description}
                   </span>
                 </a>

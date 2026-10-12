@@ -64,6 +64,7 @@ const en: Dictionary = {
         "Grades, schedule, homework, cafeteria menu and more, all in one beautifully simple app that fits right into your day.",
       stars: "stars",
       discover: "Explore Papillon",
+      iconLabels: ["News", "Cards", "Schedule", "Cafeteria", "School life"],
     },
     features: {
       title: "Everything school, in one app.",
@@ -473,7 +474,7 @@ const en: Dictionary = {
           imageAlt: "Papillon’s progress chart, showing an estimated average of 14.83 out of 20 on October 4",
         },
         methods: {
-          title: "Your average, your way.",
+          title: "The right average, with the right weights.",
           description:
             "Papillon factors in weights and lets you pick the method your school uses. If your school posts its own average, that’s the one you’ll see.",
           points: [
@@ -484,7 +485,7 @@ const en: Dictionary = {
           imageAlt: "Choosing how the overall average is calculated in Papillon",
         },
         detail: {
-          title: "Every grade, in context.",
+          title: "What your grade is really worth.",
           description:
             "Tap a grade to see how the rest of the class did: class average, highest and lowest score, and how much the assignment is worth.",
           points: [
@@ -495,7 +496,7 @@ const en: Dictionary = {
           imageAlt: "Details of a 16 out of 20 grade, with a weight of 1 and a class average of 13.50",
         },
         influence: {
-          title: "See what every grade really changes.",
+          title: "What every grade changes.",
           description:
             "Got a 16 in Biology? That’s +0.07 on your overall average. Papillon shows the impact of every grade, so you know exactly where you’re gaining ground and where to catch up.",
           points: [
@@ -505,7 +506,7 @@ const en: Dictionary = {
           imageAlt: "A grade that raises the overall average by 0.07 points",
         },
         periods: {
-          title: "Every term, one tap away.",
+          title: "Term by term.",
           description:
             "Switch between terms or semesters from the menu to compare your results or look back at the start of the year. Practice exams get their own tab.",
           points: ["Terms and semesters", "Practice exams kept separate", "Start and end dates for each term"],
@@ -527,7 +528,7 @@ const en: Dictionary = {
         title: "Also",
         items: {
           offline: {
-            title: "Offline",
+            title: "Works offline",
             description: "Your grades are always available, even with no signal on the bus or in the back row.",
           },
           home: {
@@ -535,7 +536,7 @@ const en: Dictionary = {
             description: "Your average and its chart are there the moment you open the app.",
           },
           scale: {
-            title: "Your scale",
+            title: "Out of 20, or not",
             description: "Graded out of 10 or 40? Papillon converts it to the scale you prefer.",
           },
           skills: {
@@ -547,7 +548,7 @@ const en: Dictionary = {
             description: "Everything’s set up for you, but you can change any subject’s name, emoji and color.",
           },
           private: {
-            title: "Private",
+            title: "Just for you",
             description: "Your grades stay on your device. They never touch our servers.",
           },
         },
@@ -594,8 +595,8 @@ const en: Dictionary = {
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for any of this?",
-            answer: "Nope. Everything is free, with no ads and no subscription.",
+            question: "Is it free?",
+            answer: "Yep. Everything is free, with no ads and no subscription.",
           },
         ],
       },
@@ -628,7 +629,7 @@ const en: Dictionary = {
       },
       highlights: {
         day: {
-          title: "Changes stand out.",
+          title: "Class canceled? You’ll know right away.",
           description:
             "Class canceled or moved? You’ll see it right in your day. Room, teacher, length: it’s all there, breaks included.",
           points: [
@@ -639,7 +640,7 @@ const en: Dictionary = {
           imageAlt: "Thursday, October 8, with a lunch break and a canceled Economics class",
         },
         views: {
-          title: "List or week, your call.",
+          title: "List or week.",
           description:
             "Stick with the List view to follow your day, or switch to the Week view to see every class at once. It’s just one menu away.",
           points: ["List view, day by day", "Week view, in beta", "All your iCal calendars in one place"],
@@ -690,7 +691,7 @@ const en: Dictionary = {
             description: "Today’s or tomorrow’s classes are there the moment you open the app.",
           },
           offline: {
-            title: "Offline",
+            title: "Works offline",
             description: "Your schedule is always available, even without a connection.",
           },
           ical: {
@@ -706,7 +707,7 @@ const en: Dictionary = {
             description: "Change any subject’s name, emoji and color.",
           },
           private: {
-            title: "Private",
+            title: "Just for you",
             description: "Your schedule stays on your device, never on our servers.",
           },
         },
@@ -753,8 +754,8 @@ const en: Dictionary = {
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for any of this?",
-            answer: "Nope. Everything is free, with no ads and no subscription.",
+            question: "Is it free?",
+            answer: "Yep. Everything is free, with no ads and no subscription.",
           },
         ],
       },
@@ -841,11 +842,11 @@ const en: Dictionary = {
             description: "Find any assignment by typing a word from the instructions or the subject name.",
           },
           offline: {
-            title: "Offline",
+            title: "Works offline",
             description: "Your homework is always available, even without a connection.",
           },
           private: {
-            title: "Private",
+            title: "Just for you",
             description: "Your homework stays on your device, never on our servers.",
           },
         },
@@ -884,8 +885,8 @@ const en: Dictionary = {
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for any of this?",
-            answer: "Nope. Everything is free, with no ads and no subscription.",
+            question: "Is it free?",
+            answer: "Yep. Everything is free, with no ads and no subscription.",
           },
         ],
       },
@@ -934,11 +935,11 @@ const en: Dictionary = {
             description: "The latest announcements appear on the app’s home screen.",
           },
           offline: {
-            title: "Offline",
+            title: "Works offline",
             description: "Announcements you’ve already loaded stay readable without a connection.",
           },
           private: {
-            title: "Private",
+            title: "Just for you",
             description: "Your school’s announcements stay on your device, never on our servers.",
           },
         },
@@ -973,8 +974,8 @@ const en: Dictionary = {
           },
           {
             emoji: "💸",
-            question: "Do I have to pay for any of this?",
-            answer: "Nope. Everything is free, with no ads and no subscription.",
+            question: "Is it free?",
+            answer: "Yep. Everything is free, with no ads and no subscription.",
           },
         ],
       },

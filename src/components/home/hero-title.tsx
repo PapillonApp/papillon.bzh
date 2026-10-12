@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  AnimatePresence,
   type MotionValue,
   motion,
   useMotionTemplate,
@@ -11,7 +12,7 @@ import {
   type Variants,
 } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
-import { type ClipboardEvent, useEffect, useRef } from "react";
+import { type ClipboardEvent, useEffect, useRef, useState } from "react";
 import bubble from "@/assets/hero/bubble.svg";
 import calendar from "@/assets/hero/calendar.svg";
 import cards from "@/assets/hero/cards.svg";
@@ -95,13 +96,17 @@ function TitleText({ text, pointer }: { text: string; pointer: TitlePointer }) {
 
 function TitleIcon({
   icon,
+  label,
   index,
   pointer,
 }: {
   icon: StaticImageData;
+  label: string;
   index: number;
   pointer: TitlePointer;
 }) {
+  const reduceMotion = useReducedMotion();
+  const [hovered, setHovered] = useState(false);
   const { ref, proximity } = useProximity<HTMLSpanElement>(pointer, 70);
   const scale = useTransform(proximity, [0, 1], [1, 1.6]);
 
@@ -110,14 +115,37 @@ function TitleIcon({
       ref={ref}
       custom={index}
       variants={iconVariants}
-      className="flex h-12 justify-center lg:h-17"
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="relative flex h-12 justify-center lg:h-17"
     >
       <MotionImage src={icon} alt="" style={{ scale }} className="size-12 max-w-none lg:size-17" />
+      <AnimatePresence>
+        {hovered && (
+          <motion.span
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
+            transition={{ duration: 0.2, ease: easeOutPapillon }}
+            className="pointer-events-none absolute bottom-full mb-2 rounded-full bg-foreground/80 px-3 py-1.5 text-md font-medium tracking-normal text-background whitespace-nowrap backdrop-blur-md lg:mb-3"
+          >
+            <span className="text-trim">{label}</span>
+          </motion.span>
+        )}
+      </AnimatePresence>
     </motion.span>
   );
 }
 
-export function HeroTitle({ start, end }: { start: string; end: string }) {
+export function HeroTitle({
+  start,
+  end,
+  iconLabels,
+}: {
+  start: string;
+  end: string;
+  iconLabels: string[];
+}) {
   const reduceMotion = useReducedMotion();
   const origin = useRef<HTMLHeadingElement>(null);
   const pointer: TitlePointer = {
@@ -163,7 +191,13 @@ export function HeroTitle({ start, end }: { start: string; end: string }) {
         className="flex items-center select-none"
       >
         {titleIcons.map((icon, index) => (
-          <TitleIcon key={icon.src} icon={icon} index={index} pointer={pointer} />
+          <TitleIcon
+            key={icon.src}
+            icon={icon}
+            label={iconLabels[index]}
+            index={index}
+            pointer={pointer}
+          />
         ))}
       </motion.span>
       <TitleText text={end} pointer={pointer} />

@@ -51,7 +51,7 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
       />
 
       <div className="relative mx-auto mt-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
-        <HeroTitle start={t.titleStart} end={t.titleEnd} />
+        <HeroTitle start={t.titleStart} end={t.titleEnd} iconLabels={t.iconLabels} />
 
         <p className="text-trim text-lg/normal font-book text-current/60">{t.description}</p>
 

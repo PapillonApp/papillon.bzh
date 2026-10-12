@@ -33,7 +33,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 <motion.span
                   animate={{ rotate: open ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: easeOutPapillon }}
-                  className="shrink-0 text-foreground/40"
+                  className="shrink-0 text-foreground/60"
                 >
                   <ChevronDown aria-hidden className="size-5" />
                 </motion.span>

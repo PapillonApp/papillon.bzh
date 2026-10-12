@@ -17,7 +17,7 @@ export async function Steps() {
     <section id="how-it-works" className="scroll-mt-20 px-6 py-24 lg:py-32">
       <SectionHeading
         icon={Login}
-        iconColor="text-foreground/50"
+        iconColor="text-foreground/60"
         title={t.title}
         description={t.description}
       />

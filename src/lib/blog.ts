@@ -1,6 +1,8 @@
 import { readdir } from "node:fs/promises";
 import path from "node:path";
-import type { ComponentType } from "react";
+import type { MDXContent } from "mdx/types";
+
+export const postLocale = "fr";
 
 export const postCategories = ["articles", "development", "releaseNotes"] as const;
 
@@ -18,7 +20,7 @@ export type PostFrontmatter = {
 
 export type Post = PostFrontmatter & { slug: string; file: string; category: PostCategory };
 
-type PostModule = { default: ComponentType; frontmatter: PostFrontmatter };
+type PostModule = { default: MDXContent; frontmatter: PostFrontmatter };
 
 const postFile = /\.mdx?$/;
 

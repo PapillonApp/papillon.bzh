@@ -31,7 +31,7 @@ export default async function NotFound() {
           </a>
           <DownloadButton t={dict.download} variant="primary" />
         </div>
-        <p className="mt-6 text-sm text-foreground/40">{t.hint}</p>
+        <p className="mt-6 text-sm text-foreground/60">{t.hint}</p>
       </div>
     </main>
   );

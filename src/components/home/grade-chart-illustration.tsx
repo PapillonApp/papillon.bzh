@@ -7,6 +7,7 @@ import {
   useMotionValueEvent,
   useReducedMotion,
   useTransform,
+  type Transition,
 } from "motion/react";
 import { useId, useRef, useState, type PointerEvent } from "react";
 import { Chevron } from "@/components/ui/chevron";
@@ -65,7 +66,7 @@ const ping = { scale: [0.4, 1.6], opacity: [0, 0.8, 0] };
 const pingTransition = {
   scale: { duration: 1.6, repeat: Infinity, ease: "easeOut" },
   opacity: { duration: 1.6, repeat: Infinity, times: [0, 0.2, 1], ease: "linear" },
-} as const;
+} satisfies Transition;
 const pingStopped = { scale: 0.4, opacity: 0 };
 const pingStopTransition = { duration: 0.15 };
 const digitTransition = { duration: 0.2, ease: easeOutPapillon };
@@ -206,7 +207,7 @@ export function GradeChartIllustration({ label, source }: GradeChartIllustration
           </p>
           <p className="flex items-center gap-1.5 text-md font-semibold">
             {label}
-            <Chevron className="text-foreground/50" />
+            <Chevron className="text-foreground/60" />
           </p>
           <p className="text-sm text-foreground/60">{source}</p>
         </div>

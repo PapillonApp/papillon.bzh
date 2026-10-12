@@ -7,12 +7,19 @@ import { FeaturePage } from "@/components/feature/feature-page";
 import { HeroScreens } from "@/components/feature/hero-screens";
 import { SectionTitle } from "@/components/feature/section-title";
 import { Tiles } from "@/components/feature/tiles";
-import { getDictionary } from "@/i18n/server";
+import { getDictionary, getLocale } from "@/i18n/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = (await getDictionary()).featurePages.homework;
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
+  const t = dict.featurePages.homework;
 
-  return { title: t.metadataTitle, description: t.metadataDescription };
+  return pageMetadata({
+    locale,
+    path: "/homework",
+    title: t.metadataTitle,
+    description: t.metadataDescription,
+  });
 }
 
 export default async function HomeworkPage() {

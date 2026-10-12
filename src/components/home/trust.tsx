@@ -18,8 +18,8 @@ export async function Trust() {
 
   const pillars: { key: PillarKey; proof: ReactNode }[] = [
     { key: "openSource", proof: <ContributorsProof t={t} contributors={contributors} /> },
-    { key: "privacy", proof: <Ghost aria-hidden className="size-12 text-foreground/50" /> },
-    { key: "security", proof: <Lock aria-hidden className="size-12 text-foreground/50" /> },
+    { key: "privacy", proof: <Ghost aria-hidden className="size-12 text-foreground/60" /> },
+    { key: "security", proof: <Lock aria-hidden className="size-12 text-foreground/60" /> },
   ];
 
   return (
@@ -80,7 +80,7 @@ function ContributorsProof({ t, contributors }: { t: Trust; contributors: Contri
       )}
       <span className="flex items-center gap-1.5 text-md font-medium">
         <span className="text-trim">{label}</span>
-        <ExternalLink aria-hidden className="size-5 text-foreground/50" />
+        <ExternalLink aria-hidden className="size-5 text-foreground/60" />
       </span>
     </a>
   );

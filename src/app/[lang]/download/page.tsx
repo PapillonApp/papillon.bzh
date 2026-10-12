@@ -3,11 +3,17 @@ import { Beta } from "@/components/download/beta";
 import { Hero } from "@/components/download/hero";
 import { Platforms } from "@/components/download/platforms";
 import { getDictionary, getLocale } from "@/i18n/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dict = await getDictionary();
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
-  return { title: dict.downloadPage.metadataTitle };
+  return pageMetadata({
+    locale,
+    path: "/download",
+    title: dict.downloadPage.metadataTitle,
+    description: dict.downloadPage.hero.description,
+  });
 }
 
 export default async function DownloadPage() {

@@ -39,7 +39,7 @@ export function CategoryTabs({ allLabel, labels, panels }: CategoryTabsProps) {
             type="button"
             aria-pressed={active === tab}
             onClick={() => setActive(tab)}
-            className="relative isolate flex h-10 shrink-0 items-center gap-2 rounded-full px-3 text-md font-medium text-foreground/50 transition-colors duration-150 hover:text-foreground aria-pressed:text-foreground"
+            className="relative isolate flex h-10 shrink-0 items-center gap-2 rounded-full px-3 text-md font-medium text-foreground/60 transition-colors duration-150 hover:text-foreground aria-pressed:text-foreground"
           >
             {active === tab && (
               <motion.span

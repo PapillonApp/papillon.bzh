@@ -3,6 +3,7 @@ import Image from "next/image";
 import iphoneFrame from "@/assets/features/iphone-frame.png";
 import { FadeUp } from "@/components/ui/fade-up";
 import { HorizontalScroll } from "@/components/ui/horizontal-scroll";
+import { LazyVideo } from "@/components/ui/lazy-video";
 import { getDictionary } from "@/i18n/server";
 
 const videos = ["/features/grades.mp4", "/features/schedule.mp4", "/features/subjects.mp4"];
@@ -19,15 +20,7 @@ export async function FeatureDemos() {
         >
           <FadeUp className="relative aspect-431/885 w-64 shrink-0 lg:h-3/4 lg:max-h-205 lg:w-auto">
             <div className="absolute inset-x-1/23 inset-y-1/53 overflow-hidden rounded-[14%/6.5%]">
-              <video
-                src={videos[index]}
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-hidden
-                className="size-full object-cover"
-              />
+              <LazyVideo src={videos[index]} className="size-full object-cover" />
             </div>
             <Image
               src={iphoneFrame}

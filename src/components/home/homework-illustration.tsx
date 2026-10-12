@@ -22,7 +22,7 @@ export function HomeworkIllustration({ homework }: HomeworkIllustrationProps) {
         <div className="flex items-center gap-3 text-2xl">
           <span aria-hidden>{homework.emoji}</span>
           <span className="font-semibold text-swatch-purple">{homework.subject}</span>
-          <span className="ml-auto text-foreground/50">{homework.due}</span>
+          <span className="ml-auto text-foreground/60">{homework.due}</span>
         </div>
         <p className="text-2xl/snug">{homework.content}</p>
         <div className="flex items-center justify-between">

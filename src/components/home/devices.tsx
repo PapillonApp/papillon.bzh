@@ -10,7 +10,7 @@ export async function Devices() {
     <section id="devices" className="scroll-mt-20 px-6 py-24 lg:py-32">
       <SectionHeading
         icon={Phone}
-        iconColor="text-foreground/50"
+        iconColor="text-foreground/60"
         title={t.title}
         description={t.description}
       />
