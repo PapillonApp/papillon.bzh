@@ -21,6 +21,8 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
   const { scrollYProgress } = useScroll({ target: toneRef, offset: ["start start", "end start"] });
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
+    // The listener outlives the page while <Activity> keeps it hidden
+    if (!toneRef.current?.checkVisibility()) return;
     pageLight.set(progress);
     document.documentElement.style.setProperty("--page-light", `${progress * 100}%`);
   });

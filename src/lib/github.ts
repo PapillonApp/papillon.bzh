@@ -23,3 +23,19 @@ export async function getContributors(): Promise<Contributor[]> {
     return [];
   }
 }
+
+export async function getGithubName(login: string): Promise<string> {
+  "use cache";
+  cacheLife("days");
+
+  try {
+    const response = await fetch(`https://api.github.com/users/${encodeURIComponent(login)}`, {
+      headers: { Accept: "application/vnd.github+json" },
+    });
+    if (!response.ok) return login;
+    const user: { name: string | null } = await response.json();
+    return user.name || login;
+  } catch {
+    return login;
+  }
+}

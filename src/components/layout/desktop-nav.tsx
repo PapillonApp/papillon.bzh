@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 import {
   type PointerEvent,
   type ReactNode,
@@ -92,6 +93,16 @@ export function DesktopNav({ labels, locale }: DesktopNavProps) {
             </button>
           </li>
         ))}
+        <li>
+          <Link
+            href={`/${locale}/blog`}
+            onPointerEnter={(event) => isMouse(event) && setActive(null)}
+            data-hover-item
+            className={navEntryStyle}
+          >
+            <span className="text-trim">{labels.blog}</span>
+          </Link>
+        </li>
       </ul>
 
       <AnimatePresence>

@@ -10,6 +10,7 @@ const fr = {
     features: "Fonctionnalités",
     about: "À propos",
     developers: "Développer",
+    blog: "Blog",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     menus: {
@@ -1017,6 +1018,19 @@ const fr = {
       },
     },
   },
+  blog: {
+    metadataTitle: "Blog – Papillon",
+    title: "Blog",
+    description: "Les nouveautés de l’app, les coulisses du projet et ce qu’on apprend en chemin.",
+    all: "Tout",
+    categories: {
+      articles: "Articles",
+      development: "Développement",
+      releaseNotes: "Notes de mise à jour",
+    },
+    back: "Tous les articles",
+    empty: "Aucun article pour le moment.",
+  },
   notFound: {
     metadataTitle: "Page introuvable – Papillon",
     label: "Erreur 404 · Absence non justifiée",
@@ -1052,6 +1066,7 @@ const fr = {
         links: {
           team: "Qui sommes-nous",
           story: "Notre histoire",
+          blog: "Blog",
           donate: "Soutenir le projet",
           privacy: "Confidentialité",
         },

@@ -2,6 +2,7 @@
 
 import { Cross, Menu } from "@getpapillon/papicons";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 import { useEffect } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { easeOutPapillon } from "@/lib/motion";
@@ -74,6 +75,11 @@ export function MobileMenu({ nav, language, locale }: MobileMenuProps) {
                     />
                   </li>
                 ))}
+                <li>
+                  <Link href={`/${locale}/blog`} className={entryStyle}>
+                    {nav.blog}
+                  </Link>
+                </li>
               </ul>
             </nav>
             <div className="mt-auto self-start">

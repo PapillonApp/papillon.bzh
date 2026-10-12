@@ -106,13 +106,14 @@
     --page-light: 100%;
   }
 
-  :root:has([data-dark-hero]) {
+  /* Pages kept hidden by <Activity> stay in the DOM with display: none */
+  :root:has([data-dark-hero]:not([style*="display: none"], [style*="display: none"] *)) {
     --page-light: 0%;
   }
 
   /* Scroll-linked in CSS so a reload mid-page paints the right tone before hydration */
   @supports (animation-timeline: scroll()) {
-    :root:has([data-dark-hero]) {
+    :root:has([data-dark-hero]:not([style*="display: none"], [style*="display: none"] *)) {
       animation: page-light linear both;
       animation-timeline: scroll(root);
       animation-range: 0 calc(var(--spacing) * 75);

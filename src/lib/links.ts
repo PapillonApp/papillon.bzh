@@ -13,6 +13,7 @@ export const linkHrefs: Record<LinkKey, string> = {
   news: "/news",
   team: "/association",
   story: "/story",
+  blog: "/blog",
   donate: "https://ko-fi.com/thepapillonapp",
   privacy: "https://docs.papillon.bzh/privacy-policy",
   docs: "https://docs.papillon.bzh",

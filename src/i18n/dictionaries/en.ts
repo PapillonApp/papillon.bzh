@@ -11,6 +11,7 @@ const en: Dictionary = {
     features: "Features",
     about: "About",
     developers: "Developers",
+    blog: "Blog",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     menus: {
@@ -991,6 +992,19 @@ const en: Dictionary = {
       },
     },
   },
+  blog: {
+    metadataTitle: "Blog – Papillon",
+    title: "Blog",
+    description: "What’s new in the app, behind the scenes of the project, and what we learn along the way.",
+    all: "All",
+    categories: {
+      articles: "Articles",
+      development: "Development",
+      releaseNotes: "Release notes",
+    },
+    back: "All posts",
+    empty: "No posts yet.",
+  },
   notFound: {
     metadataTitle: "Page not found – Papillon",
     label: "Error 404 · Unexcused absence",
@@ -1026,6 +1040,7 @@ const en: Dictionary = {
         links: {
           team: "Meet the team",
           story: "Our story",
+          blog: "Blog",
           donate: "Donate",
           privacy: "Privacy",
         },

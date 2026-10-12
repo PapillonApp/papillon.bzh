@@ -35,7 +35,9 @@ function isOverDarkSection() {
 
 function isOverDarkHero() {
   return (
-    Boolean(document.querySelector("[data-dark-hero], [data-primary-hero], [data-photo-hero]")) &&
+    [...document.querySelectorAll("[data-dark-hero], [data-primary-hero], [data-photo-hero]")].some(
+      (hero) => hero.checkVisibility(),
+    ) &&
     window.scrollY <= lightAfterScroll
   );
 }
