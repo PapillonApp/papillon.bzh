@@ -21,6 +21,7 @@ const fr = {
       },
       about: {
         team: { title: "Association", description: "L’équipe et la vision derrière Papillon." },
+        story: { title: "Notre histoire", description: "Comment Papillon est né, et ce qui a suivi." },
       },
       developers: {
         docs: { title: "Documentation", description: "Guides et référence pour contribuer." },
@@ -46,7 +47,7 @@ const fr = {
       titleStart: "La nouvelle",
       titleEnd: "vie scolaire",
       description:
-        "Un seul endroit pour vos notes, votre cantine, votre calendrier, vos devoirs, et plus encore, pour une expérience pensée pour rendre la vie étudiante facile, fluide et intégrée dans votre quotidien.",
+        "Un seul endroit pour vos notes, votre cantine, votre calendrier, vos devoirs, et plus encore, pour une expérience pensée pour rendre la vie étudiante facile et intégrée dans votre quotidien.",
       imageAlt: "Papillon ouvert sur un téléphone pliable, avec l’emploi du temps de la journée",
       discover: "Découvrir Papillon",
     },
@@ -1038,6 +1039,7 @@ const fr = {
         title: "À propos",
         links: {
           team: "Qui sommes-nous",
+          story: "Notre histoire",
           donate: "Soutenir le projet",
           privacy: "Confidentialité",
         },
@@ -1060,6 +1062,54 @@ const fr = {
           discord: "Discord",
         },
       },
+    },
+  },
+  story: {
+    placeholder: "Capture à fournir",
+    timeline: [
+      { date: "2021", title: "Une app pour les copains", text: "La première version est codée le soir après les cours, pour une poignée d’amis." },
+      { date: "2022", title: "Le code passe en open source", text: "Tout le monde peut lire le code et proposer des changements. La communauté se forme sur GitHub et sur Discord." },
+      { date: "2023", title: "Enfin sur les stores", text: "Les dons de la communauté permettent de publier Papillon sur l’App Store et Google Play." },
+      { date: "Septembre 2024", title: "La v7, refaite de zéro", text: "Tom redessine toute l’app, identité visuelle comprise." },
+      { date: "Décembre 2024", title: "Numéro 1 de l’App Store", text: "Papillon passe les 100 000 téléchargements et reste une semaine en tête de l’App Store France." },
+      { date: "Mai 2025", title: "Un million de téléchargements", text: "Et toujours pas une seule pub. L’app reste gratuite." },
+      { date: "Août 2025", title: "On crée l’association", text: "Papillon devient une association d’élèves et d’étudiants, pour que le projet tienne dans le temps." },
+      { date: "Septembre 2025", title: "La v8", text: "Une grosse mise à jour : l’app est plus rapide et fait plus de choses." },
+      { date: "Janvier 2026", title: "Direction la fac", text: "On commence à adapter Papillon aux étudiants du supérieur." },
+      { date: "Septembre 2026", title: "iPad, iPhone Duo et Mac", text: "Papillon arrive sur iPad et sur Mac, et s’adapte à l’écran pliable de l’iPhone Duo." },
+    ],
+    vinceQuote:
+      "J’ai lancé Papillon en 2021 parce que je voulais voir ma moyenne sans passer par trois menus. Cinq ans plus tard, on est toujours des élèves qui codent pour d’autres élèves, et le code est toujours ouvert. Ça, on n’y touchera pas.",
+    metadataTitle: "Notre histoire – Papillon",
+    download: "Télécharger",
+    hero: {
+      title: "Comment tout a commencé",
+      devicesAlt: "Papillon sur Pixel, iPad, iPhone Duo et iPhone",
+      description:
+        "Papillon est né en 2021, entre deux devoirs. Cinq ans plus tard, l’app a été téléchargée plus de 1,8 million de fois.",
+    },
+    timelineLabel: "Les étapes de Papillon, de 2021 à aujourd’hui",
+    placeholders: {
+      first: "première version de Papillon en 2021, capture d’époque",
+      stores: "fiche App Store de Papillon en 2023",
+      v7: "accueil de Papillon v7, septembre 2024",
+      ranking: "classement App Store France avec Papillon numéro 1, décembre 2024",
+      million: "visuel publié pour le million de téléchargements, mai 2025",
+      universities: "écran de connexion à une université, en développement",
+    },
+    images: {
+      openSource: "Un membre de l’équipe en train de coder sur son ordinateur",
+      association: "Les six membres de l’équipe Papillon",
+      v8: "L’accueil de Papillon v8",
+      devices: "Papillon sur un iPad Pro, avec la vue semaine",
+    },
+    vision: {
+      title: "Et maintenant ?",
+      description:
+        "L’association veut que chaque élève, du collège à l’université, ait une app gratuite, rapide et qui respecte sa vie privée. Le code reste ouvert, et on continue à le faire avec la communauté.",
+    },
+    cta: {
+      description: "Papillon est gratuit et sans pub.",
     },
   },
 };

@@ -5,6 +5,7 @@ import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import phoneInHand from "@/assets/hero/phone-in-hand.png";
+import { AnimatedGradient } from "@/components/home/animated-gradient";
 import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
@@ -38,13 +39,10 @@ export function Hero({ t, download }: HeroProps) {
   return (
     <section
       data-dark-hero
-      className="relative isolate z-10 flex flex-col overflow-x-clip pt-18 pb-12 text-page-foreground lg:h-svh lg:min-h-180 lg:pb-16"
+      className="relative isolate z-10 flex flex-col overflow-x-clip pt-18 pb-12 text-page-foreground lg:h-svh lg:min-h-180 lg:pt-20 lg:pb-16"
     >
       <div ref={toneRef} aria-hidden className="absolute inset-x-0 top-0 h-75" />
-      <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-193 left-1/2 h-386 w-918 -translate-x-1/2 bg-radial from-primary/30 from-21% via-primary/15 via-43% to-transparent to-65%" />
-        <div className="absolute -top-112 left-1/2 h-238 w-428 -translate-x-1/2 bg-radial from-primary/55 via-primary/30 via-26% to-transparent to-71%" />
-      </div>
+      <AnimatedGradient className="absolute inset-0 -z-10 size-full mask-b-from-40% opacity-[calc(100%-var(--page-light))]" />
 
       <MotionImage
         initial={reduceMotion ? false : { opacity: 0, y: 32 }}
@@ -56,7 +54,7 @@ export function Hero({ t, download }: HeroProps) {
         loading="eager"
         fetchPriority="high"
         quality={90}
-        className="-mb-16 w-170 max-w-none self-center mask-b-from-75% md:-mb-14 md:w-200 lg:absolute lg:inset-x-0 lg:top-20 lg:mx-auto lg:h-4/5 lg:max-h-240 lg:w-auto"
+        className="-mb-16 w-170 max-w-none self-center mask-b-from-75% md:-mb-14 md:w-200 lg:-mb-24 lg:min-h-0 lg:w-full lg:max-h-240 lg:flex-1 lg:object-contain lg:object-bottom"
       />
 
       <div className="relative mx-auto mt-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">

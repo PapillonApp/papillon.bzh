@@ -1,6 +1,7 @@
 import {
   Butterfly,
   Calendar,
+  Clock,
   Code,
   Grades,
   Newspaper,
@@ -20,14 +21,15 @@ type MenuLinkKey = { [Key in MenuKey]: keyof Menus[Key] }[MenuKey];
 
 export const navItems: MenuKey[] = ["features", "about", "developers"];
 
-const menuIcons: Record<MenuLinkKey, typeof Grades> = {
-  grades: Grades,
-  schedule: Calendar,
-  homework: Tasks,
-  news: Newspaper,
-  team: Butterfly,
-  docs: Paper,
-  github: Code,
+const menuIcons: Record<MenuLinkKey, { Icon: typeof Grades; color: string }> = {
+  grades: { Icon: Grades, color: "text-feature-grades" },
+  schedule: { Icon: Calendar, color: "text-feature-schedule" },
+  homework: { Icon: Tasks, color: "text-feature-homework" },
+  news: { Icon: Newspaper, color: "text-feature-news" },
+  team: { Icon: Butterfly, color: "text-primary" },
+  story: { Icon: Clock, color: "text-primary" },
+  docs: { Icon: Paper, color: "text-foreground/50" },
+  github: { Icon: Code, color: "text-foreground/50" },
 };
 
 type NavEntryProps = {
@@ -62,7 +64,7 @@ export function MenuLinks({ links, locale }: MenuLinksProps) {
   return (
     <ul>
       {entries.map(([key, { title, description }]) => {
-        const Icon = menuIcons[key];
+        const { Icon, color } = menuIcons[key];
         const href = localizeHref(linkHrefs[key], locale);
         return (
           <li key={key}>
@@ -70,14 +72,12 @@ export function MenuLinks({ links, locale }: MenuLinksProps) {
               href={href}
               {...(href.startsWith("http") ? externalProps : {})}
               data-hover-item
-              className="flex items-center gap-4 rounded-2xl p-3"
+              className="flex gap-3 rounded-2xl px-3 py-2.5"
             >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-foreground/10 bg-transparent">
-                <Icon aria-hidden className="size-6 text-foreground/70" />
-              </span>
-              <span className="flex flex-col gap-1">
-                <span className="text-md font-medium">{title}</span>
-                <span className="text-md text-foreground/60">{description}</span>
+              <Icon aria-hidden className={`size-5 shrink-0 ${color}`} />
+              <span className="flex flex-col gap-2 pt-1">
+                <span className="text-trim text-md font-medium">{title}</span>
+                <span className="text-sm text-pretty text-foreground/55">{description}</span>
               </span>
             </a>
           </li>

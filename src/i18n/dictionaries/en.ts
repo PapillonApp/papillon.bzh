@@ -22,6 +22,7 @@ const en: Dictionary = {
       },
       about: {
         team: { title: "Our team", description: "The people and the vision behind Papillon." },
+        story: { title: "Our story", description: "How Papillon started, and what came next." },
       },
       developers: {
         docs: { title: "Docs", description: "Guides and API reference for contributors." },
@@ -1012,6 +1013,7 @@ const en: Dictionary = {
         title: "About",
         links: {
           team: "Meet the team",
+          story: "Our story",
           donate: "Donate",
           privacy: "Privacy",
         },
@@ -1034,6 +1036,54 @@ const en: Dictionary = {
           discord: "Discord",
         },
       },
+    },
+  },
+  story: {
+    placeholder: "Screenshot needed",
+    timeline: [
+      { date: "2021", title: "An app for friends", text: "The first version is written in the evenings after class, for a handful of friends." },
+      { date: "2022", title: "The code goes open source", text: "Anyone can read the code and suggest changes. A community starts to form on GitHub and Discord." },
+      { date: "2023", title: "Finally on the stores", text: "Donations from the community pay for Papillon’s release on the App Store and Google Play." },
+      { date: "September 2024", title: "Version 7, rebuilt from scratch", text: "Tom redesigns the whole app, including its visual identity." },
+      { date: "December 2024", title: "Number 1 on the App Store", text: "Papillon passes 100,000 downloads and spends a week at the top of the French App Store." },
+      { date: "May 2025", title: "A million downloads", text: "Still not a single ad. The app is still free." },
+      { date: "August 2025", title: "We start an association", text: "Papillon becomes a nonprofit run by high school and university students, so the project can last." },
+      { date: "September 2025", title: "Version 8", text: "A big update: the app is faster and does more." },
+      { date: "January 2026", title: "Heading to university", text: "We start adapting Papillon for university students." },
+      { date: "September 2026", title: "iPad, iPhone Duo and Mac", text: "Papillon comes to iPad and Mac, and adapts to the foldable screen of the iPhone Duo." },
+    ],
+    vinceQuote:
+      "I started Papillon in 2021 because I wanted to see my average without digging through three menus. Five years later, we’re still students writing code for other students, and the code is still open. That part isn’t changing.",
+    metadataTitle: "Our story – Papillon",
+    download: "Download",
+    hero: {
+      title: "How it all started",
+      devicesAlt: "Papillon on Pixel, iPad, iPhone Duo and iPhone",
+      description:
+        "Papillon started in 2021, between homework assignments. Five years later, it has been downloaded more than 1.8 million times.",
+    },
+    timelineLabel: "Papillon’s milestones, from 2021 to today",
+    placeholders: {
+      first: "the first version of Papillon in 2021, original screenshot",
+      stores: "Papillon’s App Store page in 2023",
+      v7: "Papillon v7 home screen, September 2024",
+      ranking: "French App Store chart with Papillon at number 1, December 2024",
+      million: "image posted for the millionth download, May 2025",
+      universities: "university sign-in screen, in development",
+    },
+    images: {
+      openSource: "A team member writing code on a laptop",
+      association: "The six members of the Papillon team",
+      v8: "The Papillon v8 home screen",
+      devices: "Papillon on an iPad Pro, showing the week view",
+    },
+    vision: {
+      title: "What’s next?",
+      description:
+        "The association wants every student, from middle school to university, to have an app that’s free, fast and respects their privacy. The code stays open, and we keep building it with the community.",
+    },
+    cta: {
+      description: "Papillon is free, with no ads.",
     },
   },
 };

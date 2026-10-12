@@ -35,7 +35,7 @@ function isOverDarkSection() {
 
 function isOverDarkHero() {
   return (
-    Boolean(document.querySelector("[data-dark-hero], [data-primary-hero]")) &&
+    Boolean(document.querySelector("[data-dark-hero], [data-primary-hero], [data-photo-hero]")) &&
     window.scrollY <= lightAfterScroll
   );
 }
@@ -66,5 +66,5 @@ export function HeaderShell({ children }: { children: ReactNode }) {
 }
 
 function startsOverDarkHero(pathname: string) {
-  return ["", "download"].includes(pathname.split("/")[2] ?? "");
+  return ["", "download", "association"].includes(pathname.split("/")[2] ?? "");
 }

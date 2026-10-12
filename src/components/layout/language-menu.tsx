@@ -2,13 +2,22 @@
 
 import { Check, Globe } from "@getpapillon/papicons";
 import type { Route } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import en from "@/assets/flags/en.svg";
+import fr from "@/assets/flags/fr.svg";
 import { Chevron } from "@/components/ui/chevron";
 import { Dropdown } from "@/components/ui/dropdown";
 import { HoverGroup } from "@/components/ui/hover-highlight";
-import { hasLocale, localeNames, locales } from "@/i18n/config";
+import { hasLocale, type Locale, localeNames, locales } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+
+const flags = { fr, en };
+
+function Flag({ locale }: { locale: Locale }) {
+  return <Image src={flags[locale]} alt="" className="size-4 rounded-full ring-1 ring-foreground/10" />;
+}
 
 type LanguageMenuProps = {
   t: Dictionary["language"];
@@ -48,7 +57,10 @@ export function LanguageMenu({ t, triggerClassName, side, align }: LanguageMenuP
                 data-hover-item
                 className="flex h-9 items-center justify-between gap-3 rounded-xl px-3 text-md"
               >
-                <span className="text-trim">{localeNames[locale]}</span>
+                <span className="flex items-center gap-2.5">
+                  <Flag locale={locale} />
+                  <span className="text-trim">{localeNames[locale]}</span>
+                </span>
                 {locale === currentLocale && <Check aria-hidden className="size-5 text-primary" />}
               </Link>
             </li>
