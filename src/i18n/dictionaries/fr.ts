@@ -14,10 +14,22 @@ const fr = {
     closeMenu: "Fermer le menu",
     menus: {
       features: {
-        grades: { title: "Notes et moyennes", description: "Toutes vos notes, moyennes calculées." },
-        schedule: { title: "Emploi du temps", description: "Votre journée, cours après cours." },
-        homework: { title: "Devoirs", description: "Ce qu’il reste à faire, et pour quand." },
-        news: { title: "Actualités", description: "Les infos de votre établissement." },
+        grades: {
+          title: "Notes et moyennes",
+          description: "Toutes vos notes, moyennes calculées.",
+        },
+        schedule: {
+          title: "Emploi du temps",
+          description: "Votre journée, cours après cours.",
+        },
+        homework: {
+          title: "Devoirs",
+          description: "Ce qu’il reste à faire, et pour quand.",
+        },
+        news: {
+          title: "Actualités",
+          description: "Les infos de votre établissement.",
+        },
       },
       about: {
         team: { title: "Association", description: "L’équipe et la vision derrière Papillon." },
@@ -48,7 +60,7 @@ const fr = {
       titleEnd: "vie scolaire",
       description:
         "Un seul endroit pour vos notes, votre cantine, votre calendrier, vos devoirs, et plus encore, pour une expérience pensée pour rendre la vie étudiante facile et intégrée dans votre quotidien.",
-      imageAlt: "Papillon ouvert sur un téléphone pliable, avec l’emploi du temps de la journée",
+      stars: "étoiles",
       discover: "Découvrir Papillon",
     },
     features: {
@@ -267,7 +279,7 @@ const fr = {
       reviewsLabel: "Avis publiés sur l’App Store et Google Play",
       ratingLabel: "étoiles sur 5",
       stats: {
-        downloads: { value: "1,8M+", label: "téléchargements" },
+        downloads: { value: "1,9M+", label: "téléchargements" },
         rating: { value: "4,7", label: "note moyenne sur les stores" },
         reviews: { value: "25K+", label: "avis sur les stores" },
         sessions: { value: "100K+", label: "sessions hebdomadaires" },

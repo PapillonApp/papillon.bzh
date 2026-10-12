@@ -13,7 +13,12 @@ export default async function HomePage() {
 
   return (
     <main>
-      <Hero t={dict.home.hero} download={dict.download} />
+      <Hero
+        t={dict.home.hero}
+        download={dict.download}
+        stats={dict.home.adoption.stats}
+        compatible={dict.featurePages.compatible}
+      />
       <Features />
       <Devices />
       <FeatureDemos />

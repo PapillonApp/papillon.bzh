@@ -92,6 +92,15 @@
   scrollbar-width: none;
 }
 
+/* Découpe le cercle précédent d'une pile d'icônes size-6 chevauchées de -ml-2 */
+@utility stack-cutout {
+  mask-image: radial-gradient(
+    circle at calc(var(--spacing) * -1) 50%,
+    transparent calc(var(--spacing) * 3.5),
+    black calc(var(--spacing) * 3.5 + 0.5px)
+  );
+}
+
 @layer base {
   :root {
     --page-light: 100%;

@@ -15,7 +15,7 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <article
-      className={`flex flex-col overflow-hidden rounded-2xl bg-surface text-foreground ${className}`}
+      className={`flex flex-col overflow-hidden rounded-2xl bg-background outline-foreground/10 outline shadow-2xl/10 text-foreground ${className}`}
     >
       <div className="relative min-h-48 flex-1 lg:min-h-52">{illustration}</div>
       <div className="flex flex-col gap-1 px-6 pb-6 lg:px-6 lg:pb-6">

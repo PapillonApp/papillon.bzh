@@ -15,10 +15,22 @@ const en: Dictionary = {
     closeMenu: "Close menu",
     menus: {
       features: {
-        grades: { title: "Grades", description: "Every grade, with your averages done for you." },
-        schedule: { title: "Schedule", description: "Your day, one class at a time." },
-        homework: { title: "Homework", description: "What’s due, and when." },
-        news: { title: "News", description: "Announcements from your school." },
+        grades: {
+          title: "Grades",
+          description: "Every grade, averages done for you.",
+        },
+        schedule: {
+          title: "Schedule",
+          description: "Your day, one class at a time.",
+        },
+        homework: {
+          title: "Homework",
+          description: "What’s due, and when.",
+        },
+        news: {
+          title: "News",
+          description: "Announcements from your school.",
+        },
       },
       about: {
         team: { title: "Our team", description: "The people and the vision behind Papillon." },
@@ -49,7 +61,7 @@ const en: Dictionary = {
       titleEnd: "reimagined",
       description:
         "Grades, schedule, homework, cafeteria menu and more, all in one beautifully simple app that fits right into your day.",
-      imageAlt: "Papillon on a foldable phone, showing today’s schedule",
+      stars: "stars",
       discover: "Explore Papillon",
     },
     features: {
@@ -261,7 +273,7 @@ const en: Dictionary = {
       reviewsLabel: "Reviews from the App Store and Google Play",
       ratingLabel: "out of 5 stars",
       stats: {
-        downloads: { value: "1.8M+", label: "downloads" },
+        downloads: { value: "1.9M+", label: "downloads" },
         rating: { value: "4.7", label: "average rating" },
         reviews: { value: "25K+", label: "reviews" },
         sessions: { value: "100K+", label: "sessions a week" },

@@ -14,6 +14,7 @@ import { Chevron } from "@/components/ui/chevron";
 import { HoverGroup } from "@/components/ui/hover-highlight";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { easeOutPapillon } from "@/lib/motion";
+import { FeatureMenu } from "./feature-menu";
 import { MenuLinks, type MenuKey, navEntryStyle, navItems } from "./nav";
 
 const closeDelay = 120;
@@ -107,9 +108,15 @@ export function DesktopNav({ labels, locale }: DesktopNavProps) {
             className="absolute top-full left-0 origin-top-left pt-2"
           >
             <MorphPanel contentKey={active}>
-              <HoverGroup highlightClassName="rounded-2xl bg-foreground/5">
-                <MenuLinks links={labels.menus[active]} locale={locale} />
-              </HoverGroup>
+              {active === "features" ? (
+                <FeatureMenu labels={labels} locale={locale} />
+              ) : (
+                <HoverGroup highlightClassName="rounded-2xl bg-foreground/5">
+                  <div className="max-w-sm">
+                    <MenuLinks links={labels.menus[active]} locale={locale} />
+                  </div>
+                </HoverGroup>
+              )}
             </MorphPanel>
           </motion.div>
         )}
@@ -141,7 +148,7 @@ function MorphPanel({ contentKey, children }: { contentKey: string; children: Re
       transition={transition}
       className="box-content overflow-hidden rounded-3xl border border-foreground/10 bg-background text-foreground shadow-xl"
     >
-      <div ref={contentRef} className="relative w-max max-w-sm p-2">
+      <div ref={contentRef} className="relative w-max p-2">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={contentKey}

@@ -10,10 +10,6 @@ export default async function NotFound() {
   return (
     <main className="relative isolate overflow-x-clip px-4 pt-36 pb-24 lg:px-5 lg:pt-44 lg:pb-32">
       <title>{t.metadataTitle}</title>
-      <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-118 left-1/2 h-238 w-428 -translate-x-1/2 bg-radial from-primary/30 via-primary/6 via-40% to-transparent to-65%" />
-      </div>
-
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-5 text-center">
         <div className="flex items-center gap-2 text-9xl font-semibold tracking-tighter select-none lg:gap-4">
           <span aria-hidden>4</span>

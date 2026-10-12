@@ -18,7 +18,7 @@ const stores = [
 
 const variants = {
   header: {
-    root: "h-9 bg-white text-primary-dark group-data-light/header:bg-primary group-data-light/header:text-white",
+    root: "h-9 bg-white text-black group-data-light/header:bg-primary group-data-light/header:text-white",
     main: "py-1.5",
     icon: "size-5",
     toggle: "border-current/30 pl-2.5 pr-3 group-data-light/header:border-current/40",
@@ -35,9 +35,10 @@ type DownloadButtonProps = {
   t: Dictionary["download"];
   variant: keyof typeof variants;
   compactOnMobile?: boolean;
+  menuSide?: "top" | "bottom";
 };
 
-export function DownloadButton({ t, variant, compactOnMobile = false }: DownloadButtonProps) {
+export function DownloadButton({ t, variant, compactOnMobile = false, menuSide = "bottom" }: DownloadButtonProps) {
   const style = variants[variant];
   const { lang } = useParams<{ lang: string }>();
 
@@ -61,11 +62,12 @@ export function DownloadButton({ t, variant, compactOnMobile = false }: Download
       </a>
       <Dropdown
         className={compactOnMobile ? "max-sm:hidden" : ""}
+        side={menuSide}
         triggerClassName={`flex h-full items-center rounded-r-full border-l transition-[background-color] hover:bg-current/10 ${style.toggle}`}
         trigger={
           <>
             <span className="sr-only">{t.moreOptions}</span>
-            <Chevron />
+            <Chevron className={menuSide === "top" ? "rotate-180" : ""} />
           </>
         }
       >

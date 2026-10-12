@@ -1,4 +1,5 @@
 import {
+  ArrowRightUp,
   Butterfly,
   Calendar,
   Clock,
@@ -21,7 +22,7 @@ type MenuLinkKey = { [Key in MenuKey]: keyof Menus[Key] }[MenuKey];
 
 export const navItems: MenuKey[] = ["features", "about", "developers"];
 
-const menuIcons: Record<MenuLinkKey, { Icon: typeof Grades; color: string }> = {
+export const menuIcons: Record<MenuLinkKey, { Icon: typeof Grades; color: string }> = {
   grades: { Icon: Grades, color: "text-feature-grades" },
   schedule: { Icon: Calendar, color: "text-feature-schedule" },
   homework: { Icon: Tasks, color: "text-feature-homework" },
@@ -66,17 +67,21 @@ export function MenuLinks({ links, locale }: MenuLinksProps) {
       {entries.map(([key, { title, description }]) => {
         const { Icon, color } = menuIcons[key];
         const href = localizeHref(linkHrefs[key], locale);
+        const external = href.startsWith("http");
         return (
           <li key={key}>
             <a
               href={href}
-              {...(href.startsWith("http") ? externalProps : {})}
+              {...(external ? externalProps : {})}
               data-hover-item
               className="flex gap-3 rounded-2xl px-3 py-2.5"
             >
               <Icon aria-hidden className={`size-5 shrink-0 ${color}`} />
               <span className="flex flex-col gap-2 pt-1">
-                <span className="text-trim text-md font-medium">{title}</span>
+                <span className="flex items-center gap-1">
+                  <span className="text-trim text-md font-medium">{title}</span>
+                  {external && <ArrowRightUp aria-hidden className="-my-1 size-3.5 text-foreground/30" />}
+                </span>
                 <span className="text-sm text-pretty text-foreground/55">{description}</span>
               </span>
             </a>

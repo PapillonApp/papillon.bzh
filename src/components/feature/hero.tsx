@@ -1,19 +1,10 @@
 import { Star } from "@getpapillon/papicons";
-import Image from "next/image";
 import type { ComponentType, ReactNode } from "react";
-import ecoledirecte from "@/assets/services/ecoledirecte.svg";
-import pronote from "@/assets/services/pronote.svg";
-import skolengo from "@/assets/services/skolengo.svg";
 import { StoreBadges } from "@/components/download/store-badges";
 import { FadeUp } from "@/components/ui/fade-up";
+import { ServiceLogos } from "@/components/ui/service-logos";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
-
-const services = [
-  { name: "Pronote", logo: pronote },
-  { name: "ÉcoleDirecte", logo: ecoledirecte },
-  { name: "Skolengo", logo: skolengo },
-];
 
 export type HeroText = {
   title: string;
@@ -103,15 +94,7 @@ export function Hero({
             </p>
             <p className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <span className="text-trim">{compatible}</span>
-              {services.map((service) => (
-                <Image
-                  key={service.name}
-                  src={service.logo}
-                  alt={service.name}
-                  title={service.name}
-                  className="size-6 rounded-md"
-                />
-              ))}
+              <ServiceLogos />
             </p>
           </div>
         </FadeUp>

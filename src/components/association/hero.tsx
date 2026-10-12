@@ -1,6 +1,6 @@
 "use client";
 
-import { TextBubble } from "@getpapillon/papicons";
+import { PapillonIcon, TextBubble } from "@getpapillon/papicons";
 import { motion, useReducedMotion } from "motion/react";
 import { DownloadButton } from "@/components/ui/download-button";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
@@ -37,12 +37,19 @@ export function Hero({ t, download }: HeroProps) {
       </div>
 
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+
+        <div class="flex items-center -mb-3 gap-1">
+        <motion.div {...reveal(0.22)}>
+          <PapillonIcon aria-hidden className="size-10 text-primary" />
+        </motion.div>
         <motion.p
           {...reveal(0.3)}
-          className="text-2xl font-bold text-primary -mb-3"
+          className="text-2xl font-bold text-primary"
         >
           <span className="text-trim">{t.label}</span>
         </motion.p>
+        </div>
+
         <motion.h1
           {...reveal(0.38)}
           className="text-4xl font-semibold tracking-tight text-balance lg:text-5xl"
