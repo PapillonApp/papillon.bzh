@@ -1,4 +1,6 @@
 import { cacheLife } from "next/cache";
+import type { StaticImageData } from "next/image";
+import { teamMembers } from "@/content/team";
 
 export const githubRepoUrl = "https://github.com/PapillonApp/Papillon";
 
@@ -24,18 +26,28 @@ export async function getContributors(): Promise<Contributor[]> {
   }
 }
 
-export async function getGithubName(login: string): Promise<string> {
+export type Author = { login: string; name: string; avatar: string | StaticImageData };
+
+export async function getAuthor(login: string): Promise<Author> {
+  const member = teamMembers.find((teamMember) => teamMember.github === login);
+  if (member) return { login, name: member.name, avatar: member.photo };
+
+  const avatar = `https://github.com/${login}.png?size=64`;
+  try {
+    return { login, name: await fetchGithubName(login), avatar };
+  } catch {
+    return { login, name: login, avatar };
+  }
+}
+
+async function fetchGithubName(login: string): Promise<string> {
   "use cache";
   cacheLife("days");
 
-  try {
-    const response = await fetch(`https://api.github.com/users/${encodeURIComponent(login)}`, {
-      headers: { Accept: "application/vnd.github+json" },
-    });
-    if (!response.ok) return login;
-    const user: { name: string | null } = await response.json();
-    return user.name || login;
-  } catch {
-    return login;
-  }
+  const response = await fetch(`https://api.github.com/users/${encodeURIComponent(login)}`, {
+    headers: { Accept: "application/vnd.github+json" },
+  });
+  if (!response.ok) throw new Error(`GitHub user ${login}: ${response.status}`);
+  const user: { name: string | null } = await response.json();
+  return user.name || login;
 }

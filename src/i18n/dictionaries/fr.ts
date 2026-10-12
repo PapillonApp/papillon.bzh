@@ -1028,6 +1028,8 @@ const fr = {
       development: "Développement",
       releaseNotes: "Notes de mise à jour",
     },
+    copyCode: "Copier le code",
+    copied: "Copié",
     back: "Tous les articles",
     empty: "Aucun article pour le moment.",
   },

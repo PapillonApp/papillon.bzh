@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
-import { FadeUp } from "@/components/ui/fade-up";
+import { type ReactNode, ViewTransition } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { formatPostDate, type Post, type PostCategory, postCategories } from "@/lib/blog";
 import { CategoryTabs } from "./category-tabs";
@@ -14,31 +13,33 @@ type PostListProps = {
 
 export function PostList({ t, posts, locale }: PostListProps) {
   return (
-    <section className="px-6 pt-32 pb-24 lg:pt-44 lg:pb-32">
-      <FadeUp className="mx-auto max-w-2xl">
-        <h1 className="text-3xl font-semibold tracking-tight">{t.title}</h1>
-        <p className="mt-3 text-lg text-pretty text-foreground/60">{t.description}</p>
+    <ViewTransition name="blog-page" share="blog-page" default="none">
+      <section className="px-6 pt-32 pb-24 lg:pt-44 lg:pb-32">
+        <div className="mx-auto max-w-2xl">
+          <h1 className="text-3xl font-semibold tracking-tight">{t.title}</h1>
+          <p className="mt-3 text-lg text-pretty text-foreground/60">{t.description}</p>
 
-        <CategoryTabs
-          allLabel={t.all}
-          labels={t.categories}
-          panels={{
-            all: <Posts posts={posts} empty={t.empty} locale={locale} />,
-            ...(Object.fromEntries(
-              postCategories.map((category) => [
-                category,
-                <Posts
-                  key={category}
-                  posts={posts.filter((post) => post.category === category)}
-                  empty={t.empty}
-                  locale={locale}
-                />,
-              ]),
-            ) as Record<PostCategory, ReactNode>),
-          }}
-        />
-      </FadeUp>
-    </section>
+          <CategoryTabs
+            allLabel={t.all}
+            labels={t.categories}
+            panels={{
+              all: <Posts posts={posts} empty={t.empty} locale={locale} />,
+              ...(Object.fromEntries(
+                postCategories.map((category) => [
+                  category,
+                  <Posts
+                    key={category}
+                    posts={posts.filter((post) => post.category === category)}
+                    empty={t.empty}
+                    locale={locale}
+                  />,
+                ]),
+              ) as Record<PostCategory, ReactNode>),
+            }}
+          />
+        </div>
+      </section>
+    </ViewTransition>
   );
 }
 
@@ -75,18 +76,20 @@ type PostRowProps = {
 function PostRow({ post, locale, preload }: PostRowProps) {
   return (
     <Link href={`/${locale}/blog/${post.slug}`} className="group flex items-center gap-5 py-5">
-      <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-xl bg-surface sm:w-36">
-        <Image
-          src={post.banner}
-          alt=""
-          fill
-          preload={preload}
-          sizes="144px"
-          className="object-cover"
-        />
-      </div>
+      <ViewTransition name={`blog-banner-${post.slug}`} share="blog-banner" default="none">
+        <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-xl bg-surface sm:w-36">
+          <Image
+            src={post.banner}
+            alt=""
+            fill
+            preload={preload}
+            sizes="144px"
+            className="object-cover"
+          />
+        </div>
+      </ViewTransition>
       <div className="flex min-w-0 flex-col gap-1.5">
-        <h2 className="text-lg/snug font-medium text-balance transition-colors duration-150 group-hover:text-primary">
+        <h2 className="truncate text-lg/snug font-medium transition-colors duration-150 group-hover:text-primary">
           {post.title}
         </h2>
         {post.description && (

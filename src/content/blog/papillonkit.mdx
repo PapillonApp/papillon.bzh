@@ -1,0 +1,142 @@
+---
+title: "Comment nous avons intégré des fonctions natives à React Native"
+description: "Widgets, Siri, Spotlight, Live Activities et Apple Intelligence : comment PapillonKit fait parler Swift et React Native sans passer par le pont."
+date: 2026-09-25
+author: tryon
+category: development
+banner: /blog/papillonkit/header.webp
+bannerAlt: "PapillonKit"
+---
+
+Papillon est une application scolaire développée en [React Native](https://reactnative.dev) avec [Expo](https://expo.dev). Pour faire simple, ça nous permet d'écrire l'app **une seule fois** en JavaScript, puis de la sortir à la fois sur iPhone et sur Android. Pour une petite équipe d'étudiants, c'est un gain de temps énorme.
+
+Mais certaines fonctionnalités de l'iPhone ne sont accessibles qu'en [Swift](https://developer.apple.com/swift/), le langage d'Apple : un [widget](https://developer.apple.com/widgets/) sur l'écran d'accueil, une réponse de [Siri](https://developer.apple.com/siri/), un cours qui s'affiche dans la [Dynamic Island](https://developer.apple.com/design/human-interface-guidelines/live-activities)... Et à ces endroits là, <Highlight>notre code JavaScript ne tourne tout simplement pas</Highlight>.
+
+Alors, comment faire ?
+
+## Le problème du pont
+
+Normalement, quand une app React Native a besoin d'une fonction de l'iPhone, elle passe par ce qu'on appelle **le pont**. Le JavaScript pose une question au code Swift, attend la réponse, puis l'affiche. Ça marche très bien, **tant que l'app est ouverte**.
+
+Sauf qu'un widget, lui, fonctionne même quand Papillon est fermé. Siri peut te répondre sans ouvrir l'app. Et une Live Activity doit passer de « bientôt » à « en cours » toute seule, sur l'écran verrouillé. Dans tous ces cas, <Highlight>il n'y a personne de l'autre côté du pont pour répondre</Highlight>.
+
+Notre première version contournait le problème : à chaque changement, l'app préparait les infos et les envoyait aux widgets. Ça fonctionnait, mais chaque nouvelle fonctionnalité demandait encore plus de code, et si l'app n'avait pas eu le temps d'envoyer les infos, le widget affichait **des données dépassées**.
+
+On a donc décidé de réécrire [PapillonKit](https://github.com/PapillonApp/PapillonKit) autour d'une idée simple : <Highlight>au lieu d'envoyer les données au code Swift, le laisser aller les chercher lui-même</Highlight>.
+
+Et ça a tout changé.
+
+## Lire les mêmes fichiers que l'app
+
+Toutes tes données Papillon (cours, devoirs, notes, comptes) sont déjà stockées **sur ton téléphone**, dans des fichiers. **Rien ne passe par nos serveurs**, puisqu'on n'en a pas.
+
+Sur iPhone, chaque app vit normalement dans sa propre bulle et ne partage rien. Mais Apple permet de créer un dossier partagé, un « [**App Group**](https://developer.apple.com/documentation/xcode/configuring-app-groups) », que l'app, ses widgets et Siri peuvent tous lire. On y a donc placé ces fichiers.
+
+À partir de là, le code Swift peut ouvrir directement la même base de données que l'app. Et pour éviter tout problème, il ne l'ouvre <Highlight>qu'en lecture : il peut regarder, mais jamais modifier</Highlight>. Seule l'app a le droit d'écrire, ce qui permet de garantir que tes données ne seront jamais abîmées.
+
+Concrètement, ça tient en quelques lignes : on ouvre le fichier, puis on lui dit tout de suite qu'il est interdit d'y écrire.
+
+```swift title="Database.swift"
+sqlite3_open_v2(path, &pointer, SQLITE_OPEN_READWRITE, nil)
+sqlite3_exec(handle, "PRAGMA query_only = 1", nil, nil, nil)
+```
+
+Résultat : quand tu demandes ton prochain cours à Siri, il lit **exactement les mêmes infos** que celles que tu vois dans l'app.
+
+## Savoir quand les données changent
+
+Lire les données c'est bien, mais savoir quand les relire c'est mieux. Plutôt que d'attendre que l'app prévienne, **PapillonKit surveille directement le fichier.**
+
+Dès que Papillon récupère tes nouvelles notes ou ton nouvel emploi du temps, le fichier change. PapillonKit attend quelques secondes que tout soit bien enregistré, puis met à jour tes widgets et ta recherche [Spotlight](https://support.apple.com/fr-fr/guide/iphone/iph7c3d96bab/ios) d'un seul coup. Même si l'app écrit cinquante fois de suite, le travail n'est fait <Highlight>qu'une seule fois</Highlight>, ce qui évite de vider ta batterie pour rien.
+
+Au final, le reste de Papillon n'a presque rien à faire. Il enregistre ses données comme avant, et **tout suit automatiquement**.
+
+## Une seule app pour tout le monde
+
+Tous les iPhone ne savent pas faire la même chose, et sur Android, rien de tout ça n'existe. Pour ne pas avoir à gérer chaque cas à la main, PapillonKit dit simplement à l'app ce que ton téléphone sait faire :
+
+- <Label icon="grid" color="red">Widgets</Label> : dès iOS 17.
+- <Label icon="clock" color="green">Live Activity</Label> : à partir d'iOS 18.
+- <Label icon="sparkles" color="purple">Apple Intelligence</Label> : à partir d'iOS 26, sur iPhone 15 Pro et plus récent.
+- <Label icon="search" color="blue">Siri et Spotlight</Label> : à partir d'iOS 27.
+
+Si une fonctionnalité n'est pas disponible, elle ne fait tout simplement rien. <Highlight>Pas de plantage, pas de message d'erreur</Highlight> : l'app continue de fonctionner normalement.
+
+Côté app, il suffit donc de demander avant d'agir :
+
+```ts title="Côté React Native"
+import { features, widgets } from "@getpapillon/papillonkit";
+
+if (features.liveActivities) {
+  await widgets.showCourseActivity(course);
+}
+```
+
+## Siri et Spotlight
+
+Tu peux maintenant demander « Quel est mon prochain cours sur Papillon ? ». Siri lit ton compte, cherche le cours suivant, puis te répond directement, **sans jamais ouvrir l'app**. Ça marche aussi pour ton prochain devoir, et tu peux réutiliser ces réponses dans l'app [Raccourcis](https://support.apple.com/fr-fr/guide/shortcuts/welcome/ios).
+
+Les phrases que Siri reconnaît sont traduites en français et en anglais, et sont ajoutées automatiquement à l'app au moment de la construire.
+
+Tes cours et tes devoirs apparaissent aussi dans Spotlight, la recherche de l'iPhone. Tape « **maths** » depuis l'écran d'accueil, et ton prochain cours de maths s'affiche, avec la salle et le prof.
+
+## Les widgets
+
+<PhoneShot src="/blog/papillonkit/widget.webp" alt="Widget Emploi du temps de Papillon sur l'écran d'accueil" caption="Le widget « Emploi du temps » sur l'écran d'accueil" />
+
+Les widgets « Emploi du temps » et « Tâches » ont été entièrement redéveloppés en [SwiftUI](https://developer.apple.com/swiftui/), l'outil d'Apple pour créer des interfaces, pour être **plus rapides et plus fiables**.
+
+Un widget a cependant ses propres règles. Il a très peu de mémoire, et <Highlight>c'est l'iPhone qui décide quand le mettre à jour, pas nous</Highlight>. Pour ça, le widget **prépare à l'avance** son affichage pour les prochains jours : quand un cours se termine, il passe tout seul au suivant, même si tu n'as pas ouvert l'app depuis longtemps.
+
+Il fallait aussi que les couleurs de tes matières soient exactement les mêmes que dans l'app. Plutôt que de comparer à l'œil, on a récupéré **plus de 200 couleurs** calculées par l'app, et des tests automatiques vérifient que les widgets donnent exactement le même résultat. Même chose pour les noms de matières, les emojis et les semaines.
+
+## Les Live Activities
+
+<PhoneShot show="bottom" src="/blog/papillonkit/live-activity.webp" alt="Live Activity de Papillon sur l'écran verrouillé" caption="La Live Activity d'un cours en cours sur l'écran verrouillé" />
+
+La [Live Activity](https://developer.apple.com/documentation/activitykit) affiche ton cours actuel ou ton prochain cours sur l'écran verrouillé, dans la Dynamic Island et même sur ton Apple Watch. Il n'y en a **toujours qu'une seule à la fois** : quand un nouveau cours arrive, l'ancien disparaît.
+
+Le plus intéressant, c'est le passage de « commence bientôt » à « en cours » sans que l'app ne tourne. L'iPhone permet de dire à l'avance <Highlight>« cette info sera dépassée à telle heure »</Highlight>. On lui donne donc l'heure de début du cours, puis l'heure de fin, et c'est le téléphone qui met à jour l'affichage **tout seul, pile au bon moment**.
+
+```swift title="CourseLiveActivity.swift"
+// Avant le cours : l'info expire au début du cours.
+// Pendant le cours : elle expire à la fin.
+let staleDate = now < state.startsAt ? state.startsAt : state.endsAt
+let content = ActivityContent(state: state, staleDate: staleDate)
+```
+
+## Apple Intelligence
+
+Sur les iPhone compatibles, Papillon peut utiliser l'[intelligence artificielle d'Apple](https://www.apple.com/fr/apple-intelligence/) directement dans l'app. La particularité, c'est que <Highlight>tout se passe sur ton téléphone : rien n'est envoyé sur internet</Highlight>.
+
+L'app peut lui demander un texte libre, ou une réponse bien rangée, par exemple un titre et une liste d'étapes. Pour ça, on lui donne une sorte de **formulaire à remplir**.
+
+```ts title="intelligence.ts"
+const summary = await intelligence.generateObject(prompt, {
+  schema: {
+    type: "object",
+    properties: {
+      title: { type: "string" },
+      steps: { type: "array", items: { type: "string" } },
+    },
+  },
+});
+// → { title: "Réviser le chapitre 3", steps: ["Relire le cours", "Faire les exercices"] }
+```
+
+Un détail nous a d'ailleurs pris pas mal de temps : **l'ordre des cases** de ce formulaire. L'IA remplit les cases dans l'ordre où elles arrivent, et <Highlight>cet ordre change beaucoup la qualité de la réponse</Highlight>. Sauf qu'en passant du JavaScript au Swift, l'ordre se mélangeait. On a donc ajouté une petite liste qui fixe l'ordre des cases, pour que l'IA les remplisse toujours dans le bon sens.
+
+## Le challenge des tests
+
+Quand on modifie PapillonKit, il ne faut **surtout pas casser Papillon**, utilisé chaque jour par des milliers d'élèves. Plusieurs vérifications automatiques ont donc été mises en place :
+
+- <Label icon="apple" color="blue">Plusieurs versions d'iOS</Label> : le code est vérifié pour iOS 17, 26 et 27, pour s'assurer qu'il fonctionne aussi sur les iPhone plus anciens.
+- <Label icon="gears" color="orange">L'installation</Label> : on vérifie que les widgets et Siri s'ajoutent correctement à l'app.
+- <Label icon="phone" color="green">Android</Label> : on vérifie que tout continue de marcher quand ces fonctionnalités n'existent pas.
+- <Label icon="lock" color="purple">La publication</Label> : une nouvelle version ne peut être publiée qu'après une double validation.
+
+## Conclusion
+
+La plus grosse décision de ce projet n'était pas vraiment technique. C'était d'accepter que <Highlight>le JavaScript et le Swift lisent les mêmes fichiers</Highlight>, plutôt que de passer leur temps à s'envoyer des messages. Une fois ce choix fait, chaque nouvelle fonctionnalité devient bien plus simple : **les données sont déjà là, il suffit de les lire.**
+
+PapillonKit est [open source sur GitHub](https://github.com/PapillonApp/PapillonKit). Si tu développes toi aussi une app et que tu te heurtes aux mêmes limites, le code est là pour toi !

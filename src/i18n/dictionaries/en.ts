@@ -1002,6 +1002,8 @@ const en: Dictionary = {
       development: "Development",
       releaseNotes: "Release notes",
     },
+    copyCode: "Copy code",
+    copied: "Copied",
     back: "All posts",
     empty: "No posts yet.",
   },

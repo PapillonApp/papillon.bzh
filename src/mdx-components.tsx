@@ -1,8 +1,20 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { Callout } from "@/components/blog/callout";
 import { Credits } from "@/components/blog/credits";
+import { Label } from "@/components/blog/label";
+import { PhoneShot } from "@/components/blog/phone-shot";
+import { Photos } from "@/components/blog/photos";
 import { externalProps } from "@/lib/links";
+
+function Highlight({ children }: { children: ReactNode }) {
+  return (
+    <mark className="rounded-md bg-primary/12 box-decoration-clone px-1.5 py-0.5 font-medium text-primary-dark">
+      {children}
+    </mark>
+  );
+}
 
 const components = {
   h2: (props) => (
@@ -41,13 +53,27 @@ const components = {
     />
   ),
   hr: () => <hr className="my-14 border-foreground/10" />,
-  code: (props) => <code className="rounded-md bg-surface px-1.5 py-0.5 font-mono text-md" {...props} />,
-  pre: (props) => (
-    <pre
-      className="mt-6 overflow-x-auto rounded-2xl bg-surface p-5 text-sm/relaxed [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-sm"
-      {...props}
-    />
-  ),
+  code: (props) =>
+    "data-language" in props ? (
+      <code {...props} />
+    ) : (
+      <code className="rounded-md bg-surface px-1.5 py-0.5 font-mono text-md" {...props} />
+    ),
+  figure: (props) =>
+    "data-rehype-pretty-code-figure" in props ? (
+      <figure className="mt-6 overflow-hidden rounded-2xl bg-code text-white" {...props} />
+    ) : (
+      <figure {...props} />
+    ),
+  figcaption: (props) =>
+    "data-rehype-pretty-code-title" in props ? (
+      <figcaption
+        className="border-b border-white/10 px-5 py-3 font-mono text-sm text-white/60"
+        {...props}
+      />
+    ) : (
+      <figcaption {...props} />
+    ),
   img: ({ src, alt = "" }) => (
     <Image
       src={src as string}
@@ -68,6 +94,10 @@ const components = {
   ),
   Callout,
   Credits,
+  PhoneShot,
+  Photos,
+  Highlight,
+  Label,
 } satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {

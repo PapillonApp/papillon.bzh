@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { getGithubName } from "@/lib/github";
+import { getAuthor } from "@/lib/github";
 import { externalProps } from "@/lib/links";
+import { Avatar } from "./avatar";
 
 type AuthorProps = {
   login: string;
@@ -8,17 +8,10 @@ type AuthorProps = {
 };
 
 export async function Author({ login, link = false }: AuthorProps) {
-  const name = await getGithubName(login);
+  const { name, avatar } = await getAuthor(login);
   const content = (
     <>
-      <Image
-        src={`https://github.com/${login}.png?size=64`}
-        alt=""
-        width={24}
-        height={24}
-        unoptimized
-        className="size-6 rounded-full bg-surface"
-      />
+      <Avatar src={avatar} className="size-6" />
       <span className="text-trim">{name}</span>
     </>
   );

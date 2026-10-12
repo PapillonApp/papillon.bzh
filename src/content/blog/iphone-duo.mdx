@@ -1,0 +1,147 @@
+---
+title: "Comment nous avons préparé Papillon à l'iPhone Duo"
+description: "Un workshop à Londres, un été à tout redessiner, et un iPhone pliable qui n'a presque rien demandé le jour de sa sortie."
+date: 2026-10-12
+author: ecnivtwelve
+category: development
+banner: /blog/iphone-duo/header.webp
+bannerAlt: "Papillon sur l'iPhone Duo"
+---
+
+L'iPhone Duo est sorti en septembre. Fermé, c'est un iPhone classique. Ouvert, il devient presque une tablette. Et une app peut passer de l'un à l'autre **en une seconde**, sans même se fermer.
+
+Pour la plupart des apps, c'est un vrai casse-tête. Pour Papillon, il n'y avait <Highlight>quasiment rien à faire le jour de la sortie</Highlight>.
+
+Mais comment en est-on arrivé là ?
+
+## Une app pensée pour un seul écran
+
+Jusqu'au printemps dernier, Papillon était pensée pour une seule chose : un téléphone tenu à la verticale, sur iPhone et sur Android.
+
+Il existait bien une version iPad, mais soyons honnêtes : elle n'était pas vraiment utilisable. L'app s'étirait sur toute la largeur de l'écran, les listes faisaient des kilomètres de large, et certains écrans se coupaient carrément au mauvais endroit. On l'avait activée, puis désactivée, puis réactivée... sans jamais vraiment s'en occuper.
+
+Le problème, c'est que <Highlight>chaque écran supposait qu'il connaissait la taille du téléphone</Highlight>. Et le jour où cette taille change, tout casse.
+
+## Juin : un workshop à Londres
+
+<Photos images={[
+  { src: "/blog/iphone-duo/londres-1.webp", alt: "Lucas et Vince avec leurs badges du workshop Apple, à Londres" },
+  { src: "/blog/iphone-duo/londres-2.webp", alt: "Lucas en pleine session de travail pendant le workshop" },
+]} />
+
+<Credits authors={["ecnivtwelve", "tryon"]} />
+
+En juin, Lucas et moi avons eu la chance de participer à un workshop organisé par [Apple](https://developer.apple.com) à Londres. L'objectif était de découvrir les nouveautés d'[iOS 27](https://developer.apple.com/ios/) et de préparer nos apps à ce qui allait arriver.
+
+Un message revenait sans arrêt : **les apps doivent pouvoir changer de taille à tout moment**. Plus question de supposer qu'un iPhone fait toujours la même largeur.
+
+Alors, dès le retour, j'ai commencé à rendre Papillon redimensionnable. La première étape était très simple : un petit outil qui regarde la largeur de la fenêtre, et qui dit si on est sur un « grand » écran ou non.
+
+```ts title="ui/utils/Resizable.ts"
+const useResizable = () => {
+  const { width } = useWindowDimensions();
+  const isLarge = width >= 600;
+
+  return { isLarge };
+};
+```
+
+Avec ça, l'accueil pouvait déjà passer sur **deux colonnes** quand il y a de la place. Et comme la largeur est relue en permanence, l'app s'adapte d'elle-même dès que la fenêtre change.
+
+```tsx title="Accueil"
+const { isLarge } = useResizable();
+
+<FlatList
+  data={widgets}
+  numColumns={isLarge ? 2 : 1}
+/>
+```
+
+Ce n'était pas encore parfait, loin de là. Mais pour la première fois, Papillon ne cassait plus quand on changeait la taille de l'écran.
+
+## Août : tout redessiner
+
+<Credits authors={["tomhlr", "tryon", "remygdt", "ecnivtwelve"]} />
+
+Une app qui ne casse pas, c'est bien. Une app qui profite vraiment d'un grand écran, c'est mieux.
+
+En août, on s'est donc réunis avec Tom, Lucas et Rémy pour redessiner les onglets principaux de Papillon, un par un. Pour chaque écran, on s'est posé la même question : <Highlight>qu'est-ce qu'on ferait de toute cette place en plus ?</Highlight>
+
+- <Label icon="grid" color="red">Accueil</Label> : les widgets se rangent sur plusieurs colonnes, comme un tableau de bord.
+- <Label icon="sparkles" color="green">Notes</Label> : les moyennes restent à gauche, et les dernières notes s'affichent à droite au lieu d'être en dessous.
+- <Label icon="clock" color="orange">Emploi du temps</Label> : sur grand écran, une vue de la semaine entière apparaît, avec une colonne par jour.
+- <Label icon="search" color="blue">Cartes et connexion</Label> : les écrans de cantine et de connexion se centrent au lieu de s'étirer.
+
+Pour les listes, Rémy a ajouté le support des colonnes « en maçonnerie », comme sur Pinterest : chaque carte prend la hauteur dont elle a besoin, et les colonnes se remplissent sans laisser de trous.
+
+L'emploi du temps à la semaine nous a d'ailleurs réservé une petite surprise. Le samedi et le dimanche ne doivent apparaître que si tu as vraiment cours ces jours-là. Sauf que l'app ne charge que quelques semaines à la fois : en passant à la semaine suivante, le samedi disparaissait, et toutes les colonnes changeaient de largeur d'un coup. On a donc décidé qu'**une fois qu'un samedi a eu cours, il garde sa colonne** jusqu'à la fermeture de l'app.
+
+## Août : direction Paris
+
+![Le groupe du workshop Apple à Paris, devant la tour Eiffel](/blog/iphone-duo/paris-1.webp)
+
+Quelques semaines après Londres, on a été invités à un nouveau workshop organisé par Apple, cette fois à Paris. L'occasion parfaite pour montrer notre travail en cours, et surtout pour le tester sur de vrais appareils.
+
+On est arrivés avec nos nouveaux écrans sous le bras, plutôt fiers. Les échanges avec les équipes d'Apple nous ont pourtant fait remarquer une chose : nos onglets et nos en-têtes, faits maison, se comportaient bien moins bien que ceux d'iOS dès que la taille de l'écran changeait.
+
+<Photos images={[{ src: "/blog/iphone-duo/paris-2.jpg", alt: "Session de travail pendant le workshop Apple à Paris" }]} />
+
+Et c'est là qu'on a compris qu'<Highlight>on se battait contre iOS au lieu de le laisser nous aider</Highlight>.
+
+## Août : laisser iOS faire le travail
+
+Dès le retour de Paris, on a donc fait un choix qui allait tout changer : <Highlight>arrêter de dessiner nous-mêmes les barres de navigation</Highlight>.
+
+Jusque-là, les en-têtes et les onglets de Papillon étaient faits maison, en React Native. Ils ressemblaient à ceux d'iOS, mais ce n'étaient pas ceux d'iOS. Et à chaque changement de taille, il fallait recalculer leur position, leur hauteur, leurs marges...
+
+On les a donc remplacés par les vrais composants d'Apple, en [SwiftUI](https://developer.apple.com/swiftui/), grâce à [Expo Router](https://docs.expo.dev/router/introduction/). Le titre et les boutons sont déclarés directement dans la page, et c'est iOS qui s'occupe de les afficher.
+
+```tsx title="Emploi du temps"
+<Stack.Title>{t("Tab_Calendar")}</Stack.Title>
+
+<Stack.Toolbar placement="left">
+  <Stack.Toolbar.Button icon="calendar" onPress={toggleCalendar}>
+    {dayLabel}
+  </Stack.Toolbar.Button>
+</Stack.Toolbar>
+```
+
+Résultat : Papillon a enfin le **même feeling que les apps d'Apple**, avec les mêmes animations et le même effet de verre. Et surtout, quand l'écran change de taille, <Highlight>c'est iOS qui redimensionne tout, automatiquement</Highlight>.
+
+Dernier détail : sur un grand écran, le contenu ne doit jamais se coller aux bords ou passer sous l'encoche. Un petit outil calcule donc les marges à gauche et à droite selon l'appareil, et tous les écrans l'utilisent.
+
+```ts title="ui/hooks/useSafeHorizontalPadding.ts"
+export const useSafeHorizontalPadding = (base = 16) => {
+  const insets = useSafeAreaInsets();
+  return {
+    paddingLeft: insets.left + base,
+    paddingRight: insets.right + (insets.right > 10 ? 0 : base),
+  };
+};
+```
+
+## Septembre : l'iPhone Duo arrive
+
+![Papillon sur l'iPhone Duo ouvert](/blog/iphone-duo/iphone-duo.webp)
+
+Le jour de la sortie, on a installé Papillon sur un iPhone Duo, un peu stressés. On l'a ouvert, fermé, rouvert...
+
+Et ça marche !
+
+Fermé, Papillon s'affiche comme sur n'importe quel iPhone. Ouvert, l'accueil passe sur deux colonnes, les notes se mettent côte à côte et l'emploi du temps affiche la semaine entière. Le tout **sans redémarrer l'app**, en plein milieu de l'utilisation.
+
+Il a quand même fallu faire quelques ajustements :
+
+- <Label icon="phone" color="purple">Le format</Label> : on a ajouté une valeur `isTablet` qui ne dépend pas du sens de l'écran, pour que l'app ne change pas d'avis en tournant le téléphone.
+- <Label icon="gears" color="orange">Les fonds d'écran</Label> : la fenêtre de choix du fond d'écran calculait mal sa largeur sur certains appareils.
+- <Label icon="apple" color="blue">Les devoirs</Label> : le sélecteur de semaine des devoirs a été revu pour profiter de toute la largeur.
+
+Quelques lignes de code, là où il aurait pu en falloir des milliers.
+
+## Conclusion
+
+On aurait pu attendre la sortie de l'iPhone Duo pour s'en occuper. Mais grâce au travail entamé dès cet été, <Highlight>l'iPhone Duo n'a presque rien demandé</Highlight>. Et au passage, la version iPad de Papillon est enfin devenue utilisable.
+
+La plus grosse leçon de ce projet, c'est qu'une app ne devrait jamais supposer la taille de son écran. **Les téléphones changent, et l'app doit suivre.**
+
+Papillon est [open source sur GitHub](https://github.com/PapillonApp/Papillon). Si tu as un iPhone Duo ou un iPad, n'hésite pas à essayer et à nous faire tes retours !

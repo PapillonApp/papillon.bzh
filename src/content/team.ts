@@ -12,12 +12,13 @@ export const teamMembers: {
   key: TeamMemberKey;
   name: string;
   photo: StaticImageData;
+  github: string;
   linkedin: string;
 }[] = [
-  { key: "vince", name: "Vince Linise", photo: ecnivtwelve, linkedin: "https://www.linkedin.com/in/vincelinise/" },
-  { key: "lucas", name: "Lucas Lavajo", photo: tryon, linkedin: "https://www.linkedin.com/in/lucas-lavajo/" },
-  { key: "tom", name: "Tom Hélière", photo: tomhlr, linkedin: "https://www.linkedin.com/in/tom-heliere/" },
-  { key: "raphael", name: "Raphaël Schroder", photo: raphckrman, linkedin: "https://www.linkedin.com/in/raphckrman/" },
-  { key: "remy", name: "Rémy Godet", photo: remygdt, linkedin: "https://www.linkedin.com/in/godetremy/" },
-  { key: "mael", name: "Mael Duret", photo: ryzenixx, linkedin: "https://www.linkedin.com/in/mael-duret/" },
+  { key: "vince", name: "Vince Linise", photo: ecnivtwelve, github: "ecnivtwelve", linkedin: "https://www.linkedin.com/in/vincelinise/" },
+  { key: "lucas", name: "Lucas Lavajo", photo: tryon, github: "tryon", linkedin: "https://www.linkedin.com/in/lucas-lavajo/" },
+  { key: "tom", name: "Tom Hélière", photo: tomhlr, github: "tomhlr", linkedin: "https://www.linkedin.com/in/tom-heliere/" },
+  { key: "raphael", name: "Raphaël Schroder", photo: raphckrman, github: "raphckrman", linkedin: "https://www.linkedin.com/in/raphckrman/" },
+  { key: "remy", name: "Rémy Godet", photo: remygdt, github: "remygdt", linkedin: "https://www.linkedin.com/in/godetremy/" },
+  { key: "mael", name: "Mael Duret", photo: ryzenixx, github: "ryzenixx", linkedin: "https://www.linkedin.com/in/mael-duret/" },
 ];
