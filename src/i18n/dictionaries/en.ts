@@ -456,6 +456,11 @@ const en: Dictionary = {
           "Papillon pulls in your grades as soon as they’re posted, calculates your weighted average and shows how it changes, subject by subject.",
         imageAlt: "Papillon’s Grades tab, with the progress chart and an average of 15.20 out of 20",
       },
+      tour: {
+        title: "Every grade, from every angle.",
+        description:
+          "Trend line, averaging method, periods and subjects: Papillon organizes your results so you have nothing to work out.",
+      },
       highlights: {
         evolution: {
           title: "See where you stand, at a glance.",
@@ -550,7 +555,7 @@ const en: Dictionary = {
       faq: {
         title: "Grades FAQ",
         description:
-          "Everything you need to know about grades and averages in Papillon. Still have questions? Reach us at support@papillon.bzh.",
+          "Everything you need to know about grades and averages in Papillon.",
         items: [
           {
             emoji: "🎯",
@@ -615,6 +620,11 @@ const en: Dictionary = {
         description:
           "Papillon keeps your schedule up to date, flags canceled or changed classes and follows you all the way to your Lock Screen.",
         imageAlt: "Thursday, October 8 in Papillon’s schedule, with a lunch break and a canceled class",
+      },
+      beyond: {
+        title: "Without even opening the app.",
+        description:
+          "On iPhone, your classes follow you onto the Lock Screen and the Home Screen.",
       },
       highlights: {
         day: {
@@ -704,7 +714,7 @@ const en: Dictionary = {
       faq: {
         title: "Schedule FAQ",
         description:
-          "Everything you need to know about your schedule in Papillon. Still have questions? Reach us at support@papillon.bzh.",
+          "Everything you need to know about your schedule in Papillon.",
         items: [
           {
             emoji: "🔄",
@@ -769,6 +779,11 @@ const en: Dictionary = {
         description:
           "Papillon gathers your homework week by week, lets you check it off when you’re done and shows you what’s coming up at a glance.",
         imageAlt: "Week 41 homework in Papillon, sorted by due date",
+      },
+      tour: {
+        title: "Your homework, under control.",
+        description:
+          "See what’s coming, tick off what’s done and sort the rest your way.",
       },
       highlights: {
         week: {
@@ -838,7 +853,7 @@ const en: Dictionary = {
       faq: {
         title: "Homework FAQ",
         description:
-          "Everything you need to know about homework in Papillon. Still have questions? Reach us at support@papillon.bzh.",
+          "Everything you need to know about homework in Papillon.",
         items: [
           {
             emoji: "📥",
@@ -890,6 +905,11 @@ const en: Dictionary = {
           "Meetings, sign-ups, field trips: Papillon brings your school’s announcements together in one clean feed, made for reading on your phone.",
         imageAlt: "The school news feed in Papillon",
       },
+      tour: {
+        title: "The essentials, without digging.",
+        description:
+          "Your school’s announcements, gathered in one place and formatted for your phone.",
+      },
       highlights: {
         list: {
           title: "Every announcement, in one place.",
@@ -926,7 +946,7 @@ const en: Dictionary = {
       faq: {
         title: "News FAQ",
         description:
-          "Everything you need to know about news in Papillon. Still have questions? Reach us at support@papillon.bzh.",
+          "Everything you need to know about news in Papillon.",
         items: [
           {
             emoji: "📥",

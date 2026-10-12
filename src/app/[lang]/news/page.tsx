@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import detail from "@/assets/news/detail.webp";
 import list from "@/assets/news/list.webp";
 import { FeaturePage } from "@/components/feature/feature-page";
-import { Screen } from "@/components/feature/screen";
-import { ReadingSpread } from "@/components/news/reading-spread";
+import { HeroScreens } from "@/components/feature/hero-screens";
+import { SectionTitle } from "@/components/feature/section-title";
+import { Tiles } from "@/components/feature/tiles";
 import { getDictionary } from "@/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,26 +22,24 @@ export default async function NewsPage() {
       t={t}
       themeClassName="theme-news"
       icon={Newspaper}
-      heroLayout="center"
       heroVisual={
-        <div className="flex h-100 items-start justify-center overflow-hidden mask-b-from-55% lg:h-150">
-          <Screen
-            image={list}
-            alt={t.hero.imageAlt}
-            priority
-            className="relative z-10 w-44 -rotate-3 sm:w-64 lg:w-80"
-          />
-          <Screen
-            image={detail}
-            alt={t.highlights.detail.imageAlt}
-            className="mt-24 -ml-8 w-44 rotate-3 sm:w-64 lg:-ml-12 lg:w-80"
-          />
-        </div>
+        <HeroScreens
+          front={{ image: list, alt: t.hero.imageAlt }}
+          back={{ image: detail, alt: t.highlights.detail.imageAlt }}
+        />
       }
       moreIcons={{ home: Home, offline: GlobeCross, private: Lock }}
       ctaImage={detail}
     >
-      <ReadingSpread items={[t.highlights.list, t.highlights.detail]} />
+      <section className="px-6 py-24 lg:py-32">
+        <SectionTitle title={t.tour.title} description={t.tour.description} />
+        <Tiles
+          items={[
+            { image: list, t: t.highlights.list },
+            { image: detail, t: t.highlights.detail },
+          ]}
+        />
+      </section>
     </FeaturePage>
   );
 }

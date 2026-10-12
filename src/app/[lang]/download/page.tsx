@@ -14,10 +14,12 @@ export default async function DownloadPage() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
-    <main>
-      <Hero t={dict.downloadPage} stats={dict.home.adoption.stats} locale={locale} />
-      <Platforms t={dict.downloadPage.platforms} />
-      <Beta t={dict.downloadPage.beta} />
+    <main className="min-h-dvh px-6 pt-32 pb-24 lg:pt-44 lg:pb-32">
+      <div className="mx-auto max-w-2xl">
+        <Hero t={dict.downloadPage} stats={dict.home.adoption.stats} locale={locale} />
+        <Platforms t={dict.downloadPage.platforms} />
+        <Beta t={dict.downloadPage.beta} />
+      </div>
     </main>
   );
 }

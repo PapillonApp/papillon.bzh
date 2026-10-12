@@ -1,8 +1,8 @@
 import type { StaticImageData } from "next/image";
 import type { ComponentProps, ComponentType, ReactNode } from "react";
-import { Faq } from "@/components/home/faq";
 import { getDictionary, getLocale } from "@/i18n/server";
 import { Cta } from "./cta";
+import { Faq } from "./faq";
 import { Hero, type HeroText } from "./hero";
 import { MoreFeatures } from "./more-features";
 
@@ -17,7 +17,6 @@ type FeaturePageProps<MoreKey extends string> = {
   };
   themeClassName: string;
   icon: Icon;
-  heroLayout: "center" | "split";
   heroVisual: ReactNode;
   moreIcons: Record<MoreKey, Icon>;
   ctaImage: StaticImageData;
@@ -28,7 +27,6 @@ export async function FeaturePage<MoreKey extends string>({
   t,
   themeClassName,
   icon,
-  heroLayout,
   heroVisual,
   moreIcons,
   ctaImage,
@@ -41,7 +39,6 @@ export async function FeaturePage<MoreKey extends string>({
       <Hero
         t={t.hero}
         icon={icon}
-        layout={heroLayout}
         compatible={dict.featurePages.compatible}
         download={dict.downloadPage}
         stats={dict.home.adoption.stats}

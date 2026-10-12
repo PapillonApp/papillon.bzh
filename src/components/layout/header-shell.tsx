@@ -33,6 +33,10 @@ function isOverDarkSection() {
   });
 }
 
+function isScrolled() {
+  return window.scrollY > lightAfterScroll;
+}
+
 function isOverDarkHero() {
   return (
     [...document.querySelectorAll("[data-dark-hero], [data-primary-hero], [data-photo-hero]")].some(
@@ -48,6 +52,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
     startsOverDarkHero(pathname),
   );
   const overDarkSection = useSyncExternalStore(subscribeToPage, isOverDarkSection, () => false);
+  const scrolled = useSyncExternalStore(subscribeToPage, isScrolled, () => false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -55,11 +60,12 @@ export function HeaderShell({ children }: { children: ReactNode }) {
       <header
         data-light={menuOpen || !overDarkHero || undefined}
         data-dark={(overDarkSection && !menuOpen) || undefined}
+        data-bordered={scrolled || !isFeaturePage(pathname) || undefined}
         className="group/header fixed inset-x-0 top-0 z-20 text-white transition-colors duration-300 data-light:text-foreground data-dark:theme-dark"
       >
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 border-b border-foreground/5 bg-background/85 group-data-dark/header:border-foreground/10 opacity-0 backdrop-blur-xl transition-[opacity,background-color,border-color] duration-300 group-data-light/header:opacity-100"
+          className="absolute inset-0 -z-10 border-b border-transparent bg-background/85 group-data-bordered/header:border-foreground/5 group-data-dark/header:border-foreground/10 opacity-0 backdrop-blur-xl transition-[opacity,background-color,border-color] duration-300 group-data-light/header:opacity-100"
         />
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </header>
@@ -68,5 +74,9 @@ export function HeaderShell({ children }: { children: ReactNode }) {
 }
 
 function startsOverDarkHero(pathname: string) {
-  return ["", "download", "association"].includes(pathname.split("/")[2] ?? "");
+  return ["", "association"].includes(pathname.split("/")[2] ?? "");
+}
+
+function isFeaturePage(pathname: string) {
+  return ["grades", "schedule", "homework", "news"].includes(pathname.split("/")[2] ?? "");
 }

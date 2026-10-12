@@ -464,6 +464,11 @@ const fr = {
           "Papillon récupère vos notes dès leur publication, calcule votre moyenne avec les coefficients et vous montre son évolution, matière par matière.",
         imageAlt: "L’onglet Notes de Papillon, avec la courbe d’évolution et une moyenne de 15,20 sur 20",
       },
+      tour: {
+        title: "Toutes vos notes, sous tous les angles.",
+        description:
+          "Courbe, méthode de calcul, périodes et matières : Papillon organise vos résultats pour que vous n’ayez rien à calculer.",
+      },
       highlights: {
         evolution: {
           title: "Voyez où vous en êtes, d’un coup d’œil.",
@@ -562,7 +567,7 @@ const fr = {
       faq: {
         title: "Vos questions sur les notes",
         description:
-          "Tout ce qu’il faut savoir sur vos notes et vos moyennes dans Papillon. Une autre question ? Écrivez-nous à support@papillon.bzh.",
+          "Tout ce qu’il faut savoir sur vos notes et vos moyennes dans Papillon.",
         items: [
           {
             emoji: "🎯",
@@ -628,6 +633,11 @@ const fr = {
         description:
           "Papillon affiche votre emploi du temps à jour, signale les cours annulés ou modifiés et vous suit jusque sur l’écran verrouillé.",
         imageAlt: "L’emploi du temps du jeudi 8 octobre dans Papillon, avec une pause déjeuner et un cours annulé",
+      },
+      beyond: {
+        title: "Même sans ouvrir l’app.",
+        description:
+          "Sur iPhone, vos cours vous suivent sur l’écran verrouillé et l’écran d’accueil.",
       },
       highlights: {
         day: {
@@ -725,7 +735,7 @@ const fr = {
       faq: {
         title: "Vos questions sur l’emploi du temps",
         description:
-          "Tout ce qu’il faut savoir sur l’emploi du temps dans Papillon. Une autre question ? Écrivez-nous à support@papillon.bzh.",
+          "Tout ce qu’il faut savoir sur l’emploi du temps dans Papillon.",
         items: [
           {
             emoji: "🔄",
@@ -790,6 +800,11 @@ const fr = {
         description:
           "Papillon rassemble vos devoirs semaine par semaine, vous laisse les cocher une fois faits et vous montre en un coup d’œil ce qui vous attend.",
         imageAlt: "Les devoirs de la semaine 41 dans Papillon, rangés par jour de rendu",
+      },
+      tour: {
+        title: "Vos devoirs, sous contrôle.",
+        description:
+          "Voyez ce qui arrive, cochez ce qui est fait et rangez le reste comme vous voulez.",
       },
       highlights: {
         week: {
@@ -859,7 +874,7 @@ const fr = {
       faq: {
         title: "Vos questions sur les devoirs",
         description:
-          "Tout ce qu’il faut savoir sur les devoirs dans Papillon. Une autre question ? Écrivez-nous à support@papillon.bzh.",
+          "Tout ce qu’il faut savoir sur les devoirs dans Papillon.",
         items: [
           {
             emoji: "📥",
@@ -912,6 +927,11 @@ const fr = {
           "Réunions, inscriptions, sorties : Papillon rassemble les actualités de votre établissement dans une liste claire, faite pour être lue sur téléphone.",
         imageAlt: "La liste des actualités de l’établissement dans Papillon",
       },
+      tour: {
+        title: "L’essentiel, sans chercher.",
+        description:
+          "Les annonces de votre établissement, rassemblées au même endroit et mises en forme pour votre téléphone.",
+      },
       highlights: {
         list: {
           title: "Toutes les annonces, au même endroit.",
@@ -952,7 +972,7 @@ const fr = {
       faq: {
         title: "Vos questions sur les actualités",
         description:
-          "Tout ce qu’il faut savoir sur les actualités dans Papillon. Une autre question ? Écrivez-nous à support@papillon.bzh.",
+          "Tout ce qu’il faut savoir sur les actualités dans Papillon.",
         items: [
           {
             emoji: "📥",

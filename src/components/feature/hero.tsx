@@ -15,7 +15,6 @@ export type HeroText = {
 type HeroProps = {
   t: HeroText;
   icon: ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
-  layout: "center" | "split";
   compatible: string;
   download: Dictionary["downloadPage"];
   stats: Dictionary["home"]["adoption"]["stats"];
@@ -23,75 +22,31 @@ type HeroProps = {
   children: ReactNode;
 };
 
-export function Hero({
-  t,
-  icon: Icon,
-  layout,
-  compatible,
-  download,
-  stats,
-  locale,
-  children,
-}: HeroProps) {
-  const split = layout === "split";
+export function Hero({ t, icon: Icon, compatible, download, stats, locale, children }: HeroProps) {
   const rating = download.hero.rating
     .replace("{rating}", stats.rating.value)
     .replace("{downloads}", stats.downloads.value);
 
   return (
-    <section
-      className={`relative isolate overflow-hidden px-6 pt-32 lg:pt-44 ${
-        split ? "pb-20 lg:pb-28" : ""
-      }`}
-    >
-      <div
-        aria-hidden
-        className={`absolute inset-0 -z-10 bg-radial-[at_top] from-primary/25 via-primary/8 via-30% to-transparent to-60% ${
-          split ? "lg:bg-radial-[at_85%_30%]" : ""
-        }`}
-      />
-
-      <div
-        className={
-          split
-            ? "mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-[1fr_auto] lg:gap-20"
-            : "mx-auto max-w-6xl"
-        }
-      >
-        <FadeUp
-          className={`flex flex-col gap-6 ${
-            split
-              ? "items-center text-center lg:items-start lg:text-left"
-              : "mx-auto max-w-4xl items-center text-center"
-          }`}
-        >
-          <Icon aria-hidden className="size-14 text-primary lg:size-16" />
-          <h1
-            className={`font-semibold tracking-tight text-balance ${
-              split ? "text-4xl sm:text-5xl lg:text-6xl" : "text-4xl sm:text-5xl lg:text-7xl"
-            }`}
-          >
+    <section className="px-3 pt-19 lg:px-4 lg:pt-24">
+      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-primary/10 lg:min-h-160 lg:grid-cols-2">
+        <FadeUp className="flex flex-col items-start justify-center gap-5 px-6 pt-12 sm:px-10 lg:py-20 lg:pr-0 lg:pl-16">
+          <Icon aria-hidden className="size-12 text-primary" />
+          <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
             {t.title}
           </h1>
-          <p className="max-w-xl text-lg/normal font-book text-pretty text-foreground/60">
+          <p className="max-w-lg text-lg/normal font-book text-pretty text-foreground/60">
             {t.description}
           </p>
-          <div className="mt-2">
-            <StoreBadges
-              t={download.stores}
-              locale={locale}
-              className={split ? "justify-center lg:justify-start" : "justify-center"}
-            />
+          <div className="mt-3">
+            <StoreBadges t={download.stores} locale={locale} className="justify-start" />
           </div>
-          <div
-            className={`flex flex-wrap items-center gap-x-6 gap-y-3 text-md text-foreground/60 ${
-              split ? "justify-center lg:justify-start" : "justify-center"
-            }`}
-          >
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-md text-foreground/60">
             <p className="flex items-center gap-1.5">
               <Star aria-hidden className="size-5 text-primary" />
               <span className="text-trim">{rating}</span>
             </p>
+            <span aria-hidden className="h-4 w-px bg-current/30 max-sm:hidden" />
             <p className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <span className="text-trim">{compatible}</span>
               <ServiceLogos />
@@ -99,7 +54,7 @@ export function Hero({
           </div>
         </FadeUp>
 
-        <FadeUp delay={0.15} className={split ? "flex justify-center" : "mt-14 lg:mt-20"}>
+        <FadeUp delay={0.15} className="flex h-104 justify-center pt-12 sm:h-120 lg:h-auto lg:pt-20">
           {children}
         </FadeUp>
       </div>

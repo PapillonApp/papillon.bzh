@@ -1,7 +1,6 @@
 import { Star } from "@getpapillon/papicons";
 import Image from "next/image";
-import iphone from "@/assets/devices/Devices-iPhone.png";
-import { FadeUp } from "@/components/ui/fade-up";
+import appIcon from "@/assets/app-icon.png";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { QrCode } from "./qr-code";
@@ -19,43 +18,26 @@ export function Hero({ t, stats, locale }: HeroProps) {
     .replace("{downloads}", stats.downloads.value);
 
   return (
-    <section data-primary-hero className="theme-primary overflow-hidden bg-background px-6 pt-32 lg:pt-40 pb-16">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2 lg:gap-10">
-        <FadeUp className="flex flex-col items-center gap-5 text-center lg:items-start lg:pb-28 lg:text-left">
-          <p className="rounded-full bg-foreground/15 px-3 py-1.5 text-md font-medium">
-            <span className="text-trim">{t.hero.label}</span>
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-balance lg:text-7xl">
-            {t.hero.title}
-          </h1>
-          <p className="max-w-xl text-lg/normal text-pretty text-foreground/85">
-            {t.hero.description}
-          </p>
-          <div className="mt-4">
-            <StoreBadges t={t.stores} locale={locale} />
-          </div>
-          <p className="flex items-center gap-1.5 text-md text-foreground/85">
-            <Star aria-hidden className="size-5" />
-            <span className="text-trim">{rating}</span>
-          </p>
-        </FadeUp>
+    <section>
+      <Image src={appIcon} alt="" preload sizes="64px" className="mb-6 size-16" />
+      <h1 className="text-3xl font-semibold tracking-tight text-balance">{t.hero.title}</h1>
+      <p className="mt-3 text-lg text-pretty text-foreground/60">{t.hero.description}</p>
 
-        <FadeUp delay={0.15} className="relative flex justify-center">
-          <Image
-            src={iphone}
-            alt={t.hero.imageAlt}
-            sizes="(min-width: 1024px) 320px, 240px"
-            priority
-            className="h-auto w-60 lg:w-80 drop-shadow-2xl"
-          />
-          <div className="absolute bottom-32 left-0 flex w-92 items-center gap-6 rounded-3xl bg-white p-6 text-primary-dark shadow-2xl max-lg:hidden xl:-left-8">
-            <QrCode label={t.hero.qrAlt} className="size-28 shrink-0" />
-            <div className="flex flex-col gap-2">
-              <p className="text-md font-semibold">{t.hero.qrTitle}</p>
-              <p className="text-sm/snug text-primary-dark/70">{t.hero.qrDescription}</p>
-            </div>
-          </div>
-        </FadeUp>
+      <StoreBadges t={t.stores} locale={locale} className="mt-8" />
+
+      <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-foreground/50">
+        <Star aria-hidden className="size-4" />
+        <span>{rating}</span>
+        <span aria-hidden>·</span>
+        <span>{t.hero.label}</span>
+      </p>
+
+      <div className="mt-10 flex items-center gap-5 border-y border-foreground/10 py-5 max-lg:hidden">
+        <QrCode label={t.hero.qrAlt} className="size-24 shrink-0" />
+        <div className="flex flex-col gap-1.5">
+          <p className="text-lg/snug font-medium">{t.hero.qrTitle}</p>
+          <p className="text-md text-pretty text-foreground/50">{t.hero.qrDescription}</p>
+        </div>
       </div>
     </section>
   );

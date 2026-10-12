@@ -4,8 +4,9 @@ import detail from "@/assets/homework/detail.webp";
 import list from "@/assets/homework/list.webp";
 import sort from "@/assets/homework/sort.webp";
 import { FeaturePage } from "@/components/feature/feature-page";
-import { Screen } from "@/components/feature/screen";
-import { Ledger } from "@/components/homework/ledger";
+import { HeroScreens } from "@/components/feature/hero-screens";
+import { SectionTitle } from "@/components/feature/section-title";
+import { Tiles } from "@/components/feature/tiles";
 import { getDictionary } from "@/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -23,26 +24,11 @@ export default async function HomeworkPage() {
       t={t}
       themeClassName="theme-homework"
       icon={Tasks}
-      heroLayout="center"
       heroVisual={
-        <div className="flex h-100 items-start justify-center overflow-hidden mask-b-from-55% lg:h-150">
-          <Screen
-            image={detail}
-            alt={done.imageAlt}
-            className="mt-16 -mr-16 w-32 -rotate-6 sm:w-48 lg:w-72"
-          />
-          <Screen
-            image={list}
-            alt={t.hero.imageAlt}
-            priority
-            className="relative z-10 w-48 sm:w-56 lg:w-80"
-          />
-          <Screen
-            image={sort}
-            alt={sorting.imageAlt}
-            className="mt-16 -ml-16 w-32 rotate-6 sm:w-48 lg:w-72"
-          />
-        </div>
+        <HeroScreens
+          front={{ image: list, alt: t.hero.imageAlt }}
+          back={{ image: detail, alt: done.imageAlt }}
+        />
       }
       moreIcons={{
         subjects: Emoji,
@@ -54,13 +40,16 @@ export default async function HomeworkPage() {
       }}
       ctaImage={list}
     >
-      <Ledger
-        items={[
-          { image: list, t: week },
-          { image: detail, t: done },
-          { image: sort, t: sorting },
-        ]}
-      />
+      <section className="px-6 py-24 lg:py-32">
+        <SectionTitle title={t.tour.title} description={t.tour.description} />
+        <Tiles
+          items={[
+            { image: list, t: week },
+            { image: detail, t: done },
+            { image: sort, t: sorting },
+          ]}
+        />
+      </section>
     </FeaturePage>
   );
 }
