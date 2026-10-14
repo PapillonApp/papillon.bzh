@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 
 type Columns = Dictionary["footer"]["columns"];
 export type LinkKey = { [Column in keyof Columns]: keyof Columns[Column]["links"] }[keyof Columns];
@@ -27,7 +28,7 @@ export const linkHrefs: Record<LinkKey, string> = {
 };
 
 export function localizeHref(href: string, locale: string) {
-  return href.startsWith("/") ? `/${locale}${href}` : href;
+  return href.startsWith("/") ? withBasePath(`/${locale}${href}`) : href;
 }
 
 export const externalProps = { target: "_blank", rel: "noreferrer" } as const;

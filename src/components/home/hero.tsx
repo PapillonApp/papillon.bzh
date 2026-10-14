@@ -7,6 +7,7 @@ import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import { ServiceLogos } from "@/components/ui/service-logos";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 import { pageLight } from "@/lib/page-tone";
 
 type HeroProps = {
@@ -41,7 +42,7 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
     >
       <div ref={toneRef} aria-hidden className="absolute inset-x-0 top-0 h-75" />
       <video
-        src="/hero/papievent-reveal.mp4"
+        src={withBasePath("/hero/papievent-reveal.mp4")}
         autoPlay
         muted
         loop

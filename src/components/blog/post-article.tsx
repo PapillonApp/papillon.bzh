@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 import { formatPostDate, importPost, type Post } from "@/lib/blog";
 import { Author } from "./author";
 import { CodeBlock, type CodeBlockLabels } from "./code-block";
@@ -45,7 +46,7 @@ export function PostArticle({ t, post, locale }: PostArticleProps) {
         <ViewTransition name={`blog-banner-${post.slug}`} share="blog-banner" default="none">
           <div className="relative mx-auto mt-12 aspect-video max-w-4xl overflow-hidden rounded-3xl bg-surface lg:mt-16">
             <Image
-              src={post.banner}
+              src={withBasePath(post.banner)}
               alt={post.bannerAlt ?? ""}
               fill
               preload

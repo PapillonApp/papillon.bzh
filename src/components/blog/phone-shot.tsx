@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 
 type PhoneShotProps = {
   src: string;
@@ -15,7 +16,7 @@ export function PhoneShot({ src, alt, caption, show = "top" }: PhoneShotProps) {
         <div
           className={`mx-auto flex aspect-2/3 w-1/2 flex-col overflow-hidden ${bottom ? "justify-end" : ""}`}
         >
-          <Image src={src} alt={alt} width={990} height={2032} sizes="336px" className="w-full shrink-0" />
+          <Image src={withBasePath(src)} alt={alt} width={990} height={2032} sizes="336px" className="w-full shrink-0" />
         </div>
       </div>
       {caption && (
