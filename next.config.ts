@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     qualities: [75, 90],
   },
   experimental: {
+    agentUpgrade: "security",
     optimizePackageImports: ["@getpapillon/papicons"],
   },
   turbopack: {

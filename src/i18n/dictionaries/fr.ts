@@ -13,6 +13,7 @@ const fr = {
     blog: "Blog",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
+    back: "Retour",
     menus: {
       features: {
         grades: {

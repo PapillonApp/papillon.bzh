@@ -14,6 +14,7 @@ const en: Dictionary = {
     blog: "Blog",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    back: "Back",
     menus: {
       features: {
         grades: {

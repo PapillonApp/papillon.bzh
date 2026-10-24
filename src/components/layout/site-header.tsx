@@ -34,7 +34,7 @@ export async function SiteHeader() {
             <LanguageMenu t={dict.language} triggerClassName={navEntryStyle} />
           </div>
           <DownloadButton t={dict.download} variant="header" compactOnMobile />
-          <MobileMenu nav={dict.nav} language={dict.language} locale={locale} />
+          <MobileMenu nav={dict.nav} language={dict.language} download={dict.download} locale={locale} />
         </div>
       </HoverGroup>
     </HeaderShell>

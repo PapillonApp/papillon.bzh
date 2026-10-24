@@ -7,7 +7,7 @@ export async function Devices() {
   const t = (await getDictionary()).home.devices;
 
   return (
-    <section id="devices" className="scroll-mt-20 px-6 py-24 lg:py-32">
+    <section id="devices" className="scroll-mt-20 overflow-x-clip px-6 py-24 lg:py-32">
       <SectionHeading
         icon={Phone}
         iconColor="text-foreground/60"
