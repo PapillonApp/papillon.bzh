@@ -1,0 +1,76 @@
+---
+title: "Comment nous nous sommes préparés au Liquid Glass ?"
+description: "Une v8 pensée à plat, un iOS 26 qui change les règles en plein développement, et une app qui s'intègre un peu plus au système à chaque version."
+date: 2026-08-19
+author: tomhlr
+category: development
+banner: /blog/liquid-glass/header.webp
+bannerAlt: "L'onglet Accueil de Papillon dans la barre d'onglets Liquid Glass"
+---
+
+Le Liquid Glass est le nouveau langage visuel d'Apple, présenté avec [iOS 26](https://developer.apple.com/ios/) en juin 2025. Les barres, les boutons et les menus deviennent des morceaux de verre, qui laissent passer le contenu en dessous et réagissent au toucher.
+
+Pour Papillon, il est arrivé à un drôle de moment : <Highlight>en plein milieu du développement de la v8</Highlight>.
+
+Alors, comment s'y est-on préparé ?
+
+## Une v8 pensée à plat
+
+Vers avril-mai 2025, on a commencé à designer puis à développer la v8 de Papillon. À ce moment-là, personne ne savait encore ce qu'Apple allait annoncer.
+
+L'app était donc pensée pour une interface **plate et statique** : une barre d'onglets classique collée en bas de l'écran, des en-têtes séparés du contenu par une simple bordure, des cartes posées les unes sous les autres. Et le design system suivait la même logique : <Highlight>pas de dégradé, pas d'ombre, rien qui dépasse</Highlight>. Juste des couleurs et des bordures.
+
+<PhoneShot show="bottom" src="/blog/liquid-glass/v8-plat.webp" alt="Emploi du temps de la v8 avec une barre d'onglets plate séparée par une bordure" caption="L'emploi du temps des premières maquettes de la v8, entièrement à plat" />
+
+C'était propre, lisible, et ça nous allait très bien.
+
+## iOS 26 change les règles
+
+Puis iOS 26 est sorti, alors que la v8 était encore en développement. Et avec lui, certaines choses ont changé <Highlight>sans qu'on ait rien demandé</Highlight>. En compilant Papillon pour iOS 26, la barre d'onglets est devenue une barre flottante en verre, et les boutons des en-têtes se sont transformés en pastilles Liquid Glass. Le tout activé par défaut.
+
+Notre premier build sous iOS 26 avait donc un drôle d'air : une interface à plat, avec un morceau de verre qui flottait par-dessus.
+
+<PhoneShot show="bottom" src="/blog/liquid-glass/premier-build.webp" alt="Écran Tâches en construction avec la nouvelle barre d'onglets flottante d'iOS 26" caption="Le tout premier build de Papillon sous iOS 26" />
+
+Pas question de tout redessiner à quelques semaines de la sortie. On s'est donc adaptés **légèrement** : quelques ombres pour décoller les éléments du fond, et plus de contraste pour que tout reste lisible autour du verre. Assez pour que la v8 ne jure pas avec le reste du système.
+
+<PhoneShot show="bottom" src="/blog/liquid-glass/v8-ombres.webp" alt="Emploi du temps de la v8 avec des cartes ombrées et la barre d'onglets flottante" caption="L'emploi du temps de la v8, avec ses ombres et la nouvelle barre d'onglets" />
+
+## Les premières explorations
+
+Peu après la sortie de la v8, on a commencé à se poser une autre question. S'adapter au Liquid Glass, c'est bien. **S'intégrer vraiment avec**, c'est mieux.
+
+On a donc lancé quelques explorations d'interface, pour voir jusqu'où on pouvait emmener le matériau dans Papillon. Comme cet écran des notes, avec son en-tête bleuté et ses filtres en pastilles.
+
+<PhoneShot src="/blog/liquid-glass/notes.webp" alt="Exploration de l'écran des notes avec un en-tête bleuté et des filtres en pastilles" caption="Une exploration de l'écran des notes" />
+
+## Plus de verre dans l'app
+
+Petit à petit, le Liquid Glass s'est ensuite installé dans Papillon, notamment :
+
+- <Label icon="grid" color="blue">Les en-têtes</Label> : leurs boutons passent en verre, comme ceux des apps d'Apple.
+- <Label icon="sparkles" color="green">Les Papicons</Label> : nos icônes ont été adaptées à la nouvelle barre d'onglets, pour rester lisibles sur le verre.
+
+<PhoneShot src="/blog/liquid-glass/accueil-header.webp" alt="Accueil de Papillon avec des boutons Liquid Glass dans l'en-tête" caption="L'accueil, avec ses boutons en verre dans l'en-tête" />
+
+## v8.4 : tout l'accueil en verre
+
+Pour la v8.4, on a décidé d'aller plus loin. Cette fois, <Highlight>tout l'accueil passe en Liquid Glass</Highlight> : les raccourcis, les cours et les cartes. Et derrière, un fond d'écran personnalisable, plus immersif, que le verre laisse transparaître.
+
+![Papillon v8.4 sur un iPhone tenu en main, avec l'accueil en Liquid Glass](/blog/liquid-glass/v8-4.webp)
+
+## iOS 27 : place à la couleur
+
+Avec iOS 27, Apple a raffiné le Liquid Glass. Il est **plus lisible**, et surtout bien plus facile à intégrer.
+
+On en a donc profité pour étendre encore l'intégration du matériau : de la couleur dans le verre, et plus de conteneurs Liquid Glass. Le but : <Highlight>une interface plus fun, et mieux intégrée à l'OS</Highlight>.
+
+<PhoneShot src="/blog/liquid-glass/ios-27.webp" alt="Accueil de Papillon sous iOS 27 avec des raccourcis en verre coloré" caption="L'accueil de Papillon sous iOS 27" />
+
+## Conclusion
+
+On a commencé la v8 avec une interface toute plate, et iOS 26 a changé les règles en cours de route. Plutôt que de tout jeter, on a avancé par étapes : d'abord s'adapter, puis explorer, puis intégrer le verre un peu plus à chaque version.
+
+La plus grosse leçon de ce projet, c'est qu'une app ne vit pas seule : elle vit dans un système qui évolue. Et **mieux vaut laisser iOS nous aider que se battre contre lui.**
+
+Papillon est [open-source sur GitHub](https://github.com/PapillonApp/Papillon). N'hésite pas à essayer la dernière version et à nous faire tes retours !

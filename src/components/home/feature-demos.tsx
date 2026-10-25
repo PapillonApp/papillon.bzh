@@ -7,6 +7,7 @@ import { LazyVideo } from "@/components/ui/lazy-video";
 import { getDictionary } from "@/i18n/server";
 
 const videos = ["/features/grades.mp4", "/features/schedule.mp4", "/features/subjects.mp4"];
+const themes = ["theme-grades", "theme-schedule", "theme-news"];
 
 export async function FeatureDemos() {
   const t = (await getDictionary()).home.demos;
@@ -16,7 +17,7 @@ export async function FeatureDemos() {
       {t.items.map((item, index) => (
         <div
           key={item.title}
-          className="flex flex-col items-center gap-10 px-6 lg:h-full lg:flex-row lg:justify-center lg:gap-18"
+          className={`flex flex-col items-center gap-10 px-6 lg:h-full lg:flex-row lg:justify-center lg:gap-18 ${themes[index]}`}
         >
           <FadeUp className="relative aspect-431/885 w-64 shrink-0 lg:h-3/4 lg:max-h-205 lg:w-auto">
             <div className="absolute inset-x-1/23 inset-y-1/53 overflow-hidden rounded-[14%/6.5%]">

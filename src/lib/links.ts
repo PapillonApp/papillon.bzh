@@ -4,6 +4,7 @@ type Columns = Dictionary["footer"]["columns"];
 export type LinkKey = { [Column in keyof Columns]: keyof Columns[Column]["links"] }[keyof Columns];
 
 export const discordUrl = "https://discord.gg/wVKWBRTbfh";
+export const contactEmail = "support@papillon.bzh";
 export const linkedinUrl = "https://www.linkedin.com/company/getpapillonapp";
 
 export const linkHrefs: Record<LinkKey, string> = {

@@ -276,7 +276,7 @@ const en: Dictionary = {
       reviewsLabel: "Reviews from the App Store and Google Play",
       ratingLabel: "out of 5 stars",
       stats: {
-        downloads: { value: "1.9M+", label: "downloads" },
+        downloads: { value: "2M+", label: "downloads" },
         rating: { value: "4.7", label: "average rating" },
         reviews: { value: "25K+", label: "reviews" },
         sessions: { value: "100K+", label: "sessions a week" },
@@ -341,62 +341,114 @@ const en: Dictionary = {
   association: {
     metadataTitle: "About us – Papillon",
     hero: {
-      label: "About Papillon",
-      title: "Better, together.",
+      label: "Papillon association",
+      title: "Students building for students",
       description:
-        "Papillon is also six passionate students who never stop pushing to surprise you and deliver an experience that goes beyond what you’d expect.",
-      discord: "Join our Discord",
+        "There’s no company behind Papillon. Just six students, a non-profit and an app we keep running between classes. 2 million downloads later, it’s still free, ad-free and open source.",
+      team: "Meet the team",
+      story: "Our story",
     },
-    values: [
-      {
-        title: "We can’t please everyone, but we’ll do everything we can to please you.",
-        description:
-          "We’re not just building an app. We’re building a community that creates school tools that go further. Papillon is a team of passionate people who always want to do more for you.",
-      },
-      {
-        title: "Passionate about breaking the routine.",
-        description:
-          "Always looking for ways to do better, again and again: that’s what drives us. We’re constantly rethinking how things are done to bring you something that feels like a breath of fresh air.",
-      },
-      {
-        title: "Whatever the storm, we stick together.",
-        description:
-          "We believe in the power of the team. At Papillon, we move forward together, share the same values and keep going even when the pressure’s on.",
-      },
-    ],
-    team: {
-      title: "So, who’s behind Papillon?",
+    origin: {
+      title: "It was just for me",
       description:
-        "Along with the hundreds of contributors we can’t thank enough, Papillon is a team of passionate people working every day to keep the project going.",
+        "In 2021, Vince was still in school and felt his schedule, homework and grades deserved better. So he built his own app, in the evenings after class. He showed it to a few friends, who showed it to theirs. And it never stopped.",
+      imageAlt: "Papillon v1’s schedule, in 2021",
+      link: "Read the whole story",
+    },
+    today: {
+      title: "Five years on, it’s *still free*",
+      description:
+        "The project between friends ended up in students’ pockets all over France, from middle school to university. And we still haven’t added a single ad.",
+      facts: {
+        founded: { value: "2021", label: "the very first version" },
+        appStore: { value: "#1", label: "on the French App Store in 2024" },
+      },
+    },
+    team: {
+      title: "Six students, five cities",
+      description:
+        "Rennes, Montpellier, Laon, Angoulême, Chambéry: we don’t live in the same place, so everything happens online, between classes. Hundreds of contributors lend us a hand. And whenever an event brings us together, we jump on a train.",
+      remote: "Each from home, from the couch to the kitchen table.",
+      together: "And all together whenever we get the chance.",
       members: {
         vince: {
-          role: "President",
+          role: "President and founder",
+          school: "BUT MMI, 3rd year · IUT de Lannion",
           description:
-            "Founder and president of the project, he has a hand in everything Papillon.",
+            "He wrote the very first version in 2021. Today, he runs the product and keeps the association going.",
         },
         lucas: {
           role: "Vice President",
+          school: "BUT MMI, 1st year · IUT de Béziers",
           description:
-            "Lucas joined Papillon in its early days and helps lead the project.",
+            "Here since day one, he co-leads the association and keeps an eye on everything that’s moving.",
         },
         tom: {
           role: "UI/UX Designer",
+          school: "BUT MMI, 2nd year · IUT de Lannion",
           description:
-            "The team’s artist, he shapes Papillon’s visual identity and interface.",
+            "He redid the whole app and its visual identity for v7. Since then, no screen ships without going through him.",
         },
         raphael: {
           role: "Developer",
+          school: "1st year · Université de technologie de Troyes",
           description:
-            "Our evil coding genius, and the one who gets all the jobs nobody else wants.",
+            "The technical jobs nobody wants? Those are his.",
         },
         remy: {
           role: "Developer",
+          school: "École 42 · Angoulême",
           description:
-            "With an eye for both code and design, he gives features a fresh coat of paint.",
+            "Half dev, half designer, he turns mockups into real features.",
         },
         mael: {
           role: "Developer",
-          description: "He tinkers with everything… especially when he “just wants to see what happens.”",
+          school: "O’Clock School · Chambéry",
+          description:
+            "He tries everything, especially when he “just wants to see what happens.”",
+        },
+      },
+    },
+    commitments: {
+      title: "What’s not going to change",
+      items: {
+        free: {
+          title: "Free, and staying that way",
+          description:
+            "No subscription, no ads, and we don’t sell anything to anyone. The app runs on community donations, and we set up the association in 2025 precisely to keep it going.",
+        },
+        open: {
+          title: "All the code is public",
+          description:
+            "Since 2022, anyone can read it on GitHub, check what the app does or suggest an idea. Hundreds of people already have.",
+        },
+        privacy: {
+          title: "We don’t keep your credentials",
+          description:
+            "They go encrypted, straight to the school. And the rest of your data never leaves your phone.",
+        },
+      },
+    },
+    next: {
+      title: "Want to get involved?",
+      description:
+        "The goal? Every student, from middle school to university, gets a free, fast app that respects their privacy. If that speaks to you, there are a few ways to lend a hand.",
+      privacy: "Work at a school? Everything we do with data is explained in our privacy policy.",
+      cards: {
+        support: {
+          title: "Support us",
+          description:
+            "Incubator, sponsor or company? Let’s talk over a coffee (or an email). And if you just want to give us a boost, donations are open.",
+          cta: "Drop us a line",
+          subject: "Partnership",
+          secondary: "Donate",
+        },
+        contribute: {
+          title: "Contribute",
+          description:
+            "Dev, designer or just curious? The code is on GitHub, and the whole community hangs out on Discord.",
+          cta: "See the code",
+          secondary: "Come say hi on Discord",
         },
       },
     },
@@ -453,19 +505,19 @@ const en: Dictionary = {
       metadataDescription:
         "Get your grades as soon as they’re posted, your weighted average calculated for you, and see how it changes over the year. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        title: "Know your average before report cards do.",
+        title: "Know your average before report cards do",
         description:
           "Papillon pulls in your grades as soon as they’re posted, calculates your weighted average and shows how it changes, subject by subject.",
         imageAlt: "Papillon’s Grades tab, with the progress chart and an average of 15.20 out of 20",
       },
       tour: {
-        title: "Every grade, from every angle.",
+        title: "Every grade, from every angle",
         description:
           "Trend line, averaging method, periods and subjects: Papillon organizes your results so you have nothing to work out.",
       },
       highlights: {
         evolution: {
-          title: "See where you stand, at a glance.",
+          title: "See where you stand, at a glance",
           description:
             "Your overall average front and center, with a chart covering the whole term. Drag your finger along it to see your average on any day.",
           points: [
@@ -475,7 +527,7 @@ const en: Dictionary = {
           imageAlt: "Papillon’s progress chart, showing an estimated average of 14.83 out of 20 on October 4",
         },
         methods: {
-          title: "The right average, with the right weights.",
+          title: "The right average, with the right weights",
           description:
             "Papillon factors in weights and lets you pick the method your school uses. If your school posts its own average, that’s the one you’ll see.",
           points: [
@@ -486,7 +538,7 @@ const en: Dictionary = {
           imageAlt: "Choosing how the overall average is calculated in Papillon",
         },
         detail: {
-          title: "What your grade is really worth.",
+          title: "What your grade is really worth",
           description:
             "Tap a grade to see how the rest of the class did: class average, highest and lowest score, and how much the assignment is worth.",
           points: [
@@ -497,7 +549,7 @@ const en: Dictionary = {
           imageAlt: "Details of a 16 out of 20 grade, with a weight of 1 and a class average of 13.50",
         },
         influence: {
-          title: "What every grade changes.",
+          title: "What every grade changes",
           description:
             "Got a 16 in Biology? That’s +0.07 on your overall average. Papillon shows the impact of every grade, so you know exactly where you’re gaining ground and where to catch up.",
           points: [
@@ -507,14 +559,14 @@ const en: Dictionary = {
           imageAlt: "A grade that raises the overall average by 0.07 points",
         },
         periods: {
-          title: "Term by term.",
+          title: "Term by term",
           description:
             "Switch between terms or semesters from the menu to compare your results or look back at the start of the year. Practice exams get their own tab.",
           points: ["Terms and semesters", "Practice exams kept separate", "Start and end dates for each term"],
           imageAlt: "Papillon’s term menu, showing three terms and their dates",
         },
         subjects: {
-          title: "All your subjects, neatly organized.",
+          title: "All your subjects, neatly organized",
           description:
             "Your grades are grouped by subject, each with its own average. Papillon recognizes over 250 subjects, even when they’re abbreviated or in all caps, and gives each a clean name, an emoji and a color. Sort them, or search for any assignment.",
           points: [
@@ -602,13 +654,13 @@ const en: Dictionary = {
         ],
       },
       largeScreen: {
-        title: "Even better on a big screen.",
+        title: "Even better on a big screen",
         description:
           "On iPad and Mac, Papillon uses the full width of the screen: the chart stretches out, your latest grades scroll by and two subjects sit side by side.",
         imageAlt: "Papillon’s Grades tab on an iPad Pro, with the progress chart and two subjects side by side",
       },
       cta: {
-        title: "Your grades deserve better than a spreadsheet.",
+        title: "Your grades deserve better than a spreadsheet",
         description:
           "Install Papillon and sign in with your school login. Your grades show up in seconds.",
       },
@@ -618,19 +670,19 @@ const en: Dictionary = {
       metadataDescription:
         "Your schedule, always up to date: canceled and changed classes, rooms, teachers, Live Activities and widgets. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        title: "Your day, one class at a time.",
+        title: "Your day, one class at a time",
         description:
           "Papillon keeps your schedule up to date, flags canceled or changed classes and follows you all the way to your Lock Screen.",
         imageAlt: "Thursday, October 8 in Papillon’s schedule, with a lunch break and a canceled class",
       },
       beyond: {
-        title: "Without even opening the app.",
+        title: "Without even opening the app",
         description:
           "On iPhone, your classes follow you onto the Lock Screen and the Home Screen.",
       },
       highlights: {
         day: {
-          title: "Class canceled? You’ll know right away.",
+          title: "Class canceled? You’ll know right away",
           description:
             "Class canceled or moved? You’ll see it right in your day. Room, teacher, length: it’s all there, breaks included.",
           points: [
@@ -641,14 +693,14 @@ const en: Dictionary = {
           imageAlt: "Thursday, October 8, with a lunch break and a canceled Economics class",
         },
         views: {
-          title: "List or week.",
+          title: "List or week",
           description:
             "Stick with the List view to follow your day, or switch to the Week view to see every class at once. It’s just one menu away.",
           points: ["List view, day by day", "Week view, in beta", "All your iCal calendars in one place"],
           imageAlt: "The schedule’s View menu, with the List and Week options",
         },
         calendar: {
-          title: "Jump to any day.",
+          title: "Jump to any day",
           description:
             "Swipe from one day to the next, or open the calendar to go straight to the date you need, whether it’s a test in two weeks or the first day back from break.",
           points: [
@@ -659,7 +711,7 @@ const en: Dictionary = {
           imageAlt: "The month calendar open on Tuesday, October 13",
         },
         detail: {
-          title: "Every class, up close.",
+          title: "Every class, up close",
           description:
             "Tap a class to see when it starts and ends, how long until it begins, the room and the teacher. Papillon recognizes over 250 subjects, even when they’re abbreviated or in all caps, and gives each a clean name, an emoji and a color.",
           points: [
@@ -670,14 +722,14 @@ const en: Dictionary = {
           imageAlt: "Details of a one-hour History & Geography class in room C 018 with Mme Bernard",
         },
         live: {
-          title: "Your class, on your Lock Screen.",
+          title: "Your class, on your Lock Screen",
           description:
             "On iPhone, your current or next class shows up live on the Lock Screen and in the Dynamic Island, with the room and time remaining. No need to open the app between classes.",
           points: ["Live countdown", "Room and teacher", "In the Dynamic Island"],
           imageAlt: "An iPhone Lock Screen showing the current History & Geography class and the time remaining",
         },
         widget: {
-          title: "Your next classes, right on your Home Screen.",
+          title: "Your next classes, right on your Home Screen",
           description:
             "Add the Papillon widget to your iPhone’s Home Screen and see your upcoming classes without even opening the app.",
           points: ["Upcoming classes at a glance", "Always up to date"],
@@ -761,13 +813,13 @@ const en: Dictionary = {
         ],
       },
       largeScreen: {
-        title: "Your whole week, on one screen.",
+        title: "Your whole week, on one screen",
         description:
           "On iPad and Mac, the Week view shows every class from Monday to Friday at a glance, canceled ones included. Use the sidebar to jump between tabs.",
         imageAlt: "The week of October 5 in Papillon’s schedule on an iPad Pro",
       },
       cta: {
-        title: "Your next class, already in your pocket.",
+        title: "Your next class, already in your pocket",
         description:
           "Install Papillon and sign in with your school login. Your schedule shows up in seconds.",
       },
@@ -777,19 +829,19 @@ const en: Dictionary = {
       metadataDescription:
         "All your homework, week by week, sorted by due date or subject and ready to check off. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        title: "What’s due, and when.",
+        title: "What’s due, and when",
         description:
           "Papillon gathers your homework week by week, lets you check it off when you’re done and shows you what’s coming up at a glance.",
         imageAlt: "Week 41 homework in Papillon, sorted by due date",
       },
       tour: {
-        title: "Your homework, under control.",
+        title: "Your homework, under control",
         description:
           "See what’s coming, tick off what’s done and sort the rest your way.",
       },
       highlights: {
         week: {
-          title: "Your whole week, day by day.",
+          title: "Your whole week, day by day",
           description:
             "Your homework is sorted by due date, with the subject and how much time you have left. Swipe to see next week.",
           points: [
@@ -800,7 +852,7 @@ const en: Dictionary = {
           imageAlt: "Homework from Monday, October 5 to Wednesday, October 7, one assignment already done",
         },
         done: {
-          title: "Check it off. Done.",
+          title: "Check it off. Done",
           description:
             "Mark an assignment as done with one tap, from the list or the assignment itself. You always know what’s left before tomorrow.",
           points: [
@@ -811,7 +863,7 @@ const en: Dictionary = {
           imageAlt: "A History & Geography assignment, marked as done",
         },
         sort: {
-          title: "Sort it your way.",
+          title: "Sort it your way",
           description:
             "Sort your homework by due date or subject, or show unfinished work first. Looking for specific instructions? Just search.",
           points: [
@@ -902,26 +954,26 @@ const en: Dictionary = {
       metadataDescription:
         "Your school’s announcements in one clean feed, easy to read on your phone. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
       hero: {
-        title: "Never miss a school announcement.",
+        title: "Never miss a school announcement",
         description:
           "Meetings, sign-ups, field trips: Papillon brings your school’s announcements together in one clean feed, made for reading on your phone.",
         imageAlt: "The school news feed in Papillon",
       },
       tour: {
-        title: "The essentials, without digging.",
+        title: "The essentials, without digging",
         description:
           "Your school’s announcements, gathered in one place and formatted for your phone.",
       },
       highlights: {
         list: {
-          title: "Every announcement, in one place.",
+          title: "Every announcement, in one place",
           description:
             "Each post shows who wrote it, when, and a preview of the message. The latest are at the top, and search finds any announcement in an instant.",
           points: ["Author and date", "Message preview", "Search all announcements"],
           imageAlt: "Four announcements: parent-teacher conferences, the library, the sports club and a charity drive",
         },
         detail: {
-          title: "Easy on the eyes.",
+          title: "Easy on the eyes",
           description:
             "Open a post to read it in full, formatted for your screen. Its category is shown up top, so you know right away what it’s about.",
           points: ["Text formatted for your phone", "Category, author and date up top"],
@@ -981,7 +1033,7 @@ const en: Dictionary = {
         ],
       },
       cta: {
-        title: "Stay in the loop.",
+        title: "Stay in the loop",
         description:
           "Install Papillon and sign in with your school login. Your school’s announcements show up in seconds.",
       },
@@ -1090,48 +1142,77 @@ const en: Dictionary = {
     },
   },
   story: {
-    placeholder: "Screenshot needed",
-    timeline: [
-      { date: "2021", title: "An app for friends", text: "The first version is written in the evenings after class, for a handful of friends." },
-      { date: "2022", title: "The code goes open source", text: "Anyone can read the code and suggest changes. A community starts to form on GitHub and Discord." },
-      { date: "2023", title: "Finally on the stores", text: "Donations from the community pay for Papillon’s release on the App Store and Google Play." },
-      { date: "September 2024", title: "Version 7, rebuilt from scratch", text: "Tom redesigns the whole app, including its visual identity." },
-      { date: "December 2024", title: "Number 1 on the App Store", text: "Papillon passes 100,000 downloads and spends a week at the top of the French App Store." },
-      { date: "May 2025", title: "A million downloads", text: "Still not a single ad. The app is still free." },
-      { date: "August 2025", title: "We start an association", text: "Papillon becomes a nonprofit run by high school and university students, so the project can last." },
-      { date: "September 2025", title: "Version 8", text: "A big update: the app is faster and does more." },
-      { date: "January 2026", title: "Heading to university", text: "We start adapting Papillon for university students." },
-      { date: "September 2026", title: "iPad, iPhone Duo and Mac", text: "Papillon comes to iPad and Mac, and adapts to the foldable screen of the iPhone Duo." },
-    ],
-    vinceQuote:
-      "I started Papillon in 2021 because I wanted to see my average without digging through three menus. Five years later, we’re still students writing code for other students, and the code is still open. That part isn’t changing.",
     metadataTitle: "Our story – Papillon",
-    download: "Download",
     hero: {
-      title: "How it all started",
-      devicesAlt: "Papillon on Pixel, iPad, iPhone Duo and iPhone",
+      title: "Our story",
       description:
-        "Papillon started in 2021, between homework assignments. Five years later, it has been downloaded more than 1.8 million times.",
+        "In 2021, the app had exactly one user: Vince. Eight versions later, more than a million students have it on their phones.",
+      iconsAlt: "The app’s icons over the years, from 2021 to today",
     },
-    timelineLabel: "Papillon’s milestones, from 2021 to today",
-    placeholders: {
-      first: "the first version of Papillon in 2021, original screenshot",
-      stores: "Papillon’s App Store page in 2023",
-      v7: "Papillon v7 home screen, September 2024",
-      ranking: "French App Store chart with Papillon at number 1, December 2024",
-      million: "image posted for the millionth download, May 2025",
-      universities: "university sign-in screen, in development",
+    timelineLabel: "Papillon’s versions, from 2021 to today",
+    eras: [
+      {
+        date: "2021",
+        title: "The very first version",
+        text: "Vince codes his own take on Pronote, just for himself. Version 2? A small update, nothing wild.",
+        alts: ["The Pronote+ v1 home screen, with the latest grades"],
+      },
+      {
+        date: "2022",
+        title: "We open up the code",
+        text: "The code goes open source, with an interface we rebuilt our way. And then the first users show up.",
+        alts: ["The Pronote+ 3.4 welcome screen", "The Pronote+ v3 schedule"],
+      },
+      {
+        date: "2022",
+        title: "Enter the butterfly",
+        text: "The first version with the logo we still use today. The rest? Slow, buggy, definitely not our best. It didn’t last long.",
+        alts: ["The Pronote+ v4 sign-in screen", "The Pronote+ v4 schedule"],
+      },
+      {
+        date: "2023",
+        title: "Pronote+ becomes Papillon",
+        text: "A new name, and we’re not just about Pronote anymore. A big one: the home screen, grade cards, how each grade affects your average, and ways to make the app your own.",
+        alts: ["The Papillon v5 overview, with the latest grades and homework"],
+      },
+      {
+        date: "2023",
+        title: "Hello, React Native",
+        text: "Our first React Native version, and the interface starts to look like the one you know. Along the way: your average’s history and the very first Papicons, our own icons.",
+        alts: ["The Papillon v6 overview, with the next class and tomorrow’s schedule"],
+      },
+      {
+        date: "2024",
+        title: "We redo everything",
+        text: "Tom Things redesigns the app from scratch. We add Papillon Magic (our AI), notifications and even more customization. That’s when things take off.",
+        alts: ["The Papillon v7 home screen, with the current class and the average"],
+      },
+      {
+        date: "2025",
+        title: "Our latest version",
+        text: "Our most complete version yet: a new interface by Tom Things, and an app that really fits in on iOS and Android. If you’re curious, here’s every step the interface went through.",
+        alts: [
+          "Papillon v8, first iteration of the home screen",
+          "Papillon v8, an iteration of the schedule",
+          "Papillon v8, third iteration of the home screen",
+          "Papillon v8, fourth iteration of the home screen",
+          "Papillon v8, fifth iteration of the home screen",
+          "Papillon v8, today’s home screen",
+        ],
+      },
+    ],
+    milestone: {
+      label: "Then it all snowballed",
+      from: { value: "100,000", label: "users by the end of 2024" },
+      to: { value: "1 million", label: "in early 2025" },
     },
-    images: {
-      openSource: "A team member writing code on a laptop",
-      association: "The six members of the Papillon team",
-      v8: "The Papillon v8 home screen",
-      devices: "Papillon on an iPad Pro, showing the week view",
-    },
+    today: "Today",
+    vinceQuote:
+      "I started Papillon in 2021 because I wanted a more modern interface for my schedule, homework and grades. Five years later, we’re still students writing code for other students, and the code is still open. That part isn’t changing.",
     vision: {
       title: "What’s next?",
       description:
-        "The association wants every student, from middle school to university, to have an app that’s free, fast and respects their privacy. The code stays open, and we keep building it with the community.",
+        "We want every student, from middle school to university, to have an app that’s free, fast and respects their privacy. The code stays open, and we keep building it with the community.",
     },
     cta: {
       description: "Papillon is free, with no ads.",

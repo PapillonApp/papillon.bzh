@@ -10,6 +10,13 @@ import { getDictionary } from "@/i18n/server";
 
 const mockups = [step1, step2, step3, step4];
 
+const panels = [
+  "bg-feature-grades/10",
+  "bg-feature-schedule/10",
+  "bg-feature-homework/10",
+  "bg-feature-news/10",
+];
+
 export async function Steps() {
   const t = (await getDictionary()).home.steps;
 
@@ -26,20 +33,17 @@ export async function Steps() {
           <li key={step.title} className="flex items-center gap-6 lg:flex-col lg:items-stretch">
             <FadeUp
               delay={index * 0.1}
-              className="aspect-13/20 w-28 shrink-0 overflow-hidden mask-b-from-60% sm:w-36 lg:w-auto"
+              className={`aspect-13/20 w-28 shrink-0 overflow-hidden rounded-2xl px-4 pt-5 sm:w-36 lg:w-auto lg:rounded-3xl lg:px-8 lg:pt-10 ${panels[index]}`}
             >
               <Image
                 src={mockups[index]}
                 alt=""
                 sizes="(min-width: 1024px) 270px, (min-width: 640px) 144px, 112px"
                 quality={90}
-                className="w-full"
+                className="w-full mask-b-from-70%"
               />
             </FadeUp>
             <div className="flex flex-col gap-3">
-              <span aria-hidden className="text-3xl font-semibold text-primary lg:text-4xl">
-                {index + 1}
-              </span>
               <h3 className="text-xl font-semibold tracking-tight text-balance lg:text-2xl">{step.title}</h3>
               <p className="text-md/normal text-pretty text-foreground/60">{step.description}</p>
             </div>

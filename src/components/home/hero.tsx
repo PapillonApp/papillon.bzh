@@ -4,7 +4,7 @@ import { Search, Star } from "@getpapillon/papicons";
 import { useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import papieventBg from "@/assets/hero/papievent-bg.png";
+import papieventBg from "@/assets/hero/papievent-bg.jpg";
 import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import { ServiceLogos } from "@/components/ui/service-logos";
@@ -72,7 +72,7 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
         aria-hidden
         className="relative -z-10 -mt-18 -mb-8 min-h-72 flex-1 mask-t-from-80% mask-t-to-black/40 mask-b-from-50% lg:absolute lg:inset-0 lg:m-0 lg:mask-b-from-40% opacity-[calc(100%-var(--page-light))]"
       >
-        <Image src={papieventBg} alt="" fill preload sizes="100vw" className="object-cover" />
+        <Image src={papieventBg} alt="" fill preload sizes="100vw" className="object-cover blur-md scale-105" />
         <video
           ref={videoRef}
           autoPlay

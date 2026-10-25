@@ -1,19 +1,17 @@
 "use client";
 
-import { PapillonIcon, TextBubble } from "@getpapillon/papicons";
+import { PapillonIcon, User } from "@getpapillon/papicons";
 import { motion, useReducedMotion } from "motion/react";
-import { DownloadButton } from "@/components/ui/download-button";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
-import { discordUrl } from "@/lib/links";
 import { easeOutPapillon } from "@/lib/motion";
 import { GridMotion } from "./grid-motion";
 
 type HeroProps = {
   t: Dictionary["association"]["hero"];
-  download: Dictionary["download"];
+  locale: string;
 };
 
-export function Hero({ t, download }: HeroProps) {
+export function Hero({ t, locale }: HeroProps) {
   const reduceMotion = useReducedMotion();
 
   function reveal(delay: number) {
@@ -63,15 +61,18 @@ export function Hero({ t, download }: HeroProps) {
           {t.description}
         </motion.p>
         <motion.div {...reveal(0.54)} className="mt-4 flex flex-wrap justify-center gap-4">
-          <DownloadButton t={download} variant="primary" />
           <a
-            href={discordUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex h-10 items-center gap-1.5 rounded-full border border-foreground/15 px-4 text-md font-medium text-foreground/60 transition hover:border-foreground/30 hover:text-foreground/80 active:scale-97"
+            href="#team"
+            className="flex h-10 items-center gap-1.5 rounded-full bg-primary px-4 text-md font-semibold text-white transition hover:bg-primary/90 active:scale-97"
           >
-            <TextBubble aria-hidden className="size-6" />
-            <span className="text-trim">{t.discord}</span>
+            <User aria-hidden className="size-6" />
+            <span className="text-trim">{t.team}</span>
+          </a>
+          <a
+            href={`/${locale}/story`}
+            className="flex h-10 items-center rounded-full border border-foreground/15 px-4 text-md font-medium text-foreground/60 transition hover:border-foreground/30 hover:text-foreground/80 active:scale-97"
+          >
+            <span className="text-trim">{t.story}</span>
           </a>
         </motion.div>
       </div>

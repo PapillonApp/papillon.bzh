@@ -282,7 +282,7 @@ const fr = {
       reviewsLabel: "Avis publiés sur l’App Store et Google Play",
       ratingLabel: "étoiles sur 5",
       stats: {
-        downloads: { value: "1,9M+", label: "téléchargements" },
+        downloads: { value: "2M+", label: "téléchargements" },
         rating: { value: "4,7", label: "note moyenne sur les stores" },
         reviews: { value: "25K+", label: "avis sur les stores" },
         sessions: { value: "100K+", label: "sessions hebdomadaires" },
@@ -348,61 +348,113 @@ const fr = {
     metadataTitle: "Qui sommes-nous ? – Papillon",
     hero: {
       label: "Association Papillon",
-      title: "Faire équipe pour faire mieux.",
+      title: "Des élèves qui codent pour d’autres élèves",
       description:
-        "Papillon, c’est aussi 6 étudiant·e·s passionné·e·s qui cherchent toujours à créer l’inattendu pour fournir une expérience au-delà des attentes.",
-      discord: "Rejoindre le Discord",
+        "Pas d’entreprise derrière Papillon : juste six étudiants, une asso loi 1901 et une app qu’on fait tourner entre deux cours. 2 millions de téléchargements plus tard, elle est toujours gratuite, sans pub et open source.",
+      team: "Découvrir l’équipe",
+      story: "Notre histoire",
     },
-    values: [
-      {
-        title: "On ne peut pas plaire à tout le monde, mais on fait tout pour vous plaire.",
-        description:
-          "On ne veut pas juste une application, mais construire une communauté qui s’engage à créer des outils éducatifs qui dépassent les attentes. Papillon, c’est une équipe de passionnés, qui se dédie à faire toujours plus pour vous.",
-      },
-      {
-        title: "Passionnés par ce qui vous change de la routine.",
-        description:
-          "Chercher à faire mieux, toujours, et encore. C’est notre moteur. Papillon, c’est une équipe qui réfléchit constamment à comment faire autrement, pour apporter une expérience qui fait un vent de frais.",
-      },
-      {
-        title: "Même sous les pires tempêtes, on restera soudés.",
-        description:
-          "On est une équipe qui croit en la force du collectif. Papillon, c’est une équipe qui avance ensemble, qui partage les mêmes valeurs, et qui avance même quand la contrainte est forte.",
-      },
-    ],
-    team: {
-      title: "Mais c’est qui, Papillon ?",
+    origin: {
+      title: "Au départ, c’était juste pour moi",
       description:
-        "En plus des centaines de contributeur·rice·s que nous remercions chaleureusement, Papillon c’est aussi une équipe de passionné·e·s qui travaillent chaque jour pour faire vivre le projet.",
+        "En 2021, Vince est encore élève et trouve que son emploi du temps, ses devoirs et ses notes méritent mieux. Alors il code sa propre app, le soir après les cours. Il la montre à quelques potes, qui la montrent à leurs potes. Et ça ne s’est jamais arrêté.",
+      imageAlt: "L’emploi du temps de Papillon v1, en 2021",
+      link: "Lire toute l’histoire",
+    },
+    today: {
+      title: "Cinq ans après, c’est *toujours gratuit*",
+      description:
+        "Le projet entre potes s’est retrouvé dans les poches d’élèves de toute la France, du collège à la fac. Et on n’a toujours pas mis une seule pub.",
+      facts: {
+        founded: { value: "2021", label: "la toute première version" },
+        appStore: { value: "N°1", label: "sur l’App Store France, en 2024" },
+      },
+    },
+    team: {
+      title: "Six étudiants, cinq villes",
+      description:
+        "Rennes, Montpellier, Laon, Angoulême, Chambéry : on n’habite pas au même endroit, alors tout se passe en ligne, entre deux cours. Des centaines de contributeur·rice·s nous filent un coup de main. Et dès qu’un événement nous réunit, on saute dans le train.",
+      remote: "Chacun chez soi, du canapé à la table de la cuisine.",
+      together: "Et réunis dès qu’on en a l’occasion.",
       members: {
         vince: {
-          role: "Président",
+          role: "Président et fondateur",
+          school: "BUT MMI, 3e année · IUT de Lannion",
           description:
-            "Fondateur et président du projet, il touche un peu à tout ce qui parle Papillon.",
+            "Il a codé la toute première version en 2021. Aujourd’hui, il pilote le produit et fait tourner l’asso.",
         },
         lucas: {
           role: "Vice-président",
+          school: "BUT MMI, 1re année · IUT de Béziers",
           description:
-            "Lucas a rejoint Papillon à ses débuts et participe activement à la direction du projet.",
+            "Là depuis le tout début, il codirige l’asso et garde un œil sur tout ce qui avance.",
         },
         tom: {
           role: "Designer UI/UX",
+          school: "BUT MMI, 2e année · IUT de Lannion",
           description:
-            "Artiste du projet, il s’occupe de l’identité visuelle et de l’interface de Papillon.",
+            "Il a refait toute l’app et son identité visuelle pour la v7. Depuis, aucun écran ne sort sans passer par lui.",
         },
         raphael: {
           role: "Développeur",
+          school: "1re année · Université de technologie de Troyes",
           description:
-            "Grand génie du mal et du code, c’est lui à qui on refile les tâches ingrates.",
+            "Les chantiers techniques dont personne ne veut ? C’est pour lui.",
         },
         remy: {
           role: "Développeur",
+          school: "École 42 · Angoulême",
           description:
-            "Visionnaire du code et du design, il met un coup de pinceau aux fonctionnalités.",
+            "Moitié dev, moitié designer, il transforme les maquettes en vraies fonctionnalités.",
         },
         mael: {
           role: "Développeur",
-          description: "Il touche à tout… surtout quand il veut « juste voir ce que ça fait ».",
+          school: "O’Clock School · Chambéry",
+          description:
+            "Il teste tout, surtout quand il veut « juste voir ce que ça fait ».",
+        },
+      },
+    },
+    commitments: {
+      title: "Ce qui ne bougera pas",
+      items: {
+        free: {
+          title: "Gratuit, et ça le restera",
+          description:
+            "Pas d’abonnement, pas de pub, et on ne revend rien à personne. L’app tient grâce aux dons de la communauté, et on a monté l’asso en 2025 justement pour que ça dure.",
+        },
+        open: {
+          title: "Tout le code est public",
+          description:
+            "Depuis 2022, n’importe qui peut le lire sur GitHub, vérifier ce que fait l’app ou proposer une idée. Des centaines de personnes l’ont déjà fait.",
+        },
+        privacy: {
+          title: "On ne garde pas vos identifiants",
+          description:
+            "Ils partent chiffrés, directement vers l’établissement. Et le reste de vos données ne quitte pas votre téléphone.",
+        },
+      },
+    },
+    next: {
+      title: "Envie de participer ?",
+      description:
+        "L’objectif ? Que chaque élève, du collège à la fac, ait une app gratuite, rapide et qui respecte sa vie privée. Si ça vous parle, il y a plusieurs façons de nous donner un coup de main.",
+      privacy: "Vous travaillez dans un établissement ? Tout ce qu’on fait des données est expliqué dans notre politique de confidentialité.",
+      cards: {
+        support: {
+          title: "Nous soutenir",
+          description:
+            "Incubateur, mécène, entreprise ? On en parle autour d’un café (ou d’un mail). Et pour un simple coup de pouce, les dons sont ouverts.",
+          cta: "Nous écrire",
+          subject: "Partenariat",
+          secondary: "Faire un don",
+        },
+        contribute: {
+          title: "Contribuer",
+          description:
+            "Dev, designer ou juste curieux·se ? Le code est sur GitHub, et toute la communauté traîne sur Discord.",
+          cta: "Voir le code",
+          secondary: "Passer sur Discord",
         },
       },
     },
@@ -461,19 +513,19 @@ const fr = {
       metadataDescription:
         "Vos notes dès leur publication, votre moyenne calculée avec les coefficients et son évolution sur l’année. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        title: "Votre moyenne, sans attendre le bulletin.",
+        title: "Votre moyenne, sans attendre le bulletin",
         description:
           "Dès qu’un prof publie une note, elle arrive dans Papillon. Votre moyenne est recalculée avec les coefficients, et vous voyez tout de suite si ça monte ou si ça descend.",
         imageAlt: "L’onglet Notes de Papillon, avec la courbe d’évolution et une moyenne de 15,20 sur 20",
       },
       tour: {
-        title: "Vos notes, dans tous les sens.",
+        title: "Vos notes, dans tous les sens",
         description:
           "La courbe, la méthode de calcul, les trimestres, les matières : tout est rangé, et vous n’avez plus rien à calculer de tête.",
       },
       highlights: {
         evolution: {
-          title: "Où vous en êtes, en un coup d’œil.",
+          title: "Où vous en êtes, en un coup d’œil",
           description:
             "Votre moyenne générale s’affiche en grand, avec sa courbe sur toute la période. Faites glisser votre doigt dessus pour voir ce qu’elle valait à n’importe quelle date.",
           points: [
@@ -483,7 +535,7 @@ const fr = {
           imageAlt: "La courbe d’évolution de Papillon, avec une moyenne estimée à 14,83 sur 20 au 4 octobre",
         },
         methods: {
-          title: "La bonne moyenne, avec les bons coeffs.",
+          title: "La bonne moyenne, avec les bons coeffs",
           description:
             "Papillon tient compte des coefficients et vous laisse choisir la méthode de calcul de votre établissement. Et si votre établissement publie sa propre moyenne, c’est elle qui s’affiche.",
           points: [
@@ -494,7 +546,7 @@ const fr = {
           imageAlt: "Le choix de la méthode de calcul de la moyenne générale dans Papillon",
         },
         detail: {
-          title: "Ce que vaut vraiment votre note.",
+          title: "Ce que vaut vraiment votre note",
           description:
             "Touchez une note pour voir comment s’en est sortie la classe : moyenne du groupe, meilleure et moins bonne note, et le coefficient du devoir.",
           points: [
@@ -505,7 +557,7 @@ const fr = {
           imageAlt: "Détail d’une note de 16 sur 20, avec un coefficient de 1 et une moyenne de groupe de 13,50",
         },
         influence: {
-          title: "Ce que chaque note change.",
+          title: "Ce que chaque note change",
           description:
             "Un 16 en SVT ? +0,07 point sur votre moyenne générale. Papillon calcule l’effet de chaque note, pour que vous sachiez tout de suite où vous gagnez des points et où il faut vous rattraper.",
           points: [
@@ -515,7 +567,7 @@ const fr = {
           imageAlt: "Une note qui fait gagner 0,07 point sur la moyenne générale",
         },
         periods: {
-          title: "Trimestre par trimestre.",
+          title: "Trimestre par trimestre",
           description:
             "Passez d’un trimestre ou d’un semestre à l’autre depuis le menu des périodes, pour comparer vos résultats ou revoir votre début d’année. Les bacs et brevets blancs ont leur propre période.",
           points: [
@@ -526,7 +578,7 @@ const fr = {
           imageAlt: "Le menu des périodes de Papillon, avec les trois trimestres et leurs dates",
         },
         subjects: {
-          title: "Toutes vos matières, bien rangées.",
+          title: "Toutes vos matières, bien rangées",
           description:
             "Vos notes sont groupées par matière, chacune avec sa moyenne. Papillon reconnaît plus de 250 matières, même quand votre établissement les écrit en abrégé ou en majuscules, et leur donne un vrai nom, un emoji et une couleur. Triez-les comme vous voulez, ou cherchez directement un devoir.",
           points: [
@@ -615,13 +667,13 @@ const fr = {
         ],
       },
       largeScreen: {
-        title: "Encore mieux sur grand écran.",
+        title: "Encore mieux sur grand écran",
         description:
           "Sur iPad et Mac, Papillon prend toute la largeur : la courbe s’étire, vos dernières notes défilent et deux matières tiennent côte à côte.",
         imageAlt: "L’onglet Notes de Papillon sur un iPad Pro, avec la courbe d’évolution et deux matières côte à côte",
       },
       cta: {
-        title: "Votre prochaine note mérite mieux qu’un tableau.",
+        title: "Votre prochaine note mérite mieux qu’un tableau",
         description:
           "Installez Papillon et connectez-vous avec vos identifiants habituels. Vos notes sont là en quelques secondes.",
       },
@@ -631,19 +683,19 @@ const fr = {
       metadataDescription:
         "Votre emploi du temps toujours à jour : cours annulés et modifiés signalés, salles, profs, Activités en direct et widgets. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        title: "Votre journée, cours après cours.",
+        title: "Votre journée, cours après cours",
         description:
           "Papillon affiche votre emploi du temps à jour, vous prévient quand un cours saute ou change, et vous suit jusque sur l’écran verrouillé.",
         imageAlt: "L’emploi du temps du jeudi 8 octobre dans Papillon, avec une pause déjeuner et un cours annulé",
       },
       beyond: {
-        title: "Même sans ouvrir l’app.",
+        title: "Même sans ouvrir l’app",
         description:
           "Sur iPhone, vos cours vous suivent sur l’écran verrouillé et sur l’écran d’accueil.",
       },
       highlights: {
         day: {
-          title: "Un cours annulé ? Vous le voyez tout de suite.",
+          title: "Un cours annulé ? Vous le voyez tout de suite",
           description:
             "Annulé ou modifié, un cours est signalé directement dans votre journée. Salle, prof, durée : tout est là, pauses comprises.",
           points: [
@@ -654,7 +706,7 @@ const fr = {
           imageAlt: "La journée du jeudi 8 octobre, avec la pause méridienne et un cours de SES annulé",
         },
         views: {
-          title: "En liste ou à la semaine.",
+          title: "En liste ou à la semaine",
           description:
             "Gardez la vue Liste pour suivre votre journée, ou passez à la vue Semaine pour voir tous vos cours d’un coup. Un menu suffit pour changer.",
           points: [
@@ -665,7 +717,7 @@ const fr = {
           imageAlt: "Le menu Affichage de l’emploi du temps, avec les vues Liste et Semaine",
         },
         calendar: {
-          title: "Sautez à n’importe quel jour.",
+          title: "Sautez à n’importe quel jour",
           description:
             "Glissez d’un jour à l’autre, ou ouvrez le calendrier pour aller droit à la date qui vous intéresse : le contrôle dans deux semaines, la rentrée après les vacances.",
           points: [
@@ -676,7 +728,7 @@ const fr = {
           imageAlt: "Le calendrier du mois ouvert sur le mardi 13 octobre",
         },
         detail: {
-          title: "Chaque cours, en détail.",
+          title: "Chaque cours, en détail",
           description:
             "Touchez un cours pour voir ses horaires, le temps avant qu’il commence, la salle et le prof. Papillon reconnaît plus de 250 matières, même abrégées ou en majuscules, et leur donne un vrai nom, un emoji et une couleur.",
           points: [
@@ -687,7 +739,7 @@ const fr = {
           imageAlt: "Le détail d’un cours d’Histoire-Géographie d’une heure, en salle C 018 avec Mme Bernard",
         },
         live: {
-          title: "Votre cours, sur l’écran verrouillé.",
+          title: "Votre cours, sur l’écran verrouillé",
           description:
             "Sur iPhone, votre cours actuel ou le suivant s’affiche en direct sur l’écran verrouillé et dans la Dynamic Island, avec la salle et le temps restant. Plus besoin d’ouvrir l’app entre deux sonneries.",
           points: [
@@ -698,7 +750,7 @@ const fr = {
           imageAlt: "L’écran verrouillé d’un iPhone avec le cours d’Histoire-Géographie en cours et le temps restant",
         },
         widget: {
-          title: "Vos prochains cours, dès l’écran d’accueil.",
+          title: "Vos prochains cours, dès l’écran d’accueil",
           description:
             "Ajoutez le widget Papillon sur l’écran d’accueil de votre iPhone : vos prochains cours s’affichent sans même ouvrir l’app.",
           points: ["Vos prochains cours en un coup d’œil", "Toujours à jour"],
@@ -782,13 +834,13 @@ const fr = {
         ],
       },
       largeScreen: {
-        title: "Toute votre semaine, sur un seul écran.",
+        title: "Toute votre semaine, sur un seul écran",
         description:
           "Sur iPad et Mac, la vue Semaine affiche vos cours du lundi au vendredi d’un coup d’œil, cours annulés compris. La barre latérale vous emmène d’un onglet à l’autre.",
         imageAlt: "L’emploi du temps de la semaine du 5 octobre dans Papillon sur un iPad Pro",
       },
       cta: {
-        title: "Votre prochain cours tient déjà dans votre poche.",
+        title: "Votre prochain cours tient déjà dans votre poche",
         description:
           "Installez Papillon et connectez-vous avec vos identifiants habituels. Votre emploi du temps est là en quelques secondes.",
       },
@@ -798,19 +850,19 @@ const fr = {
       metadataDescription:
         "Tous vos devoirs semaine par semaine, à cocher une fois finis, triés par date ou par matière. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        title: "Ce qu’il reste à faire, et pour quand.",
+        title: "Ce qu’il reste à faire, et pour quand",
         description:
           "Papillon range vos devoirs semaine par semaine, vous laisse les cocher une fois faits et vous montre d’un coup d’œil ce qui vous attend.",
         imageAlt: "Les devoirs de la semaine 41 dans Papillon, rangés par jour de rendu",
       },
       tour: {
-        title: "Vos devoirs, sous contrôle.",
+        title: "Vos devoirs, sous contrôle",
         description:
           "Voyez ce qui arrive, cochez ce qui est fait et rangez le reste comme vous voulez.",
       },
       highlights: {
         week: {
-          title: "Toute la semaine, jour par jour.",
+          title: "Toute la semaine, jour par jour",
           description:
             "Vos devoirs sont rangés par date de rendu, avec la matière et le temps qu’il vous reste. Glissez pour passer à la semaine suivante.",
           points: [
@@ -821,7 +873,7 @@ const fr = {
           imageAlt: "Les devoirs du lundi 5 au mercredi 7 octobre, dont un déjà terminé",
         },
         done: {
-          title: "Coché, c’est fait.",
+          title: "Coché, c’est fait",
           description:
             "Marquez un devoir comme fini d’un geste, depuis la liste ou depuis sa fiche. Vous savez toujours ce qu’il vous reste avant demain.",
           points: [
@@ -832,7 +884,7 @@ const fr = {
           imageAlt: "La fiche d’un devoir d’Histoire-Géographie, marqué comme terminé",
         },
         sort: {
-          title: "Rangez-les comme vous voulez.",
+          title: "Rangez-les comme vous voulez",
           description:
             "Triez vos devoirs par date de rendu, par matière, ou faites remonter ceux qui ne sont pas finis. Vous cherchez une consigne précise ? La recherche la retrouve.",
           points: [
@@ -914,7 +966,7 @@ const fr = {
         ],
       },
       cta: {
-        title: "Plus jamais « on avait des devoirs ? ».",
+        title: "Plus jamais « on avait des devoirs ? »",
         description:
           "Installez Papillon et connectez-vous avec vos identifiants habituels. Vos devoirs sont là en quelques secondes.",
       },
@@ -924,19 +976,19 @@ const fr = {
       metadataDescription:
         "Les actus de votre établissement dans une liste claire, faite pour le téléphone. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
       hero: {
-        title: "Les infos de votre établissement, sans rien rater.",
+        title: "Les infos de votre établissement, sans rien rater",
         description:
           "Réunions, inscriptions, sorties : Papillon regroupe les actus de votre établissement dans une liste claire, faite pour être lue sur votre téléphone.",
         imageAlt: "La liste des actualités de l’établissement dans Papillon",
       },
       tour: {
-        title: "L’essentiel, sans chercher.",
+        title: "L’essentiel, sans chercher",
         description:
           "Les annonces de votre établissement, au même endroit et mises en forme pour votre téléphone.",
       },
       highlights: {
         list: {
-          title: "Toutes les annonces, au même endroit.",
+          title: "Toutes les annonces, au même endroit",
           description:
             "Chaque actu affiche son auteur, sa date et un aperçu du message. Les plus récentes sont en haut, et la recherche retrouve une annonce en deux secondes.",
           points: [
@@ -947,7 +999,7 @@ const fr = {
           imageAlt: "Quatre actualités : réunion parents-professeurs, CDI, association sportive et collecte solidaire",
         },
         detail: {
-          title: "Agréable à lire.",
+          title: "Agréable à lire",
           description:
             "Ouvrez une actu pour la lire en entier, mise en forme pour votre écran. Sa catégorie s’affiche en haut, pour savoir tout de suite de quoi ça parle.",
           points: ["Texte mis en forme pour le téléphone", "Catégorie, auteur et date en haut"],
@@ -1007,7 +1059,7 @@ const fr = {
         ],
       },
       cta: {
-        title: "La prochaine annonce, vous la verrez.",
+        title: "La prochaine annonce, vous la verrez",
         description:
           "Installez Papillon et connectez-vous avec vos identifiants habituels. Les actus de votre établissement sont là en quelques secondes.",
       },
@@ -1116,48 +1168,77 @@ const fr = {
     },
   },
   story: {
-    placeholder: "Capture à fournir",
-    timeline: [
-      { date: "2021", title: "Une app pour les potes", text: "La première version est codée le soir après les cours, pour une poignée d’ami·e·s." },
-      { date: "2022", title: "Le code passe en open source", text: "Tout le monde peut lire le code et proposer des changements. La communauté se forme sur GitHub et sur Discord." },
-      { date: "2023", title: "Enfin sur les stores", text: "Les dons de la communauté permettent de publier Papillon sur l’App Store et Google Play." },
-      { date: "Septembre 2024", title: "La v7, refaite de zéro", text: "Tom redessine toute l’app, identité visuelle comprise." },
-      { date: "Décembre 2024", title: "Numéro 1 de l’App Store", text: "Papillon passe les 100 000 téléchargements et reste une semaine en tête de l’App Store France." },
-      { date: "Mai 2025", title: "Un million de téléchargements", text: "Et toujours pas une seule pub. L’app reste gratuite." },
-      { date: "Août 2025", title: "On crée l’association", text: "Papillon devient une association d’élèves et d’étudiant·e·s, pour que le projet tienne dans le temps." },
-      { date: "Septembre 2025", title: "La v8", text: "Une grosse mise à jour : l’app est plus rapide et fait plus de choses." },
-      { date: "Janvier 2026", title: "Direction la fac", text: "On commence à adapter Papillon aux étudiant·e·s du supérieur." },
-      { date: "Septembre 2026", title: "iPad, iPhone Duo et Mac", text: "Papillon arrive sur iPad et sur Mac, et s’adapte à l’écran pliable de l’iPhone Duo." },
-    ],
-    vinceQuote:
-      "J’ai lancé Papillon en 2021 parce que je voulais voir ma moyenne sans passer par trois menus. Cinq ans plus tard, on est toujours des élèves qui codent pour d’autres élèves, et le code est toujours ouvert. Ça, on n’y touchera pas.",
     metadataTitle: "Notre histoire – Papillon",
-    download: "Télécharger",
     hero: {
-      title: "Comment tout a commencé",
-      devicesAlt: "Papillon sur Pixel, iPad, iPhone Duo et iPhone",
+      title: "Notre histoire",
       description:
-        "Papillon est né en 2021, entre deux devoirs. Cinq ans plus tard, l’app a été téléchargée plus de 1,8 million de fois.",
+        "En 2021, l’app ne servait qu’à Vince. Huit versions plus tard, plus d’un million d’élèves l’ont sur leur téléphone.",
+      iconsAlt: "Les icônes successives de l’app, de 2021 à aujourd’hui",
     },
-    timelineLabel: "Les étapes de Papillon, de 2021 à aujourd’hui",
-    placeholders: {
-      first: "première version de Papillon en 2021, capture d’époque",
-      stores: "fiche App Store de Papillon en 2023",
-      v7: "accueil de Papillon v7, septembre 2024",
-      ranking: "classement App Store France avec Papillon numéro 1, décembre 2024",
-      million: "visuel publié pour le million de téléchargements, mai 2025",
-      universities: "écran de connexion à une université, en développement",
+    timelineLabel: "Les versions de Papillon, de 2021 à aujourd’hui",
+    eras: [
+      {
+        date: "2021",
+        title: "La toute première version",
+        text: "Vince code sa propre version de Pronote, pour lui et personne d’autre. La v2 ? Une petite mise à jour, rien de fou.",
+        alts: ["L’accueil de Pronote+ v1, avec les dernières notes"],
+      },
+      {
+        date: "2022",
+        title: "On ouvre le code",
+        text: "Le code passe en open source, avec une interface refaite à notre goût. Et là, les premier·e·s utilisateur·rice·s débarquent.",
+        alts: ["L’écran de bienvenue de Pronote+ 3.4", "L’emploi du temps de Pronote+ v3"],
+      },
+      {
+        date: "2022",
+        title: "Le papillon débarque",
+        text: "Première version avec le logo qu’on a encore aujourd’hui. Le reste ? Lent, plein de bugs, clairement pas notre meilleure. Elle n’a pas tenu longtemps.",
+        alts: ["L’écran de connexion de Pronote+ v4", "L’emploi du temps de Pronote+ v4"],
+      },
+      {
+        date: "2023",
+        title: "Pronote+ devient Papillon",
+        text: "Nouveau nom, et on ne se limite plus à Pronote. Grosse version : l’écran d’accueil, les notes en cartes, l’influence de chaque note sur votre moyenne, et de quoi personnaliser l’app.",
+        alts: ["La vue d’ensemble de Papillon v5, avec les dernières notes et les devoirs"],
+      },
+      {
+        date: "2023",
+        title: "On passe à React Native",
+        text: "Première version en React Native, et l’interface commence à ressembler à celle que vous connaissez. Au passage : l’historique de la moyenne et les toutes premières Papicons, nos icônes maison.",
+        alts: ["La vue d’ensemble de Papillon v6, avec le prochain cours et la journée du lendemain"],
+      },
+      {
+        date: "2024",
+        title: "On refait tout",
+        text: "Tom Things redessine l’app de A à Z. On ajoute Papillon Magic (notre IA), les notifications et encore plus de personnalisation. C’est là que tout décolle.",
+        alts: ["L’accueil de Papillon v7, avec le cours en cours et la moyenne"],
+      },
+      {
+        date: "2025",
+        title: "Notre dernière version",
+        text: "Notre version la plus complète : une nouvelle interface signée Tom Things, et une app qui s’intègre vraiment à iOS et Android. Pour les curieux·ses, voici toutes les étapes par lesquelles l’interface est passée.",
+        alts: [
+          "Papillon v8, première itération de l’accueil",
+          "Papillon v8, itération de l’emploi du temps",
+          "Papillon v8, troisième itération de l’accueil",
+          "Papillon v8, quatrième itération de l’accueil",
+          "Papillon v8, cinquième itération de l’accueil",
+          "Papillon v8, l’accueil actuel",
+        ],
+      },
+    ],
+    milestone: {
+      label: "Et puis, ça s’emballe",
+      from: { value: "100 000", label: "utilisateur·rice·s fin 2024" },
+      to: { value: "1 million", label: "début 2025" },
     },
-    images: {
-      openSource: "Un membre de l’équipe en train de coder sur son ordinateur",
-      association: "Les six membres de l’équipe Papillon",
-      v8: "L’accueil de Papillon v8",
-      devices: "Papillon sur un iPad Pro, avec la vue semaine",
-    },
+    today: "Aujourd’hui",
+    vinceQuote:
+      "J’ai lancé Papillon en 2021 parce que je voulais une interface plus moderne pour mon emploi du temps, mes devoirs et mes notes. Cinq ans plus tard, on est toujours des élèves qui codent pour d’autres élèves, et le code est toujours ouvert. Ça, on n’y touchera pas.",
     vision: {
       title: "Et maintenant ?",
       description:
-        "L’association veut que chaque élève, du collège à l’université, ait une app gratuite, rapide et qui respecte sa vie privée. Le code reste ouvert, et on continue à le faire avec la communauté.",
+        "On veut que chaque élève, du collège à la fac, ait une app gratuite, rapide et qui respecte sa vie privée. Le code reste ouvert, et on continue de le construire avec la communauté.",
     },
     cta: {
       description: "Papillon est gratuit et sans pub.",

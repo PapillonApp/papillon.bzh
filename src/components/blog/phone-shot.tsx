@@ -13,7 +13,7 @@ export function PhoneShot({ src, alt, caption, show = "top" }: PhoneShotProps) {
     <figure className="mt-8">
       <div className={`overflow-hidden rounded-2xl bg-surface px-6 ${bottom ? "pb-10" : "pt-10"}`}>
         <div
-          className={`mx-auto flex aspect-2/3 w-1/2 flex-col overflow-hidden ${bottom ? "justify-end" : ""}`}
+          className={`mx-auto flex aspect-2/3 w-1/2 flex-col overflow-hidden shadow-xl ring-1 ring-foreground/10 ${bottom ? "justify-end rounded-b-4xl" : "rounded-t-4xl"}`}
         >
           <Image src={src} alt={alt} width={990} height={2032} sizes="336px" className="w-full shrink-0" />
         </div>

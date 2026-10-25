@@ -13,12 +13,12 @@ import { RevealWhenLight } from "./reveal-when-light";
 
 type CardKey = keyof Dictionary["home"]["features"]["cards"];
 
-const cards: { key: CardKey; className?: string }[] = [
-  { key: "connected", className: "md:row-span-2" },
-  { key: "private" },
-  { key: "instant" },
-  { key: "smart" },
-  { key: "personal" },
+const cards: { key: CardKey; className?: string; tint: string }[] = [
+  { key: "connected", className: "md:row-span-2", tint: "from-feature-grades/15" },
+  { key: "private", tint: "from-swatch-purple/15" },
+  { key: "instant", tint: "from-feature-homework/15" },
+  { key: "smart", tint: "from-feature-news/15" },
+  { key: "personal", tint: "from-feature-schedule/15" },
 ];
 
 export async function Features() {
@@ -68,6 +68,7 @@ export async function Features() {
             description={t.cards[card.key].description}
             illustration={illustrations[card.key]}
             className={card.className}
+            tint={card.tint}
           />
         ))}
       </RevealWhenLight>

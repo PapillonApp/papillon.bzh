@@ -1,84 +1,70 @@
-import Image, { type StaticImageData } from "next/image";
-import coding from "@/assets/association/value-2-b.png";
-import ipadPro from "@/assets/devices/Devices-iPadPro.png";
-import overview from "@/assets/grades/overview.webp";
-import home from "@/assets/schedule/home.webp";
-import list from "@/assets/schedule/list.webp";
-import loginSearch from "@/assets/steps/Login_Step1.png";
-import loginDone from "@/assets/steps/Login_Step4.png";
-import teamPhoto from "@/assets/team/PapillonTeam.png";
-import { PlaceholderShot } from "./placeholder-shot";
+import Image from "next/image";
+import v1 from "@/assets/story/v1.png";
+import v3a from "@/assets/story/v3-a.png";
+import v3b from "@/assets/story/v3-b.png";
+import v4a from "@/assets/story/v4-a.png";
+import v4b from "@/assets/story/v4-b.png";
+import v5 from "@/assets/story/v5.png";
+import v6 from "@/assets/story/v6.png";
+import v7 from "@/assets/story/v7.png";
+import v8a from "@/assets/story/v8-1.png";
+import v8b from "@/assets/story/v8-2.png";
+import v8c from "@/assets/story/v8-3.png";
+import v8d from "@/assets/story/v8-4.png";
+import v8e from "@/assets/story/v8-5.png";
+import v8f from "@/assets/story/v8-6.png";
+import { Chapter } from "./chapter";
+import { Milestone } from "./milestone";
+import type { Shot } from "./phone-shot";
 import { StoryHero } from "./story-hero";
+import { StoryStack } from "./story-stack";
+import { Today } from "./today";
 import { StoreBadges } from "@/components/download/store-badges";
 import { teamMembers } from "@/content/team";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 
-type Histoire = Dictionary["story"];
-type Visual =
-  | { kind: "placeholder"; image: StaticImageData; label: keyof Histoire["placeholders"] }
-  | { kind: "photo" | "phone" | "wide"; image: StaticImageData; alt: keyof Histoire["images"] };
-
-const visuals: Visual[] = [
-  { kind: "placeholder", image: loginSearch, label: "first" },
-  { kind: "photo", image: coding, alt: "openSource" },
-  { kind: "placeholder", image: overview, label: "stores" },
-  { kind: "placeholder", image: list, label: "v7" },
-  { kind: "placeholder", image: loginDone, label: "ranking" },
-  { kind: "placeholder", image: home, label: "million" },
-  { kind: "wide", image: teamPhoto, alt: "association" },
-  { kind: "phone", image: home, alt: "v8" },
-  { kind: "placeholder", image: loginSearch, label: "universities" },
-  { kind: "wide", image: ipadPro, alt: "devices" },
+const shots: Shot[][] = [
+  [{ image: v1, framed: true }],
+  [
+    { image: v3a, framed: true },
+    { image: v3b, framed: true },
+  ],
+  [{ image: v4a }, { image: v4b }],
+  [{ image: v5, framed: true }],
+  [{ image: v6 }],
+  [{ image: v7, framed: true }],
 ];
 
-type StoryPageProps = { dict: Dictionary; locale: Locale };
+const milestoneAfter = 5;
 
-function MilestoneVisual({ visual, t }: { visual: Visual; t: Histoire }) {
-  if (visual.kind === "placeholder") {
-    return <PlaceholderShot image={visual.image} prefix={t.placeholder} label={t.placeholders[visual.label]} className="w-40 shrink-0 lg:w-48" sizes="192px" />;
-  }
-  const sizing = {
-    photo: "w-full max-w-md rounded-3xl",
-    phone: "w-40 shrink-0 lg:w-48",
-    wide: "w-full max-w-2xl",
-  }[visual.kind];
-  return <Image src={visual.image} alt={t.images[visual.alt]} sizes="(min-width: 1024px) 672px, 90vw" className={`h-auto ${sizing}`} />;
-}
+const todayShots: Shot[] = [{ image: v8a }, { image: v8b }, { image: v8c }, { image: v8d }, { image: v8e }, { image: v8f }];
+
+type StoryPageProps = { dict: Dictionary; locale: Locale };
 
 export function StoryPage({ dict, locale }: StoryPageProps) {
   const t = dict.story;
   const vince = teamMembers[0];
 
   return (
-    <main className="overflow-x-clip">
+    <main className="overflow-x-clip bg-surface">
       <StoryHero t={t.hero} />
 
-      <section aria-label={t.timelineLabel} className="px-6 pb-28 lg:pb-40">
-        <ol className="mx-auto max-w-5xl">
-          {t.timeline.map((step, index) => {
-            const visual = visuals[index];
-            const beside = visual.kind === "placeholder" || visual.kind === "phone";
-            return (
-              <li key={step.date} className="grid gap-x-12 gap-y-4 border-t border-foreground/10 py-12 lg:grid-cols-4 lg:py-16">
-                <p className="text-lg font-semibold text-primary-dark lg:sticky lg:top-28 lg:self-start">{step.date}</p>
-                <div className={`flex flex-col gap-8 lg:col-span-3 ${beside ? "sm:flex-row sm:items-start sm:justify-between sm:gap-12" : ""}`}>
-                  <div className="flex max-w-md flex-col gap-3">
-                    <h2 className="text-3xl font-semibold tracking-tight text-balance">{step.title}</h2>
-                    <p className="text-xl/normal text-pretty text-foreground/70">{step.text}</p>
-                  </div>
-                  <MilestoneVisual visual={visual} t={t} />
-                </div>
-              </li>
-            );
-          })}
-        </ol>
-      </section>
+      <div>
+        <StoryStack
+          label={t.timelineLabel}
+          items={shots.flatMap((eraShots, index) => [
+            <Chapter key={index} era={t.eras[index]} shots={eraShots} />,
+            ...(index === milestoneAfter ? [<Milestone key="milestone" t={t.milestone} />] : []),
+          ])}
+        />
+        <Today era={t.eras[shots.length]} label={t.today} shots={todayShots} />
+      </div>
 
       <section aria-labelledby="vision-title" className="theme-primary bg-background px-6 py-24 text-foreground lg:py-32">
         <div className="mx-auto grid max-w-5xl gap-16 lg:grid-cols-2 lg:gap-24">
           <figure className="flex flex-col gap-8">
-            <blockquote className="text-2xl/snug font-medium text-pretty">«{"\u00a0"}{t.vinceQuote}{"\u00a0"}»</blockquote>
+            <blockquote className="text-2xl/snug font-medium text-pretty">«{" "}{t.vinceQuote}{" "}»</blockquote>
             <figcaption className="flex items-center gap-3">
               <Image src={vince.photo} alt="" sizes="48px" className="size-12 rounded-full object-cover" />
               <span className="flex flex-col text-md">
