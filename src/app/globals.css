@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant footer-flat (body:has(main:not([style]) > [data-curved]:last-child) &);
+
 @theme {
   --font-sans: var(--font-sn-pro), ui-sans-serif, system-ui, sans-serif;
   /* Figma's SN Pro styles, converted to the Google Fonts weight axis */
@@ -63,6 +65,13 @@
   --color-background: #000000;
   --color-foreground: #ffffff;
   --color-surface: oklch(20% 0 0);
+  color: var(--color-foreground);
+}
+
+@utility theme-night {
+  --color-background: #0a1428;
+  --color-foreground: #ffffff;
+  --color-surface: color-mix(in oklab, #ffffff 8%, #0a1428);
   color: var(--color-foreground);
 }
 

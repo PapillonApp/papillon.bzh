@@ -20,7 +20,11 @@ export function Contact({ t }: { t: NextDict }) {
   ];
 
   return (
-    <section id="contact" className="theme-primary scroll-mt-20 bg-background px-6 py-24 lg:py-32">
+    <section
+      id="contact"
+      data-curved
+      className="theme-primary relative mt-16 scroll-mt-20 overflow-x-clip bg-background px-6 pt-8 pb-24 before:absolute before:-inset-x-1/2 before:bottom-full before:h-16 before:rounded-t-[50%_100%] before:bg-background lg:mt-32 lg:pt-12 lg:pb-32 lg:before:h-32"
+    >
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-24">
         <FadeUp>
           <ChapterHeading title={t.title} description={t.description}>

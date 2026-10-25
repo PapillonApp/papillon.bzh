@@ -102,10 +102,14 @@ function PostRow({ post, teamName, locale, preload }: PostRowProps) {
             {post.description}
           </p>
         )}
-        <div className="flex items-center gap-2 text-sm text-foreground/60">
-          <time dateTime={post.date}>{formatPostDate(post.date, locale)}</time>
+        <div className="flex items-center gap-2 text-sm whitespace-nowrap text-foreground/60">
+          <time dateTime={post.date} className="shrink-0">
+            {formatPostDate(post.date, locale)}
+          </time>
           <span aria-hidden>·</span>
-          <Author login={post.author} teamName={teamName} avatar={false} />
+          <span className="truncate">
+            <Author login={post.author} teamName={teamName} avatar={false} />
+          </span>
         </div>
       </div>
     </Link>

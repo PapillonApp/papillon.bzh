@@ -73,10 +73,6 @@ const duoMockups: Record<DuoState, Mockup> = {
   },
 };
 
-const tallestMockup = Math.max(
-  ...[...Object.values(mockups), ...Object.values(duoMockups)].map(({ image }) => image.height),
-);
-
 const slide = {
   enter: (direction: number) => ({ opacity: 0, x: direction * 48 }),
   center: { opacity: 1, x: 0 },
@@ -216,15 +212,16 @@ export function DeviceShowcase({ t }: { t: Dictionary["home"]["devices"] }) {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.96 }}
                     transition={slideTransition}
-                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ containerType: "size" }}
+                    className="absolute inset-0 flex items-center justify-center [--mockup-max:92cqw] lg:[--mockup-max:calc(100cqw-var(--spacing)*108)]"
                   >
                     <div
                       ref={(element) => {
                         if (element) mockupRef.current = element;
                       }}
-                      className="relative max-w-11/12"
+                      className="relative"
                       style={{
-                        height: `${(mockup.image.height / tallestMockup) * 88}%`,
+                        width: `min(var(--mockup-max), ${(88 * mockup.image.width) / mockup.image.height}cqh)`,
                         aspectRatio: `${mockup.image.width} / ${mockup.image.height}`,
                       }}
                     >

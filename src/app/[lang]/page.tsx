@@ -15,7 +15,7 @@ export default async function HomePage() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
-    <main>
+    <main className="overflow-x-clip">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -41,9 +41,14 @@ export default async function HomePage() {
       <Devices />
       <FeatureDemos />
       <Steps />
-      <div data-dark-section className="theme-dark my-12 bg-background py-12 lg:my-20 lg:py-20">
-        <Trust />
-        <Adoption />
+      <div
+        data-dark-section
+        className="theme-night relative my-12 py-16 before:absolute before:-inset-x-1/2 before:top-0 before:h-16 before:rounded-t-[50%_100%] before:bg-background after:absolute after:-inset-x-1/2 after:bottom-0 after:h-16 after:rounded-b-[50%_100%] after:bg-background lg:my-20 lg:py-32 lg:before:h-32 lg:after:h-32"
+      >
+        <div className="bg-background">
+          <Trust />
+          <Adoption />
+        </div>
       </div>
       <Faq t={dict.home.faq} />
     </main>

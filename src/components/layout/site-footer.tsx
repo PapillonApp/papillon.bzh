@@ -15,9 +15,9 @@ export async function SiteFooter() {
   const columns = Object.keys(t.columns) as (keyof Columns)[];
 
   return (
-    <footer data-sound="footer" className="overflow-hidden bg-primary-dark text-white">
+    <footer data-sound="footer" className="relative mt-16 overflow-x-clip bg-primary-dark text-white before:absolute before:-inset-x-1/2 before:bottom-full before:h-16 before:rounded-t-[50%_100%] before:bg-primary-dark lg:mt-32 lg:before:h-32 footer-flat:mt-0 footer-flat:pt-12 footer-flat:before:hidden lg:footer-flat:pt-16">
       <div className="mx-auto max-w-7xl px-6">
-        <section className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
+        <section className="grid items-center gap-10 pt-8 pb-20 lg:grid-cols-2 lg:gap-16 lg:pt-12 lg:pb-28">
           <Image
             src={team}
             alt={t.team.photoAlt}

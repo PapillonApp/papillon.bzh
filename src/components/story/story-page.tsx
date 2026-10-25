@@ -61,7 +61,11 @@ export function StoryPage({ dict, locale }: StoryPageProps) {
         <Today era={t.eras[shots.length]} label={t.today} shots={todayShots} />
       </div>
 
-      <section aria-labelledby="vision-title" className="theme-primary bg-background px-6 py-24 text-foreground lg:py-32">
+      <section
+        aria-labelledby="vision-title"
+        data-curved
+        className="theme-primary relative mt-16 bg-background px-6 pt-2 pb-24 text-foreground before:absolute before:-inset-x-1/2 before:bottom-full before:h-16 before:rounded-t-[50%_100%] before:bg-background lg:mt-32 lg:pt-4 lg:pb-32 lg:before:h-32"
+      >
         <div className="mx-auto grid max-w-5xl gap-16 lg:grid-cols-2 lg:gap-24">
           <figure className="flex flex-col gap-8">
             <blockquote className="text-2xl/snug font-medium text-pretty">«{" "}{t.vinceQuote}{" "}»</blockquote>
