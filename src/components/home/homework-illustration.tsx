@@ -34,6 +34,7 @@ export function HomeworkIllustration({ homework }: HomeworkIllustrationProps) {
             layout
             type="button"
             aria-pressed={done}
+            data-sound="check"
             aria-label={homework.markDone}
             onClick={() => setDone(!done)}
             transition={transition}

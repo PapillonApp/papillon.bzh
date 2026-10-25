@@ -9,8 +9,7 @@ import { Steps } from "@/components/home/steps";
 import { Trust } from "@/components/home/trust";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getDictionary, getLocale } from "@/i18n/server";
-import { linkHrefs } from "@/lib/links";
-import { siteUrl } from "@/lib/seo";
+import { organizationId, siteUrl } from "@/lib/seo";
 
 export default async function HomePage() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
@@ -20,35 +19,16 @@ export default async function HomePage() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Organization",
-              "@id": `${siteUrl}/#organization`,
-              name: "Papillon",
-              url: siteUrl,
-              logo: `${siteUrl}/icon.png`,
-              sameAs: [
-                linkHrefs.github,
-                linkHrefs.x,
-                linkHrefs.instagram,
-                linkHrefs.tiktok,
-                linkHrefs.youtube,
-                linkHrefs.linkedin,
-              ],
-            },
-            {
-              "@type": "MobileApplication",
-              name: "Papillon",
-              description: dict.metadata.description,
-              url: `${siteUrl}/${locale}`,
-              operatingSystem: "iOS, iPadOS, macOS, Android",
-              applicationCategory: "EducationalApplication",
-              inLanguage: locale,
-              offers: { "@type": "Offer", price: 0, priceCurrency: "EUR" },
-              downloadUrl: [storeUrls.appStore, storeUrls.googlePlay],
-              publisher: { "@id": `${siteUrl}/#organization` },
-            },
-          ],
+          "@type": "MobileApplication",
+          name: "Papillon",
+          description: dict.metadata.description,
+          url: `${siteUrl}/${locale}`,
+          operatingSystem: "iOS, iPadOS, macOS, Android",
+          applicationCategory: "EducationalApplication",
+          inLanguage: locale,
+          offers: { "@type": "Offer", price: 0, priceCurrency: "EUR" },
+          downloadUrl: [storeUrls.appStore, storeUrls.googlePlay],
+          publisher: { "@id": organizationId },
         }}
       />
       <Hero

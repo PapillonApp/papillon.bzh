@@ -3,6 +3,7 @@
 import { Butterfly } from "@getpapillon/papicons";
 import { motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
+import { sounds } from "@/lib/sounds";
 
 const randomBetween = (min: number, max: number) => min + Math.random() * (max - min);
 
@@ -10,12 +11,14 @@ export function RunawayButterfly() {
   const reduceMotion = useReducedMotion();
   const [position, setPosition] = useState({ x: 0, y: 0, rotate: 0 });
 
-  const flee = () =>
+  const flee = () => {
+    if (navigator.userActivation.hasBeenActive) sounds.flutter({ jitter: { detune: 200 } });
     setPosition({
       x: randomBetween(-140, 140),
       y: randomBetween(-110, 60),
       rotate: randomBetween(-30, 30),
     });
+  };
 
   if (reduceMotion) return <Butterfly aria-hidden className="size-24 text-primary lg:size-32" />;
 

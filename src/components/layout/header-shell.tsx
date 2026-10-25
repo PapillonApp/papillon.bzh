@@ -58,6 +58,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
   return (
     <HeaderMenuContext value={{ menuOpen, setMenuOpen }}>
       <header
+        data-sound="nav"
         data-light={menuOpen || !overDarkHero || undefined}
         data-dark={(overDarkSection && !menuOpen) || undefined}
         data-bordered={scrolled || !isFeaturePage(pathname) || undefined}

@@ -19,6 +19,7 @@ export function HomeLink({ href, label, className, children }: HomeLinkProps) {
     <Link
       href={href}
       aria-label={label}
+      data-sound="home"
       onClick={(event) => {
         if (pathname !== href) return;
         event.preventDefault();

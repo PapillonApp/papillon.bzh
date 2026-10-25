@@ -1,11 +1,14 @@
 import { Info } from "@getpapillon/papicons";
 import { Accordion } from "@/components/ui/accordion";
+import { JsonLd } from "@/components/ui/json-ld";
 import { SectionHeading } from "@/components/ui/section-heading";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { faqJsonLd } from "@/lib/seo";
 
 export function Faq({ t }: { t: Dictionary["home"]["faq"] }) {
   return (
     <section id="faq" className="scroll-mt-20 px-6 py-24 lg:py-32">
+      <JsonLd data={faqJsonLd(t.items)} />
       <SectionHeading
         icon={Info}
         iconColor="text-foreground/60"

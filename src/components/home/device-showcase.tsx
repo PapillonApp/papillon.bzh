@@ -4,12 +4,12 @@ import { ChevronLeft, ChevronRight } from "@getpapillon/papicons";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { type KeyboardEvent, type PointerEvent, useId, useRef, useState } from "react";
-import duoClosed from "@/assets/devices/Devices-Duo-Closed.png";
-import mac from "@/assets/devices/Devices-MacApp.png";
-import android from "@/assets/devices/Devices-Pixel10.png";
-import ipad from "@/assets/devices/Devices-iPadPro.png";
-import iphone from "@/assets/devices/Devices-iPhone.png";
-import duoOpen from "@/assets/devices/iPhone Duo-Open.png";
+import duoClosed from "@/assets/devices/Devices-Duo-Closed.webp";
+import mac from "@/assets/devices/Devices-MacApp.webp";
+import android from "@/assets/devices/Devices-Pixel10.webp";
+import ipad from "@/assets/devices/Devices-iPadPro.webp";
+import iphone from "@/assets/devices/Devices-iPhone.webp";
+import duoOpen from "@/assets/devices/iPhone Duo-Open.webp";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { easeOutPapillon } from "@/lib/motion";
 

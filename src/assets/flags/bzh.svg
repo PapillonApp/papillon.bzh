@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="52" viewBox="0 0 72 52" fill="none">
+<rect x="2" y="2" width="68" height="48" fill="white"/>
+<rect x="2" y="2" width="68" height="48" stroke="black" stroke-width="4"/>
+<rect x="4" y="8" width="64" height="4" fill="black"/>
+<rect x="4" y="16" width="64" height="4" fill="black"/>
+<rect x="4" y="24" width="64" height="4" fill="black"/>
+<rect x="4" y="32" width="64" height="4" fill="black"/>
+<rect x="4" y="40" width="64" height="4" fill="black"/>
+<rect x="4" y="4" width="36" height="28" fill="white"/>
+<rect x="8" y="8" width="4" height="4" fill="black"/>
+<rect x="8" y="24" width="4" height="4" fill="black"/>
+<rect x="16" y="24" width="4" height="4" fill="black"/>
+<rect x="24" y="24" width="4" height="4" fill="black"/>
+<rect x="32" y="24" width="4" height="4" fill="black"/>
+<rect x="16" y="8" width="4" height="4" fill="black"/>
+<rect x="24" y="8" width="4" height="4" fill="black"/>
+<rect x="32" y="8" width="4" height="4" fill="black"/>
+<rect x="28" y="16" width="4" height="4" fill="black"/>
+<rect x="20" y="16" width="4" height="4" fill="black"/>
+<rect x="12" y="16" width="4" height="4" fill="black"/>
+</svg>

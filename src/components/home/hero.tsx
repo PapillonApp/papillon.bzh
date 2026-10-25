@@ -1,16 +1,26 @@
 "use client";
 
 import { Search, Star } from "@getpapillon/papicons";
-import { useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import Image from "next/image";
+import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import papieventBg from "@/assets/hero/papievent-bg.jpg";
 import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import { ServiceLogos } from "@/components/ui/service-logos";
+import { Spinner } from "@/components/ui/spinner";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { withBasePath } from "@/lib/base-path";
+import { easeOutPapillon } from "@/lib/motion";
 import { pageLight } from "@/lib/page-tone";
+
+const posterPlaceholder =
+  "url(data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBQCdASogABIAPrVIn0unI6KhsBgIAOAWiWQAnTKEgQAWBT3/P1+I7O/2TGCpo2zCsllgAPni198fNHP6ZlejASbk6PR3Jo+kzAyDbBtGWCiGHofyHjHALvum2l7UUeQj1/PKF2E1Ah4HmttjZrUtO4TqfUH087Rg03+VdVoLIk6QyAgAAA==)";
+
+type NetworkInformation = { saveData?: boolean; effectiveType?: string };
+
+function isSlowConnection() {
+  const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection;
+  return !!connection?.saveData || /2g|3g/.test(connection?.effectiveType ?? "");
+}
 
 type HeroProps = {
   t: Dictionary["home"]["hero"];
@@ -23,7 +33,8 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
   const toneRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
-  const [videoReady, setVideoReady] = useState(false);
+  const [buffering, setBuffering] = useState(true);
+  const [started, setStarted] = useState(false);
   const { scrollYProgress } = useScroll({ target: toneRef, offset: ["start start", "end start"] });
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
@@ -43,7 +54,14 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) setVideoReady(true);
+    if (!video.getAttribute("src") && isSlowConnection()) {
+      const hevc = video.canPlayType('video/mp4; codecs="hvc1"');
+      video.src = withBasePath(`/hero/papievent-reveal-720p.${hevc ? "mp4" : "webm"}`);
+    }
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && !video.paused) {
+      setBuffering(false);
+      setStarted(true);
+    }
     if (reduceMotion) {
       video.pause();
       return;
@@ -51,7 +69,7 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.intersectionRatio >= 0.5) {
-          video.play().catch(() => {});
+          video.play().catch(() => setBuffering(false));
         } else if (!entry.isIntersecting) {
           video.pause();
           video.currentTime = 0;
@@ -73,28 +91,52 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
         aria-hidden
         className="relative -z-10 -mt-18 -mb-8 min-h-72 flex-1 mask-t-from-80% mask-t-to-black/40 mask-b-from-50% lg:absolute lg:inset-0 lg:m-0 lg:mask-b-from-40% opacity-[calc(100%-var(--page-light))]"
       >
-        <Image src={papieventBg} alt="" fill preload sizes="100vw" className="object-cover blur-md scale-105" />
-        <video
+        <div
+          style={{ backgroundImage: `url(${withBasePath("/hero/papievent-poster.jpg")}), ${posterPlaceholder}` }}
+          className="absolute inset-0 scale-105 bg-cover bg-center blur-2xl"
+        />
+        <motion.video
           ref={videoRef}
           autoPlay
           muted
           playsInline
-          onCanPlay={() => setVideoReady(true)}
-          className={`absolute inset-0 size-full object-cover ${videoReady ? "" : "invisible"}`}
+          onWaiting={() => setBuffering(true)}
+          onPlaying={() => {
+            setBuffering(false);
+            setStarted(true);
+          }}
+          initial={false}
+          animate={{ opacity: started ? 1 : 0 }}
+          transition={{ duration: 0.6, ease: easeOutPapillon }}
+          className="absolute inset-0 size-full object-cover"
         >
           <source
-            src={withBasePath("/hero/papievent-reveal.mov")}
-            type='video/quicktime; codecs="hvc1"'
+            src={withBasePath("/hero/papievent-reveal.mp4")}
+            type='video/mp4; codecs="hvc1"'
             media="(min-width: 1440px) and (min-resolution: 2dppx)"
           />
-          <source src={withBasePath("/hero/papievent-reveal-1080p.mov")} type='video/quicktime; codecs="hvc1"' />
+          <source src={withBasePath("/hero/papievent-reveal-1080p.mp4")} type='video/mp4; codecs="hvc1"' />
           <source
             src={withBasePath("/hero/papievent-reveal.webm")}
             type="video/webm"
             media="(min-width: 1440px) and (min-resolution: 2dppx)"
           />
           <source src={withBasePath("/hero/papievent-reveal-1080p.webm")} type="video/webm" />
-        </video>
+        </motion.video>
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-black/80 via-black/50 to-transparent" />
+        <AnimatePresence>
+          {buffering && (
+            <motion.div
+              initial={false}
+              exit={{ opacity: 0, transition: { duration: 0.2, ease: easeOutPapillon } }}
+              className="absolute inset-0 grid place-items-center motion-reduce:hidden"
+            >
+              <div className="transition-opacity delay-600 duration-300 ease-out starting:opacity-0">
+                <Spinner className="size-8 text-current/70" />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <div className="relative mx-auto mt-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">

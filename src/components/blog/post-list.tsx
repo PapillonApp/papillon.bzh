@@ -4,6 +4,7 @@ import { type ReactNode, ViewTransition } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { withBasePath } from "@/lib/base-path";
 import { formatPostDate, type Post, type PostCategory, postCategories } from "@/lib/blog";
+import { Author } from "./author";
 import { CategoryTabs } from "./category-tabs";
 
 type PostListProps = {
@@ -24,7 +25,7 @@ export function PostList({ t, posts, locale }: PostListProps) {
             allLabel={t.all}
             labels={t.categories}
             panels={{
-              all: <Posts posts={posts} empty={t.empty} locale={locale} />,
+              all: <Posts posts={posts} empty={t.empty} teamName={t.team} locale={locale} />,
               ...(Object.fromEntries(
                 postCategories.map((category) => [
                   category,
@@ -32,6 +33,7 @@ export function PostList({ t, posts, locale }: PostListProps) {
                     key={category}
                     posts={posts.filter((post) => post.category === category)}
                     empty={t.empty}
+                    teamName={t.team}
                     locale={locale}
                   />,
                 ]),
@@ -47,10 +49,11 @@ export function PostList({ t, posts, locale }: PostListProps) {
 type PostsProps = {
   posts: Post[];
   empty: string;
+  teamName: string;
   locale: string;
 };
 
-function Posts({ posts, empty, locale }: PostsProps) {
+function Posts({ posts, empty, teamName, locale }: PostsProps) {
   if (posts.length === 0) {
     return (
       <p className="mt-6 border-t border-foreground/10 pt-6 text-md text-foreground/60">{empty}</p>
@@ -61,7 +64,7 @@ function Posts({ posts, empty, locale }: PostsProps) {
     <ul className="mt-6 divide-y divide-foreground/10 border-y border-foreground/10">
       {posts.map((post, index) => (
         <li key={post.slug}>
-          <PostRow post={post} locale={locale} preload={index === 0} />
+          <PostRow post={post} teamName={teamName} locale={locale} preload={index === 0} />
         </li>
       ))}
     </ul>
@@ -70,13 +73,14 @@ function Posts({ posts, empty, locale }: PostsProps) {
 
 type PostRowProps = {
   post: Post;
+  teamName: string;
   locale: string;
   preload: boolean;
 };
 
-function PostRow({ post, locale, preload }: PostRowProps) {
+function PostRow({ post, teamName, locale, preload }: PostRowProps) {
   return (
-    <Link href={`/${locale}/blog/${post.slug}`} className="group flex items-center gap-5 py-5">
+    <Link href={`/${locale}/blog/${post.slug}`} data-sound="pageOpen" className="group flex items-center gap-5 py-5">
       <ViewTransition name={`blog-banner-${post.slug}`} share="blog-banner" default="none">
         <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-xl bg-surface sm:w-36">
           <Image
@@ -98,9 +102,11 @@ function PostRow({ post, locale, preload }: PostRowProps) {
             {post.description}
           </p>
         )}
-        <time dateTime={post.date} className="text-sm text-foreground/60">
-          {formatPostDate(post.date, locale)}
-        </time>
+        <div className="flex items-center gap-2 text-sm text-foreground/60">
+          <time dateTime={post.date}>{formatPostDate(post.date, locale)}</time>
+          <span aria-hidden>·</span>
+          <Author login={post.author} teamName={teamName} avatar={false} />
+        </div>
       </div>
     </Link>
   );

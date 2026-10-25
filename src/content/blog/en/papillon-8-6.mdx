@@ -1,0 +1,130 @@
+---
+title: "Papillon 8.6: made for big screens"
+description: "Papillon on iPad and iPhone Duo, a week view for your timetable, custom homework, widgets, Live Activities, gradient wallpapers... Everything that changed since 8.4."
+summary: "Papillon 8.6 brings together six months of work since 8.4. The big one: an app finally designed for iPad and iPhone Duo, adapting live to the size of the screen. And also: a week view for the timetable, homework you can create yourself, widgets and Live Activities on iPhone, gradient wallpapers, skills in grades, an offline account and encrypted data on your phone."
+date: 2026-10-24
+author: PapillonApp
+category: releaseNotes
+banner: /blog/papillon-8-6/header.webp
+bannerAlt: "Papillon logo next to the text v8.6, on a green gradient background"
+---
+
+Papillon 8.6 is available today on the App Store and the Play Store. Since 8.4 came out in April, we shipped 8.5 and a few bug fix releases, but a lot happened behind the scenes. So this version is the perfect time to go over <Highlight>everything that changed in six months</Highlight>.
+
+And there's a lot.
+
+## Papillon on iPad and iPhone Duo
+
+This is the biggest change in this version: <Highlight>Papillon is finally designed for big screens</Highlight>.
+
+There already was an iPad version, but let's be honest, it just stretched the app across the whole width. This time, every main tab was redesigned to make the most of the extra space:
+
+- <Label icon="grid" color="red">Home</Label>: widgets are laid out in several columns, like a dashboard.
+- <Label icon="sparkles" color="green">Grades</Label>: averages stay on the left, and recent grades show up on the right instead of below.
+- <Label icon="clock" color="orange">Timetable</Label>: the whole week shows at once, with one column per day.
+- <Label icon="search" color="blue">Cards and login</Label>: the canteen and login screens are centered instead of stretched.
+
+![Papillon's home screen on iPad in landscape, with the sidebar and widgets in two columns](/blog/papillon-8-6/home-ipad.webp)
+
+Above all, Papillon is now **fully resizable**. On the iPhone Duo, the app looks like on any iPhone when folded, then switches to the big screen layout as soon as you unfold it, <Highlight>without restarting, right in the middle of using it</Highlight>. Same thing on iPad when you resize its window.
+
+![Papillon's home screen on the unfolded iPhone Duo, with widgets in two columns and a gradient wallpaper](/blog/papillon-8-6/home-gradient.webp)
+
+To get there, we also replaced our home-made tabs and headers with the iOS ones. Papillon now has the same animations and the same Liquid Glass effect as Apple's apps, and iOS resizes everything automatically.
+
+We tell the whole story, from our Apple workshop in London to the iPhone Duo launch, in [a dedicated article](/en/blog/iphone-duo).
+
+## Timetable
+
+The **week view** isn't just for big screens: it's coming to iPhone too, with one column per day, just like a paper planner. It's still in <Highlight>beta</Highlight>: turn it on from the **Display** button at the top of the screen, and switch back to the list whenever you want.
+
+<PhoneShot src="/blog/papillon-8-6/view-menu.webp" alt="The timetable Display menu on iPhone, with the List and Week (Beta) options" caption="The Display menu, on iPhone" />
+
+Saturday and Sunday only show up if you actually have classes on those days. No need to keep two empty columns on screen all year long.
+
+![The timetable week view on iPad, Monday to Friday, with one column per day](/blog/papillon-8-6/week-ipad.webp)
+
+On iPhone, your current or next class can also show up as a **Live Activity**, on the lock screen and in the Dynamic Island, with the time left before it starts or ends. You'll find the option in **Settings > Features > Lock screen**.
+
+Finally, **Quick glance** shows your next classes right above the tabs, and hides itself when there's nothing left to show.
+
+<PhoneShot show="bottom" src="/blog/papillon-8-6/home-iphone.webp" alt="Papillon's home screen on iPhone, with the next class shown right above the tabs" caption="Quick glance, right above the tabs" />
+
+## Homework
+
+It was one of the most requested features: you can now <Highlight>create your own homework</Highlight>. A subject, a due date, some content, and it's saved. Homework you added yourself gets a small icon, and you can edit or delete it at any time.
+
+<PhoneShot device="duo" src="/blog/papillon-8-6/custom-task.webp" alt="New homework sheet with the subject, due date and content" caption="Creating homework, with a live preview" />
+
+The Homework tab has been reworked too:
+
+- <Label icon="clock" color="orange">Weeks</Label>: swipe the list left or right to move from one week to the next.
+- <Label icon="grid" color="red">The header</Label>: it now uses the iOS navigation bar, with a title that shrinks as you scroll.
+- <Label icon="sparkles" color="green">The countdown</Label>: the number of days before a due date now counts from midnight, so it no longer says "tomorrow" on the day itself.
+
+## Grades
+
+Grades got a good share of the work these past months, including:
+
+- <Label icon="sparkles" color="green">Skills</Label>: if your school grades by skills, they finally show up in Papillon, both in the list and in a grade's details.
+- <Label icon="gears" color="orange">Grade scale</Label>: as an experiment, you can choose what your grades are out of, instead of converting everything to 20.
+- <Label icon="search" color="blue">Median</Label>: a new way to compute your average, from the median of all your grades.
+- <Label icon="clock" color="purple">The chart</Label>: slide your finger across it to go back in time and see how your average evolved.
+
+![The Grades tab on iPad, with the average chart, recent grades and subjects in two columns](/blog/papillon-8-6/grades-ipad.webp)
+
+When your service doesn't provide an average, Papillon now computes it itself. And when a subject has no average, it no longer shows a meaningless "NaN".
+
+## Home and personalization
+
+Your home screen can now have a **gradient wallpaper**, randomly generated. A **Shuffle** button suggests a new one on every tap, and each account can have its own wallpaper.
+
+The first time you open the app, Papillon also offers to add a profile picture and pick your favorite color. You can of course skip this step and set everything up later in the settings.
+
+<PhoneShot src="/blog/papillon-8-6/welcome-color.webp" alt="Papillon welcome screen asking to pick a favorite color" caption="Picking your color, on first launch" />
+
+A new **Settings > Features** page gathers the settings that change how the app behaves: Quick glance, tab names, Live Activities and the grade scale.
+
+On iPhone, a few tips now show up at the right time to help you discover these gestures. They only appear once you've settled in, <Highlight>not three at once on first launch</Highlight>.
+
+## Papillon on your iPhone
+
+A big part of this version isn't visible in the app, but around it. Thanks to [PapillonKit](/en/blog/papillonkit), Papillon now reaches places it couldn't before:
+
+- <Label icon="grid" color="red">Widgets</Label>: your timetable and homework, right on your home screen.
+- <Label icon="clock" color="green">Live Activities</Label>: your current or next class, on the lock screen and in the Dynamic Island.
+- <Label icon="apple" color="blue">Siri and Spotlight</Label>: your next class or next homework, without opening the app (starting with iOS 27).
+
+<PhoneShot device="duo" src="/blog/papillon-8-6/widget.webp" alt="Papillon widget on the home screen showing tomorrow's classes" caption="The Timetable widget on the home screen" />
+
+## School services
+
+On the login side, several services were improved:
+
+- **PRONOTE**: two-factor authentication and the security checks some schools require are now handled directly in Papillon. Compound and accented last names are no longer cut, and the city list shows postal codes.
+- **ÉcoleDirecte**: university accounts are supported, and Papillon can use the colors chosen by your school.
+- **Skolengo**, **TurboSelf** and **ARD**: several login issues were fixed.
+
+You can also create an **offline account**, not linked to any school service. Handy to try Papillon out, or to keep track of your homework by hand.
+
+Finally, the IUT de Lannion service was removed for security reasons. Affected accounts were signed out, and you can connect another service from the home screen.
+
+## Your data, better protected
+
+All your Papillon data stays **on your phone**, since we don't have any server. With 8.6, your accounts and login details are now <Highlight>encrypted</Highlight>, with a key kept in your device's secure storage.
+
+## Android
+
+Android wasn't left behind. The app follows Material You more closely, with new context menus, new icons and reworked login screens. The back button works everywhere again, and the emoji picker was fixed.
+
+## Good to know
+
+Papillon 8.6 now requires **iOS 17.6** or later on iPhone and iPad. If your device is stuck on an older version, you'll keep the last compatible version of Papillon.
+
+Under the hood, the app moves to Expo 58, and we took the opportunity to clean things up: the app has nearly 20,000 fewer lines of code than 8.5. Less code means <Highlight>fewer bugs and a lighter app</Highlight>.
+
+## Conclusion
+
+Six months, two versions and lots of small things that, put together, change your everyday life with Papillon quite a bit. Thanks to everyone who contributed code, translations and feedback during these months.
+
+As always, if you find a bug or have an idea, let us know. More is coming soon!

@@ -1,6 +1,6 @@
 import { Check } from "@getpapillon/papicons";
 import Image from "next/image";
-import iphoneFrame from "@/assets/features/iphone-frame.png";
+import iphoneFrame from "@/assets/features/iphone-frame.webp";
 import { FadeUp } from "@/components/ui/fade-up";
 import { HorizontalScroll } from "@/components/ui/horizontal-scroll";
 import { LazyVideo } from "@/components/ui/lazy-video";

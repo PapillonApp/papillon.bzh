@@ -2,8 +2,9 @@ import type { Dictionary } from "./fr";
 
 const en: Dictionary = {
   metadata: {
-    title: "Papillon, school life reimagined",
-    description: "Your grades, schedule, homework, cafeteria menu and more, all in one app.",
+    title: "Papillon, the free school life app",
+    description:
+      "Grades, averages, schedule, homework and cafeteria in one app. Free, ad-free, rated 4.7/5 and downloaded over 2 million times.",
   },
   nav: {
     label: "Main navigation",
@@ -454,7 +455,9 @@ const en: Dictionary = {
     },
   },
   downloadPage: {
-    metadataTitle: "Download Papillon",
+    metadataTitle: "Download Papillon for free on iPhone, Android and Mac",
+    metadataDescription:
+      "Install Papillon for free on iPhone, iPad, Mac and Android. No ads, no subscription, and rated 4.7/5 on the stores. Your whole school life in one app.",
     hero: {
       label: "Free, ad-free, open source",
       title: "School life, in your pocket.",
@@ -501,9 +504,9 @@ const en: Dictionary = {
   featurePages: {
     compatible: "Works with",
     grades: {
-      metadataTitle: "Grades – Papillon",
+      metadataTitle: "Your grades and average in real time – Papillon",
       metadataDescription:
-        "Get your grades as soon as they’re posted, your weighted average calculated for you, and see how it changes over the year. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "Get your grades as soon as they’re posted, your weighted average calculated for you, and see how it changes over the year. Free, ad-free, on iPhone and Android.",
       hero: {
         title: "Know your average before report cards do",
         description:
@@ -666,9 +669,9 @@ const en: Dictionary = {
       },
     },
     schedule: {
-      metadataTitle: "Schedule – Papillon",
+      metadataTitle: "Your schedule, always up to date – Papillon",
       metadataDescription:
-        "Your schedule, always up to date: canceled and changed classes, rooms, teachers, Live Activities and widgets. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "Canceled and changed classes flagged right away, rooms, teachers, Live Activities and widgets. Free, ad-free, on iPhone and Android.",
       hero: {
         title: "Your day, one class at a time",
         description:
@@ -825,9 +828,9 @@ const en: Dictionary = {
       },
     },
     homework: {
-      metadataTitle: "Homework – Papillon",
+      metadataTitle: "All your homework, week by week – Papillon",
       metadataDescription:
-        "All your homework, week by week, sorted by due date or subject and ready to check off. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "All your homework, week by week, sorted by due date or subject and ready to check off. Free, ad-free, on iPhone and Android.",
       hero: {
         title: "What’s due, and when",
         description:
@@ -950,9 +953,9 @@ const en: Dictionary = {
       },
     },
     news: {
-      metadataTitle: "News – Papillon",
+      metadataTitle: "Your school’s news in one feed – Papillon",
       metadataDescription:
-        "Your school’s announcements in one clean feed, easy to read on your phone. Free, works with Pronote, ÉcoleDirecte and Skolengo.",
+        "Your school’s announcements in one clean feed, easy to read on your phone. Free, ad-free, on iPhone and Android.",
       hero: {
         title: "Never miss a school announcement",
         description:
@@ -1080,6 +1083,10 @@ const en: Dictionary = {
     copied: "Copied",
     back: "All posts",
     empty: "No posts yet.",
+    translatedByAi: "Translated by AI",
+    summary: "In short",
+    summarizedByAi: "Summarized by AI",
+    team: "The Papillon team",
   },
   notFound: {
     metadataTitle: "Page not found – Papillon",
@@ -1099,8 +1106,9 @@ const en: Dictionary = {
       linkedin: "LinkedIn",
       photoAlt: "The Papillon team",
     },
-    association: "Papillon (nonprofit)",
-    copyright: "© 2026 Papillon & contributors. All rights reserved.",
+    madeIn: "Made with love in Brittany",
+    association: "Association Papillon",
+    copyright: "© 2026 Association Papillon & contributors. All rights reserved.",
     columns: {
       product: {
         title: "Features",

@@ -58,6 +58,8 @@ export function FeatureMenu({ labels, locale }: FeatureMenuProps) {
           <li key={key}>
             <a
               href={localizeHref(linkHrefs[key], locale)}
+              data-sound="card"
+              data-hover-sound="cardHover"
               className={`relative flex h-48 w-72 flex-col justify-end overflow-hidden rounded-2xl p-5 text-white transition-[scale,filter] duration-150 ease-out hover:scale-98 hover:brightness-90 ${card}`}
             >
               <watermark.Icon

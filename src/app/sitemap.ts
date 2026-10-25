@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
-import { getPosts, postLocale } from "@/lib/blog";
+import { getPosts } from "@/lib/blog";
 import { localizedAlternates, siteUrl } from "@/lib/seo";
 
 const paths = [
@@ -27,10 +27,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       alternates: { languages: absolute(localizedAlternates(path)) },
     })),
   );
-  const posts = (await getPosts()).map((post) => ({
-    url: `${siteUrl}/${postLocale}/blog/${post.slug}`,
+  const posts = (await Promise.all(locales.map((locale) => getPosts(locale)))).flatMap(
+    (posts, index) => posts.filter((post) => post.lang === locales[index]),
+  );
+  const translated = (slug: string) =>
+    posts.filter((post) => post.slug === slug).length === locales.length;
+  const postEntries = posts.map((post) => ({
+    url: `${siteUrl}/${post.lang}/blog/${post.slug}`,
     lastModified: post.date,
+    ...(translated(post.slug) && {
+      alternates: { languages: absolute(localizedAlternates(`/blog/${post.slug}`)) },
+    }),
   }));
 
-  return [...pages, ...posts];
+  return [...pages, ...postEntries];
 }

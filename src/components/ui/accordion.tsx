@@ -22,6 +22,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 type="button"
                 id={`${id}-question-${index}`}
                 aria-expanded={open}
+                data-sound="fold"
                 aria-controls={`${id}-answer-${index}`}
                 onClick={() => setOpenIndex(open ? null : index)}
                 className="flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-semibold"

@@ -10,14 +10,14 @@ import {
 } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { useEffect } from "react";
-import eventPhoto from "@/assets/association/event.jpg";
-import value1a from "@/assets/association/value-1-a.png";
-import value1b from "@/assets/association/value-1-b.png";
-import value2a from "@/assets/association/value-2-a.png";
-import value2b from "@/assets/association/value-2-b.png";
-import value3a from "@/assets/association/value-3-a.png";
-import value3b from "@/assets/association/value-3-b.png";
-import groupPhoto from "@/assets/team/PapillonTeam.png";
+import eventPhoto from "@/assets/association/event.webp";
+import value1a from "@/assets/association/value-1-a.webp";
+import value1b from "@/assets/association/value-1-b.webp";
+import value2a from "@/assets/association/value-2-a.webp";
+import value2b from "@/assets/association/value-2-b.webp";
+import value3a from "@/assets/association/value-3-a.webp";
+import value3b from "@/assets/association/value-3-b.webp";
+import groupPhoto from "@/assets/team/PapillonTeam.webp";
 import { teamMembers } from "@/content/team";
 import { easeOutPapillon } from "@/lib/motion";
 

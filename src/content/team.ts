@@ -1,9 +1,9 @@
 import type { StaticImageData } from "next/image";
 import ecnivtwelve from "@/assets/team/ecnivtwelve.jpg";
 import raphckrman from "@/assets/team/raphckrman.jpg";
-import remygdt from "@/assets/team/remygdt.jpg";
+import remygdt from "@/assets/team/remygdt.webp";
 import ryzenixx from "@/assets/team/ryzenixx.jpg";
-import tomhlr from "@/assets/team/tomhlr.jpg";
+import tomhlr from "@/assets/team/tomhlr.webp";
 import tryon from "@/assets/team/tryon.jpg";
 
 export type TeamMemberKey = "vince" | "lucas" | "tom" | "raphael" | "remy" | "mael";

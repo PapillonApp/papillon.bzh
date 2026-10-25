@@ -1,0 +1,130 @@
+---
+title: "Papillon 8.6 : place aux grands écrans"
+description: "Papillon sur iPad et iPhone Duo, vue semaine, devoirs personnalisés, widgets, Live Activities, fonds d'écran en dégradé... Tout ce qui a changé depuis la 8.4."
+summary: "Papillon 8.6 regroupe six mois de travail depuis la 8.4. La grosse nouveauté : une app enfin pensée pour l'iPad et l'iPhone Duo, qui s'adapte en direct à la taille de l'écran. Et aussi : une vue semaine pour l'emploi du temps, des devoirs que tu peux créer toi-même, des widgets et des Live Activities sur iPhone, des fonds d'écran en dégradé, les compétences dans les notes, un compte hors ligne et des données chiffrées sur ton téléphone."
+date: 2026-10-24
+author: PapillonApp
+category: releaseNotes
+banner: /blog/papillon-8-6/header.webp
+bannerAlt: "Logo de Papillon à côté du texte v8.6, sur un fond dégradé vert"
+---
+
+Papillon 8.6 est disponible dès aujourd'hui sur l'App Store et le Play Store. Depuis la 8.4, sortie en avril, on a publié la 8.5 et plusieurs correctifs, mais beaucoup de choses sont restées dans les coulisses. Cette version est donc l'occasion de faire <Highlight>le tour de tout ce qui a changé en six mois</Highlight>.
+
+Et il y en a beaucoup.
+
+## Papillon sur iPad et iPhone Duo
+
+C'est la plus grosse nouveauté de cette version : <Highlight>Papillon est enfin pensé pour les grands écrans</Highlight>.
+
+Il existait bien une version iPad, mais soyons honnêtes, elle se contentait d'étirer l'app sur toute la largeur. Cette fois, chaque onglet principal a été redessiné pour profiter de la place en plus :
+
+- <Label icon="grid" color="red">Accueil</Label> : les widgets se rangent sur plusieurs colonnes, comme un tableau de bord.
+- <Label icon="sparkles" color="green">Notes</Label> : les moyennes restent à gauche, et les dernières notes s'affichent à droite au lieu d'être en dessous.
+- <Label icon="clock" color="orange">Emploi du temps</Label> : la semaine entière s'affiche d'un coup, avec une colonne par jour.
+- <Label icon="search" color="blue">Cartes et connexion</Label> : les écrans de cantine et de connexion se centrent au lieu de s'étirer.
+
+![L'accueil de Papillon sur iPad en paysage, avec la barre latérale et les widgets sur deux colonnes](/blog/papillon-8-6/home-ipad.webp)
+
+Et surtout, Papillon est maintenant **entièrement redimensionnable**. Sur l'iPhone Duo, l'app s'affiche comme sur n'importe quel iPhone une fois fermé, puis passe en grand écran dès que tu le déplies, <Highlight>sans redémarrer, en pleine utilisation</Highlight>. Même chose sur iPad quand tu changes la taille de sa fenêtre.
+
+![L'accueil de Papillon sur l'iPhone Duo déplié, avec les widgets sur deux colonnes et un fond d'écran en dégradé](/blog/papillon-8-6/home-gradient.webp)
+
+Pour y arriver, on a aussi remplacé nos onglets et nos en-têtes faits maison par ceux d'iOS. Papillon a donc les mêmes animations et le même effet Liquid Glass que les apps d'Apple, et c'est iOS qui redimensionne tout automatiquement.
+
+On raconte toute l'histoire, de notre workshop avec Apple à Londres jusqu'à la sortie de l'iPhone Duo, dans [un article dédié](/fr/blog/iphone-duo).
+
+## L'emploi du temps
+
+La **vue semaine** n'est pas réservée aux grands écrans : elle arrive aussi sur iPhone, avec une colonne par jour, comme sur un agenda papier. Elle est encore en <Highlight>bêta</Highlight> : tu peux l'activer depuis le bouton **Affichage** en haut de l'écran, et revenir à la liste quand tu veux.
+
+<PhoneShot src="/blog/papillon-8-6/view-menu.webp" alt="Le menu Affichage de l'emploi du temps sur iPhone, avec les options Liste et Semaine (Bêta)" caption="Le menu Affichage, sur iPhone" />
+
+Le samedi et le dimanche n'apparaissent que si tu as vraiment cours ces jours-là. Pas besoin de garder deux colonnes vides à l'écran toute l'année.
+
+![La vue semaine de l'emploi du temps sur iPad, du lundi au vendredi, avec une colonne par jour](/blog/papillon-8-6/week-ipad.webp)
+
+Sur iPhone, ton cours en cours ou le prochain peut aussi s'afficher en **Activité en direct**, sur l'écran verrouillé et dans la Dynamic Island, avec le temps restant avant le début ou la fin du cours. L'option se trouve dans **Paramètres > Fonctionnalités > Écran verrouillé**.
+
+Enfin, le **Coup d'oeil** affiche tes prochains cours juste au dessus des onglets, et se cache tout seul quand il n'y a plus rien à afficher.
+
+<PhoneShot show="bottom" src="/blog/papillon-8-6/home-iphone.webp" alt="L'accueil de Papillon sur iPhone, avec le prochain cours affiché juste au dessus des onglets" caption="Le Coup d'oeil, juste au dessus des onglets" />
+
+## Les devoirs
+
+C'était l'une des demandes qui revenait le plus souvent : tu peux maintenant <Highlight>créer tes propres devoirs</Highlight>. Une matière, une date de rendu, un contenu, et c'est enregistré. Tes devoirs ajoutés à la main sont marqués d'une petite icône, et tu peux les modifier ou les supprimer à tout moment.
+
+<PhoneShot device="duo" src="/blog/papillon-8-6/custom-task.webp" alt="Fenêtre Nouveau devoir avec la matière, la date de rendu et le contenu" caption="La création d'un devoir, avec un aperçu en direct" />
+
+L'onglet Devoirs a aussi été revu :
+
+- <Label icon="clock" color="orange">Les semaines</Label> : balaie la liste vers la gauche ou la droite pour passer d'une semaine à l'autre.
+- <Label icon="grid" color="red">L'en-tête</Label> : il utilise désormais la barre de navigation d'iOS, avec un titre qui se réduit au scroll.
+- <Label icon="sparkles" color="green">Le décompte</Label> : le nombre de jours avant un rendu est maintenant compté à partir de minuit, pour ne plus afficher « demain » le jour même.
+
+## Les notes
+
+Les notes ont eu droit à une bonne partie du travail de ces derniers mois, notamment :
+
+- <Label icon="sparkles" color="green">Les compétences</Label> : si ton établissement note par compétences, elles s'affichent enfin dans Papillon, dans la liste comme dans le détail d'une note.
+- <Label icon="gears" color="orange">L'échelle des notes</Label> : en expérimental, tu peux choisir sur combien tes notes sont affichées, au lieu de tout ramener sur 20.
+- <Label icon="search" color="blue">La médiane</Label> : un nouveau mode de calcul de la moyenne, à partir de la médiane de toutes tes notes.
+- <Label icon="clock" color="purple">Le graphique</Label> : fais glisser ton doigt dessus pour remonter le temps et voir l'évolution de ta moyenne.
+
+![L'onglet Notes sur iPad, avec le graphique de la moyenne, les dernières notes et les matières sur deux colonnes](/blog/papillon-8-6/grades-ipad.webp)
+
+Quand ton service ne donne pas de moyenne, Papillon la calcule lui-même. Et si une matière n'a pas de moyenne, elle n'affiche plus un « NaN » qui ne voulait rien dire.
+
+## L'accueil et la personnalisation
+
+Ton accueil peut maintenant avoir un **fond d'écran en dégradé**, généré aléatoirement. Un bouton **Mélanger** en propose un nouveau à chaque appui, et chaque compte peut avoir son propre fond d'écran.
+
+À la première ouverture, Papillon te propose aussi d'ajouter une photo de profil et de choisir ta couleur favorite. Tu peux bien sûr passer cette étape et tout régler plus tard dans les paramètres.
+
+<PhoneShot src="/blog/papillon-8-6/welcome-color.webp" alt="Écran de bienvenue de Papillon proposant de choisir une couleur favorite" caption="Le choix de la couleur, à la première ouverture" />
+
+Une nouvelle page **Paramètres > Fonctionnalités** regroupe les réglages qui changent le comportement de l'app : le Coup d'oeil, le nom des onglets, les Activités en direct et l'échelle des notes.
+
+Sur iPhone, quelques astuces apparaissent maintenant au bon moment pour te faire découvrir ces gestes. Elles n'arrivent qu'une fois que tu as pris tes habitudes, <Highlight>pas trois d'un coup au premier lancement</Highlight>.
+
+## Papillon s'intègre à ton iPhone
+
+Une grosse partie de cette version ne se voit pas dans l'app, mais autour. Grâce à [PapillonKit](/fr/blog/papillonkit), Papillon arrive là où il n'était pas encore :
+
+- <Label icon="grid" color="red">Widgets</Label> : ton emploi du temps et tes devoirs, directement sur l'écran d'accueil.
+- <Label icon="clock" color="green">Activités en direct</Label> : le cours en cours ou le prochain, sur l'écran verrouillé et la Dynamic Island.
+- <Label icon="apple" color="blue">Siri et Spotlight</Label> : ton prochain cours ou ton prochain devoir, sans ouvrir l'app (à partir d'iOS 27).
+
+<PhoneShot device="duo" src="/blog/papillon-8-6/widget.webp" alt="Widget Papillon sur l'écran d'accueil avec les cours du lendemain" caption="Le widget Emploi du temps sur l'écran d'accueil" />
+
+## Les services scolaires
+
+Côté connexion, plusieurs services ont été améliorés :
+
+- **PRONOTE** : la double authentification et les vérifications de sécurité demandées par certains établissements sont maintenant gérées directement dans Papillon. Les noms composés ou accentués ne sont plus coupés, et la liste des villes affiche le code postal.
+- **ÉcoleDirecte** : les comptes universitaires sont pris en charge, et Papillon peut reprendre les couleurs choisies par ton établissement.
+- **Skolengo**, **TurboSelf** et **ARD** : plusieurs problèmes de connexion ont été corrigés.
+
+Il est aussi possible de créer un **compte hors ligne**, qui n'est relié à aucun service scolaire. Pratique pour découvrir Papillon, ou pour noter tes devoirs à la main.
+
+Enfin, le service de l'IUT de Lannion a été retiré pour des raisons de sécurité. Les comptes concernés ont été déconnectés, et tu peux connecter un autre service depuis l'accueil.
+
+## Tes données, encore mieux protégées
+
+Toutes tes données Papillon restent stockées **sur ton téléphone**, puisqu'on n'a pas de serveur. Avec la 8.6, tes comptes et tes informations de connexion sont désormais <Highlight>chiffrés</Highlight>, avec une clé rangée dans le stockage sécurisé de ton appareil.
+
+## Android
+
+Android n'a pas été oublié. L'app suit davantage Material You, avec de nouveaux menus contextuels, de nouvelles icônes et des écrans de connexion revus. Le bouton retour fonctionne de nouveau partout, et le sélecteur d'émoji a été corrigé.
+
+## Ce qu'il faut savoir
+
+Papillon 8.6 demande désormais **iOS 17.6** ou plus récent sur iPhone et iPad. Si ton appareil est resté sur une version plus ancienne, tu garderas la dernière version compatible de Papillon.
+
+Sous le capot, l'app passe à Expo 58, et on en a profité pour faire le ménage : l'app compte près de 20 000 lignes de code en moins qu'avec la 8.5. Moins de code, c'est <Highlight>moins de bugs et une app plus légère</Highlight>.
+
+## Conclusion
+
+Six mois, deux versions et beaucoup de petites choses qui, mises bout à bout, changent pas mal ton quotidien avec Papillon. Merci à toutes les personnes qui ont contribué au code, aux traductions et aux retours pendant ces mois.
+
+Comme toujours, si tu trouves un bug ou si tu as une idée, n'hésite pas à nous le dire. La suite arrive bientôt !

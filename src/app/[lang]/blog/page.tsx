@@ -16,7 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BlogPage() {
-  const [dict, locale, posts] = await Promise.all([getDictionary(), getLocale(), getPosts()]);
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
+  const posts = await getPosts(locale);
 
   return (
     <main className="min-h-dvh">

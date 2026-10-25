@@ -1,9 +1,9 @@
 import { Login } from "@getpapillon/papicons";
 import Image from "next/image";
-import step1 from "@/assets/steps/Login_Step1.png";
-import step2 from "@/assets/steps/Login_Step2.png";
-import step3 from "@/assets/steps/Login_Step3.png";
-import step4 from "@/assets/steps/Login_Step4.png";
+import step1 from "@/assets/steps/Login_Step1.webp";
+import step2 from "@/assets/steps/Login_Step2.webp";
+import step3 from "@/assets/steps/Login_Step3.webp";
+import step4 from "@/assets/steps/Login_Step4.webp";
 import { FadeUp } from "@/components/ui/fade-up";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { getDictionary } from "@/i18n/server";

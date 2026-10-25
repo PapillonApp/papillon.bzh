@@ -1,18 +1,28 @@
+import Image from "next/image";
+import appIcon from "@/assets/app-icon.png";
+import { teamAuthor } from "@/lib/blog";
 import { getAuthor } from "@/lib/github";
 import { externalProps } from "@/lib/links";
 import { Avatar } from "./avatar";
 
 type AuthorProps = {
   login: string;
+  teamName: string;
   link?: boolean;
+  avatar?: boolean;
 };
 
-export async function Author({ login, link = false }: AuthorProps) {
-  const { name, avatar } = await getAuthor(login);
+export async function Author({ login, teamName, link = false, avatar = true }: AuthorProps) {
+  const author = login === teamAuthor ? undefined : await getAuthor(login);
   const content = (
     <>
-      <Avatar src={avatar} className="size-6" />
-      <span className="text-trim">{name}</span>
+      {avatar &&
+        (author ? (
+          <Avatar src={author.avatar} className="size-6" />
+        ) : (
+          <Image src={appIcon} alt="" width={48} height={48} className="size-6" />
+        ))}
+      <span className="text-trim">{author?.name ?? teamName}</span>
     </>
   );
 

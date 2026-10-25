@@ -86,6 +86,7 @@ export function DesktopNav({ labels, locale }: DesktopNavProps) {
                 else show(item, event.currentTarget);
               }}
               data-hover-item
+              data-hover-sound="none"
               className={navEntryStyle}
             >
               <span className="text-trim">{labels[item]}</span>
@@ -98,6 +99,7 @@ export function DesktopNav({ labels, locale }: DesktopNavProps) {
             href={`/${locale}/blog`}
             onPointerEnter={(event) => isMouse(event) && setActive(null)}
             data-hover-item
+            data-hover-sound="none"
             className={navEntryStyle}
           >
             <span className="text-trim">{labels.blog}</span>

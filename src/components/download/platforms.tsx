@@ -1,8 +1,8 @@
 import { ArrowRight } from "@getpapillon/papicons";
 import Image, { type StaticImageData } from "next/image";
-import mac from "@/assets/devices/Devices-MacApp.png";
-import android from "@/assets/devices/Devices-Pixel10.png";
-import ipad from "@/assets/devices/Devices-iPadPro.png";
+import mac from "@/assets/devices/Devices-MacApp.webp";
+import android from "@/assets/devices/Devices-Pixel10.webp";
+import ipad from "@/assets/devices/Devices-iPadPro.webp";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { storeUrls } from "./store-badges";
 

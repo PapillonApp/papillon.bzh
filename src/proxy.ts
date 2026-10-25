@@ -3,6 +3,8 @@ import { defaultLocale, hasLocale, localeCookie } from "@/i18n/config";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (pathname.endsWith(".md")) return NextResponse.rewrite(new URL(`/md${pathname}`, request.url));
+
   const pathLocale = pathname.split("/")[1];
 
   if (hasLocale(pathLocale)) {
@@ -31,5 +33,5 @@ function preferredLocale(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|.*\\..*).*)"],
+  matcher: ["/((?!_next|api|.*\\..*).*)", "/(.*\\.md)"],
 };

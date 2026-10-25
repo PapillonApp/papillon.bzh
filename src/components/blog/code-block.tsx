@@ -34,6 +34,7 @@ export function CodeBlock({ labels, ...props }: CodeBlockProps) {
       <button
         type="button"
         onClick={copy}
+        data-sound="copy"
         aria-label={copied ? labels.copied : labels.copyCode}
         className="absolute top-2.5 right-2.5 flex size-8 items-center justify-center rounded-lg bg-code text-white/50 transition hover:bg-white/10 hover:text-white active:scale-95"
       >

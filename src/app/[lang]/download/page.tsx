@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     locale,
     path: "/download",
     title: dict.downloadPage.metadataTitle,
-    description: dict.downloadPage.hero.description,
+    description: dict.downloadPage.metadataDescription,
   });
 }
 

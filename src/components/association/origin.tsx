@@ -1,6 +1,6 @@
 import { ArrowRight } from "@getpapillon/papicons";
 import Image from "next/image";
-import v1 from "@/assets/story/v1.png";
+import v1 from "@/assets/story/v1.webp";
 import { FadeUp } from "@/components/ui/fade-up";
 import { teamMembers } from "@/content/team";
 import type { Dictionary } from "@/i18n/dictionaries/fr";

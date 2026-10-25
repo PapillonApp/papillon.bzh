@@ -1,8 +1,8 @@
 const fr = {
   metadata: {
-    title: "Papillon, la nouvelle vie scolaire",
+    title: "Papillon, l’app gratuite de la vie scolaire",
     description:
-      "Un seul endroit pour vos notes, votre cantine, votre calendrier, vos devoirs, et plus encore.",
+      "Notes, moyennes, emploi du temps, devoirs et cantine dans une seule app. Gratuite, sans pub, notée 4,7/5 et déjà téléchargée plus de 2 millions de fois.",
   },
   nav: {
     label: "Navigation principale",
@@ -460,7 +460,9 @@ const fr = {
     },
   },
   downloadPage: {
-    metadataTitle: "Télécharger Papillon",
+    metadataTitle: "Télécharger Papillon gratuitement sur iPhone, Android et Mac",
+    metadataDescription:
+      "Installez Papillon gratuitement sur iPhone, iPad, Mac et Android. Sans pub, sans abonnement, et noté 4,7/5 sur les stores. Toute votre vie scolaire en une app.",
     hero: {
       label: "Gratuit, sans pub, open source",
       title: "Votre vie scolaire, dans votre poche.",
@@ -509,9 +511,9 @@ const fr = {
   featurePages: {
     compatible: "Compatible avec",
     grades: {
-      metadataTitle: "Notes et moyennes – Papillon",
+      metadataTitle: "Vos notes et votre moyenne en temps réel – Papillon",
       metadataDescription:
-        "Vos notes dès leur publication, votre moyenne calculée avec les coefficients et son évolution sur l’année. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Vos notes dès leur publication, votre moyenne calculée avec les coefficients et son évolution sur l’année. Gratuit, sans pub, sur iPhone et Android.",
       hero: {
         title: "Votre moyenne, sans attendre le bulletin",
         description:
@@ -679,9 +681,9 @@ const fr = {
       },
     },
     schedule: {
-      metadataTitle: "Emploi du temps – Papillon",
+      metadataTitle: "Votre emploi du temps toujours à jour – Papillon",
       metadataDescription:
-        "Votre emploi du temps toujours à jour : cours annulés et modifiés signalés, salles, profs, Activités en direct et widgets. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Cours annulés et modifiés signalés tout de suite, salles, profs, Activités en direct et widgets. Gratuit, sans pub, sur iPhone et Android.",
       hero: {
         title: "Votre journée, cours après cours",
         description:
@@ -846,9 +848,9 @@ const fr = {
       },
     },
     homework: {
-      metadataTitle: "Devoirs – Papillon",
+      metadataTitle: "Tous vos devoirs, semaine par semaine – Papillon",
       metadataDescription:
-        "Tous vos devoirs semaine par semaine, à cocher une fois finis, triés par date ou par matière. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Tous vos devoirs semaine par semaine, à cocher une fois finis, triés par date ou par matière. Gratuit, sans pub, sur iPhone et Android.",
       hero: {
         title: "Ce qu’il reste à faire, et pour quand",
         description:
@@ -972,9 +974,9 @@ const fr = {
       },
     },
     news: {
-      metadataTitle: "Actualités – Papillon",
+      metadataTitle: "Les actus de votre établissement – Papillon",
       metadataDescription:
-        "Les actus de votre établissement dans une liste claire, faite pour le téléphone. Gratuit, compatible Pronote, ÉcoleDirecte et Skolengo.",
+        "Les actus de votre établissement dans une liste claire, faite pour le téléphone. Gratuit, sans pub, sur iPhone et Android.",
       hero: {
         title: "Les infos de votre établissement, sans rien rater",
         description:
@@ -1106,6 +1108,10 @@ const fr = {
     copied: "Copié",
     back: "Tous les articles",
     empty: "Aucun article pour le moment.",
+    translatedByAi: "Traduit par IA",
+    summary: "En bref",
+    summarizedByAi: "Résumé par IA",
+    team: "L’équipe Papillon",
   },
   notFound: {
     metadataTitle: "Page introuvable – Papillon",
@@ -1125,6 +1131,7 @@ const fr = {
       linkedin: "LinkedIn",
       photoAlt: "L’équipe de Papillon",
     },
+    madeIn: "Fait avec amour en Bretagne",
     association: "Association Papillon",
     copyright: "© 2026 Association Papillon & contributeur·rice·s. Tous droits réservés.",
     columns: {

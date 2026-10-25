@@ -1,6 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
-import eventPhoto from "@/assets/association/event.jpg";
-import remotePhoto from "@/assets/association/value-2-b.png";
+import eventPhoto from "@/assets/association/event.webp";
+import remotePhoto from "@/assets/association/value-2-b.webp";
 import { FadeUp } from "@/components/ui/fade-up";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { ChapterHeading } from "./chapter-heading";

@@ -1,6 +1,7 @@
 import { ExternalLink } from "@getpapillon/papicons";
 import Image from "next/image";
-import team from "@/assets/team/PapillonTeam.png";
+import bzh from "@/assets/flags/bzh.svg";
+import team from "@/assets/team/PapillonTeam.webp";
 import { Logo } from "@/components/ui/logo";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -14,7 +15,7 @@ export async function SiteFooter() {
   const columns = Object.keys(t.columns) as (keyof Columns)[];
 
   return (
-    <footer className="overflow-hidden bg-primary-dark text-white">
+    <footer data-sound="footer" className="overflow-hidden bg-primary-dark text-white">
       <div className="mx-auto max-w-7xl px-6">
         <section className="grid items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
           <Image
@@ -50,6 +51,10 @@ export async function SiteFooter() {
         <div className="grid gap-12 border-t border-white/10 py-16 sm:grid-cols-2 lg:grid-cols-6">
           <div className="flex flex-col gap-4 lg:col-span-2">
             <Logo aria-label="Papillon" role="img" className="h-7 w-auto self-start" />
+            <span className="flex h-8 items-center gap-2 self-start rounded-full bg-white/10 px-3 text-sm font-medium">
+              <Image src={bzh} alt="" className="h-3.5 w-auto" />
+              <span className="text-trim">{t.madeIn}</span>
+            </span>
             <div className="flex flex-col gap-1 text-md">
               <span className="font-semibold">{t.association}</span>
               <span className="max-w-xs text-white/60">{t.copyright}</span>
