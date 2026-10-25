@@ -13,11 +13,11 @@ import {
 } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { type ClipboardEvent, useEffect, useRef, useState } from "react";
-import bubble from "@/assets/hero/bubble.svg";
-import calendar from "@/assets/hero/calendar.svg";
-import cards from "@/assets/hero/cards.svg";
-import homework from "@/assets/hero/homework.svg";
-import menu from "@/assets/hero/menu.svg";
+import bubble from "@/assets/hero/bubble.webp";
+import calendar from "@/assets/hero/calendar.webp";
+import cards from "@/assets/hero/cards.webp";
+import homework from "@/assets/hero/homework.webp";
+import menu from "@/assets/hero/menu.webp";
 import { easeOutPapillon } from "@/lib/motion";
 
 const titleIcons = [bubble, cards, calendar, menu, homework];

@@ -4,9 +4,9 @@ import { Grid } from "@getpapillon/papicons";
 import { motion, useReducedMotion } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { type ReactNode, useState } from "react";
-import bubble from "@/assets/hero/bubble.svg";
-import calendar from "@/assets/hero/calendar.svg";
-import homework from "@/assets/hero/homework.svg";
+import bubble from "@/assets/hero/bubble.webp";
+import calendar from "@/assets/hero/calendar.webp";
+import homework from "@/assets/hero/homework.webp";
 import type { PostCategory } from "@/lib/blog";
 
 type Tab = "all" | PostCategory;
