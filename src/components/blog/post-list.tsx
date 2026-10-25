@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { type ReactNode, ViewTransition } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 import { formatPostDate, type Post, type PostCategory, postCategories } from "@/lib/blog";
 import { CategoryTabs } from "./category-tabs";
 
@@ -79,7 +80,7 @@ function PostRow({ post, locale, preload }: PostRowProps) {
       <ViewTransition name={`blog-banner-${post.slug}`} share="blog-banner" default="none">
         <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-xl bg-surface sm:w-36">
           <Image
-            src={post.banner}
+            src={withBasePath(post.banner)}
             alt=""
             fill
             preload={preload}

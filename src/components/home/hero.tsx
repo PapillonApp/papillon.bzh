@@ -9,6 +9,7 @@ import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import { ServiceLogos } from "@/components/ui/service-logos";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 import { pageLight } from "@/lib/page-tone";
 
 type HeroProps = {
@@ -82,17 +83,17 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
           className={`absolute inset-0 size-full object-cover ${videoReady ? "" : "invisible"}`}
         >
           <source
-            src="/hero/papievent-reveal.mov"
+            src={withBasePath("/hero/papievent-reveal.mov")}
             type='video/quicktime; codecs="hvc1"'
             media="(min-width: 1440px) and (min-resolution: 2dppx)"
           />
-          <source src="/hero/papievent-reveal-1080p.mov" type='video/quicktime; codecs="hvc1"' />
+          <source src={withBasePath("/hero/papievent-reveal-1080p.mov")} type='video/quicktime; codecs="hvc1"' />
           <source
-            src="/hero/papievent-reveal.webm"
+            src={withBasePath("/hero/papievent-reveal.webm")}
             type="video/webm"
             media="(min-width: 1440px) and (min-resolution: 2dppx)"
           />
-          <source src="/hero/papievent-reveal-1080p.webm" type="video/webm" />
+          <source src={withBasePath("/hero/papievent-reveal-1080p.webm")} type="video/webm" />
         </video>
       </div>
 

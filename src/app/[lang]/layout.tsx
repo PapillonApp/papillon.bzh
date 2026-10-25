@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(siteUrl),
     applicationName: "Papillon",
     twitter: { card: "summary_large_image", site: "@thepapillonapp" },
+    ...(process.env.STATIC_EXPORT === "true" && { robots: { index: false, follow: false } }),
     ...pageMetadata({
       locale,
       path: "",

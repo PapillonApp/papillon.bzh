@@ -5,8 +5,9 @@ import { FadeUp } from "@/components/ui/fade-up";
 import { HorizontalScroll } from "@/components/ui/horizontal-scroll";
 import { LazyVideo } from "@/components/ui/lazy-video";
 import { getDictionary } from "@/i18n/server";
+import { withBasePath } from "@/lib/base-path";
 
-const videos = ["/features/grades.mp4", "/features/schedule.mp4", "/features/subjects.mp4"];
+const videos = ["/features/grades.mp4", "/features/schedule.mp4", "/features/subjects.mp4"].map(withBasePath);
 const themes = ["theme-grades", "theme-schedule", "theme-news"];
 
 export async function FeatureDemos() {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 
 type Photo = { src: string; alt: string };
 
@@ -12,7 +13,7 @@ export function Photos({ images }: { images: Photo[] }) {
           className={`relative overflow-hidden rounded-2xl bg-surface ${pair ? "aspect-3/4" : "aspect-4/3"}`}
         >
           <Image
-            src={image.src}
+            src={withBasePath(image.src)}
             alt={image.alt}
             fill
             sizes={pair ? "(min-width: 768px) 336px, 50vw" : "(min-width: 768px) 672px, 100vw"}

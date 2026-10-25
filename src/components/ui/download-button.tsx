@@ -4,6 +4,7 @@ import { Apple, PapillonApp } from "@getpapillon/papicons";
 import { useParams } from "next/navigation";
 import { storeUrls } from "@/components/download/store-badges";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 import { externalProps } from "@/lib/links";
 import { GitHubLogo, GooglePlayLogo } from "./brand-logos";
 import { Chevron } from "./chevron";
@@ -47,7 +48,7 @@ export function DownloadButton({ t, variant, compactOnMobile = false, menuSide =
       className={`flex shrink-0 items-stretch rounded-full text-md font-semibold transition-[color,background-color,scale] duration-300 active:scale-97 active:duration-150 ${style.root}`}
     >
       <a
-        href={`/${lang}/download`}
+        href={withBasePath(`/${lang}/download`)}
         className={`flex items-center gap-1.5 rounded-l-full px-3 transition-[background-color] hover:bg-current/10 ${style.main} ${compactOnMobile ? "max-sm:rounded-r-full" : ""}`}
       >
         <PapillonApp aria-hidden className={style.icon} />
