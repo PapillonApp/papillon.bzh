@@ -36,6 +36,9 @@ jobs:
           STATIC_EXPORT: "true"
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
+      - name: Variantes des images
+        run: bun scripts/resize-images.ts out
+
       - name: Fichiers Markdown à côté des pages
         run: cp -R out/md/. out/ && rm -rf out/md
 

@@ -50,7 +50,7 @@ export function pageMetadata({
       url,
       title,
       description,
-      images: `/${locale}/opengraph-image`,
+      images: { url: "/og.jpg", width: 1920, height: 1080, alt: "Papillon" },
       ...openGraph,
     },
   };

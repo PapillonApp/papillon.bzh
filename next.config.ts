@@ -13,13 +13,14 @@ const nextConfig: NextConfig = {
   cacheComponents: !staticExport,
   partialPrefetching: !staticExport,
   images: {
-    unoptimized: staticExport,
+    ...(staticExport && { loader: "custom" as const, loaderFile: "./src/lib/image-loader.ts" }),
     formats: ["image/avif", "image/webp"],
     imageSizes: [32, 48, 64, 96, 128, 256, 384, 448],
     qualities: [75, 90],
   },
   experimental: {
     agentUpgrade: "security",
+    inlineCss: true,
     optimizePackageImports: ["@getpapillon/papicons"],
   },
   turbopack: {

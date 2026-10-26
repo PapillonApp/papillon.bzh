@@ -3,6 +3,7 @@
 import { Search, Star } from "@getpapillon/papicons";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 import { HeroTitle } from "@/components/home/hero-title";
 import { DownloadButton } from "@/components/ui/download-button";
 import { ServiceLogos } from "@/components/ui/service-logos";
@@ -14,6 +15,8 @@ import { pageLight } from "@/lib/page-tone";
 
 const posterPlaceholder =
   "url(data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBQCdASogABIAPrVIn0unI6KhsBgIAOAWiWQAnTKEgQAWBT3/P1+I7O/2TGCpo2zCsllgAPni198fNHP6ZlejASbk6PR3Jo+kzAyDbBtGWCiGHofyHjHALvum2l7UUeQj1/PKF2E1Ah4HmttjZrUtO4TqfUH087Rg03+VdVoLIk6QyAgAAA==)";
+
+const posterUrl = withBasePath("/hero/papievent-poster.jpg");
 
 const fadeDuration = 0.3;
 
@@ -32,6 +35,7 @@ type HeroProps = {
 };
 
 export function Hero({ t, download, stats, compatible }: HeroProps) {
+  preload(posterUrl, { as: "image", fetchPriority: "high" });
   const toneRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
@@ -104,7 +108,7 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
         className="relative -z-10 -mt-18 -mb-8 min-h-72 flex-1 mask-t-from-80% mask-t-to-black/40 mask-b-from-50% lg:absolute lg:inset-0 lg:m-0 lg:mask-b-from-40% opacity-[calc(100%-var(--page-light))]"
       >
         <div
-          style={{ backgroundImage: `url(${withBasePath("/hero/papievent-poster.jpg")}), ${posterPlaceholder}` }}
+          style={{ backgroundImage: `url(${posterUrl}), ${posterPlaceholder}` }}
           className="absolute inset-0 scale-105 bg-cover bg-center blur-2xl"
         />
         <motion.video
