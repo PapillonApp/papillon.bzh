@@ -39,6 +39,9 @@ jobs:
       - name: Fichiers Markdown à côté des pages
         run: cp -R out/md/. out/ && rm -rf out/md
 
+      - name: Page 404
+        run: cp out/fr/404/index.html out/404.html
+
       - name: Redirection racine
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}

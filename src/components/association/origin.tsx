@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/base-path";
 import { ArrowRight } from "@getpapillon/papicons";
 import Image from "next/image";
 import v1 from "@/assets/story/v1.webp";
@@ -31,7 +32,7 @@ export function Origin({ t, quote, role, locale }: OriginProps) {
             </figcaption>
           </figure>
           <a
-            href={`/${locale}/story`}
+            href={withBasePath(`/${locale}/story`)}
             className="group mt-4 flex w-fit items-center gap-1.5 text-md font-semibold text-primary"
           >
             <span className="text-trim">{t.link}</span>

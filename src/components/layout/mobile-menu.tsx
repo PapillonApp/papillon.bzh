@@ -6,6 +6,7 @@ import Link from "next/link";
 import { type ReactNode, useEffect, useState } from "react";
 import { Chevron } from "@/components/ui/chevron";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { withBasePath } from "@/lib/base-path";
 import { externalProps, linkHrefs, localizeHref } from "@/lib/links";
 import { easeOutPapillon } from "@/lib/motion";
 import { useHeaderMenu } from "./header-shell";
@@ -84,7 +85,7 @@ export function MobileMenu({ nav, language, download, locale }: MobileMenuProps)
                 triggerClassName="flex w-full items-center gap-2 rounded-2xl bg-background px-5 py-4 text-md font-medium"
               />
               <a
-                href={`/${locale}/download`}
+                href={withBasePath(`/${locale}/download`)}
                 className="flex items-center justify-center gap-2 rounded-2xl bg-primary px-5 py-4 text-md font-semibold text-white transition-[scale,filter] duration-150 active:scale-98 active:brightness-90"
               >
                 <PapillonApp aria-hidden className="size-6" />

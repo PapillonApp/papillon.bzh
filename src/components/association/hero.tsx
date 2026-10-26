@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
 import { PapillonIcon, User } from "@getpapillon/papicons";
 import { motion, useReducedMotion } from "motion/react";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
@@ -69,7 +70,7 @@ export function Hero({ t, locale }: HeroProps) {
             <span className="text-trim">{t.team}</span>
           </a>
           <a
-            href={`/${locale}/story`}
+            href={withBasePath(`/${locale}/story`)}
             className="flex h-10 items-center rounded-full border border-foreground/15 px-4 text-md font-medium text-foreground/60 transition hover:border-foreground/30 hover:text-foreground/80 active:scale-97"
           >
             <span className="text-trim">{t.story}</span>

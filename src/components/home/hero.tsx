@@ -15,6 +15,8 @@ import { pageLight } from "@/lib/page-tone";
 const posterPlaceholder =
   "url(data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBQCdASogABIAPrVIn0unI6KhsBgIAOAWiWQAnTKEgQAWBT3/P1+I7O/2TGCpo2zCsllgAPni198fNHP6ZlejASbk6PR3Jo+kzAyDbBtGWCiGHofyHjHALvum2l7UUeQj1/PKF2E1Ah4HmttjZrUtO4TqfUH087Rg03+VdVoLIk6QyAgAAA==)";
 
+const fadeDuration = 0.3;
+
 type NetworkInformation = { saveData?: boolean; effectiveType?: string };
 
 function isSlowConnection() {
@@ -34,7 +36,9 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
   const [buffering, setBuffering] = useState(true);
-  const [started, setStarted] = useState(false);
+  const [ready, setReady] = useState(false);
+  const inViewRef = useRef(false);
+  const shownRef = useRef(false);
   const { scrollYProgress } = useScroll({ target: toneRef, offset: ["start start", "end start"] });
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
@@ -58,17 +62,16 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
       const hevc = video.canPlayType('video/mp4; codecs="hvc1"');
       video.src = withBasePath(`/hero/papievent-reveal-720p.${hevc ? "mp4" : "webm"}`);
     }
-    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && !video.paused) {
-      setBuffering(false);
-      setStarted(true);
-    }
-    if (reduceMotion) {
+    if (!shownRef.current && (!video.paused || video.currentTime > 0)) {
       video.pause();
-      return;
+      video.currentTime = 0;
     }
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) setBuffering(false);
+    if (reduceMotion) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.intersectionRatio >= 0.5) {
+        inViewRef.current = entry.intersectionRatio >= 0.5;
+        if (inViewRef.current && shownRef.current) {
           video.play().catch(() => setBuffering(false));
         } else if (!entry.isIntersecting) {
           video.pause();
@@ -80,6 +83,15 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
     observer.observe(video);
     return () => observer.disconnect();
   }, [reduceMotion]);
+
+  useEffect(() => {
+    if (!ready || reduceMotion) return;
+    const timer = setTimeout(() => {
+      shownRef.current = true;
+      if (inViewRef.current) videoRef.current?.play().catch(() => setBuffering(false));
+    }, (fadeDuration * 1000) / 2);
+    return () => clearTimeout(timer);
+  }, [ready, reduceMotion]);
 
   return (
     <section
@@ -101,13 +113,19 @@ export function Hero({ t, download, stats, compatible }: HeroProps) {
           muted
           playsInline
           onWaiting={() => setBuffering(true)}
-          onPlaying={() => {
+          onCanPlay={() => setBuffering(false)}
+          onPlaying={(event) => {
             setBuffering(false);
-            setStarted(true);
+            if (shownRef.current) return;
+            event.currentTarget.pause();
+            event.currentTarget.currentTime = 0;
+          }}
+          onSeeked={() => {
+            if (!shownRef.current) setReady(true);
           }}
           initial={false}
-          animate={{ opacity: started ? 1 : 0 }}
-          transition={{ duration: 0.6, ease: easeOutPapillon }}
+          animate={{ opacity: ready && !reduceMotion ? 1 : 0 }}
+          transition={{ duration: fadeDuration, ease: easeOutPapillon }}
           className="absolute inset-0 size-full object-cover"
         >
           <source

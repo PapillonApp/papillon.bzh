@@ -23,7 +23,7 @@ export default async function AssociationPage() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
-    <main>
+    <main className="overflow-x-clip">
       <Hero t={dict.association.hero} locale={locale} />
       <Origin
         t={dict.association.origin}

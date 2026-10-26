@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/base-path";
 import { Heart, Paper } from "@getpapillon/papicons";
 import type { ComponentType } from "react";
 import { QrCode } from "@/components/download/qr-code";
@@ -54,7 +55,7 @@ export function LinkList({ t, download, locale }: LinkListProps) {
           <div className="mt-2 flex flex-col items-start gap-4">
             <StoreBadges t={download.stores} locale={locale} className="justify-start" />
             <a
-              href={`/${locale}/download`}
+              href={withBasePath(`/${locale}/download`)}
               className="text-md font-medium text-primary underline decoration-primary/30 underline-offset-4 transition hover:decoration-primary"
             >
               {t.otherOptions}

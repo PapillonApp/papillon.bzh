@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/base-path";
 import { Home } from "@getpapillon/papicons";
 import { RunawayButterfly } from "@/components/not-found/runaway-butterfly";
 import { DownloadButton } from "@/components/ui/download-button";
@@ -23,7 +24,7 @@ export default async function NotFound() {
         <p className="max-w-xl text-lg/normal text-pretty text-foreground/60">{t.description}</p>
         <div className="mt-4 flex flex-wrap justify-center gap-4">
           <a
-            href={`/${locale}`}
+            href={withBasePath(`/${locale}`)}
             className="flex h-10 items-center gap-1.5 rounded-full border border-foreground/15 px-4 text-md font-medium text-foreground/60 transition hover:border-foreground/30 hover:text-foreground/80 active:scale-97"
           >
             <Home aria-hidden className="size-6" />

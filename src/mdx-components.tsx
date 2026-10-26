@@ -6,6 +6,7 @@ import { Credits } from "@/components/blog/credits";
 import { Label } from "@/components/blog/label";
 import { PhoneShot } from "@/components/blog/phone-shot";
 import { Photos } from "@/components/blog/photos";
+import { withBasePath } from "@/lib/base-path";
 import { externalProps } from "@/lib/links";
 
 function Highlight({ children }: { children: ReactNode }) {
@@ -26,7 +27,7 @@ const components = {
   p: (props) => <p className="mt-5 text-lg/relaxed text-pretty text-foreground/75" {...props} />,
   a: ({ href = "", ...props }) => (
     <a
-      href={href}
+      href={href.startsWith("/") ? withBasePath(href) : href}
       {...(href.startsWith("http") ? externalProps : {})}
       className="font-medium text-primary underline decoration-primary/30 underline-offset-4 transition hover:decoration-primary"
       {...props}

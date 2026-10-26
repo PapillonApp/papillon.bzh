@@ -17,8 +17,11 @@ export function Today({ t, stats }: TodayProps) {
   ];
 
   return (
-    <div data-dark-section className="theme-dark bg-background">
-      <section className="px-6 py-24 lg:py-32">
+    <div
+      data-dark-section
+      className="theme-night relative my-12 py-16 before:absolute before:-inset-x-1/2 before:top-0 before:h-16 before:rounded-t-[50%_100%] before:bg-background after:absolute after:-inset-x-1/2 after:bottom-0 after:h-16 after:rounded-b-[50%_100%] after:bg-background lg:my-20 lg:py-32 lg:before:h-32 lg:after:h-32"
+    >
+      <section className="bg-background px-6 py-8 lg:py-12">
         <div className="mx-auto flex max-w-6xl flex-col gap-16 lg:gap-20">
           <FadeUp>
             <ChapterHeading title={t.title} description={t.description} />
