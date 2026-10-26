@@ -10,8 +10,11 @@ type PhoneShotProps = {
 };
 
 const corners = {
-  iphone: { top: "rounded-t-4xl", bottom: "rounded-b-4xl" },
-  duo: { top: "rounded-tl-lg rounded-tr-4xl", bottom: "rounded-bl-lg rounded-br-4xl" },
+  iphone: { top: "rounded-t-2xl sm:rounded-t-4xl", bottom: "rounded-b-2xl sm:rounded-b-4xl" },
+  duo: {
+    top: "rounded-tl-lg rounded-tr-2xl sm:rounded-tr-4xl",
+    bottom: "rounded-bl-lg rounded-br-2xl sm:rounded-br-4xl",
+  },
 };
 
 export function PhoneShot({ src, alt, caption, show = "top", device = "iphone" }: PhoneShotProps) {
