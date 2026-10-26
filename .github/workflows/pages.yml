@@ -45,19 +45,25 @@ jobs:
       - name: Page 404
         run: cp out/fr/404/index.html out/404.html
 
-      - name: Redirection racine
+      - name: Redirections sans langue
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: |
-          META=$(grep -oE '<title>[^<]*</title>|<meta (name|property)="(description|og:[^"]*|twitter:[^"]*)"[^>]*>' out/fr/index.html)
-          cat > out/index.html <<HTML
+          cd out/fr
+          find . -name index.html -not -path './404/*' | while read -r page; do
+          route=${page#./}
+          route=${route%index.html}
+          mkdir -p "../$route"
+          META=$(grep -oE '<title>[^<]*</title>|<meta (name|property)="(description|og:[^"]*|twitter:[^"]*)"[^>]*>' "$page")
+          cat > "../$route/index.html" <<HTML
           <!doctype html>
           <meta charset="utf-8">
           <meta name="robots" content="noindex">
           $META
-          <script>location.replace("$BASE_PATH/" + (navigator.language.startsWith("fr") ? "fr" : "en") + "/")</script>
-          <noscript><meta http-equiv="refresh" content="0; url=$BASE_PATH/fr/"></noscript>
+          <script>location.replace("$BASE_PATH/" + (navigator.language.startsWith("fr") ? "fr" : "en") + "/$route" + location.search + location.hash)</script>
+          <noscript><meta http-equiv="refresh" content="0; url=$BASE_PATH/fr/$route"></noscript>
           HTML
+          done
 
       - uses: actions/upload-pages-artifact@v3
         with:
