@@ -49,10 +49,12 @@ jobs:
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: |
+          META=$(grep -oE '<title>[^<]*</title>|<meta (name|property)="(description|og:[^"]*|twitter:[^"]*)"[^>]*>' out/fr/index.html)
           cat > out/index.html <<HTML
           <!doctype html>
           <meta charset="utf-8">
           <meta name="robots" content="noindex">
+          $META
           <script>location.replace("$BASE_PATH/" + (navigator.language.startsWith("fr") ? "fr" : "en") + "/")</script>
           <noscript><meta http-equiv="refresh" content="0; url=$BASE_PATH/fr/"></noscript>
           HTML
